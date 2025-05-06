@@ -1,0 +1,178 @@
+/* Color barra titulo del tema */
+.navbar-inverse,
+.navbar-inverse .navbar-nav > .open > a{
+	background-color: #848484 !important;
+}
+.logo_empresa .texto h1{
+	color: #fff !important;
+}
+
+/* Color caracteristico del tema */
+#wrap,
+#left,
+.head,
+.user-media,
+.sidebar-left-mini .user-wrapper,
+body:not(.sidebar-left-mini) #menu .nav-header,
+.sidebar-left-mini #menu>li>a .link-title,
+#footer{
+	background-color: #333 !important;
+}
+/* Color seleccion del tema */
+#menu>li:hover>a, 
+#menu>li:focus>a,
+#menu>li a:hover {
+	background-color: rgba(0,0,0,0.3)!important;
+	color: #fff !important;
+}
+/* Color submenu del tema */
+#menu>li ul {
+	background-color: rgba(0,0,0,0.8)!important;
+}
+#menu>li ul li a{
+	color: #BABABA !important;
+}
+
+
+/* Color de las fuentes del tema */
+.head .main-bar h3,
+.user-media .media-body h5.media-heading,
+body:not(.sidebar-left-mini) #menu .nav-header,
+.sidebar-left-mini .user-media-toggleHover,
+#menu > li > a,
+#footer {
+    color: #BABABA;
+    text-shadow: none !important;
+}
+
+/* Color de de los separadores de las secciones */
+#menu .nav-divider,
+.outer {
+    background: #222 !important;
+    box-shadow: none !important;
+}
+.inner {
+    border: none !important;
+}
+#menu > li > a,
+body:not(.sidebar-left-mini) #menu .nav-header {
+    border-top: 1px solid rgba(0, 0, 0, 0.1);	
+}
+.head{
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);	
+}
+
+
+/* Otros */
+#top > .navbar {
+	border-top: none !important;
+}
+#footer {
+	background-image: none !important;
+}
+.table {
+    margin-bottom: 0px !important;
+}
+.container_box {
+    top: 10px !important;
+}
+
+/*******************************************************/
+/* Modificacion de los cuadros del tema */
+.box{
+	background-color: #fff;
+	border: 1px solid #848484;
+	border-radius: 4px;
+	-webkit-box-shadow: 0 1px 1px rgba(0,0,0,.05);
+	box-shadow: 0 1px 1px rgba(0,0,0,.05);
+}
+.box header {
+    color: #fff;
+	background-color: #848484;
+	border-color: #848484;
+	border-top-left-radius: 3px;
+	border-top-right-radius: 3px;
+	background-image: none;
+	background-repeat: repeat-x;
+	border-bottom: none;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+}
+.box header .icons {
+    padding: 10px 15px;
+    border-right: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+.box header .nav-tabs {
+    border-bottom: none;
+}
+.box .body {
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    width: 100%;
+    background-color: #fff;
+    border-bottom-left-radius: 4px;
+	border-bottom-right-radius: 4px;
+}
+.box .table-responsive {
+	margin-bottom: 3px !important;
+}
+/* Color de la letra de la pestaña de la tabla*/
+.nav-tabs > li > a {
+    color: #fff !important;
+}
+.nav-tabs > li > a:hover, .nav-tabs > li > a:focus {
+    color: #fff;
+	background-color: #737373;
+	border-color: transparent;
+	border-bottom: none;
+}
+.nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
+    color: #555 !important;
+    /*border-bottom: none;*/
+}
+/** Modificacion del dropdown de la tablas **/
+.box header .dropdown-menu {
+    right: 0!important;
+    float: right!important;
+	left: auto!important;
+}
+.box header .nav-tabs > li > a,
+.box header .nav-tabs > li > a:hover,
+.box header .nav-tabs > li > a:focus {
+    color: #fff;
+}
+.box header .nav-tabs > .open > a,
+.box header .nav-tabs > .open > a:hover,
+.box header .nav-tabs > .open > a:focus,
+.box header .nav-tabs > li > a:hover,
+.box header .nav-tabs > li > a:focus {
+	color: #fff;
+	background-color: #737373;
+	border-color: transparent;
+}
+.box header .nav-tabs > li.active > a,
+.box header .nav-tabs > li.active > a:hover,
+.box header .nav-tabs > li.active > a:focus {
+	color: #848484;
+	background-color: #fff;
+	border-color: #848484;
+	border-bottom-color: transparent;
+}
+.box header .nav-tabs > li.dropdown .dropdown-menu {
+    background-color: #848484;
+    border-color: #737373;
+}
+.box header .nav-tabs > li.dropdown .dropdown-menu > li > a {
+    color: #fff;   
+}
+.box header .nav-tabs > li.dropdown .dropdown-menu > li > a:hover,
+.box header .nav-tabs > li.dropdown .dropdown-menu > li > a:focus {
+    background-color: #737373;
+}
+.box header .nav-tabs > li.dropdown .dropdown-menu > .active > a,
+.box header .nav-tabs > li.dropdown .dropdown-menu > .active > a:hover,
+.box header .nav-tabs > li.dropdown .dropdown-menu > .active > a:focus {
+    background-color: #848484;
+}
