@@ -1,0 +1,129 @@
+
+
+
+.avgrund-popin a {
+	/*color: #ED5E2F;*/
+}
+
+.avgrund-popin a:hover {
+	text-decoration: none;
+}
+
+.avgrund-popin h1 {
+	color: #333;
+	font-family: 'Headland One', Georgia, serif;
+	font-size: 40px;
+	text-align: center;
+	margin: 0 0 25px;
+}
+
+.avgrund-popin pre, 
+.avgrund-popin code {
+	font-family: "Consolas", "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", Monaco, "Courier New", Courier, monospace;
+	font-size: 12px;
+	line-height: 18px;
+	border: 1px solid #CCC;
+	padding: 10px;
+	margin: 10px 0;
+	overflow: hidden;
+	background: #F8F8F8;
+	color: #333;
+}
+
+.avgrund-popin .container {
+	width: 600px;
+	margin: 0 auto;
+	padding: 45px 0 0;
+}
+
+.avgrund-popin .buttons {
+	width: 390px;
+	height: 75px;
+	margin: 0 auto;
+}
+
+.avgrund-popin .button {
+	display: block;
+	background: #ED5E2F;
+	color: #FFF;
+	text-decoration: none;
+	width: 110px;
+	text-align: center;
+	padding: 10px;
+	margin: 15px 0 0 15px;
+	font-size: 18px;
+	text-transform: uppercase;
+	font-weight: 300;
+}
+
+.avgrund-popin .download {
+	width: 200px;
+}
+
+.avgrund-popin .button:hover {
+	background: #74A599;
+}
+
+.avgrund-popin .button:active {
+	background: #F6A953;
+}
+
+.avgrund-popin .socials {
+	font-size: 12px;
+	margin: 10px 0 0;
+}
+
+/* Custom styles for popin & close button */
+.avgrund-popin.custom {
+	color: #555;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+}
+
+.avgrund-popin.custom p {
+	padding: 10px 20px;
+	margin: 30px 0 0;
+	font-size: 14px;
+	font-weight: 300;
+	text-align: center;
+}
+.avgrund-popin.custom .to_bottom{
+
+   bottom:0;                           /* added */
+   right:0;
+   margin-bottom:10px;
+   margin-right:10px;
+}
+
+.avgrund-popin.custom .to_bottom .btn_ok, 
+.avgrund-popin.custom .to_bottom .btn_cancel {
+	float: right;
+	text-align: center;
+	font-size: 12px;
+	color: white;
+	padding: 8px 18px;
+	margin: 18px 0 0 20px;
+	text-decoration: none;
+	-webkit-transition: background 0.3s ease;
+	-moz-transition: background 0.3s ease;
+	-ms-transition: background 0.3s ease;
+	-o-transition: background 0.3s ease;
+	transition: background 0.3s ease;
+}
+
+.avgrund-popin.custom .to_bottom .btn_ok {
+	background: rgba(71, 186, 255, 0.8);
+}
+
+.avgrund-popin.custom .to_bottom .btn_ok:hover {
+	background: rgba(71, 186, 255, 1);
+}
+
+.avgrund-popin.custom .to_bottom .btn_cancel {
+	background: rgba(241, 118, 122, 0.8);
+}
+
+.avgrund-popin.custom .to_bottom .btn_cancel:hover {
+	background: rgba(241, 118, 122, 1);
+}
