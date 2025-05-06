@@ -1,0 +1,418 @@
+<?php
+/**********************************************************************************************************************************/
+/*                                                   Se define la Sesion                                                          */
+/**********************************************************************************************************************************/
+$timeout = 604800;                               //Se setea la expiracion a una semana
+ini_set( "session.gc_maxlifetime", $timeout );   //Establecer la vida útil máxima de la sesión
+ini_set( "session.cookie_lifetime", $timeout );  //Establecer la duración de las cookies de la sesión
+session_start();                                 //Iniciar una nueva sesión
+/**********************************************************************************************************************************/
+/*                                           Se define la variable de seguridad                                                   */
+/**********************************************************************************************************************************/
+define('XMBCXRXSKGC', 1);
+/**********************************************************************************************************************************/
+/*                                          Se llaman a los archivos necesarios                                                   */
+/**********************************************************************************************************************************/
+require_once 'core/Load.Utils.Web.php';
+/**********************************************************************************************************************************/
+/*                                          Modulo de identificacion del documento                                                */
+/**********************************************************************************************************************************/
+//Cargamos la ubicacion original
+$original = "vehiculos_listado.php";
+$location = $original;
+$new_location = "vehiculos_listado_peonetas.php";
+$new_location .='?pagina='.$_GET['pagina'];
+//Se agregan ubicaciones
+$location .='?pagina='.$_GET['pagina'];
+//Verifico los permisos del usuario sobre la transaccion
+require_once '../A2XRXS_gears/xrxs_configuracion/Load.User.Permission.php';
+/**********************************************************************************************************************************/
+/*                                          Se llaman a las partes de los formularios                                             */
+/**********************************************************************************************************************************/
+//formulario para crear
+if (!empty($_POST['submit'])){
+	//se agregan ubicaciones
+	$location = $new_location;
+	$location.= '&id='.$_GET['id'];
+	//Llamamos al formulario
+	$form_trabajo= 'insert';
+	require_once 'A1XRXS_sys/xrxs_form/vehiculos_listado_peonetas.php';
+}
+//formulario para editar
+if (!empty($_POST['submit_edit'])){
+	//se agregan ubicaciones
+	$location = $new_location;
+	$location.= '&id='.$_GET['id'];
+	//Llamamos al formulario
+	$form_trabajo= 'update';
+	require_once 'A1XRXS_sys/xrxs_form/vehiculos_listado_peonetas.php';
+}
+//se borra un dato
+if (!empty($_GET['del'])){
+	//se agregan ubicaciones
+	$location = $new_location;
+	$location.= '&id='.$_GET['id'];
+	//Llamamos al formulario
+	$form_trabajo= 'del';
+	require_once 'A1XRXS_sys/xrxs_form/vehiculos_listado_peonetas.php';
+}
+/**********************************************************************************************************************************/
+/*                                         Se llaman a la cabecera del documento html                                             */
+/**********************************************************************************************************************************/
+require_once 'core/Web.Header.Main.php';
+/**********************************************************************************************************************************/
+/*                                                   ejecucion de logica                                                          */
+/**********************************************************************************************************************************/
+//Listado de errores no manejables
+if (isset($_GET['created'])){ $error['created'] = 'sucess/Peoneta Creado correctamente';}
+if (isset($_GET['edited'])){  $error['edited']  = 'sucess/Peoneta Modificado correctamente';}
+if (isset($_GET['deleted'])){ $error['deleted'] = 'sucess/Peoneta Borrado correctamente';}
+//Manejador de errores
+if(isset($error)&&$error!=''){echo notifications_list($error);}
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+if(!empty($_GET['edit'])){
+// consulto los datos
+$query = "SELECT Nombre,ApellidoPat, ApellidoMat, Rut, Fecha
+FROM `vehiculos_listado_peonetas`
+WHERE idPeoneta = ".$_GET['edit'];
+//Consulta
+$resultado = mysqli_query ($dbConn, $query);
+//Si ejecuto correctamente la consulta
+if(!$resultado){
+	//Genero numero aleatorio
+	$vardata = genera_password(8,'alfanumerico');
+					
+	//Guardo el error en una variable temporal
+	
+	
+	
+					
+}
+$rowData = mysqli_fetch_assoc ($resultado); 
+
+ ?>
+
+<div class="col-xs-12 col-sm-10 col-md-9 col-lg-8 fcenter">
+	<div class="box">
+		<header>
+			<div class="icons"><i class="fa fa-edit" aria-hidden="true"></i></div>
+			<h5>Editar Peoneta</h5>
+		</header>
+		<div class="body">
+			<form class="form-horizontal" method="post" id="form1" name="form1" autocomplete="off" novalidate>
+
+				<?php
+				//Se verifican si existen los datos
+				if(isset($Nombre)){         $x1  = $Nombre;       }else{$x1  = $rowData['Nombre'];}
+				if(isset($ApellidoPat)){    $x2  = $ApellidoPat;  }else{$x2  = $rowData['ApellidoPat'];}
+				if(isset($ApellidoMat)){    $x3  = $ApellidoMat;  }else{$x3  = $rowData['ApellidoMat'];}
+				if(isset($Rut)){            $x4  = $Rut;          }else{$x4  = $rowData['Rut'];}
+				if(isset($Fecha)){$x5  = $Fecha;        }else{$x5  = $rowData['Fecha'];}
+
+				//se dibujan los inputs
+				$Form_Inputs = new Form_Inputs();
+				$Form_Inputs->form_input_text('Nombre', 'Nombre', $x1, 2);
+				$Form_Inputs->form_input_text('Apellido Paterno', 'ApellidoPat', $x2, 2);
+				$Form_Inputs->form_input_text('Apellido Materno', 'ApellidoMat', $x3, 2);
+				$Form_Inputs->form_input_rut('Rut', 'Rut', $x4, 2);
+				$Form_Inputs->form_date('F Nacimiento','Fecha', $x5, 1);
+
+				$Form_Inputs->form_input_hidden('idPeoneta', $_GET['edit'], 2);
+				$Form_Inputs->form_input_hidden('idVehiculo', $_GET['id'], 2);
+				?>
+
+				<div class="form-group">
+					<input type="submit" class="btn btn-primary pull-right margin_form_btn fa-input" value="&#xf0c7; Guardar Cambios" name="submit_edit">
+					<a href="<?php echo $new_location.'&id='.$_GET['id']; ?>" class="btn btn-danger pull-right margin_form_btn"><i class="fa fa-arrow-left" aria-hidden="true"></i> Cancelar y Volver</a>
+				</div>
+			</form>
+			<?php widget_validator(); ?>
+		</div>
+	</div>
+</div>
+
+<?php //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+}elseif(!empty($_GET['new'])){
+//valido los permisos
+validaPermisoUser($rowlevel['level'], 3, $dbConn); ?>
+
+<div class="col-xs-12 col-sm-10 col-md-9 col-lg-8 fcenter">
+	<div class="box">
+		<header>
+			<div class="icons"><i class="fa fa-edit" aria-hidden="true"></i></div>
+			<h5>Crear Peoneta</h5>
+		</header>
+		<div class="body">
+			<form class="form-horizontal" method="post" id="form1" name="form1" autocomplete="off" novalidate>
+
+				<?php
+				//Se verifican si existen los datos
+				if(isset($Nombre)){         $x1  = $Nombre;       }else{$x1  = '';}
+				if(isset($ApellidoPat)){    $x2  = $ApellidoPat;  }else{$x2  = '';}
+				if(isset($ApellidoMat)){    $x3  = $ApellidoMat;  }else{$x3  = '';}
+				if(isset($Rut)){            $x4  = $Rut;          }else{$x4  = '';}
+				if(isset($Fecha)){$x5  = $Fecha;        }else{$x5  = '';}
+
+				//se dibujan los inputs
+				$Form_Inputs = new Form_Inputs();
+				$Form_Inputs->form_input_text('Nombre', 'Nombre', $x1, 2);
+				$Form_Inputs->form_input_text('Apellido Paterno', 'ApellidoPat', $x2, 2);
+				$Form_Inputs->form_input_text('Apellido Materno', 'ApellidoMat', $x3, 2);
+				$Form_Inputs->form_input_rut('Rut', 'Rut', $x4, 2);
+				$Form_Inputs->form_date('F Nacimiento','Fecha', $x5, 1);
+
+				$Form_Inputs->form_input_hidden('idVehiculo', $_GET['id'], 2);
+				?>
+
+				<div class="form-group">
+					<input type="submit" class="btn btn-primary pull-right margin_form_btn fa-input" value="&#xf0c7; Guardar Cambios" name="submit">
+					<a href="<?php echo $new_location.'&id='.$_GET['id']; ?>" class="btn btn-danger pull-right margin_form_btn"><i class="fa fa-arrow-left" aria-hidden="true"></i> Cancelar y Volver</a>
+				</div>
+			</form>
+			<?php widget_validator(); ?>
+		</div>
+	</div>
+</div>
+
+<?php //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+}else{
+// consulto los datos
+$query = "SELECT Nombre,Patente,idOpciones_1,idOpciones_2,idOpciones_3,idOpciones_4,idOpciones_5,
+idOpciones_6, idOpciones_7, idOpciones_8
+FROM `vehiculos_listado`
+WHERE idVehiculo = ".$_GET['id'];
+//Consulta
+$resultado = mysqli_query ($dbConn, $query);
+//Si ejecuto correctamente la consulta
+if(!$resultado){
+	//Genero numero aleatorio
+	$vardata = genera_password(8,'alfanumerico');
+					
+	//Guardo el error en una variable temporal
+	
+	
+	
+					
+}
+$rowData = mysqli_fetch_assoc ($resultado);
+
+/************************************************/
+//Accesos a los equipos de telemetria
+$trans_1 = "telemetria_listado.php";
+$trans_2 = "admin_telemetria_listado.php";
+
+//Accesos a bodegas de productos
+$trans_3 = "bodegas_productos_egreso.php";
+$trans_4 = "bodegas_productos_ingreso.php";
+$trans_5 = "bodegas_productos_simple_stock.php";
+$trans_6 = "bodegas_productos_stock.php";
+
+//Accesos a rutas
+$trans_7 = "vehiculos_rutas.php";
+$trans_8 = "vehiculos_ruta_alternativa.php";
+
+//Accesos a trabajadores
+$trans_9 = "trabajadores_listado.php";
+
+//Accesos a apoderados
+$trans_10 = "apoderados_listado.php";
+
+//Accesos a clientes
+$trans_11 = "clientes_listado.php";
+
+//Accesos a colegios
+$trans_12 = "colegios_listado.php";
+
+//realizo la consulta
+$query = "SELECT
+
+(SELECT COUNT(visualizacion) FROM core_permisos_listado WHERE Direccionbase ='".$trans_1."' AND visualizacion!=9999 LIMIT 1) AS tran_1,
+(SELECT COUNT(visualizacion) FROM core_permisos_listado WHERE Direccionbase ='".$trans_2."' AND visualizacion!=9999 LIMIT 1) AS tran_2,
+(SELECT COUNT(visualizacion) FROM core_permisos_listado WHERE Direccionbase ='".$trans_3."' AND visualizacion!=9999 LIMIT 1) AS tran_3,
+(SELECT COUNT(visualizacion) FROM core_permisos_listado WHERE Direccionbase ='".$trans_4."' AND visualizacion!=9999 LIMIT 1) AS tran_4,
+(SELECT COUNT(visualizacion) FROM core_permisos_listado WHERE Direccionbase ='".$trans_5."' AND visualizacion!=9999 LIMIT 1) AS tran_5,
+(SELECT COUNT(visualizacion) FROM core_permisos_listado WHERE Direccionbase ='".$trans_6."' AND visualizacion!=9999 LIMIT 1) AS tran_6,
+(SELECT COUNT(visualizacion) FROM core_permisos_listado WHERE Direccionbase ='".$trans_7."' AND visualizacion!=9999 LIMIT 1) AS tran_7,
+(SELECT COUNT(visualizacion) FROM core_permisos_listado WHERE Direccionbase ='".$trans_8."' AND visualizacion!=9999 LIMIT 1) AS tran_8,
+(SELECT COUNT(visualizacion) FROM core_permisos_listado WHERE Direccionbase ='".$trans_9."' AND visualizacion!=9999 LIMIT 1) AS tran_9,
+(SELECT COUNT(visualizacion) FROM core_permisos_listado WHERE Direccionbase ='".$trans_10."' AND visualizacion!=9999 LIMIT 1) AS tran_10,
+(SELECT COUNT(visualizacion) FROM core_permisos_listado WHERE Direccionbase ='".$trans_11."' AND visualizacion!=9999 LIMIT 1) AS tran_11,
+(SELECT COUNT(visualizacion) FROM core_permisos_listado WHERE Direccionbase ='".$trans_12."' AND visualizacion!=9999 LIMIT 1) AS tran_12
+
+FROM usuarios_listado
+WHERE usuarios_listado.idUsuario='".$_GET['id']."' ";
+//Consulta
+$resultado = mysqli_query ($dbConn, $query);
+//Si ejecuto correctamente la consulta
+if(!$resultado){
+	//Genero numero aleatorio
+	$vardata = genera_password(8,'alfanumerico');
+					
+	//Guardo el error en una variable temporal
+	
+	
+	
+					
+}
+$rowDatax = mysqli_fetch_assoc ($resultado);
+
+
+$telemetria  = $rowDatax['tran_1'] + $rowDatax['tran_2'];
+$bodega      = $rowDatax['tran_3'] + $rowDatax['tran_4'] + $rowDatax['tran_5'] + $rowDatax['tran_6'];
+$ruta        = $rowDatax['tran_7'] + $rowDatax['tran_8'];
+$trabajador  = $rowDatax['tran_9'];
+$pasajeros   = $rowDatax['tran_10'];
+$peonetas    = $rowDatax['tran_11'];
+$colegios    = $rowDatax['tran_12'];
+
+$todos = $telemetria + $bodega + $ruta + $trabajador + $pasajeros + $peonetas + $colegios;
+
+$idTipoUsuario  = $_SESSION['usuario']['basic_data']['idTipoUsuario'];
+
+/************************************************/
+// consulto los datos
+$arrPeonetas = array();
+$query = "SELECT idPeoneta, Nombre,ApellidoPat, ApellidoMat, Rut, Fecha
+FROM `vehiculos_listado_peonetas`
+WHERE idVehiculo = ".$_GET['id']."
+ORDER BY ApellidoPat ASC, ApellidoMat ASC, Nombre ASC ";
+//Consulta
+$resultado = mysqli_query ($dbConn, $query);
+//Si ejecuto correctamente la consulta
+if(!$resultado){
+	//Genero numero aleatorio
+	$vardata = genera_password(8,'alfanumerico');
+					
+	//Guardo el error en una variable temporal
+	
+	
+	
+					
+}
+while ( $row = mysqli_fetch_assoc ($resultado)){
+array_push( $arrPeonetas,$row );
+}
+
+?>
+
+<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+	<?php 
+	$vehiculo = $rowData['Nombre'];
+	if(isset($rowData['Patente'])&&$rowData['Patente']!=''){
+		$vehiculo .= ' Patente '.$rowData['Patente'];
+	}
+	echo widget_title('bg-aqua', 'fa-cog', 100, 'Vehiculo', $vehiculo, 'Editar Peonetas'); ?>
+	<div class="col-xs-12 col-sm-6 col-md-6 col-lg-8">
+		<?php if ($rowlevel['level']>=3){ ?><a href="<?php echo $new_location.'&id='.$_GET['id'].'&new=true'; ?>" class="btn btn-default pull-right margin_width" ><i class="fa fa-file-o" aria-hidden="true"></i> Crear Peoneta</a><?php } ?>
+	</div>
+</div>
+<div class="clearfix"></div>
+
+
+ 
+
+<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+	<div class="box">
+		<header>
+			<ul class="nav nav-tabs pull-right">
+				<li class=""><a href="<?php echo 'vehiculos_listado.php?pagina='.$_GET['pagina'].'&id='.$_GET['id']?>" ><i class="fa fa-bars" aria-hidden="true"></i> Resumen</a></li>
+				<li class=""><a href="<?php echo 'vehiculos_listado_datos.php?pagina='.$_GET['pagina'].'&id='.$_GET['id']?>" ><i class="fa fa-list-alt" aria-hidden="true"></i> Datos Básicos</a></li>
+				<?php if($todos!=0 OR $idTipoUsuario==1){ ?>
+					<li class=""><a href="<?php echo 'vehiculos_listado_configuracion.php?pagina='.$_GET['pagina'].'&id='.$_GET['id']?>" ><i class="fa fa-wrench" aria-hidden="true"></i> Configuracion</a></li>
+				<?php } ?>
+				<li class="dropdown">
+					<a href="#" data-toggle="dropdown"><i class="fa fa-plus" aria-hidden="true"></i> Ver mas <i class="fa fa-angle-down" aria-hidden="true"></i></a>
+					<ul class="dropdown-menu" role="menu">
+						<?php if(isset($rowData['idOpciones_1'])&&$rowData['idOpciones_1']==1){ ?>		
+							<li class=""><a href="<?php echo 'vehiculos_listado_opc_1.php?pagina='.$_GET['pagina'].'&id='.$_GET['id']?>" ><i class="fa fa-map-marker" aria-hidden="true"></i> Telemetria</a></li>
+						<?php }
+						if(isset($rowData['idOpciones_2'])&&$rowData['idOpciones_2']==1){ ?>
+							<li class=""><a href="<?php echo 'vehiculos_listado_opc_2.php?pagina='.$_GET['pagina'].'&id='.$_GET['id']?>" ><i class="fa fa-database" aria-hidden="true"></i> Bodega</a></li>
+						<?php }
+						if(isset($rowData['idOpciones_3'])&&$rowData['idOpciones_3']==1){ ?>
+							<li class=""><a href="<?php echo 'vehiculos_listado_opc_3.php?pagina='.$_GET['pagina'].'&id='.$_GET['id']?>" ><i class="fa fa-map-o" aria-hidden="true"></i> Ruta</a></li>
+						<?php }
+						if(isset($rowData['idOpciones_4'])&&$rowData['idOpciones_4']==1){ ?>
+							<li class=""><a href="<?php echo 'vehiculos_listado_opc_4.php?pagina='.$_GET['pagina'].'&id='.$_GET['id']?>" ><i class="fa fa-car" aria-hidden="true"></i> Conductor</a></li>
+						<?php }
+						if(isset($rowData['idOpciones_5'])&&$rowData['idOpciones_5']==1){ ?>
+							<li class=""><a href="<?php echo 'vehiculos_listado_opc_5.php?pagina='.$_GET['pagina'].'&id='.$_GET['id']?>" ><i class="fa fa-users" aria-hidden="true"></i> Pasajeros</a></li>
+						<?php }
+						//Si se utiliza la APP 
+						if(isset($rowData['idOpciones_6'])&&$rowData['idOpciones_6']==1){ ?>
+							<li class=""><a href="<?php echo 'vehiculos_listado_password.php?pagina='.$_GET['pagina'].'&id='.$_GET['id']?>" ><i class="fa fa-key" aria-hidden="true"></i> Password APP</a></li>
+						<?php }
+						//Si se utilizan peonetas 
+						if(isset($rowData['idOpciones_7'])&&$rowData['idOpciones_7']==1){ ?>
+							<li class="active"><a href="<?php echo 'vehiculos_listado_peonetas.php?pagina='.$_GET['pagina'].'&id='.$_GET['id']?>" ><i class="fa fa-users" aria-hidden="true"></i> Peonetas</a></li>
+						<?php }
+						//Si se utilizan colegios 
+						if(isset($rowData['idOpciones_8'])&&$rowData['idOpciones_8']==1){ ?>
+							<li class=""><a href="<?php echo 'vehiculos_listado_colegios.php?pagina='.$_GET['pagina'].'&id='.$_GET['id']?>" ><i class="fa fa-graduation-cap" aria-hidden="true"></i> Colegios</a></li>
+						<?php } ?>
+						<li class=""><a href="<?php echo 'vehiculos_listado_estado.php?pagina='.$_GET['pagina'].'&id='.$_GET['id']?>" ><i class="fa fa-power-off" aria-hidden="true"></i> Estado</a></li>
+						<li class=""><a href="<?php echo 'vehiculos_listado_imagen.php?pagina='.$_GET['pagina'].'&id='.$_GET['id']?>" ><i class="fa fa-picture-o" aria-hidden="true"></i>  Foto</a></li>
+						<li class=""><a href="<?php echo 'vehiculos_listado_geocercas.php?pagina='.$_GET['pagina'].'&id='.$_GET['id']?>" ><i class="fa fa-map-o" aria-hidden="true"></i> GeoCercas</a></li>
+
+						<li class=""><a href="<?php echo 'vehiculos_listado_doc_padron.php?pagina='.$_GET['pagina'].'&id='.$_GET['id']?>" ><i class="fa fa-files-o" aria-hidden="true"></i> Archivo - Padron</a></li>
+						<li class=""><a href="<?php echo 'vehiculos_listado_doc_permiso_circulacion.php?pagina='.$_GET['pagina'].'&id='.$_GET['id']?>" ><i class="fa fa-files-o" aria-hidden="true"></i> Archivo - Permiso Circulacion</a></li>
+						<li class=""><a href="<?php echo 'vehiculos_listado_doc_soap.php?pagina='.$_GET['pagina'].'&id='.$_GET['id']?>" ><i class="fa fa-files-o" aria-hidden="true"></i> Archivo - SOAP</a></li>
+						<li class=""><a href="<?php echo 'vehiculos_listado_doc_revision_tecnica.php?pagina='.$_GET['pagina'].'&id='.$_GET['id']?>" ><i class="fa fa-files-o" aria-hidden="true"></i> Archivo - Revision Tecnica</a></li>
+						<li class=""><a href="<?php echo 'vehiculos_listado_doc_seguro_carga.php?pagina='.$_GET['pagina'].'&id='.$_GET['id']?>" ><i class="fa fa-files-o" aria-hidden="true"></i> Archivo - Seguro Carga</a></li>
+						<li class=""><a href="<?php echo 'vehiculos_listado_doc_resolucion_sanitaria.php?pagina='.$_GET['pagina'].'&id='.$_GET['id']?>" ><i class="fa fa-files-o" aria-hidden="true"></i> Archivo - Resolucion Sanitaria</a></li>
+						<li class=""><a href="<?php echo 'vehiculos_listado_doc_mantencion.php?pagina='.$_GET['pagina'].'&id='.$_GET['id']?>" ><i class="fa fa-files-o" aria-hidden="true"></i> Archivo - Mantenciones</a></li>
+						<li class=""><a href="<?php echo 'vehiculos_listado_doc_trans_personas.php?pagina='.$_GET['pagina'].'&id='.$_GET['id']?>" ><i class="fa fa-files-o" aria-hidden="true"></i> Archivo - Cert. Transporte Personas</a></li>
+						<li class=""><a href="<?php echo 'vehiculos_listado_doc_ficha.php?pagina='.$_GET['pagina'].'&id='.$_GET['id']?>" ><i class="fa fa-files-o" aria-hidden="true"></i> Archivo - Ficha Tecnica</a></li>
+
+					</ul>
+                </li>
+			</ul>
+		</header>
+        <div class="table-responsive">
+			<table id="dataTable" class="table table-bordered table-condensed table-hover table-striped dataTable">
+				<thead>
+					<tr role="row">
+						<th width="120">Rut</th>
+						<th>Nombre</th>
+						<th width="160">Fecha Nacimiento</th>
+						<th width="10">Acciones</th>
+					</tr>
+				</thead>
+				<tbody role="alert" aria-live="polite" aria-relevant="all">
+				<?php foreach ($arrPeonetas as $peoneta) { ?>
+					<tr class="odd">
+						<td><?php echo $peoneta['Rut']; ?></td>
+						<td><?php echo $peoneta['Nombre'].' '.$peoneta['ApellidoPat'].' '.$peoneta['ApellidoMat']; ?></td>
+						<td><?php echo fecha_estandar($peoneta['Fecha']); ?></td>
+						<td>
+							<div class="btn-group" style="width: 70px;" >
+								<?php if ($rowlevel['level']>=2){ ?><a href="<?php echo $new_location.'&id='.$_GET['id'].'&edit='.$peoneta['idPeoneta']; ?>" title="Editar Información" class="btn btn-success btn-sm tooltip"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a><?php } ?>
+								<?php if ($rowlevel['level']>=4){
+									$ubicacion = $new_location.'&id='.$_GET['id'].'&del='.simpleEncode($peoneta['idPeoneta'], fecha_actual());
+									$dialogo   = '¿Realmente deseas eliminar el peoneta '.$peoneta['Nombre'].' '.$peoneta['ApellidoPat'].'?'; ?>
+									<a onClick="dialogBox('<?php echo $ubicacion ?>', '<?php echo $dialogo ?>')" title="Borrar Información" class="btn btn-metis-1 btn-sm tooltip"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+								<?php } ?>
+							</div>
+						</td>
+					</tr>
+				<?php } ?>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>
+
+<div class="clearfix"></div>
+<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="margin-bottom:30px">
+	<a href="<?php echo $location ?>" class="btn btn-danger pull-right"><i class="fa fa-arrow-left" aria-hidden="true"></i> Volver</a>
+	<div class="clearfix"></div>
+</div>
+
+<?php } ?>
+<?php
+/**********************************************************************************************************************************/
+/*                                             Se llama al pie del documento html                                                 */
+/**********************************************************************************************************************************/
+require_once 'core/Web.Footer.Main.php';
+
+?>

@@ -1,0 +1,1 @@
+﻿25-05-2023 /\ 11:40:58 /\ Victor Reyes Galvez3 /\ orden_trabajo_telemetria_editar.php /\ Helper utils error /\ 1054 /\ Unknown column  r2  in  where clause  /\ SELECT idMaquina FROM `orden_trabajo_listado` WHERE idOT = r2 
