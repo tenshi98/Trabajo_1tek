@@ -1,0 +1,166 @@
+User-agent: *
+Disallow: /A1XRXS_sys
+Disallow: /core
+Disallow: /upload
+Disallow: /wp-login
+Disallow: /wp-admin
+Disallow: //wp-includes/
+Disallow: /*/feed/
+Disallow: /*/trackback/
+Disallow: /*/attachment/
+Disallow: /author/
+Disallow: /*/page/
+Disallow: /*/feed/
+Disallow: /tag/*/page/
+Disallow: /tag/*/feed/
+Disallow: /page/
+Disallow: /comments/
+Disallow: /xmlrpc.php
+Disallow: /*?s=
+Disallow: /*/*/*/feed.xml
+Disallow: /?attachment_id*
+
+User-agent: Orthogaffe
+Disallow: /
+
+# los rastreadores tendrían que ser amables y obedecer
+# a menos que estén alimentando los motores de búsqueda.
+User-agent: UbiCrawler
+Disallow: /
+User-agent: DOC
+Disallow: /
+User-agent: Zao
+Disallow: /
+User-agent: Twiceler
+Disallow: /
+# Algunos robots son conocidos por ser un problema, sobre todo los destinados a copiar
+# sitios enteros o descargarlos para verlos sin conexión.
+#
+User-agent: sitecheck.internetseer.com
+Disallow: /
+User-agent: Zealbot
+Disallow: /
+User-agent: MSIECrawler
+Disallow: /
+User-agent: SiteSnagger
+Disallow: /
+User-agent: WebStripper
+Disallow: /
+User-agent: WebCopier
+Disallow: /
+User-agent: Fetch
+Disallow: /
+User-agent: Offline Explorer
+Disallow: /
+User-agent: Teleport
+Disallow: /
+User-agent: TeleportPro
+Disallow: /
+User-agent: WebZIP
+Disallow: /
+User-agent: linko
+Disallow: /
+User-agent: HTTrack
+Disallow: /
+User-agent: Microsoft.URL.Control
+Disallow: /
+User-agent: Xenu
+Disallow: /
+User-agent: larbin
+Disallow: /
+User-agent: libwww
+Disallow: /
+User-agent: ZyBORG
+Disallow: /
+User-agent: Download Ninja
+Disallow: /
+User-agent: Nutch
+Disallow: /
+User-agent: spock
+Disallow: /
+User-agent: OmniExplorer_Bot
+Disallow: /
+User-agent: TurnitinBot
+Disallow: /
+User-agent: BecomeBot
+Disallow: /
+User-agent: genieBot
+Disallow: /
+User-agent: dotbot
+Disallow: /
+User-agent: MLBot
+Disallow: /
+User-agent: 80bot
+Disallow: /
+User-agent: Linguee Bot
+Disallow: /
+User-agent: aiHitBot
+Disallow: /
+User-agent: Exabot
+Disallow: /
+User-agent: SBIder/Nutch
+Disallow: /
+User-agent: Jyxobot
+Disallow: /
+User-agent: mAgent
+Disallow: /
+User-agent: MJ12bot
+Disallow: /
+User-agent: Speedy Spider
+Disallow: /
+User-agent: ShopWiki
+Disallow: /
+User-agent: Huasai
+Disallow: /
+User-agent: DataCha0s
+Disallow: /
+User-agent: Baiduspider
+Disallow: /
+User-agent: Atomic_Email_Hunter
+Disallow: /
+User-agent: Mp3Bot
+Disallow: /
+User-agent: WinHttp
+Disallow: /
+User-agent: betaBot
+Disallow: /
+User-agent: core-project
+Disallow: /
+User-agent: panscient.com
+Disallow: /
+User-agent: Java
+Disallow: /
+User-agent: libwww-perl
+Disallow: /
+Los problemáticos.
+
+# Francamente wget es un problema frecuente
+# por tanto y para evitar sobrecargas
+#
+User-agent: wget
+Disallow: /
+
+#
+#Este descarga millones de páginas sin ningún beneficio público
+# http://www.webreaper.net/
+User-agent: WebReaper
+Disallow: /
+
+# A continuación los bots desobedientes que no quieren
+# hacer caso de robots.txt pero…
+#
+# el bot ‘grub’ es el más maleducado de todos
+
+User-agent: grub-client
+Disallow: /
+
+User-agent: k2spider
+Disallow: /
+
+# Este manda tantos intentos por segundo que es molesto de narices
+# http://www.nameprotect.com/botinfo.html
+User-agent: NPBot
+Disallow: /
+#y no olvides tu Sitemap
+
+Sitemap: http://eldominioquesea.com/sitemap.xml
