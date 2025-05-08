@@ -4,7 +4,7 @@
 		<!-- Info-->
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport"              content="width=device-width, initial-scale=1">
+		<meta name="viewport"              content="width=device-width, initial-scale=1, user-scalable=no">
 		<meta http-equiv="Content-Type"    content="text/html; charset=UTF-8">
 
 		<!-- Información del sitio-->
@@ -14,6 +14,7 @@
 		<meta name="keywords"              content="">
 
 		<!-- WEB FONT -->
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
 		<?php
 		//verifica la capa de desarrollo
 		$whitelist = array( 'localhost', '127.0.0.1', '::1' );
@@ -34,14 +35,14 @@
 		<!-- CSS Base -->
 		<link rel="stylesheet" type="text/css" href="<?php echo DB_SITE_REPO ?>/LIB_assets/lib/bootstrap3/css/bootstrap.min.css">
 		<link rel="stylesheet" type="text/css" href="<?php echo DB_SITE_REPO ?>/LIB_assets/lib/font-awesome-animation/font-awesome-animation.min.css">
-		<link rel="stylesheet" type="text/css" href="<?php echo DB_SITE_REPO ?>/Legacy/gestion_modular/css/main.min.css">
-		<link rel="stylesheet" type="text/css" href="<?php echo DB_SITE_REPO ?>/Legacy/gestion_modular/css/theme_color_<?php if(isset($_SESSION['usuario']['basic_data']['Config_idTheme'])&&$_SESSION['usuario']['basic_data']['Config_idTheme']!=''){echo $_SESSION['usuario']['basic_data']['Config_idTheme'];}else{echo '1';} ?>.css">
-		<link rel="stylesheet" type="text/css" href="<?php echo DB_SITE_REPO ?>/Legacy/gestion_modular/lib/fullcalendar/fullcalendar.css">
-		<link rel="stylesheet" type="text/css" href="<?php echo DB_SITE_REPO ?>/Legacy/gestion_modular/css/my_style.css?<?php echo time(); ?>">
+		<link rel="stylesheet" type="text/css" href="<?php echo DB_SITE_REPO ?>/Legacy/1tek_public/css/main.min.css">
+		<link rel="stylesheet" type="text/css" href="<?php echo DB_SITE_REPO ?>/Legacy/1tek_public/css/theme_color_<?php if(isset($_SESSION['usuario']['basic_data']['Config_idTheme'])&&$_SESSION['usuario']['basic_data']['Config_idTheme']!=''){echo $_SESSION['usuario']['basic_data']['Config_idTheme'];}else{echo '1';} ?>.css">
+		<link rel="stylesheet" type="text/css" href="<?php echo DB_SITE_REPO ?>/Legacy/1tek_public/lib/fullcalendar/fullcalendar.css">
+		<link rel="stylesheet" type="text/css" href="<?php echo DB_SITE_REPO ?>/Legacy/1tek_public/css/my_style.css?<?php echo time(); ?>">
 		<link rel="stylesheet" type="text/css" href="<?php echo DB_SITE_REPO ?>/LIB_assets/css/my_colors.min.css">
 		<link rel="stylesheet" type="text/css" href="<?php echo DB_SITE_REPO ?>/LIB_assets/css/directionalButtons/dist/bootstrap-directional-buttons.min.css">
 		<link rel="stylesheet" type="text/css" href="<?php echo DB_SITE_REPO ?>/LIB_assets/css/bttn/dist/bttn.min.css">
-		<link rel="stylesheet" type="text/css" href="<?php echo DB_SITE_REPO ?>/Legacy/gestion_modular/css/my_corrections.css?<?php echo time(); ?>">
+		<link rel="stylesheet" type="text/css" href="<?php echo DB_SITE_REPO ?>/Legacy/1tek_public/css/my_corrections.css?<?php echo time(); ?>">
 		<link rel="stylesheet" type="text/css" href="<?php echo DB_SITE_REPO ?>/LIBS_js/prism/prism.css">
 		<link rel="stylesheet" type="text/css" href="<?php echo DB_SITE_REPO ?>/LIBS_js/elegant_font/css/style.css">
 		<link rel="stylesheet" type="text/css" href="<?php echo DB_SITE_REPO ?>/LIBS_js/bootstrap_touchspin/src/jquery.bootstrap-touchspin.min.css">
@@ -60,7 +61,7 @@
 		<link rel="stylesheet" type="text/css" href="<?php echo DB_SITE_REPO ?>/LIBS_js/multiple-select/bootstrap-multiselect.css">
 
 		<!-- Javascript -->
-		<script type="text/javascript" src="<?php echo DB_SITE_REPO ?>/Legacy/gestion_modular/js/main.min.js"></script>
+		<script type="text/javascript" src="<?php echo DB_SITE_REPO ?>/Legacy/1tek_public/js/main.min.js"></script>
 		<script type="text/javascript" src="<?php echo DB_SITE_REPO ?>/LIB_assets/js/form_functions.min.js"></script>
 		<script type="text/javascript" src="<?php echo DB_SITE_REPO ?>/LIB_assets/js/jquery-1.7.2.min.js"></script>
 		<script type="text/javascript" src="<?php echo DB_SITE_REPO ?>/LIB_assets/js/jquery-1.11.0.min.js"></script>
@@ -89,26 +90,12 @@
 		</style>
 
 		<!-- Favicons-->
-		<?php
-		//Favicon Personalizado
-		$nombre_fichero = 'img/mifavicon.png';
-		if (file_exists($nombre_fichero)){ ?>
-			<link rel="icon"             type="image/png"                    href="img/mifavicon.png" >
-			<link rel="shortcut icon"    type="image/x-icon"                 href="img/mifavicon.png" >
-			<link rel="apple-touch-icon" type="image/x-icon"                 href="img/mifavicon-57x57.png">
-			<link rel="apple-touch-icon" type="image/x-icon" sizes="72x72"   href="img/mifavicon-72x72.png">
-			<link rel="apple-touch-icon" type="image/x-icon" sizes="114x114" href="img/mifavicon-114x114.png">
-			<link rel="apple-touch-icon" type="image/x-icon" sizes="144x144" href="img/mifavicon-144x144.png">
-		<?php
-		//Favicon predefinido
-		}else{ ?>
-			<link rel="icon"             type="image/png"                    href="<?php echo DB_SITE_REPO ?>/LIB_assets/img/favicons/favicon.png" >
-			<link rel="shortcut icon"    type="image/x-icon"                 href="<?php echo DB_SITE_REPO ?>/LIB_assets/img/favicons/favicon.png" >
-			<link rel="apple-touch-icon" type="image/x-icon"                 href="<?php echo DB_SITE_REPO ?>/LIB_assets/img/favicons/apple-touch-icon-57x57-precomposed.png">
-			<link rel="apple-touch-icon" type="image/x-icon" sizes="72x72"   href="<?php echo DB_SITE_REPO ?>/LIB_assets/img/favicons/apple-touch-icon-72x72-precomposed.png">
-			<link rel="apple-touch-icon" type="image/x-icon" sizes="114x114" href="<?php echo DB_SITE_REPO ?>/LIB_assets/img/favicons/apple-touch-icon-114x114-precomposed.png">
-			<link rel="apple-touch-icon" type="image/x-icon" sizes="144x144" href="<?php echo DB_SITE_REPO ?>/LIB_assets/img/favicons/apple-touch-icon-144x144-precomposed.png">
-		<?php } ?>
+		<link rel="icon"             type="image/png"                    href="img/favicon/mifavicon.png" >
+		<link rel="shortcut icon"    type="image/x-icon"                 href="img/favicon/mifavicon.png" >
+		<link rel="apple-touch-icon" type="image/x-icon"                 href="img/favicon/mifavicon-57x57.png">
+		<link rel="apple-touch-icon" type="image/x-icon" sizes="72x72"   href="img/favicon/mifavicon-72x72.png">
+		<link rel="apple-touch-icon" type="image/x-icon" sizes="114x114" href="img/favicon/mifavicon-114x114.png">
+		<link rel="apple-touch-icon" type="image/x-icon" sizes="144x144" href="img/favicon/mifavicon-144x144.png">
 
 	</head>
 	<body class="errorPage error">

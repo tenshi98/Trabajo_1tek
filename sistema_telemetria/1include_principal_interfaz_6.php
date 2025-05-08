@@ -88,8 +88,8 @@ for ($i = 1; $i <= $x_nperm; $i++) {
 /*CrossTrack*/      $Tab_3 = 0;//$prm_x[22] + $prm_x[23] + $prm_x[24] + $prm_x[25] + $prm_x[26] + $prm_x[27] + $prm_x[28] + $prm_x[29] + $prm_x[30] + $prm_x[31] + $prm_x[32] + $prm_x[33] + $prm_x[34] + $prm_x[35];
 /*Agro-Weather*/    $Tab_4 = $prm_x[36];
 /*CrossWater*/      $Tab_5 = 0;
-/*Power-Crane*/      $Tab_6 = $prm_x[37] + $prm_x[38] + $prm_x[39] + $prm_x[40] + $prm_x[41];
-/*Power-Energy*/     $Tab_7 = $prm_x[42] + $prm_x[43] + $prm_x[44] + $prm_x[45] + $prm_x[46];
+/*Power-Crane*/     $Tab_6 = $prm_x[37] + $prm_x[38] + $prm_x[39] + $prm_x[40] + $prm_x[41];
+/*Power-Energy*/    $Tab_7 = $prm_x[42] + $prm_x[43] + $prm_x[44] + $prm_x[45] + $prm_x[46];
 
 /************************************************************************************/
 // Listado con los nombres del tab
@@ -109,7 +109,7 @@ foreach ($arrTabMenu as $tab) {
 	.noborderbox .header .nav-tabs {border-bottom: 1px solid #ddd!important;}
 	.noborderbox .header .nav-tabs > li.active > a{color: #333 !important;border-color: #ddd!important;border-bottom-color: transparent!important;}
 	.noborderbox .header .nav-tabs > li > a {color: #665F5F !important;}
-	.noborderbox .header .nav-tabs > li > a:hover, .noborderbox .header .nav-tabs > li > a:focus {color: #fff !important;background-color: #2E2424;}
+	.noborderbox .header .nav-tabs > li > a:hover, .noborderbox .header .nav-tabs > li > a:focus {color: #fff !important;background-color: rgba(0, 0, 0, 0.4);}
 	.noborderbox .header .nav-tabs > li.active > a:hover, .noborderbox .header .nav-tabs > li.active > a:focus{color: #333 !important;}
 	.tile {display: block;cursor: pointer;float: left;min-width: 75px;min-height: 75px;text-align: center;opacity: 0.9;background-color: #2e8bcc;z-index: 1;color: #ffffff;}
 	.tile h1,.tile h2,.tile h3,.tile h4,.tile h5,.tile h6 {color: #ffffff;-webkit-user-select: none;}
@@ -127,8 +127,8 @@ foreach ($arrTabMenu as $tab) {
 	.tile .tile-label img{width: 10%;}
 	.tile .tile-content {padding-top: 20px;line-height: normal;position: relative;width: 100%;-moz-box-sizing: border-box;box-sizing: border-box;}
 	.tile .tile-content img{width: 100%;}
-	.tile .tile-content .imgw{width: 70%;}
-	.tile .tile-content .imgx{width: 30%;}
+	.tile .tile-content .imgw{width: 50%;}
+	.tile .tile-content .imgx{width: 50%;}
 	.tile .tile-content .tile-icon-large {margin-left: 0px;vertical-align: middle !important;text-align: center;}
 	.tile .tile-content .tile-icon-large p{font-size: 16px;color: #333;}
 	.tile.color_1 {background-color: #FFD734;}
@@ -265,12 +265,12 @@ foreach ($arrTabMenu as $tab) {
 						<div class="tile <?php echo $color; ?> tile-medium col-xs-12 col-sm-6 col-md-3 col-lg-3"  >
 							<div class="tile-content">
 								<div class="tile-icon-large">
-									<img alt="Imagen Referencia" class="imgw" src="<?php echo DB_SITE_REPO ?>/Legacy/gestion_modular/img/CrossTrack.png">
+									<img alt="Imagen Referencia" class="imgw" src="<?php echo DB_SITE_REPO ?>/Legacy/1tek_public/img/CrossTrack.png">
 									<p><strong>Gestion de <br/>Flota GPS</strong></p>
 								</div>
 							</div>
 							<span class="tile-label">
-								<img alt="Imagen Referencia" class="imgw" src="<?php echo DB_SITE_REPO ?>/Legacy/gestion_modular/img/tile_alfiler.png">
+								<img alt="Imagen Referencia" class="imgw" src="<?php echo DB_SITE_REPO ?>/Legacy/1tek_public/img/tile_alfiler.png">
 							</span>
 						</div>
 					</a>
@@ -283,7 +283,7 @@ foreach ($arrTabMenu as $tab) {
 				<div class="tile <?php echo $color; ?> tile-medium col-xs-12 col-sm-6 col-md-3 col-lg-3"  >
 					<div class="tile-content">
 						<div class="tile-icon-large">
-							<a href="mailto:soporte@1tek.cl?Subject=Asistencia"><img alt="Imagen Referencia" class="imgx" src="<?php echo DB_SITE_REPO ?>/Legacy/gestion_modular/img/tile_asistencia_tecnica.png"></a>
+							<a href="mailto:soporte@1tek.cl?Subject=Asistencia"><img alt="Imagen Referencia" class="imgx" src="<?php echo DB_SITE_REPO ?>/Legacy/1tek_public/img/tile_asistencia_tecnica.png"></a>
 							<p><strong>Asistencia <br/>Tecnica</strong></p>
 						</div>
 					</div>
@@ -296,7 +296,7 @@ foreach ($arrTabMenu as $tab) {
 				<div class="tile <?php echo $color; ?> tile-medium col-xs-12 col-sm-6 col-md-3 col-lg-3"  >
 					<div class="tile-content">
 						<div class="tile-icon-large">
-							<a href="mailto:ventas@1tek.cl?Subject=Cotizacion"><img alt="Imagen Referencia" class="imgx" src="<?php echo DB_SITE_REPO ?>/Legacy/gestion_modular/img/tile_cotizar.png"></a>
+							<a href="mailto:ventas@1tek.cl?Subject=Cotizacion"><img alt="Imagen Referencia" class="imgx" src="<?php echo DB_SITE_REPO ?>/Legacy/1tek_public/img/tile_cotizar.png"></a>
 							<p><strong>Asistencia <br/>Comercial</strong></p>
 						</div>
 					</div>

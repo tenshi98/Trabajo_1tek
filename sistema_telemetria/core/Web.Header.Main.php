@@ -24,6 +24,7 @@
 		<meta name="keywords"              content="">
 
 		<!-- WEB FONT -->
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
 		<?php
 		//verifica la capa de desarrollo
 		$whitelist = array( 'localhost', '127.0.0.1', '::1' );
@@ -44,14 +45,14 @@
 		<!-- CSS Base -->
 		<link rel="stylesheet" type="text/css" href="<?php echo DB_SITE_REPO ?>/LIB_assets/lib/bootstrap3/css/bootstrap.min.css">
 		<link rel="stylesheet" type="text/css" href="<?php echo DB_SITE_REPO ?>/LIB_assets/lib/font-awesome-animation/font-awesome-animation.min.css">
-		<link rel="stylesheet" type="text/css" href="<?php echo DB_SITE_REPO ?>/Legacy/gestion_modular/css/main.min.css">
-		<link rel="stylesheet" type="text/css" href="<?php echo DB_SITE_REPO ?>/Legacy/gestion_modular/css/theme_color_<?php if(isset($_SESSION['usuario']['basic_data']['Config_idTheme'])&&$_SESSION['usuario']['basic_data']['Config_idTheme']!=''){echo $_SESSION['usuario']['basic_data']['Config_idTheme'];}else{echo '1';} ?>.css">
-		<link rel="stylesheet" type="text/css" href="<?php echo DB_SITE_REPO ?>/Legacy/gestion_modular/lib/fullcalendar/fullcalendar.css">
-		<link rel="stylesheet" type="text/css" href="<?php echo DB_SITE_REPO ?>/Legacy/gestion_modular/css/my_style.css?<?php echo time(); ?>">
+		<link rel="stylesheet" type="text/css" href="<?php echo DB_SITE_REPO ?>/Legacy/1tek_public/css/main.min.css">
+		<link rel="stylesheet" type="text/css" href="<?php echo DB_SITE_REPO ?>/Legacy/1tek_public/css/theme_main.css">
+		<link rel="stylesheet" type="text/css" href="<?php echo DB_SITE_REPO ?>/Legacy/1tek_public/lib/fullcalendar/fullcalendar.css">
+		<link rel="stylesheet" type="text/css" href="<?php echo DB_SITE_REPO ?>/Legacy/1tek_public/css/my_style.css?<?php echo time(); ?>">
 		<link rel="stylesheet" type="text/css" href="<?php echo DB_SITE_REPO ?>/LIB_assets/css/my_colors.min.css">
 		<link rel="stylesheet" type="text/css" href="<?php echo DB_SITE_REPO ?>/LIB_assets/css/directionalButtons/dist/bootstrap-directional-buttons.min.css">
 		<link rel="stylesheet" type="text/css" href="<?php echo DB_SITE_REPO ?>/LIB_assets/css/bttn/dist/bttn.min.css">
-		<link rel="stylesheet" type="text/css" href="<?php echo DB_SITE_REPO ?>/Legacy/gestion_modular/css/my_corrections.css?<?php echo time(); ?>">
+		<link rel="stylesheet" type="text/css" href="<?php echo DB_SITE_REPO ?>/Legacy/1tek_public/css/my_corrections.css?<?php echo time(); ?>">
 		<link rel="stylesheet" type="text/css" href="<?php echo DB_SITE_REPO ?>/LIBS_js/prism/prism.css">
 		<link rel="stylesheet" type="text/css" href="<?php echo DB_SITE_REPO ?>/LIBS_js/elegant_font/css/style.css">
 		<link rel="stylesheet" type="text/css" href="<?php echo DB_SITE_REPO ?>/LIBS_js/bootstrap_touchspin/src/jquery.bootstrap-touchspin.min.css">
@@ -70,7 +71,7 @@
 		<link rel="stylesheet" type="text/css" href="<?php echo DB_SITE_REPO ?>/LIBS_js/multiple-select/bootstrap-multiselect.css">
 
 		<!-- Javascript -->
-		<script type="text/javascript" src="<?php echo DB_SITE_REPO ?>/Legacy/gestion_modular/js/main.min.js"></script>
+		<script type="text/javascript" src="<?php echo DB_SITE_REPO ?>/Legacy/1tek_public/js/main.min.js"></script>
 		<script type="text/javascript" src="<?php echo DB_SITE_REPO ?>/LIB_assets/js/form_functions.min.js"></script>
 		<script type="text/javascript" src="<?php echo DB_SITE_REPO ?>/LIB_assets/js/jquery-1.7.2.min.js"></script>
 		<script type="text/javascript" src="<?php echo DB_SITE_REPO ?>/LIB_assets/js/jquery-1.11.0.min.js"></script>
@@ -94,47 +95,16 @@
 		<script type="text/javascript" src="<?php echo DB_SITE_REPO ?>/LIBS_js/validator/validator.min.js"></script>
 
 		<!-- Favicons-->
-		<?php
-		//Favicon Personalizado
-		$nombre_fichero = 'img/mifavicon.png';
-		if (file_exists($nombre_fichero)){ ?>
-			<link rel="icon"             type="image/png"                    href="img/mifavicon.png" >
-			<link rel="shortcut icon"    type="image/x-icon"                 href="img/mifavicon.png" >
-			<link rel="apple-touch-icon" type="image/x-icon"                 href="img/mifavicon-57x57.png">
-			<link rel="apple-touch-icon" type="image/x-icon" sizes="72x72"   href="img/mifavicon-72x72.png">
-			<link rel="apple-touch-icon" type="image/x-icon" sizes="114x114" href="img/mifavicon-114x114.png">
-			<link rel="apple-touch-icon" type="image/x-icon" sizes="144x144" href="img/mifavicon-144x144.png">
-		<?php
-		//Favicon predefinido
-		}else{ ?>
-			<link rel="icon"             type="image/png"                    href="<?php echo DB_SITE_REPO ?>/LIB_assets/img/favicons/favicon.png" >
-			<link rel="shortcut icon"    type="image/x-icon"                 href="<?php echo DB_SITE_REPO ?>/LIB_assets/img/favicons/favicon.png" >
-			<link rel="apple-touch-icon" type="image/x-icon"                 href="<?php echo DB_SITE_REPO ?>/LIB_assets/img/favicons/apple-touch-icon-57x57-precomposed.png">
-			<link rel="apple-touch-icon" type="image/x-icon" sizes="72x72"   href="<?php echo DB_SITE_REPO ?>/LIB_assets/img/favicons/apple-touch-icon-72x72-precomposed.png">
-			<link rel="apple-touch-icon" type="image/x-icon" sizes="114x114" href="<?php echo DB_SITE_REPO ?>/LIB_assets/img/favicons/apple-touch-icon-114x114-precomposed.png">
-			<link rel="apple-touch-icon" type="image/x-icon" sizes="144x144" href="<?php echo DB_SITE_REPO ?>/LIB_assets/img/favicons/apple-touch-icon-144x144-precomposed.png">
-		<?php } ?>
+		<link rel="icon"             type="image/png"                    href="img/favicon/mifavicon.png" >
+		<link rel="shortcut icon"    type="image/x-icon"                 href="img/favicon/mifavicon.png" >
+		<link rel="apple-touch-icon" type="image/x-icon"                 href="img/favicon/mifavicon-57x57.png">
+		<link rel="apple-touch-icon" type="image/x-icon" sizes="72x72"   href="img/favicon/mifavicon-72x72.png">
+		<link rel="apple-touch-icon" type="image/x-icon" sizes="114x114" href="img/favicon/mifavicon-114x114.png">
+		<link rel="apple-touch-icon" type="image/x-icon" sizes="144x144" href="img/favicon/mifavicon-144x144.png">
 
 	</head>
 
-	<?php
-	//modificacion de la interfaz
-	if(isset($_SESSION['menu'])&&$_SESSION['menu']!=''){
-		switch ($_SESSION['menu']) {
-			case 1:
-			   $classelement = '';
-				break;
-			case 2:
-				$classelement = 'sidebar-left-mini';
-				break;
-			case 3:
-				$classelement = 'sidebar-left-hidden';
-				break;
-		}
-	}else{
-		$classelement = '';
-	} ?>
-	<body class="<?php echo $classelement; ?>">
+	<body>
 		<div id="loader-wrapper">
 			<div id="loader"></div>
 			<div class="loader-section section-left"></div>
@@ -173,71 +143,17 @@
 							<a href="principal.php" class="navbar-brand">
 								<?php require_once 'Web.Body.Nav.Logo.php'; ?>
 							</a>
-
-							<div class="topnav menutop1-toggle">
-								<div class="btn-group">
-									<a href="principal_notificaciones.php?pagina=1" title="Notificaciones" class="btn btn-default btn-sm tooltip">
-										<i class="fa fa-commenting-o <?php if(isset($nNoti)&&$nNoti!=0){ echo 'faa-horizontal animated';} ?>" aria-hidden="true"></i>
-										<?php if(isset($nNoti)&&$nNoti!=0){echo '<span class="label label-danger">'.$nNoti.'</span>';} ?>
-									</a>
-
-									<a href="principal_ayuda.php" title="Ayuda" class="btn btn-default btn-sm tooltip">
-										<i class="fa fa-question" aria-hidden="true"></i>
-									</a>
-
-									<a href="principal_procedimientos.php" title="Procedimientos" class="btn btn-default btn-sm tooltip">
-										<i class="fa fa-file-word-o" aria-hidden="true"></i>
-									</a>
-
-									<a href="principal_agenda_telefonica.php?pagina=1" title="Agenda" class="btn btn-default btn-sm tooltip">
-										<i class="fa fa-phone" aria-hidden="true"></i>
-									</a>
-
-									<a href="principal_calendario.php?pagina=1" title="Calendario" data-toggle="modal" class="btn btn-default btn-sm tooltip" >
-										<i class="fa fa-calendar" aria-hidden="true"></i>
-									</a>
-								</div>
-
-								<div class="btn-group">
-									<?php if((isset($_SESSION['usuario']['basic_data']['COunt'])&&$_SESSION['usuario']['basic_data']['COunt']>1) OR $_SESSION['usuario']['basic_data']['idTipoUsuario']==1){ ?>
-										<a href="index_select.php?bla=true" title="Cambio Sistema" data-toggle="modal" class="btn btn-primary btn-sm tooltip" >
-											<i class="fa fa-exchange" aria-hidden="true"></i>
-										</a>
-									<?php } ?>
-									<?php
-									$ubicacion = $original.'?salir=true';
-									$dialogo   = '¿Realmente desea cerrar su sesion?'; ?>
-									<a onClick="dialogBox('<?php echo $ubicacion ?>', '<?php echo $dialogo ?>')" title="Cerrar sesion" class="btn btn-metis-1 btn-sm tooltip">
-										<i class="fa fa-power-off" aria-hidden="true"></i>
-									</a>
-								</div>
-							</div>
-
 						</header>
-						<?php require_once 'Web.Body.Nav.Actions.php'; ?>
 						<div class="collapse navbar-collapse navbar-ex1-collapse">
-							<?php require_once 'Web.Body.Nav.Menu_top.php'; ?>
+							<?php
+							//require_once 'Web.Body.Nav.Menu_top.php'; //Menu normal
+							require_once 'Web.Body.Nav.MegaMenu.php';   //Menu desplegable
+							require_once 'Web.Body.Nav.Actions.php';    //Menu del usuario
+							?>
 						</div>
 					</div>
 				</nav>
-				<header class="head">
-					<div class="main-bar">
-						<h3>
-							<?php
-							//Se verifica que exista transaccion
-							if(isset($_SESSION['usuario']['Permisos'][$original]['TransaccionNombre'])){
-								echo '<i class="'.$_SESSION['usuario']['Permisos'][$original]['CategoriaIcono'].'"></i> '.TituloMenu($_SESSION['usuario']['Permisos'][$original]['CategoriaNombre']).' - '.TituloMenu($_SESSION['usuario']['Permisos'][$original]['TransaccionNombre']);
-							}else{
-								echo '<i class="fa fa-home" aria-hidden="true"></i> Principal';
-							} ?>
-						</h3>
-					</div>
-				</header>
 			</div>
-			<div id="left">
-				<?php require_once 'Web.Body.Lateralmenu.Userbox.php'; ?>
-				<?php require_once 'Web.Body.Lateralmenu.Menu.php'; ?>
-			</div>
+
 			<div id="content">
-				<div class="outer">
-					<div class="inner">
+				<div class="inner">

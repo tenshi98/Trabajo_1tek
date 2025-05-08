@@ -89,7 +89,7 @@ $arrArchivos = db_select_array (false, $SIS_query, 'alumnos_cursos_documentacion
 					<div class="table-responsive">
 
 						<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
-						<img style="margin-top:10px;" class="media-object img-thumbnail user-img width100" alt="Imagen Referencia" src="<?php echo DB_SITE_REPO ?>/Legacy/gestion_modular/img/training.jpg">
+						<img style="margin-top:10px;" class="media-object img-thumbnail user-img width100" alt="Imagen Referencia" src="<?php echo DB_SITE_REPO ?>/Legacy/1tek_public/img/training.jpg">
 					</div>
 					<div class="col-xs-12 col-sm-8 col-md-8 col-lg-8">
 						<h2 class="text-primary">Datos Básicos</h2>

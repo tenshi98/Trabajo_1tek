@@ -124,7 +124,7 @@ if(!empty($_GET['id'])){
 
 						<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
 							<?php if ($rowData['Direccion_img']=='') { ?>
-								<img style="margin-top:10px;" class="media-object img-thumbnail user-img width100" alt="Imagen Referencia" src="<?php echo DB_SITE_REPO ?>/Legacy/gestion_modular/img/productos.jpg">
+								<img style="margin-top:10px;" class="media-object img-thumbnail user-img width100" alt="Imagen Referencia" src="<?php echo DB_SITE_REPO ?>/Legacy/1tek_public/img/productos.jpg">
 							<?php }else{
 								echo widget_TipoImagen($rowData['idTipoImagen'], DB_SITE_REPO, DB_SITE_MAIN_PATH, 'upload', $rowData['Direccion_img']);
 							} ?>
@@ -415,7 +415,7 @@ if(!empty($_GET['id'])){
 						<tr class="odd">
 							<td>
 								<?php if ($prod['Direccion_img']=='') { ?>
-									<img class="img-round" src="<?php echo DB_SITE_REPO ?>/Legacy/gestion_modular/img/productos.jpg" style="height:30px; width:50px;">
+									<img class="img-round" src="<?php echo DB_SITE_REPO ?>/Legacy/1tek_public/img/productos.jpg" style="height:30px; width:50px;">
 								<?php }else{
 									//se selecciona el tipo de imagen
 									switch ($prod['idTipoImagen']) {

@@ -14,7 +14,7 @@
 		<meta name="keywords"              content="">
 
 		<!-- CSS Base -->
-		<link rel="stylesheet" type="text/css" href="<?php echo DB_SITE_REPO ?>/Legacy/gestion_modular/css/factura.css">
+		<link rel="stylesheet" type="text/css" href="<?php echo DB_SITE_REPO ?>/Legacy/1tek_public/css/factura.css">
 
 		<!-- Correcciones CSS -->
 		<style>

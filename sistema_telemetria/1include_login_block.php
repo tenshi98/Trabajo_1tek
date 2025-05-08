@@ -224,7 +224,7 @@ body {background-color: #09334F !important;}
 <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/CustomEase.min.js?r=2"></script>
 
 <script>
-var 
+var
 	yetiTL, chatterTL,
     furLightColor = "#FFF",
     furDarkColor = "#67b1e0",
@@ -254,7 +254,7 @@ yetiTL
 	.addCallback(function() {
 		chatterTL.play();
 	}, "0")
-	
+
 	.to(['#armL', '#flashlightFront'], .075, {x: 7}, "2.5")
 	.to(['#armL', '#flashlightFront'], .075, {x: 0}, "2.575")
 	.to(['#armL', '#flashlightFront'], .075, {x: 7}, "2.65")
@@ -301,22 +301,22 @@ yetiTL
 
 function goDark() {
 	TweenMax.set('#light', {visibility: "hidden"});
-	
+
 	TweenMax.set('.lettersSide', {fill: lettersSideDark, stroke: lettersStrokeDark});
 	TweenMax.set('.lettersFront', {fill: lettersFrontDark, stroke: lettersStrokeDark});
 	TweenMax.set('#lettersShadow', {opacity: .05});
-	
+
 	TweenMax.set('.hlFur', {fill: furDarkColor});
 	TweenMax.set('.hlSkin', {fill: skinDarkColor});
 }
 
 function goLight() {
 	TweenMax.set('#light', {visibility: "visible"});
-	
+
 	TweenMax.set('.lettersSide', {fill: lettersSideLight, stroke: lettersStrokeLight});
 	TweenMax.set('.lettersFront', {fill: lettersFrontLight, stroke: lettersStrokeLight});
 	TweenMax.set('#lettersShadow', {opacity: .2});
-	
+
 	TweenMax.set('.hlFur', {fill: furLightColor});
 	TweenMax.set('.hlSkin', {fill: skinLightColor});
 }

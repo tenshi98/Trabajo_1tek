@@ -370,11 +370,10 @@
             </div>
             <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2"></div>
         </div>
-         
+
 </div>
-         
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.4/TweenMax.min.js"></script>
 <script src="<?php echo DB_SITE_REPO ?>/LIB_assets/js/js_animate.js"></script>
 <style>.login {background: none !important;background-color: #87939d !important;}</style>
-  
-         
+

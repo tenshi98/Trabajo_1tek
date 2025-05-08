@@ -172,7 +172,7 @@ if(isset($rowData['idOpciones_8'])&&$rowData['idOpciones_8']==1){
 
 					<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
 						<?php if ($rowData['Direccion_img']=='') { ?>
-							<img style="margin-top:10px;" class="media-object img-thumbnail user-img width100" alt="Imagen Referencia" src="<?php echo DB_SITE_REPO ?>/Legacy/gestion_modular/img/car_siluete.png">
+							<img style="margin-top:10px;" class="media-object img-thumbnail user-img width100" alt="Imagen Referencia" src="<?php echo DB_SITE_REPO ?>/Legacy/1tek_public/img/car_siluete.png">
 						<?php }else{  ?>
 							<img style="margin-top:10px;" class="media-object img-thumbnail user-img width100" alt="Imagen Referencia" src="upload/<?php echo $rowData['Direccion_img']; ?>">
 						<?php } ?>

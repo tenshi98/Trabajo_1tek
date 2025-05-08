@@ -165,7 +165,7 @@ $arrFlinea = db_select_array (false, 'idFueraLinea, Fecha_inicio, Hora_inicio, F
 
 					<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
 						<?php if ($rowData['Direccion_img']=='') { ?>
-							<img style="margin-top:10px;" class="media-object img-thumbnail user-img width100" alt="Imagen Referencia" src="<?php echo DB_SITE_REPO ?>/Legacy/gestion_modular/img/maquina.jpg">
+							<img style="margin-top:10px;" class="media-object img-thumbnail user-img width100" alt="Imagen Referencia" src="<?php echo DB_SITE_REPO ?>/Legacy/1tek_public/img/maquina.jpg">
 						<?php }else{  ?>
 							<?php if (isset($_GET['data_1'])&&$_GET['data_1']=='si') { ?>
 								<img style="margin-top:10px;" class="media-object img-thumbnail user-img width100" alt="Imagen Referencia" src="<?php echo 'https://'.$_GET['data_2'].$rowData['Direccion_img']; ?>">

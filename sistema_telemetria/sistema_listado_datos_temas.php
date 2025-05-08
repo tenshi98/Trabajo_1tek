@@ -244,7 +244,7 @@ if($_SESSION['usuario']['basic_data']['idTipoUsuario']==1){
 				<?php foreach ($arrTemas as $temas) { ?>
 					<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
 						<div class="theme-box <?php if($rowData['Config_idTheme']==$temas['idTheme']){echo 'selected';} ?>">
-							<img src="<?php echo DB_SITE_REPO ?>/Legacy/gestion_modular/img/themes_preview/<?php echo $temas['img']; ?>" alt="Tema" class="img-responsive2">
+							<img src="<?php echo DB_SITE_REPO ?>/Legacy/1tek_public/img/themes_preview/<?php echo $temas['img']; ?>" alt="Tema" class="img-responsive2">
 							<div class="theme-info">
 								<div class="clearfix">
 									<h2><?php echo $temas['Nombre']; ?></h2>

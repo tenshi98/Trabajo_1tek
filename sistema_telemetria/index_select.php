@@ -23,10 +23,10 @@ $_GET  = $security->xss_clean($_GET);
 /*                                          Se llaman a los archivos necesarios                                                   */
 /**********************************************************************************************************************************/
 require_once 'A1XRXS_sys/xrxs_configuracion/config.php';                                  //Configuracion de la plataforma
-require_once '../Legacy/gestion_modular/funciones/Helpers.Functions.Propias.php';         //carga librerias de la plataforma
-require_once '../Legacy/gestion_modular/funciones/Components.UI.FormInputs.Extended.php'; //carga formularios de la plataforma
-require_once '../Legacy/gestion_modular/funciones/Components.UI.Inputs.Extended.php';     //carga inputs de la plataforma
-require_once '../Legacy/gestion_modular/funciones/Components.UI.Widgets.Extended.php';    //carga widgets de la plataforma
+require_once '../Legacy/1tek_public/funciones/Helpers.Functions.Propias.php';         //carga librerias de la plataforma
+require_once '../Legacy/1tek_public/funciones/Components.UI.FormInputs.Extended.php'; //carga formularios de la plataforma
+require_once '../Legacy/1tek_public/funciones/Components.UI.Inputs.Extended.php';     //carga inputs de la plataforma
+require_once '../Legacy/1tek_public/funciones/Components.UI.Widgets.Extended.php';    //carga widgets de la plataforma
 require_once '../A2XRXS_gears/xrxs_configuracion/Load.User.Session.php';                  //verificacion sesion usuario
 
 /**********************************************************************************************************************************/
@@ -78,287 +78,148 @@ if (!empty($_GET['ini'])){
 		}
 		?>
 
-		<!-- CSS Base -->
+		<!-------- BASE -------->
+		<!-- CSS -->
 		<link rel="stylesheet" type="text/css" href="<?php echo DB_SITE_REPO ?>/LIB_assets/lib/bootstrap3/css/bootstrap.min.css">
 		<link rel="stylesheet" type="text/css" href="<?php echo DB_SITE_REPO ?>/LIB_assets/lib/font-awesome-animation/font-awesome-animation.min.css">
-		<link rel="stylesheet" type="text/css" href="<?php echo DB_SITE_REPO ?>/Legacy/gestion_modular/css/main.min.css">
-		<link rel="stylesheet" type="text/css" href="<?php echo DB_SITE_REPO ?>/Legacy/gestion_modular/css/theme_color_1.css">
-		<link rel="stylesheet" type="text/css" href="<?php echo DB_SITE_REPO ?>/Legacy/gestion_modular/lib/fullcalendar/fullcalendar.css">
-		<link rel="stylesheet" type="text/css" href="<?php echo DB_SITE_REPO ?>/Legacy/gestion_modular/css/my_style.css?<?php echo time(); ?>">
+		<link rel="stylesheet" type="text/css" href="<?php echo DB_SITE_REPO ?>/Legacy/1tek_public/css/main.min.css">
+		<link rel="stylesheet" type="text/css" href="<?php echo DB_SITE_REPO ?>/Legacy/1tek_public/css/theme_main.css">
+		<link rel="stylesheet" type="text/css" href="<?php echo DB_SITE_REPO ?>/Legacy/1tek_public/lib/fullcalendar/fullcalendar.css">
 		<link rel="stylesheet" type="text/css" href="<?php echo DB_SITE_REPO ?>/LIB_assets/css/my_colors.min.css">
-		<link rel="stylesheet" type="text/css" href="<?php echo DB_SITE_REPO ?>/LIB_assets/css/directionalButtons/dist/bootstrap-directional-buttons.min.css">
-		<link rel="stylesheet" type="text/css" href="<?php echo DB_SITE_REPO ?>/LIB_assets/css/bttn/dist/bttn.min.css">
-		<link rel="stylesheet" type="text/css" href="<?php echo DB_SITE_REPO ?>/Legacy/gestion_modular/css/my_corrections.css?<?php echo time(); ?>">
 		<link rel="stylesheet" type="text/css" href="<?php echo DB_SITE_REPO ?>/LIBS_js/prism/prism.css">
-		<link rel="stylesheet" type="text/css" href="<?php echo DB_SITE_REPO ?>/LIBS_js/elegant_font/css/style.css">
-		<link rel="stylesheet" type="text/css" href="<?php echo DB_SITE_REPO ?>/LIBS_js/bootstrap_touchspin/src/jquery.bootstrap-touchspin.min.css">
-		<link rel="stylesheet" type="text/css" href="<?php echo DB_SITE_REPO ?>/LIBS_js/material_datetimepicker/css/bootstrap-material-datetimepicker.min.css" >
-		<link rel="stylesheet" type="text/css" href="<?php echo DB_SITE_REPO ?>/LIBS_js/clock_timepicker/dist/bootstrap-clockpicker.min.css">
-		<link rel="stylesheet" type="text/css" href="<?php echo DB_SITE_REPO ?>/LIBS_js/bootstrap_colorpicker/dist/css/bootstrap-colorpicker.min.css" >
-		<link rel="stylesheet" type="text/css" href="<?php echo DB_SITE_REPO ?>/LIBS_js/bootstrap_colorpicker/dist/css/bootstrap-colorpicker-plus.min.css" >
-		<link rel="stylesheet" type="text/css" href="<?php echo DB_SITE_REPO ?>/LIBS_js/bootstrap_fileinput/css/fileinput.min.css" media="all" >
-		<link rel="stylesheet" type="text/css" href="<?php echo DB_SITE_REPO ?>/LIBS_js/bootstrap_fileinput/themes/explorer/theme.min.css" media="all" >
-		<link rel="stylesheet" type="text/css" href="<?php echo DB_SITE_REPO ?>/LIBS_js/country_picker/css/bootstrap-select.min.css">
-		<link rel="stylesheet" type="text/css" href="<?php echo DB_SITE_REPO ?>/LIBS_js/chosen/chosen.css">
-		<link rel="stylesheet" type="text/css" href="<?php echo DB_SITE_REPO ?>/LIBS_js/tooltipster/css/tooltipster.bundle.min.css">
-
 		<!-- Javascript -->
-		<script type="text/javascript" src="<?php echo DB_SITE_REPO ?>/Legacy/gestion_modular/js/main.min.js"></script>
+		<script type="text/javascript" src="<?php echo DB_SITE_REPO ?>/Legacy/1tek_public/js/client-main.js?<?php echo time(); ?>"></script>
 		<script type="text/javascript" src="<?php echo DB_SITE_REPO ?>/LIB_assets/js/form_functions.min.js"></script>
 		<script type="text/javascript" src="<?php echo DB_SITE_REPO ?>/LIB_assets/js/jquery-1.7.2.min.js"></script>
 		<script type="text/javascript" src="<?php echo DB_SITE_REPO ?>/LIB_assets/js/jquery-1.11.0.min.js"></script>
-		<script type="text/javascript" src="<?php echo DB_SITE_REPO ?>/LIBS_js/rut_validate/jquery.rut.min.js"></script>
+
+		<!-------- PLUGINS -------->
+		<!-- bootstrap_touchspin -->
+		<link rel="stylesheet" type="text/css" href="<?php echo DB_SITE_REPO ?>/LIBS_js/bootstrap_touchspin/src/jquery.bootstrap-touchspin.min.css">
 		<script type="text/javascript" src="<?php echo DB_SITE_REPO ?>/LIBS_js/bootstrap_touchspin/src/jquery.bootstrap-touchspin.min.js"></script>
+		<!-- material_datetimepicker -->
+		<link rel="stylesheet" type="text/css" href="<?php echo DB_SITE_REPO ?>/LIBS_js/material_datetimepicker/css/bootstrap-material-datetimepicker.min.css" >
 		<script type="text/javascript" src="<?php echo DB_SITE_REPO ?>/LIBS_js/material_datetimepicker/js/moment-with-locales.min.js"></script>
 		<script type="text/javascript" src="<?php echo DB_SITE_REPO ?>/LIBS_js/material_datetimepicker/js/bootstrap-material-datetimepicker.min.js"></script>
-		<script type="text/javascript" src="<?php echo DB_SITE_REPO ?>/LIBS_js/clock_timepicker/dist/bootstrap-clockpicker.min.js"></script>
-		<script type="text/javascript" src="<?php echo DB_SITE_REPO ?>/LIBS_js/autosize/dist/autosize.min.js"></script>
-		<script type="text/javascript" src="<?php echo DB_SITE_REPO ?>/LIBS_js/ckeditor/ckeditor.js"></script>
+		<!-- bootstrap_fileinput -->
+		<link rel="stylesheet" type="text/css" href="<?php echo DB_SITE_REPO ?>/LIBS_js/bootstrap_fileinput/css/fileinput.min.css" media="all" >
+		<link rel="stylesheet" type="text/css" href="<?php echo DB_SITE_REPO ?>/LIBS_js/bootstrap_fileinput/themes/explorer/theme.min.css" media="all" >
 		<script type="text/javascript" src="<?php echo DB_SITE_REPO ?>/LIBS_js/bootstrap_fileinput/js/plugins/sortable.min.js"></script>
 		<script type="text/javascript" src="<?php echo DB_SITE_REPO ?>/LIBS_js/bootstrap_fileinput/js/fileinput.min.js"></script>
 		<script type="text/javascript" src="<?php echo DB_SITE_REPO ?>/LIBS_js/bootstrap_fileinput/js/locales/es.min.js"></script>
 		<script type="text/javascript" src="<?php echo DB_SITE_REPO ?>/LIBS_js/bootstrap_fileinput/themes/explorer/theme.min.js"></script>
-		<script type="text/javascript" src="<?php echo DB_SITE_REPO ?>/LIBS_js/country_picker/js/bootstrap-select.min.js"></script>
-		<script type="text/javascript" src="<?php echo DB_SITE_REPO ?>/LIBS_js/plotly_js/dist/plotly.min.js"></script>
-		<script type="text/javascript" src="<?php echo DB_SITE_REPO ?>/LIBS_js/plotly_js/dist/plotly-locale-es-ar.js"></script>
+		<!-- sweetalert2 -->
+		<link rel="stylesheet" type="text/css" href="<?php echo DB_SITE_REPO ?>/LIBS_js/sweetalert2/sweetalert2.min.css">
+		<script type="text/javascript" src="<?php echo DB_SITE_REPO ?>/LIBS_js/sweetalert2/sweetalert2.min.js"></script>
+		<!-- Validacion Rut -->
+		<script type="text/javascript" src="<?php echo DB_SITE_REPO ?>/LIBS_js/rut_validate/jquery.rut.min.js"></script>
+		<!-- Redimensionar Cuadro texto -->
+		<script type="text/javascript" src="<?php echo DB_SITE_REPO ?>/LIBS_js/autosize/dist/autosize.min.js"></script>
+		<!-- Cuadro texto avanzado -->
+		<script type="text/javascript" src="<?php echo DB_SITE_REPO ?>/LIBS_js/ckeditor/ckeditor.js"></script>
+		<!-- Validacion de formularios -->
 		<script type="text/javascript" src="<?php echo DB_SITE_REPO ?>/LIBS_js/validator/validator.min.js"></script>
+		<!-- select2 -->
+		<link rel="stylesheet" type="text/css" href="<?php echo DB_SITE_REPO ?>/LIBS_js/select2/dist/css/select2.min.css">
+		<script type="text/javascript" src="<?php echo DB_SITE_REPO ?>/LIBS_js/select2/dist/js/select2.min.js"></script>
+		<!-- Graficos -->
+		<link rel="stylesheet" type="text/css" href="<?php echo DB_SITE_REPO ?>/LIBS_js/chart_js/Chart.min.css">
+		<script type="text/javascript" src="<?php echo DB_SITE_REPO ?>/LIBS_js/chart_js/Chart.min.js"></script>
+
+		<!-------- CORRECCIONES -------->
+		<link rel="stylesheet" type="text/css" href="<?php echo DB_SITE_REPO ?>/Legacy/1tek_public/css/my_style.css?<?php echo time(); ?>">
+		<link rel="stylesheet" type="text/css" href="<?php echo DB_SITE_REPO ?>/Legacy/1tek_public/css/my_corrections.css?<?php echo time(); ?>">
 
 		<!-- Favicons-->
-		<?php
-		//Favicon Personalizado
-		$nombre_fichero = 'img/mifavicon.png';
-		if (file_exists($nombre_fichero)){ ?>
-			<link rel="icon"             type="image/png"                    href="img/mifavicon.png" >
-			<link rel="shortcut icon"    type="image/x-icon"                 href="img/mifavicon.png" >
-			<link rel="apple-touch-icon" type="image/x-icon"                 href="img/mifavicon-57x57.png">
-			<link rel="apple-touch-icon" type="image/x-icon" sizes="72x72"   href="img/mifavicon-72x72.png">
-			<link rel="apple-touch-icon" type="image/x-icon" sizes="114x114" href="img/mifavicon-114x114.png">
-			<link rel="apple-touch-icon" type="image/x-icon" sizes="144x144" href="img/mifavicon-144x144.png">
-		<?php
-		//Favicon predefinido
-		}else{ ?>
-			<link rel="icon"             type="image/png"                    href="<?php echo DB_SITE_REPO ?>/LIB_assets/img/favicons/favicon.png" >
-			<link rel="shortcut icon"    type="image/x-icon"                 href="<?php echo DB_SITE_REPO ?>/LIB_assets/img/favicons/favicon.png" >
-			<link rel="apple-touch-icon" type="image/x-icon"                 href="<?php echo DB_SITE_REPO ?>/LIB_assets/img/favicons/apple-touch-icon-57x57-precomposed.png">
-			<link rel="apple-touch-icon" type="image/x-icon" sizes="72x72"   href="<?php echo DB_SITE_REPO ?>/LIB_assets/img/favicons/apple-touch-icon-72x72-precomposed.png">
-			<link rel="apple-touch-icon" type="image/x-icon" sizes="114x114" href="<?php echo DB_SITE_REPO ?>/LIB_assets/img/favicons/apple-touch-icon-114x114-precomposed.png">
-			<link rel="apple-touch-icon" type="image/x-icon" sizes="144x144" href="<?php echo DB_SITE_REPO ?>/LIB_assets/img/favicons/apple-touch-icon-144x144-precomposed.png">
-		<?php } ?>
-
-		<!-- Correcciones CSS -->
-		<style>
-			.login {background-image: none !important;background-color: #1A1A1A !important;}
-			.bx_shad{-webkit-box-shadow: 0px 0px 31px 6px rgba(0,0,0,1);-moz-box-shadow: 0px 0px 31px 6px rgba(0,0,0,1);box-shadow: 0px 0px 31px 6px rgba(0,0,0,1);}
-		</style>
+		<link rel="icon"             type="image/png"                    href="img/favicon/mifavicon.png" >
+		<link rel="shortcut icon"    type="image/x-icon"                 href="img/favicon/mifavicon.png" >
+		<link rel="apple-touch-icon" type="image/x-icon"                 href="img/favicon/mifavicon-57x57.png">
+		<link rel="apple-touch-icon" type="image/x-icon" sizes="72x72"   href="img/favicon/mifavicon-72x72.png">
+		<link rel="apple-touch-icon" type="image/x-icon" sizes="114x114" href="img/favicon/mifavicon-114x114.png">
+		<link rel="apple-touch-icon" type="image/x-icon" sizes="144x144" href="img/favicon/mifavicon-144x144.png">
 
 		<!-- Burbuja de ayuda -->
 		<?php widget_tooltipster(); ?>
 	</head>
 
 	<body class="login">
-		<canvas id="canv" style="width: 100%;height: 100%;position: fixed;top: 0px;left: 0px;"></canvas>
 
-<?php //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+		<?php //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-//Si el usuario es un super usuario
-if($_SESSION['usuario']['basic_data']['idTipoUsuario']==1){
-	// Se trae un listado con todos los sistemas
-	$arrSistemas  = array();
-	$arrSistemas  = db_select_array (false,
-	'core_sistemas.idSistema,
-	core_sistemas.Nombre AS RazonSocial,
-	core_interfaces.Nombre AS Interfaz',
-	'core_sistemas',
-	'LEFT JOIN `core_interfaces`  ON core_interfaces.idInterfaz  = core_sistemas.idOpcionesGen_7',
-	'core_sistemas.idEstado=1',
-	'core_sistemas.Nombre ASC',
-	$dbConn, $_SESSION['usuario']['basic_data']['Nombre'], $original, 'arrGraficos');
+		//Si el usuario es un super usuario
+		if($_SESSION['usuario']['basic_data']['idTipoUsuario']==1){
+			// Se trae un listado con todos los sistemas
+			$arrSistemas  = array();
+			$arrSistemas  = db_select_array (false,
+			'core_sistemas.idSistema,
+			core_sistemas.Nombre AS RazonSocial,
+			core_interfaces.Nombre AS Interfaz',
+			'core_sistemas',
+			'LEFT JOIN `core_interfaces`  ON core_interfaces.idInterfaz  = core_sistemas.idOpcionesGen_7',
+			'core_sistemas.idEstado=1',
+			'core_sistemas.Nombre ASC',
+			$dbConn, $_SESSION['usuario']['basic_data']['Nombre'], $original, 'arrGraficos');
 
-//Si el usuario es un usuario normal
-}else{
-	// Se trae un listado con todos los sistemas
-	$arrSistemas  = array();
-	$arrSistemas  = db_select_array (false,
-	'usuarios_sistemas.idSistema,
-	core_sistemas.Nombre AS RazonSocial,
-	core_interfaces.Nombre AS Interfaz',
-	'usuarios_sistemas',
-	'LEFT JOIN `core_sistemas`  ON core_sistemas.idSistema  = usuarios_sistemas.idSistema LEFT JOIN `core_interfaces`  ON core_interfaces.idInterfaz  = core_sistemas.idOpcionesGen_7', 
-	'usuarios_sistemas.idUsuario ='.$_SESSION['usuario']['basic_data']['idUsuario'].' AND core_sistemas.idEstado=1',
-	'core_sistemas.Nombre ASC',
-	$dbConn, $_SESSION['usuario']['basic_data']['Nombre'], $original, 'arrGraficos');
+		//Si el usuario es un usuario normal
+		}else{
+			// Se trae un listado con todos los sistemas
+			$arrSistemas  = array();
+			$arrSistemas  = db_select_array (false,
+			'usuarios_sistemas.idSistema,
+			core_sistemas.Nombre AS RazonSocial,
+			core_interfaces.Nombre AS Interfaz',
+			'usuarios_sistemas',
+			'LEFT JOIN `core_sistemas`  ON core_sistemas.idSistema  = usuarios_sistemas.idSistema LEFT JOIN `core_interfaces`  ON core_interfaces.idInterfaz  = core_sistemas.idOpcionesGen_7', 
+			'usuarios_sistemas.idUsuario ='.$_SESSION['usuario']['basic_data']['idUsuario'].' AND core_sistemas.idEstado=1',
+			'core_sistemas.Nombre ASC',
+			$dbConn, $_SESSION['usuario']['basic_data']['Nombre'], $original, 'arrGraficos');
 
-}
+		}
+		?>
 
-?>
+		<div class="container">
 
-<div class="container">
-
-	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-
-		<div class="box">
-			<header>
-				<div class="icons"><i class="fa fa-table" aria-hidden="true"></i></div><h5><?php echo DB_SOFT_NAME; ?></h5>
-			</header>
-			<div class="table-responsive">
-
-				<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
-					<div class="usercard usercard-widget widget-user">
-						<div class="widget-user-header text-white" style="background: url('<?php echo DB_SITE_REPO ?>/Legacy/gestion_modular/img/photo1.jpg') center center;">
-							<h3 class="widget-user-username text-right">Bienvenido</h3>
-							<h5 class="widget-user-desc text-right"><?php echo $_SESSION['usuario']['basic_data']['Nombre']; ?></h5>
-						</div>
-						<div class="widget-user-image">
-							<?php if ($_SESSION['usuario']['basic_data']['Direccion_img']=='') { ?>
-							<img class="img-circle" alt="Imagen Referencia" src="<?php echo DB_SITE_REPO ?>/LIB_assets/img/usr.png">
-							<?php }else{  ?>
-								<img class="img-circle" alt="Imagen Referencia" src="upload/<?php echo $_SESSION['usuario']['basic_data']['Direccion_img']; ?>">
-							<?php } ?>
-						</div>
-						<div class="usercard-footer">
-							<div class="row">
-								<br><br>
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<div class="clearfix"></div>
-
-				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-					<div class="box">
-						<header>
-							<div class="icons"><i class="fa fa-table" aria-hidden="true"></i></div><h5>Listado de Sistemas Autorizados</h5>
-						</header>
-						<div class="table-responsive">
-							<table id="dataTable" class="table table-bordered table-condensed table-hover table-striped dataTable">
-								<thead>
-									<tr role="row">
-										<th>Sistema</th>
-										<th>Interfaz</th>
-										<th width="10">Acciones</th>
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+				<div class="box">
+					<header>
+						<div class="icons"><i class="fa fa-table" aria-hidden="true"></i></div><h5><?php echo 'Bienvenido '.$_SESSION['usuario']['basic_data']['Nombre'].' a '.DB_SOFT_NAME; ?></h5>
+					</header>
+					<div class="table-responsive">
+						<table id="dataTable" class="table table-bordered table-condensed table-hover table-striped dataTable">
+							<thead>
+								<tr role="row">
+									<th>Sistema</th>
+									<th>Interfaz</th>
+									<th width="10">Acciones</th>
+								</tr>
+								<?php echo widget_sherlock(1, 3, 'TableFiltered'); ?>
+							</thead>
+							<tbody role="alert" aria-live="polite" aria-relevant="all" id="TableFiltered">
+								<?php foreach ($arrSistemas as $sis) { ?>
+									<tr class="odd">
+										<td><?php echo $sis['RazonSocial']; ?></td>
+										<td><?php echo $sis['Interfaz']; ?></td>
+										<td>
+											<div class="btn-group" style="width: 35px;" >
+												<?php
+												$link = $location;
+												$link.= '?ini='.simpleEncode($sis['idSistema'], fecha_actual());
+												$link.= '&id='.simpleEncode($_SESSION['usuario']['basic_data']['idUsuario'], fecha_actual());
+												?>
+												<a href="<?php echo $link; ?>" title="Acceder a <?php echo $sis['RazonSocial']; ?>" class="btn btn-primary btn-sm tooltip"><i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+											</div>
+										</td>
 									</tr>
-									<?php echo widget_sherlock(1, 3, 'TableFiltered'); ?>
-								</thead>
-								<tbody role="alert" aria-live="polite" aria-relevant="all" id="TableFiltered">
-									<?php foreach ($arrSistemas as $sis) { ?>
-										<tr class="odd">
-											<td><?php echo $sis['RazonSocial']; ?></td>
-											<td><?php echo $sis['Interfaz']; ?></td>
-											<td>
-												<div class="btn-group" style="width: 35px;" >
-													<?php
-													$link = $location;
-													$link.= '?ini='.simpleEncode($sis['idSistema'], fecha_actual());
-													$link.= '&id='.simpleEncode($_SESSION['usuario']['basic_data']['idUsuario'], fecha_actual());
-													?>
-													<a href="<?php echo $link; ?>" title="Acceder a <?php echo $sis['RazonSocial']; ?>" class="btn btn-primary btn-sm tooltip"><i class="fa fa-arrow-right" aria-hidden="true"></i></a>
-												</div>
-											</td>
-										</tr>
-									<?php } ?>
-								</tbody>
-							</table>
-						</div>
+								<?php } ?>
+							</tbody>
+						</table>
 					</div>
 				</div>
-
 			</div>
+
 		</div>
 
-	</div>
 
-</div>
-
-	<script id="rendered-js" >
-		window.requestAnimFrame = function () {
-		  return window.requestAnimationFrame ||
-		  window.webkitRequestAnimationFrame ||
-		  window.mozRequestAnimationFrame ||
-		  window.oRequestAnimationFrame ||
-		  window.msRequestAnimationFrame ||
-		  function (callback) {
-			window.setTimeout(callback, 1000 / 60);
-		  };
-		}();
-
-		var c = document.getElementById('canv'),
-		$ = c.getContext('2d'),
-		w = c.width = window.innerWidth,
-		h = c.height = window.innerHeight,
-		arr = [],
-		u = 0;
-		o = 0,
-
-		$.fillStyle = '#1A1A1A';
-		$.fillRect(0, 0, w, h);
-		$.globalCompositeOperation = "source-over";
-
-		var inv = function () {
-		  $.restore();
-		  $.fillStyle = "#" + (o ? "FEFAE6" : "1A1A1A");
-		  $.fillRect(0, 0, w, h);
-		  $.fillStyle = "#" + (o ? "1A1A1A" : "FEFAE6");
-		  $.save();
-		};
-
-		window.addEventListener('resize', function () {
-		  c.width = window.innerWidth;
-		  c.height = window.innerHeight;
-		}, false);
-
-		var ready = function () {
-		  arr = [];
-		  for (let i = 0; i < 20; i++) {
-			set();
-		  }
-		};
-
-		var set = function () {
-		  arr.push({
-			x1: w,
-			y1: h,
-			_x1: w - Math.random() * w,
-			_y1: h - Math.random() * h,
-			_x2: w - Math.random() * w,
-			_y2: h - Math.random() * h,
-			x2: -w + Math.random() * w,
-			y2: -h + Math.random() * h,
-			rot: Math.random() * 180,
-			a1: Math.random() * 10,
-			a2: Math.random() * 10,
-			a3: Math.random() * 10});
-
-		};
-
-		var pretty = function () {
-		  //u -= .2;
-		  u = 190;
-		  for (var i in arr) {
-			var b = arr[i];
-			b._x1 *= Math.sin(b.a1 -= 0.001);
-			b._y1 *= Math.sin(b.a1);
-			b._x2 -= Math.sin(b.a2 += 0.001);
-			b._y1 += Math.sin(b.a2);
-			b.x1 -= Math.sin(b.a3 += 0.001);
-			b.y1 += Math.sin(b.a3);
-			b.x2 -= Math.sin(b.a3 -= 0.001);
-			b.y2 += Math.sin(b.a3);
-			$.save();
-			$.globalAlpha = 0.03;
-			$.beginPath();
-			$.strokeStyle = 'hsla(' + u + ', 85%, 60%, .7)';
-			$.moveTo(b.x1, b.y1);
-			$.bezierCurveTo(b._x1, b._y1, b._x2, b._y2, b.x2, b.y2);
-			$.stroke();
-			$.restore();
-		  }
-		  window.requestAnimFrame(pretty);
-		};
-		ready();
-		pretty();
-
-    </script>
 
 		<script type="text/javascript" src="<?php echo DB_SITE_REPO ?>/LIB_assets/lib/bootstrap3/js/bootstrap.min.js"></script>
 		<script type="text/javascript" src="<?php echo DB_SITE_REPO ?>/LIB_assets/lib/screenfull/screenfull.js"></script>

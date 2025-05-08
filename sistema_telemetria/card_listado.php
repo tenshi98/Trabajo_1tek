@@ -325,7 +325,7 @@ if(!empty($_GET['id'])){
 						<tr class="odd">
 							<td>
 								<?php if ($prod['Direccion_img']=='') { ?>
-									<img class="img-round" src="<?php echo DB_SITE_REPO ?>/Legacy/gestion_modular/img/productos.jpg" style="height:30px; width:50px;">
+									<img class="img-round" src="<?php echo DB_SITE_REPO ?>/Legacy/1tek_public/img/productos.jpg" style="height:30px; width:50px;">
 								<?php }else{
 									echo '<img class="img-round" src="upload/'.$prod['Direccion_img'].'" style="height:30px; width:50px;">';
 								} ?>

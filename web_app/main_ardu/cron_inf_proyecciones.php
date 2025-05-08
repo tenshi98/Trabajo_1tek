@@ -14,7 +14,7 @@ define('XMBCXRXSKGC', 1);
 /*                                          Se llaman a los archivos necesarios                                                   */
 /**********************************************************************************************************************************/
 require_once 'A1XRXS_sys/xrxs_configuracion/config.php';                                   //Configuracion de la plataforma
-require_once '../../Legacy/gestion_modular/funciones/Helpers.Functions.Propias.ardu.php';  //carga librerias de la plataforma
+require_once '../../Legacy/1tek_public/funciones/Helpers.Functions.Propias.ardu.php';  //carga librerias de la plataforma
 
 // obtengo puntero de conexion con la db
 $dbConn = conectar();

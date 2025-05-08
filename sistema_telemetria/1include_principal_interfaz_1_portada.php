@@ -58,8 +58,8 @@ echo '<div class="wrapper">';
 	/******************************* Meteo *******************************/		
 	//se llama a la libreria			
 	echo '
-	<script src="'.DB_SITE_REPO.'/Legacy/gestion_modular/lib/weather/jquery.simpleWeather.js"></script>
-	<script src="'.DB_SITE_REPO.'/Legacy/gestion_modular/lib/skycons/skycons.js"></script>';
+	<script src="'.DB_SITE_REPO.'/Legacy/1tek_public/lib/weather/jquery.simpleWeather.js"></script>
+	<script src="'.DB_SITE_REPO.'/Legacy/1tek_public/lib/skycons/skycons.js"></script>';
 
 	//defino la comuna
 	if(isset($subconsulta['Comuna'])&&$subconsulta['Comuna']!=''){$comuna = $subconsulta['Comuna'];}else{$comuna = 'Santiago';}
@@ -176,7 +176,7 @@ echo '<div class="wrapper">';
 													 
 					}
 								
-					html  = \'<div class="card_weather" style="background-image: url('.DB_SITE_REPO.'/Legacy/gestion_modular/img/\'+back_g+\'.jpg);">\';
+					html  = \'<div class="card_weather" style="background-image: url('.DB_SITE_REPO.'/Legacy/1tek_public/img/\'+back_g+\'.jpg);">\';
 					html += \'	<ul class="list-inline">\';
 					html += \'		<li><canvas id="\'+meteo+\'" width="30" height="30"></canvas></li>\';
 					html += \'		<li>\'+weather.currently+\'</li>\';

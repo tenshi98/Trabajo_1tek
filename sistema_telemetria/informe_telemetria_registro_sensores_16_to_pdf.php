@@ -237,10 +237,10 @@ if(isset($ndata_1)&&$ndata_1>=10001){
 					if(isset($rowEmpresa['Config_imgLogo'])&&$rowEmpresa['Config_imgLogo']!=''){
 						$logo = '../../../../'.DB_SITE_MAIN_PATH.'/upload/'.$rowEmpresa['Config_imgLogo'];
 					}else{
-						$logo = '../../../../Legacy/gestion_modular/img/logo_empresa.jpg';
+						$logo = '../../../../Legacy/1tek_public/img/logo_empresa.jpg';
 					}
 				}else{
-					$logo = '../../../../Legacy/gestion_modular/img/logo_empresa.jpg';
+					$logo = '../../../../Legacy/1tek_public/img/logo_empresa.jpg';
 				}
 				$pdf->SetHeaderData($logo, 40, $pdf_titulo, $pdf_subtitulo);
 
