@@ -212,7 +212,7 @@ foreach ($arrPromedioProd as $productos) {
 						<h2 class="text-primary"><i class="fa fa-list" aria-hidden="true"></i> Configuracion</h2>
 						<p class="text-muted">
 							<strong>Sistema Mantenlubric : </strong><?php echo $rowData['SistemaMantenlubric']; ?><br/>
-							<strong>Sistema CROSS: </strong><?php echo $rowData['SistemaCROSS']; ?><br/>
+							<strong>Sistema 1tek: </strong><?php echo $rowData['SistemaCROSS']; ?><br/>
 						</p>
 
 						<?php if(isset($rowData['idOpciones_1'])&&$rowData['idOpciones_1']==1){ ?>
@@ -222,7 +222,7 @@ foreach ($arrPromedioProd as $productos) {
 							</p>
 						<?php } ?>
 						<?php if(isset($rowData['idOpciones_2'])&&$rowData['idOpciones_2']==1){ ?>
-							<h2 class="text-primary"><i class="fa fa-list" aria-hidden="true"></i> Datos Sistema Cross</h2>
+							<h2 class="text-primary"><i class="fa fa-list" aria-hidden="true"></i> Datos Sistema 1tek</h2>
 							<p class="text-muted">
 								<strong>Tipo Planilla de Calidad : </strong><?php echo $rowData['MatrizCalidad']; ?><br/>
 							</p>

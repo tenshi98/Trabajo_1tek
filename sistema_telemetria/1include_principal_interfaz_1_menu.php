@@ -37,16 +37,16 @@ echo '
 			echo '<li><a href="#Menu_tab_5" data-toggle="tab"><i class="fa fa-database" aria-hidden="true"></i> Repositorio</a></li>';
 		}
 
-		//Cross Shipping
+		//Agro Shipping
 		$temp = $prm_x[32] + $prm_x[33] + $prm_x[34] + $prm_x[35] + $prm_x[36] + $prm_x[37];
 		if($temp!=0) {
-			echo '<li><a href="#Menu_tab_6" data-toggle="tab"><i class="fa fa-truck" aria-hidden="true"></i> Cross Shipping</a></li>';
+			echo '<li><a href="#Menu_tab_6" data-toggle="tab"><i class="fa fa-truck" aria-hidden="true"></i> Agro Shipping</a></li>';
 		}
 
-		//Cross Checking
+		//Agro Checking
 		$temp = $prm_x[38] + $prm_x[39] + $prm_x[40] + $prm_x[41];
 		if($temp!=0) {
-			echo '<li><a href="#Menu_tab_7" data-toggle="tab"><i class="fa fa-map-marker" aria-hidden="true"></i> Cross Checking</a></li>';
+			echo '<li><a href="#Menu_tab_7" data-toggle="tab"><i class="fa fa-map-marker" aria-hidden="true"></i> Agro Checking</a></li>';
 		}
 
 		//Log de cambios

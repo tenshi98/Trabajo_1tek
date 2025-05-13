@@ -5,7 +5,7 @@
 //variable de numero de permiso
 $x_nperm = 0;
 
-//CrossCheking
+//1tek Cheking
 $x_nperm++; $trans[$x_nperm] = "cross_solicitud_aplicacion_crear.php";          //01 - Solicitud Aplicacion - 01 Crear
 $x_nperm++; $trans[$x_nperm] = "cross_solicitud_aplicacion_ejecutar.php";       //02 - Solicitud Aplicacion - 02 Programar
 $x_nperm++; $trans[$x_nperm] = "cross_solicitud_aplicacion_ejecucion.php";      //03 - Solicitud Aplicacion - 03 Cerrar
@@ -30,7 +30,7 @@ $x_nperm++; $trans[$x_nperm] = "informe_telemetria_registro_sensores_6.php";    
 $x_nperm++; $trans[$x_nperm] = "informe_telemetria_registro_sensores_2.php";    //20 - Registro Sensores
 $x_nperm++; $trans[$x_nperm] = "informe_telemetria_registro_sensores_12.php";   //21 - Trazabilidad
 
-//CrossTrack
+//1tek Track
 $x_nperm++; $trans[$x_nperm] = "informe_telemetria_errores_1.php";              //22 - Alerta Sensores
 $x_nperm++; $trans[$x_nperm] = "informe_telemetria_detenciones.php";            //23 - Detenciones
 $x_nperm++; $trans[$x_nperm] = "informe_telemetria_fuera_linea_1.php";          //24 - Fuera de Linea
@@ -85,9 +85,9 @@ for ($i = 1; $i <= $x_nperm; $i++) {
 
 /*Agro-Checking*/   $Tab_1 = $prm_x[1] + $prm_x[2] + $prm_x[3] + $prm_x[4] + $prm_x[5] + $prm_x[6] + $prm_x[7] + $prm_x[8] + $prm_x[9] + $prm_x[10] + $prm_x[11] + $prm_x[12];
 /*1Tek C*/          $Tab_2 = $prm_x[13] + $prm_x[14] + $prm_x[15] + $prm_x[16] + $prm_x[17] + $prm_x[18] + $prm_x[19] + $prm_x[20] + $prm_x[21];
-/*CrossTrack*/      $Tab_3 = 0;//$prm_x[22] + $prm_x[23] + $prm_x[24] + $prm_x[25] + $prm_x[26] + $prm_x[27] + $prm_x[28] + $prm_x[29] + $prm_x[30] + $prm_x[31] + $prm_x[32] + $prm_x[33] + $prm_x[34] + $prm_x[35];
+/*1tek Track*/      $Tab_3 = 0;//$prm_x[22] + $prm_x[23] + $prm_x[24] + $prm_x[25] + $prm_x[26] + $prm_x[27] + $prm_x[28] + $prm_x[29] + $prm_x[30] + $prm_x[31] + $prm_x[32] + $prm_x[33] + $prm_x[34] + $prm_x[35];
 /*Agro-Weather*/    $Tab_4 = $prm_x[36];
-/*CrossWater*/      $Tab_5 = 0;
+/*1tek Water*/      $Tab_5 = 0;
 /*Power-Crane*/     $Tab_6 = $prm_x[37] + $prm_x[38] + $prm_x[39] + $prm_x[40] + $prm_x[41];
 /*Power-Energy*/    $Tab_7 = $prm_x[42] + $prm_x[43] + $prm_x[44] + $prm_x[45] + $prm_x[46];
 

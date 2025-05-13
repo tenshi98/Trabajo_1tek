@@ -55,7 +55,7 @@ $rowData = db_select_data (false, $SIS_query, 'productos_listado', $SIS_join, $S
 ?>
 
 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-	<?php echo widget_title('bg-aqua', 'fa-cog', 100, 'Productos', $rowData['Nombre'], 'Editar Datos Sistema Cross'); ?>
+	<?php echo widget_title('bg-aqua', 'fa-cog', 100, 'Productos', $rowData['Nombre'], 'Editar Datos Sistema 1tek'); ?>
 </div>
 <div class="clearfix"></div>
 
@@ -84,7 +84,7 @@ $rowData = db_select_data (false, $SIS_query, 'productos_listado', $SIS_join, $S
 							<li class=""><a href="<?php echo 'productos_listado_datos_ot.php?pagina='.$_GET['pagina'].'&id='.$_GET['id']?>" ><i class="fa fa-wrench" aria-hidden="true"></i> Sistema Mantenlubric</a></li>
 						<?php } ?>
 						<?php if(isset($rowData['idOpciones_2'])&&$rowData['idOpciones_2']==1){ ?>
-							<li class="active"><a href="<?php echo 'productos_listado_datos_cross.php?pagina='.$_GET['pagina'].'&id='.$_GET['id']?>" ><i class="fa fa-wrench" aria-hidden="true"></i> Sistema CROSS</a></li>
+							<li class="active"><a href="<?php echo 'productos_listado_datos_cross.php?pagina='.$_GET['pagina'].'&id='.$_GET['id']?>" ><i class="fa fa-wrench" aria-hidden="true"></i> Sistema 1tek</a></li>
 						<?php } ?>
 
 					</ul>

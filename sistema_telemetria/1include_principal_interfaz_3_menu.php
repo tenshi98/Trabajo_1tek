@@ -36,19 +36,19 @@
 
 			/**************************************************/
 			if($count_tab==5){echo '<li class="dropdown"><a href="#" data-toggle="dropdown"><i class="fa fa-plus" aria-hidden="true"></i> Ver mas <i class="fa fa-angle-down" aria-hidden="true"></i></a><ul class="dropdown-menu" role="menu">';}
-			//Cross Shipping
+			//Agro Shipping
 			$temp = $prm_x[32] + $prm_x[33] + $prm_x[34] + $prm_x[35] + $prm_x[36] + $prm_x[37];
 			if($temp!=0) {
-				echo '<li><a href="#Menu_tab_6" data-toggle="tab"><i class="fa fa-truck" aria-hidden="true"></i> Cross Shipping</a></li>';
+				echo '<li><a href="#Menu_tab_6" data-toggle="tab"><i class="fa fa-truck" aria-hidden="true"></i> Agro Shipping</a></li>';
 				$count_tab++;
 			}
 
 			/**************************************************/
 			if($count_tab==5){echo '<li class="dropdown"><a href="#" data-toggle="dropdown"><i class="fa fa-plus" aria-hidden="true"></i> Ver mas <i class="fa fa-angle-down" aria-hidden="true"></i></a><ul class="dropdown-menu" role="menu">';}
-			//Cross Checking
+			//Agro Checking
 			$temp = $prm_x[38] + $prm_x[39] + $prm_x[40] + $prm_x[41];
 			if($temp!=0) {
-				echo '<li><a href="#Menu_tab_7" data-toggle="tab"><i class="fa fa-map-marker" aria-hidden="true"></i> Cross Checking</a></li>';
+				echo '<li><a href="#Menu_tab_7" data-toggle="tab"><i class="fa fa-map-marker" aria-hidden="true"></i> Agro Checking</a></li>';
 				$count_tab++;
 			}
 

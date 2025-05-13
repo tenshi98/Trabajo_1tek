@@ -103,7 +103,7 @@ $trans_22 = "orden_trabajo_terminar.php";
 $trans_26 = "ocompra_generacion.php";
 $trans_27 = "ocompra_listado_sin_aprobar.php";
 
-//Accesos al sistema cross
+//Accesos al sistema 1tek
 $trans_31 = "sistema_variedades_categorias.php";
 $trans_32 = "sistema_variedades_tipo.php";
 $trans_33 = "variedades_listado.php";
@@ -220,7 +220,7 @@ if($_SESSION['usuario']['basic_data']['idTipoUsuario']==1){
 						<?php } ?>
 						<?php if(isset($Count_Shipping)&&$Count_Shipping!=0){ ?>
 							<li class=""><a href="<?php echo 'sistema_listado_datos_cross.php?pagina='.$_GET['pagina'].'&id='.$_GET['id']; ?>" ><i class="fa fa-calendar-check-o" aria-hidden="true"></i> Aprobador CrossShipping</a></li>
-							<li class=""><a href="<?php echo 'sistema_listado_datos_cross_aprobadas.php?pagina='.$_GET['pagina'].'&id='.$_GET['id']; ?>" ><i class="fa fa-wrench" aria-hidden="true"></i> Cross Shipping Correos Aprobados</a></li>
+							<li class=""><a href="<?php echo 'sistema_listado_datos_cross_aprobadas.php?pagina='.$_GET['pagina'].'&id='.$_GET['id']; ?>" ><i class="fa fa-wrench" aria-hidden="true"></i> 1tek Shipping Correos Aprobados</a></li>
 						<?php } ?>
 					</ul>
                 </li>

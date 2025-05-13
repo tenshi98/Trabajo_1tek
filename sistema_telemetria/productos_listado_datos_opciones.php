@@ -84,7 +84,7 @@ $rowData = db_select_data (false, $SIS_query, 'productos_listado', $SIS_join, $S
 							<li class=""><a href="<?php echo 'productos_listado_datos_ot.php?pagina='.$_GET['pagina'].'&id='.$_GET['id']?>" ><i class="fa fa-wrench" aria-hidden="true"></i> Sistema Mantenlubric</a></li>
 						<?php } ?>
 						<?php if(isset($rowData['idOpciones_2'])&&$rowData['idOpciones_2']==1){ ?>
-							<li class=""><a href="<?php echo 'productos_listado_datos_cross.php?pagina='.$_GET['pagina'].'&id='.$_GET['id']?>" ><i class="fa fa-wrench" aria-hidden="true"></i> Sistema CROSS</a></li>
+							<li class=""><a href="<?php echo 'productos_listado_datos_cross.php?pagina='.$_GET['pagina'].'&id='.$_GET['id']?>" ><i class="fa fa-wrench" aria-hidden="true"></i> Sistema 1tek</a></li>
 						<?php } ?>
 
 					</ul>
@@ -103,7 +103,7 @@ $rowData = db_select_data (false, $SIS_query, 'productos_listado', $SIS_join, $S
 					//se dibujan los inputs
 					$Form_Inputs = new Form_Inputs();
 					$Form_Inputs->form_select('Sistema Mantenlubric','idOpciones_1', $x1, 2, 'idOpciones', 'Nombre', 'core_sistemas_opciones', 0, '', $dbConn);
-					$Form_Inputs->form_select('Sistema Cross','idOpciones_2', $x2, 2, 'idOpciones', 'Nombre', 'core_sistemas_opciones', 0, '', $dbConn);
+					$Form_Inputs->form_select('Sistema 1tek','idOpciones_2', $x2, 2, 'idOpciones', 'Nombre', 'core_sistemas_opciones', 0, '', $dbConn);
 
 					$Form_Inputs->form_input_hidden('idProducto', $_GET['id'], 2);
 					?>

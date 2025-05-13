@@ -71,7 +71,7 @@ $trans_22 = "orden_trabajo_terminar.php";
 $trans_26 = "ocompra_generacion.php";
 $trans_27 = "ocompra_listado_sin_aprobar.php";
 
-//Accesos al sistema cross
+//Accesos al sistema 1tek
 $trans_31 = "sistema_variedades_categorias.php";
 $trans_32 = "sistema_variedades_tipo.php";
 $trans_33 = "variedades_listado.php";
@@ -172,7 +172,7 @@ if($_SESSION['usuario']['basic_data']['idTipoUsuario']==1){
 							<li class=""><a href="<?php echo 'admin_datos_datos_variedades_nombres.php'; ?>" ><i class="fa fa-recycle" aria-hidden="true"></i> Variedades</a></li>
 						<?php } ?>
 						<?php if(isset($Count_Shipping)&&$Count_Shipping!=0){ ?>
-							<li class=""><a href="<?php echo 'admin_datos_datos_cross.php'; ?>" ><i class="fa fa-calendar-check-o" aria-hidden="true"></i> Aprobador CrossShipping</a></li>
+							<li class=""><a href="<?php echo 'admin_datos_datos_cross.php'; ?>" ><i class="fa fa-calendar-check-o" aria-hidden="true"></i> Aprobador 1tek Shipping</a></li>
 						<?php } ?>
 						<li class="active"><a href="<?php echo 'admin_datos_datos_social.php'; ?>" ><i class="fa fa-facebook-official" aria-hidden="true"></i> Social</a></li>
 					</ul>

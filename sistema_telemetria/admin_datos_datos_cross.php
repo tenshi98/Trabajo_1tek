@@ -206,7 +206,7 @@ $trans_22 = "orden_trabajo_terminar.php";
 $trans_26 = "ocompra_generacion.php";
 $trans_27 = "ocompra_listado_sin_aprobar.php";
 
-//Accesos al sistema cross
+//Accesos al sistema 1tek
 $trans_31 = "sistema_variedades_categorias.php";
 $trans_32 = "sistema_variedades_tipo.php";
 $trans_33 = "variedades_listado.php";
@@ -271,7 +271,7 @@ if($_SESSION['usuario']['basic_data']['idTipoUsuario']==1){
 ?>
 
 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-	<?php echo widget_title('bg-aqua', 'fa-cog', 100, 'Sistema', $rowData['Nombre'], 'Editar Aprobador Cross Shipping'); ?>
+	<?php echo widget_title('bg-aqua', 'fa-cog', 100, 'Sistema', $rowData['Nombre'], 'Editar Aprobador 1tek Shipping'); ?>
 	<div class="col-xs-12 col-sm-6 col-md-6 col-lg-8">
 		<a href="<?php echo $new_location.'?new=true'; ?>" class="btn btn-default pull-right margin_width" ><i class="fa fa-file-o" aria-hidden="true"></i> Agregar Aprobador</a>
 	</div>
@@ -310,7 +310,7 @@ if($_SESSION['usuario']['basic_data']['idTipoUsuario']==1){
 							<li class=""><a href="<?php echo 'admin_datos_datos_variedades_nombres.php'; ?>" ><i class="fa fa-recycle" aria-hidden="true"></i> Variedades</a></li>
 						<?php } ?>
 						<?php if(isset($Count_Shipping)&&$Count_Shipping!=0){ ?>
-							<li class="active"><a href="<?php echo 'admin_datos_datos_cross.php'; ?>" ><i class="fa fa-calendar-check-o" aria-hidden="true"></i> Aprobador CrossShipping</a></li>
+							<li class="active"><a href="<?php echo 'admin_datos_datos_cross.php'; ?>" ><i class="fa fa-calendar-check-o" aria-hidden="true"></i> Aprobador 1tek Shipping</a></li>
 						<?php } ?>
 						<li class=""><a href="<?php echo 'admin_datos_datos_social.php'; ?>" ><i class="fa fa-facebook-official" aria-hidden="true"></i> Social</a></li>
 					</ul>

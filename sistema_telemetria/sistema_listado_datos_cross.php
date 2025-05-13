@@ -244,7 +244,7 @@ $trans_22 = "orden_trabajo_terminar.php";
 $trans_26 = "ocompra_generacion.php";
 $trans_27 = "ocompra_listado_sin_aprobar.php";
 
-//Accesos al sistema cross
+//Accesos al sistema 1tek
 $trans_31 = "sistema_variedades_categorias.php";
 $trans_32 = "sistema_variedades_tipo.php";
 $trans_33 = "variedades_listado.php";
@@ -325,7 +325,7 @@ if($_SESSION['usuario']['basic_data']['idTipoUsuario']==1){
 ?>
 
 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-	<?php echo widget_title('bg-aqua', 'fa-cog', 100, 'Sistema', $rowData['Nombre'], 'Editar Aprobador Cross Shipping'); ?>
+	<?php echo widget_title('bg-aqua', 'fa-cog', 100, 'Sistema', $rowData['Nombre'], 'Editar Aprobador 1tek Shipping'); ?>
 	<div class="col-xs-12 col-sm-6 col-md-6 col-lg-8">
 		<a href="<?php echo $new_location.'&id='.$_GET['id'].'&new=true'; ?>" class="btn btn-default pull-right margin_width" ><i class="fa fa-file-o" aria-hidden="true"></i> Agregar Aprobador</a>
 	</div>
@@ -364,7 +364,7 @@ if($_SESSION['usuario']['basic_data']['idTipoUsuario']==1){
 						<?php } ?>
 						<?php if(isset($Count_Shipping)&&$Count_Shipping!=0){ ?>
 							<li class="active"><a href="<?php echo 'sistema_listado_datos_cross.php?pagina='.$_GET['pagina'].'&id='.$_GET['id']; ?>" ><i class="fa fa-calendar-check-o" aria-hidden="true"></i> Aprobador CrossShipping</a></li>
-							<li class=""><a href="<?php echo 'sistema_listado_datos_cross_aprobadas.php?pagina='.$_GET['pagina'].'&id='.$_GET['id']; ?>" ><i class="fa fa-wrench" aria-hidden="true"></i> Cross Shipping Correos Aprobados</a></li>
+							<li class=""><a href="<?php echo 'sistema_listado_datos_cross_aprobadas.php?pagina='.$_GET['pagina'].'&id='.$_GET['id']; ?>" ><i class="fa fa-wrench" aria-hidden="true"></i> 1tek Shipping Correos Aprobados</a></li>
 						<?php } ?>
 					</ul>
                 </li>

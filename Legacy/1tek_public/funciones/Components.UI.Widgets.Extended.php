@@ -4091,7 +4091,7 @@ function widget_Gestion_Equipos($titulo,$idSistema, $IDGoogle, $idTipoUsuario, $
 	}
 }
 /*******************************************************************************************************************/
-//Muestra la gestion de equipos cross
+//Muestra la gestion de equipos 1tek
 function widget_Gestion_Flota_Cross($titulo,$idSistema, $IDGoogle, $idTipoUsuario, $idUsuario, $SegActual, $dbConn){
 
 	//Si no existe una ID se utiliza una por defecto
@@ -4701,7 +4701,7 @@ function widget_Gestion_Flota_CrossTech($titulo, $idSistema, $IDGoogle, $idTipoU
 											</tr>';
 											$GPS .= widget_sherlock(1, 7, 'TableFiltered');
 
-											//Si es crosschecking
+											//Si es 1tek checking
 											if(isset($idTab)&&$idTab==1){
 												$GPS .= '
 												<tr role="row">
@@ -5199,7 +5199,7 @@ function widget_Gestion_Flota_CrossTech($titulo, $idSistema, $IDGoogle, $idTipoU
 	}
 }
 /*******************************************************************************************************************/
-//Muestra la gestion de flota crosstech
+//Muestra la gestion de flota 1tek
 function widget_Gestion_Flota_CrossTech_Transportes_AB($titulo, $idSistema, $IDGoogle, $idTipoUsuario, $idUsuario,
 										               $SegActual, $idTab, $miniwidget, $dbConn){
 
@@ -5353,7 +5353,7 @@ function widget_Gestion_Flota_CrossTech_Transportes_AB($titulo, $idSistema, $IDG
 											</tr>';
 											$GPS .= widget_sherlock(1, 7, 'TableFiltered');
 
-											//Si es crosschecking
+											//Si es 1tek checking
 											if(isset($idTab)&&$idTab==1){
 												$GPS .= '
 												<tr role="row">
@@ -5864,7 +5864,7 @@ function widget_Equipos_Crosstech($nombreEquipo, $seguimiento, $equipo, $enlace,
 	//Variable
 	$SIS_where = "telemetria_listado.idEstado = 1 ";//solo equipos activos
 	//Filtro de los tab
-	$SIS_where .= " AND telemetria_listado.idTab = 2";//CrossC
+	$SIS_where .= " AND telemetria_listado.idTab = 2";//1tek C
 	//solo los equipos que tengan el seguimiento activado
 	if(isset($seguimiento)&&$seguimiento!=''&&$seguimiento!=0){
 		$SIS_where .= " AND telemetria_listado.id_Geo = ".$seguimiento;
@@ -5963,7 +5963,7 @@ function widget_Promedios_equipo_grupos_Crosstech($titulo_cuadro, $seguimiento, 
 	//Variable
 	$SIS_where = "telemetria_listado.idEstado = 1 ";//solo equipos activos
 	//Filtro de los tab
-	$SIS_where .= " AND telemetria_listado.idTab = 2";//CrossC
+	$SIS_where .= " AND telemetria_listado.idTab = 2";//1tek C
 	//solo los equipos que tengan el seguimiento activado
 	if(isset($seguimiento)&&$seguimiento!=''&&$seguimiento!=0){
 		$SIS_where .= " AND telemetria_listado.id_Geo = ".$seguimiento;
@@ -6701,7 +6701,7 @@ function widget_Gestion_Equipos_CrossTech($titulo,$idSistema, $IDGoogle, $idTipo
 	}
 }
 /*******************************************************************************************************************/
-//Muestra la gestion de equipos decrosscrane
+//Muestra la gestion de equipos de 1tek crane
 function widget_Gestion_Equipos_crosscrane($titulo,$idSistema, $IDGoogle, $idTipoUsuario, $idUsuario, $SegActual, $dbConn){
 
 	//Si no existe una ID se utiliza una por defecto
@@ -6737,8 +6737,8 @@ function widget_Gestion_Equipos_crosscrane($titulo,$idSistema, $IDGoogle, $idTip
 			$SIS_join  .= ' INNER JOIN usuarios_equipos_telemetria ON usuarios_equipos_telemetria.idTelemetria = telemetria_listado.idTelemetria ';
 			$SIS_where .= ' AND usuarios_equipos_telemetria.idUsuario = '.$idUsuario;
 		}
-		//Solo para plataforma Simplytech
-		$SIS_where .= " AND telemetria_listado.idTab=6";//CrossCrane
+		//Solo para plataforma 1tek
+		$SIS_where .= " AND telemetria_listado.idTab=6";//1tek Crane
 
 		//numero sensores equipo
 		$N_Maximo_Sensores = 72;
@@ -7520,7 +7520,7 @@ function widget_Equipos_external($dbConn){
 	return $GPS;
 }
 /*******************************************************************************************************************/
-//Muestra la gestion de equipos decrosscrane
+//Muestra la gestion de equipos de 1tek crane
 function widget_Gestion_Equipos_crossEnergy($titulo,$idSistema, $IDGoogle, $idTipoUsuario, $idUsuario, $SegActual, $dbConn){
 
 	//Si no existe una ID se utiliza una por defecto
@@ -7559,8 +7559,8 @@ function widget_Gestion_Equipos_crossEnergy($titulo,$idSistema, $IDGoogle, $idTi
 			$SIS_join  .= ' INNER JOIN usuarios_equipos_telemetria ON usuarios_equipos_telemetria.idTelemetria = telemetria_listado.idTelemetria ';
 			$SIS_where .= ' AND usuarios_equipos_telemetria.idUsuario = '.$idUsuario;
 		}
-		//Solo para plataforma Simplytech
-		$SIS_where .= " AND telemetria_listado.idTab=9";//CrossEnergy
+		//Solo para plataforma 1tek
+		$SIS_where .= " AND telemetria_listado.idTab=9";//1tek Energy
 
 		//numero sensores equipo
 		$N_Maximo_Sensores = 72;
@@ -8837,7 +8837,7 @@ function widget_CrossC($titulo, $timeBack, $seguimiento, $idSistema, $idTipoUsua
 	//Variable
 	$SIS_where = "telemetria_listado.idEstado = 1 ";//solo equipos activos
 	//Filtro de los tab
-	$SIS_where .= " AND telemetria_listado.idTab = 2";//CrossC
+	$SIS_where .= " AND telemetria_listado.idTab = 2";//1tek C
 	//solo los equipos que tengan el seguimiento activado
 	if(isset($seguimiento)&&$seguimiento!=''&&$seguimiento!=0){
 		$SIS_where .= " AND telemetria_listado.id_Geo = ".$seguimiento;
@@ -9473,7 +9473,7 @@ function widget_CrossC_Walmart($timeBack, $seguimiento, $idSistema, $idTipoUsuar
 	//Variable
 	$SIS_where = "telemetria_listado.idEstado = 1 ";//solo equipos activos
 	//Filtro de los tab
-	$SIS_where .= " AND telemetria_listado.idTab = 2";//CrossC
+	$SIS_where .= " AND telemetria_listado.idTab = 2";//1tek C
 	$SIS_where .= " AND telemetria_listado.Nombre LIKE 'W.%'";//Comienza por w.
 	//solo los equipos que tengan el seguimiento activado
 	if(isset($seguimiento)&&$seguimiento!=''&&$seguimiento!=0){
@@ -10115,7 +10115,7 @@ function widget_CrossC_Walmart2($timeBack, $seguimiento, $idSistema, $idTipoUsua
 	//Variable
 	$SIS_where = "telemetria_listado.idEstado = 1 ";//solo equipos activos
 	//Filtro de los tab
-	$SIS_where .= " AND telemetria_listado.idTab = 2";//CrossC
+	$SIS_where .= " AND telemetria_listado.idTab = 2";//1tek C
 	$SIS_where .= " AND telemetria_listado.Nombre LIKE 'W.%'";//Comienza por w.
 	//solo los equipos que tengan el seguimiento activado
 	if(isset($seguimiento)&&$seguimiento!=''&&$seguimiento!=0){
@@ -10525,7 +10525,7 @@ function widget_CrossC_WalmartCloro($timeBack, $seguimiento, $idSistema, $idTipo
 	//Variable
 	$SIS_where = "telemetria_listado.idEstado = 1 ";//solo equipos activos
 	//Filtro de los tab
-	$SIS_where .= " AND telemetria_listado.idTab = 2";//CrossC
+	$SIS_where .= " AND telemetria_listado.idTab = 2";//1tek C
 	$SIS_where .= " AND telemetria_listado.Nombre LIKE 'Cloro%'";//Comienza por Cloro
 	//solo los equipos que tengan el seguimiento activado
 	if(isset($seguimiento)&&$seguimiento!=''&&$seguimiento!=0){
@@ -11186,7 +11186,7 @@ function widget_CrossC_WalmartHornos($timeBack, $seguimiento, $idSistema, $idTip
 	//Variable
 	$SIS_where = "telemetria_listado.idEstado = 1 ";//solo equipos activos
 	//Filtro de los tab
-	$SIS_where .= " AND telemetria_listado.idTab = 2";//CrossC
+	$SIS_where .= " AND telemetria_listado.idTab = 2";//1tek C
 	$SIS_where .= " AND telemetria_listado.Nombre LIKE 'Horno%'";//Comienza por Horno
 	//solo los equipos que tengan el seguimiento activado
 	if(isset($seguimiento)&&$seguimiento!=''&&$seguimiento!=0){
@@ -11587,7 +11587,7 @@ function widget_CrossC_Jumbo($timeBack, $seguimiento, $idSistema, $idTipoUsuario
 	//Variable
 	$SIS_where = "telemetria_listado.idEstado = 1 ";//solo equipos activos
 	//Filtro de los tab
-	$SIS_where .= " AND telemetria_listado.idTab = 2";//CrossC
+	$SIS_where .= " AND telemetria_listado.idTab = 2";//1tek C
 	//solo los equipos que tengan el seguimiento activado
 	if(isset($seguimiento)&&$seguimiento!=''&&$seguimiento!=0){
 		$SIS_where .= " AND telemetria_listado.id_Geo = ".$seguimiento;
@@ -12315,7 +12315,7 @@ function widget_whatsappFloatBtn($Fono, $Mesage){
 	echo $widget;
 }
 /*******************************************************************************************************************/
-//Muestra la gestion de equipos decrosscrane
+//Muestra la gestion de equipos de 1tek crane
 function widget_Gestion_Equipos_crosscrane_ubicacion($titulo,$idSistema, $IDGoogle, $idTipoUsuario, $idUsuario, $SegActual, $dbConn){
 
 	//Si no existe una ID se utiliza una por defecto
@@ -12345,8 +12345,8 @@ function widget_Gestion_Equipos_crosscrane_ubicacion($titulo,$idSistema, $IDGoog
 			$SIS_join  .= ' INNER JOIN usuarios_equipos_telemetria ON usuarios_equipos_telemetria.idTelemetria = telemetria_listado.idTelemetria ';
 			$SIS_where .= ' AND usuarios_equipos_telemetria.idUsuario = '.$idUsuario;
 		}
-		//Solo para plataforma Simplytech
-		$SIS_where .= " AND telemetria_listado.idTab=6";//CrossCrane
+		//Solo para plataforma 1tek
+		$SIS_where .= " AND telemetria_listado.idTab=6";//1tek Crane
 
 		//numero sensores equipo
 		$N_Maximo_Sensores = 72;
