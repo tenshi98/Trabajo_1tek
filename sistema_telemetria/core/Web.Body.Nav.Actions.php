@@ -1,7 +1,7 @@
 <?php
 //verifico la existencia
 if (isset($_SESSION['usuario']['basic_data']['Direccion_img'])&&$_SESSION['usuario']['basic_data']['Direccion_img']!='') {
-    $srcFileNavAc = 'upload/Usuarios/'.$_SESSION['usuario']['basic_data']['Direccion_img'];
+    $srcFileNavAc = 'upload/'.$_SESSION['usuario']['basic_data']['Direccion_img'];
 }else{
     $srcFileNavAc = DB_SITE_REPO.'/LIB_assets/img/usr.png';
 }
