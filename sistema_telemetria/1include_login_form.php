@@ -1,6 +1,6 @@
 <style>
 	.formLogin .form-horizontal .form-group {margin-left: 0px;margin-right: 0px;}
-	.formLogin .formbox {background-color: #ffffff;border-radius: 3px;border: 1px solid #00D2FD;}
+	.formLogin .formbox {background-color: #ffffff;border-radius: 3px;border: 1px solid #182854;}
 	.formLogin .formbox .leftPanel{height: 500px;border-top-left-radius: 3px;border-bottom-left-radius: 3px;}
 	.formLogin .formbox .leftPanel{background: url("<?php echo DB_SITE_REPO; ?>/Legacy/1tek_public/img/pattern/vetgb_blue.jpg") repeat!important;}
 	.formLogin .formbox .leftPanel .img-logo{margin-top:80px;}
