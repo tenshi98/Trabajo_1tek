@@ -267,7 +267,7 @@ $usrfil .= $responsables;
 					}
 					?>
 					<div class="input-group-btn">
-						<button class="btn btn-metis-1 tooltip remove_tarea" type="button" title="Borrar Información" > <i class="fa fa-trash-o" aria-hidden="true"></i> </button>
+						<button class="btn btn-danger tooltip remove_tarea" type="button" title="Borrar Información" > <i class="fa fa-trash-o" aria-hidden="true"></i> </button>
 					</div>
 				</div>
 			</div>
@@ -363,7 +363,7 @@ if($_SESSION['usuario']['basic_data']['idTipoUsuario']!=1){
 					}
 					?>
 					<div class="input-group-btn">
-						<button class="btn btn-metis-1 tooltip remove_responsable" type="button" title="Borrar Información" > <i class="fa fa-trash-o" aria-hidden="true"></i> </button>
+						<button class="btn btn-danger tooltip remove_responsable" type="button" title="Borrar Información" > <i class="fa fa-trash-o" aria-hidden="true"></i> </button>
 					</div>
 				</div>
 			</div>
@@ -535,7 +535,7 @@ if($_SESSION['usuario']['basic_data']['idTipoUsuario']!=1){
 									<?php
 									$ubicacion = $location.'&del_responsable='.$resp['idResponsable'];
 									$dialogo   = '¿Realmente deseas eliminar al responsable '.$resp['Responsables'].'?'; ?>
-									<a onClick="dialogBox('<?php echo $ubicacion ?>', '<?php echo $dialogo ?>')" title="Borrar Responsable" class="btn btn-metis-1 btn-sm tooltip"><i class="fa fa-trash-o" aria-hidden="true"></i></a>							
+									<a onClick="dialogBox('<?php echo $ubicacion ?>', '<?php echo $dialogo ?>')" title="Borrar Responsable" class="btn btn-danger btn-sm tooltip"><i class="fa fa-trash-o" aria-hidden="true"></i></a>							
 								</div>
 							</td>
 						</tr>
@@ -563,7 +563,7 @@ if($_SESSION['usuario']['basic_data']['idTipoUsuario']!=1){
 									<?php
 									$ubicacion = $location.'&del_tarea='.$tarea['idInterno'];
 									$dialogo   = '¿Realmente deseas eliminar el trabajo '.$tarea['Observacion'].'?'; ?>
-									<a onClick="dialogBox('<?php echo $ubicacion ?>', '<?php echo $dialogo ?>')" title="Borrar Responsable" class="btn btn-metis-1 btn-sm tooltip"><i class="fa fa-trash-o" aria-hidden="true"></i></a>							
+									<a onClick="dialogBox('<?php echo $ubicacion ?>', '<?php echo $dialogo ?>')" title="Borrar Responsable" class="btn btn-danger btn-sm tooltip"><i class="fa fa-trash-o" aria-hidden="true"></i></a>							
 								</div>
 							</td>
 						</tr>
@@ -589,7 +589,7 @@ if($_SESSION['usuario']['basic_data']['idTipoUsuario']!=1){
 								<?php
 								$ubicacion = $location.'&del_file='.$archivo['idFile'];
 								$dialogo   = '¿Realmente deseas eliminar  '.str_replace('"','',$archivo['NombreArchivo']).'?'; ?>
-								<a onClick="dialogBox('<?php echo $ubicacion ?>', '<?php echo $dialogo ?>')" title="Borrar Archivo" class="btn btn-metis-1 btn-sm tooltip"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+								<a onClick="dialogBox('<?php echo $ubicacion ?>', '<?php echo $dialogo ?>')" title="Borrar Archivo" class="btn btn-danger btn-sm tooltip"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
 							</div>
 						</td>
 					</tr>
@@ -847,12 +847,12 @@ $arrTareas = db_select_array (false, $SIS_query, 'tareas_pendientes_listado', $S
 								<?php if ($rowlevel['level']>=1){ ?><a href="<?php echo 'view_tarea_pendiente.php?view='.simpleEncode($ot['idTareas'], fecha_actual()); ?>" title="Ver Tarea" class="iframe btn btn-primary btn-sm tooltip"><i class="fa fa-list" aria-hidden="true"></i></a><?php } ?>
 								<?php if(isset($ot['idEstado'])&&$ot['idEstado'] <= 2){ ?>
 									<?php if ($rowlevel['level']>=2){ ?><a target="_blank" rel="noopener noreferrer" href="<?php echo 'tareas_pendientes_listado_editar.php?view='.simpleEncode($ot['idTareas'], fecha_actual()); ?>" title="Editar Tarea" class="btn btn-success btn-sm tooltip"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a><?php } ?>
-									<?php if ($rowlevel['level']>=3){ ?><a href="<?php echo $location.'&cancel='.simpleEncode($ot['idTareas'], fecha_actual()); ?>" title="Cancelar Tarea" class="btn btn-metis-1 btn-sm tooltip"><i class="fa fa-ban" aria-hidden="true"></i></a><?php } ?>
+									<?php if ($rowlevel['level']>=3){ ?><a href="<?php echo $location.'&cancel='.simpleEncode($ot['idTareas'], fecha_actual()); ?>" title="Cancelar Tarea" class="btn btn-danger btn-sm tooltip"><i class="fa fa-ban" aria-hidden="true"></i></a><?php } ?>
 								<?php } ?>
 								<?php if ($rowlevel['level']>=4){
 									$ubicacion = $location.'&delete_tarea='.simpleEncode($ot['idTareas'], fecha_actual());
 									$dialogo   = '¿Realmente deseas eliminar la tarea '.$ot['Nombre'].'?'; ?>
-									<a onClick="dialogBox('<?php echo $ubicacion ?>', '<?php echo $dialogo ?>')" title="Borrar Información" class="btn btn-metis-1 btn-sm tooltip"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+									<a onClick="dialogBox('<?php echo $ubicacion ?>', '<?php echo $dialogo ?>')" title="Borrar Información" class="btn btn-danger btn-sm tooltip"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
 								<?php } ?>
 							</div>
 						</td>

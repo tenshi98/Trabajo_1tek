@@ -504,7 +504,7 @@ input[type="date"].form-control{
 
 		<div class="col-xs-12 col-sm-1 col-md-1 col-lg-1 nopadding">
 			<div class="form-group">
-				<button class="btn btn-metis-1 tooltip remove_pago_iva" type="button" title="Borrar Información" > <i class="fa fa-trash-o" aria-hidden="true"></i> </button>
+				<button class="btn btn-danger tooltip remove_pago_iva" type="button" title="Borrar Información" > <i class="fa fa-trash-o" aria-hidden="true"></i> </button>
 			</div>
 		</div>
 		<div class="clearfix"></div>
@@ -534,7 +534,7 @@ input[type="date"].form-control{
 
 		<div class="col-xs-12 col-sm-1 col-md-1 col-lg-1 nopadding">
 			<div class="form-group">
-				<button class="btn btn-metis-1 tooltip remove_pago_ppm" type="button" title="Borrar Información" > <i class="fa fa-trash-o" aria-hidden="true"></i> </button>
+				<button class="btn btn-danger tooltip remove_pago_ppm" type="button" title="Borrar Información" > <i class="fa fa-trash-o" aria-hidden="true"></i> </button>
 			</div>
 		</div>
 		<div class="clearfix"></div>
@@ -564,7 +564,7 @@ input[type="date"].form-control{
 
 		<div class="col-xs-12 col-sm-1 col-md-1 col-lg-1 nopadding">
 			<div class="form-group">
-				<button class="btn btn-metis-1 tooltip remove_pago_ret" type="button" title="Borrar Información" > <i class="fa fa-trash-o" aria-hidden="true"></i> </button>
+				<button class="btn btn-danger tooltip remove_pago_ret" type="button" title="Borrar Información" > <i class="fa fa-trash-o" aria-hidden="true"></i> </button>
 			</div>
 		</div>
 		<div class="clearfix"></div>
@@ -594,7 +594,7 @@ input[type="date"].form-control{
 
 		<div class="col-xs-12 col-sm-1 col-md-1 col-lg-1 nopadding">
 			<div class="form-group">
-				<button class="btn btn-metis-1 tooltip remove_pago_impuesto_renta" type="button" title="Borrar Información" > <i class="fa fa-trash-o" aria-hidden="true"></i> </button>
+				<button class="btn btn-danger tooltip remove_pago_impuesto_renta" type="button" title="Borrar Información" > <i class="fa fa-trash-o" aria-hidden="true"></i> </button>
 			</div>
 		</div>
 		<div class="clearfix"></div>
@@ -787,7 +787,7 @@ input[type="date"].form-control{
 
 		<div class="col-xs-12 col-sm-1 col-md-1 col-lg-1 nopadding">
 			<div class="form-group">
-				<button class="btn btn-metis-1 tooltip remove_pago_iva" type="button" title="Borrar Información" > <i class="fa fa-trash-o" aria-hidden="true"></i> </button>
+				<button class="btn btn-danger tooltip remove_pago_iva" type="button" title="Borrar Información" > <i class="fa fa-trash-o" aria-hidden="true"></i> </button>
 			</div>
 		</div>
 		<div class="clearfix"></div>
@@ -817,7 +817,7 @@ input[type="date"].form-control{
 
 		<div class="col-xs-12 col-sm-1 col-md-1 col-lg-1 nopadding">
 			<div class="form-group">
-				<button class="btn btn-metis-1 tooltip remove_pago_ppm" type="button" title="Borrar Información" > <i class="fa fa-trash-o" aria-hidden="true"></i> </button>
+				<button class="btn btn-danger tooltip remove_pago_ppm" type="button" title="Borrar Información" > <i class="fa fa-trash-o" aria-hidden="true"></i> </button>
 			</div>
 		</div>
 		<div class="clearfix"></div>
@@ -847,7 +847,7 @@ input[type="date"].form-control{
 
 		<div class="col-xs-12 col-sm-1 col-md-1 col-lg-1 nopadding">
 			<div class="form-group">
-				<button class="btn btn-metis-1 tooltip remove_pago_ret" type="button" title="Borrar Información" > <i class="fa fa-trash-o" aria-hidden="true"></i> </button>
+				<button class="btn btn-danger tooltip remove_pago_ret" type="button" title="Borrar Información" > <i class="fa fa-trash-o" aria-hidden="true"></i> </button>
 			</div>
 		</div>
 		<div class="clearfix"></div>
@@ -877,7 +877,7 @@ input[type="date"].form-control{
 
 		<div class="col-xs-12 col-sm-1 col-md-1 col-lg-1 nopadding">
 			<div class="form-group">
-				<button class="btn btn-metis-1 tooltip remove_pago_impuesto_renta" type="button" title="Borrar Información" > <i class="fa fa-trash-o" aria-hidden="true"></i> </button>
+				<button class="btn btn-danger tooltip remove_pago_impuesto_renta" type="button" title="Borrar Información" > <i class="fa fa-trash-o" aria-hidden="true"></i> </button>
 			</div>
 		</div>
 		<div class="clearfix"></div>
@@ -1691,7 +1691,7 @@ $Form_Inputs = new Inputs();
 								<?php
 								$ubicacion = $location.'&del_file='.$producto['idFile'];
 								$dialogo   = '¿Realmente deseas eliminar  '.str_replace('"','',$producto['Nombre']).'?'; ?>
-								<a onClick="dialogBox('<?php echo $ubicacion ?>', '<?php echo $dialogo ?>')" title="Borrar Archivo" class="btn btn-metis-1 btn-sm tooltip"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+								<a onClick="dialogBox('<?php echo $ubicacion ?>', '<?php echo $dialogo ?>')" title="Borrar Archivo" class="btn btn-danger btn-sm tooltip"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
 							</div>
 						</td>
 					</tr>

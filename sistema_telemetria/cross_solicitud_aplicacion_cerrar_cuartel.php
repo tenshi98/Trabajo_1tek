@@ -262,7 +262,7 @@ if(!empty($_GET['addDetalle'])){ ?>
 											<?php if(isset($rowData['idEstado'])&&$rowData['idEstado']==2){
 												$distancia = $cuartel['CuartelDistanciaPlant']*$cuartel['CuartelNPlantas'];
 												?>
-												<a href="<?php echo $location.'&lock_cuartel='.$cuartel['idCuarteles'].'&f_ejecucion='.$rowData['f_ejecucion'].'&f_ejecucion_fin='.$rowData['f_ejecucion_fin'].'&distancia='.$distancia; ?>" title="Cerrar Cuartel" class="btn btn-metis-1 btn-sm tooltip"><i class="fa fa-lock" aria-hidden="true"></i> Cerrar</a>
+												<a href="<?php echo $location.'&lock_cuartel='.$cuartel['idCuarteles'].'&f_ejecucion='.$rowData['f_ejecucion'].'&f_ejecucion_fin='.$rowData['f_ejecucion_fin'].'&distancia='.$distancia; ?>" title="Cerrar Cuartel" class="btn btn-danger btn-sm tooltip"><i class="fa fa-lock" aria-hidden="true"></i> Cerrar</a>
 											<?php } ?>
 										<?php } ?>
 									</div>

@@ -713,7 +713,7 @@ if(!empty($_GET['addFile'])){
 									<?php
 									$ubicacion = $new_location.'&edit='.$_GET['edit'].'&del_estiba='.simpleEncode($estiba['idEstibaListado'], fecha_actual());
 									$dialogo   = '¿Realmente deseas eliminar el registro ?'; ?>
-									<a onClick="dialogBox('<?php echo $ubicacion ?>', '<?php echo $dialogo ?>')" title="Borrar Registro" class="btn btn-metis-1 btn-sm tooltip"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+									<a onClick="dialogBox('<?php echo $ubicacion ?>', '<?php echo $dialogo ?>')" title="Borrar Registro" class="btn btn-danger btn-sm tooltip"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
 								</div>
 							</td>
 						</tr>
@@ -753,7 +753,7 @@ if(!empty($_GET['addFile'])){
 									<?php
 									$ubicacion = $new_location.'&edit='.$_GET['edit'].'&del_file='.simpleEncode($arch['idArchivo'], fecha_actual());
 									$dialogo   = '¿Realmente deseas eliminar  '.str_replace('"','',$arch['Nombre']).'?'; ?>
-									<a onClick="dialogBox('<?php echo $ubicacion ?>', '<?php echo $dialogo ?>')" title="Borrar Archivo" class="btn btn-metis-1 btn-sm tooltip"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+									<a onClick="dialogBox('<?php echo $ubicacion ?>', '<?php echo $dialogo ?>')" title="Borrar Archivo" class="btn btn-danger btn-sm tooltip"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
 								</div>
 							</td>
 						</tr>

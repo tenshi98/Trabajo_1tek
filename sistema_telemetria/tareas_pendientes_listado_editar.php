@@ -317,7 +317,7 @@ $usrfil .= $responsables;
 					}
 					?>
 					<div class="input-group-btn">
-						<button class="btn btn-metis-1 tooltip remove_tarea" type="button" title="Borrar Información" > <i class="fa fa-trash-o" aria-hidden="true"></i> </button>
+						<button class="btn btn-danger tooltip remove_tarea" type="button" title="Borrar Información" > <i class="fa fa-trash-o" aria-hidden="true"></i> </button>
 					</div>
 				</div>
 			</div>
@@ -415,7 +415,7 @@ if($_SESSION['usuario']['basic_data']['idTipoUsuario']!=1){
 					}
 					?>
 					<div class="input-group-btn">
-						<button class="btn btn-metis-1 tooltip remove_responsable" type="button" title="Borrar Información" > <i class="fa fa-trash-o" aria-hidden="true"></i> </button>
+						<button class="btn btn-danger tooltip remove_responsable" type="button" title="Borrar Información" > <i class="fa fa-trash-o" aria-hidden="true"></i> </button>
 					</div>
 				</div>
 			</div>

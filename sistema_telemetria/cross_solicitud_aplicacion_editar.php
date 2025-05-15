@@ -1164,7 +1164,7 @@ if(!empty($_GET['addDetalle'])){ ?>
 												<?php
 												$ubicacion = $location.'&del_material='.simpleEncode($prod['idMatSeg'], fecha_actual());
 												$dialogo   = '¿Realmente deseas eliminar el material de seguridad '.$prod['Nombre'].'?'; ?>
-												<a onClick="dialogBox('<?php echo $ubicacion ?>', '<?php echo $dialogo ?>')" title="Borrar Cuartel" class="btn btn-metis-1 btn-sm tooltip"><i class="fa fa-trash-o" aria-hidden="true"></i></a>							
+												<a onClick="dialogBox('<?php echo $ubicacion ?>', '<?php echo $dialogo ?>')" title="Borrar Cuartel" class="btn btn-danger btn-sm tooltip"><i class="fa fa-trash-o" aria-hidden="true"></i></a>							
 											<?php } ?>
 										</div>
 									</td>
@@ -1208,12 +1208,12 @@ if(!empty($_GET['addDetalle'])){ ?>
 												<?php /*if(isset($rowData['idEstado'])&&$rowData['idEstado']==2){
 													$distancia = $cuartel['CuartelDistanciaPlant']*$cuartel['CuartelNPlantas'];
 													?>
-													<a href="<?php echo $location.'&lock_cuartel='.$cuartel['idCuarteles'].'&f_ejecucion='.$rowData['f_ejecucion'].'&f_ejecucion_fin='.$rowData['f_ejecucion_fin'].'&distancia='.$distancia; ?>" title="Cerrar Cuartel" class="btn btn-metis-1 btn-sm tooltip"><i class="fa fa-lock" aria-hidden="true"></i></a>
+													<a href="<?php echo $location.'&lock_cuartel='.$cuartel['idCuarteles'].'&f_ejecucion='.$rowData['f_ejecucion'].'&f_ejecucion_fin='.$rowData['f_ejecucion_fin'].'&distancia='.$distancia; ?>" title="Cerrar Cuartel" class="btn btn-danger btn-sm tooltip"><i class="fa fa-lock" aria-hidden="true"></i></a>
 												<?php }*/ ?>
 												<?php
 												$ubicacion = $location.'&del_cuartel='.simpleEncode($cuartel['idCuarteles'], fecha_actual());
 												$dialogo   = '¿Realmente deseas eliminar el cuartel '.$cuartel['CuartelNombre'].'?'; ?>
-												<a onClick="dialogBox('<?php echo $ubicacion ?>', '<?php echo $dialogo ?>')" title="Borrar Cuartel" class="btn btn-metis-1 btn-sm tooltip"><i class="fa fa-trash-o" aria-hidden="true"></i></a>							
+												<a onClick="dialogBox('<?php echo $ubicacion ?>', '<?php echo $dialogo ?>')" title="Borrar Cuartel" class="btn btn-danger btn-sm tooltip"><i class="fa fa-trash-o" aria-hidden="true"></i></a>							
 											<?php } ?>
 										</div>
 									</td>
@@ -1234,7 +1234,7 @@ if(!empty($_GET['addDetalle'])){ ?>
 														<?php
 														$ubicacion = $location.'&cuartel_id='.$cuartel['idCuarteles'].'&del_trac='.simpleEncode($tract['idTractores'], fecha_actual());
 														$dialogo   = '¿Realmente deseas eliminar el tractor '.$tract['Nombre'].'?'; ?>
-														<a onClick="dialogBox('<?php echo $ubicacion ?>', '<?php echo $dialogo ?>')" title="Borrar Tractor" class="btn btn-metis-1 btn-sm tooltip"><i class="fa fa-trash-o" aria-hidden="true"></i></a>							
+														<a onClick="dialogBox('<?php echo $ubicacion ?>', '<?php echo $dialogo ?>')" title="Borrar Tractor" class="btn btn-danger btn-sm tooltip"><i class="fa fa-trash-o" aria-hidden="true"></i></a>							
 													<?php } ?>
 												</div>
 											</td>
@@ -1263,7 +1263,7 @@ if(!empty($_GET['addDetalle'])){ ?>
 														<?php
 														$ubicacion = $location.'&cuartel_id='.$cuartel['idCuarteles'].'&del_prod='.simpleEncode($prod['idProdQuim'], fecha_actual());
 														$dialogo   = '¿Realmente deseas eliminar el producto '.$prod['Producto'].'?'; ?>
-														<a onClick="dialogBox('<?php echo $ubicacion ?>', '<?php echo $dialogo ?>')" title="Borrar Producto" class="btn btn-metis-1 btn-sm tooltip"><i class="fa fa-trash-o" aria-hidden="true"></i></a>							
+														<a onClick="dialogBox('<?php echo $ubicacion ?>', '<?php echo $dialogo ?>')" title="Borrar Producto" class="btn btn-danger btn-sm tooltip"><i class="fa fa-trash-o" aria-hidden="true"></i></a>							
 													<?php } ?>
 												</div>
 											</td>

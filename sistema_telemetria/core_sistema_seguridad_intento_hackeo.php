@@ -137,7 +137,7 @@ if(!empty($_GET['submit_filter'])){
 											$ubicacion = $location.'&block_ip='.simpleEncode($carga['IP_Client'], fecha_actual());
 											$ubicacion.='&Relacion='.simpleEncode('del intento de hackeo fecha '.fecha_estandar($carga['Fecha']).', usuario '.$carga['usuario'].', IP '.$carga['IP_Client'], fecha_actual());
 											$dialogo   = '¿Realmente deseas bloquear la IP '.$carga['IP_Client'].'?'; ?>
-											<a onClick="dialogBox('<?php echo $ubicacion ?>', '<?php echo $dialogo ?>')" title="Bloquear Dirección IP" class="btn btn-metis-1 btn-sm tooltip"><i class="fa fa-ban" aria-hidden="true"></i></a>
+											<a onClick="dialogBox('<?php echo $ubicacion ?>', '<?php echo $dialogo ?>')" title="Bloquear Dirección IP" class="btn btn-danger btn-sm tooltip"><i class="fa fa-ban" aria-hidden="true"></i></a>
 										<?php } ?>
 									</div>
 								</td>

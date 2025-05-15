@@ -177,7 +177,7 @@ array_push( $arrArchivos,$row );
 									<?php
 									$ubicacion = $new_location.'&id='.$_GET['id'].'&del_file='.simpleEncode($tipo['idArchivo'], fecha_actual());
 									$dialogo   = '¿Realmente deseas eliminar el documento '.$tipo['Nombre'].'?'; ?>
-									<a onClick="dialogBox('<?php echo $ubicacion ?>', '<?php echo $dialogo ?>')" title="Borrar Información" class="btn btn-metis-1 btn-sm tooltip"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+									<a onClick="dialogBox('<?php echo $ubicacion ?>', '<?php echo $dialogo ?>')" title="Borrar Información" class="btn btn-danger btn-sm tooltip"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
 								</div>
 							</td>
 						</tr>

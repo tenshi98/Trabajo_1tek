@@ -430,7 +430,7 @@ if(!empty($_GET['modAct'])){
 									//se verifica que el usuario no sea uno mismo
 									$ubicacion = $new_location.'&id='.$_GET['id'].'&modDelAct=true';
 									$dialogo   = '¿Realmente deseas eliminar el sensor de activacion?'; ?>
-									<a onClick="dialogBox('<?php echo $ubicacion ?>', '<?php echo $dialogo ?>')" title="Borrar Sensor Activacion" class="btn btn-metis-1 btn-sm tooltip"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+									<a onClick="dialogBox('<?php echo $ubicacion ?>', '<?php echo $dialogo ?>')" title="Borrar Sensor Activacion" class="btn btn-danger btn-sm tooltip"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
 								<?php } ?>
 							</div>
 						</td>

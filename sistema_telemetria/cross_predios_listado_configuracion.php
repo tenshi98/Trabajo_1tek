@@ -599,7 +599,7 @@ if(!empty($_GET['mod'])){
 												<?php if ($rowlevel['level']>=2){
 													$ubicacion = $new_location.'&edit_puntos='.$_GET['edit_puntos'].'&del_punto='.simpleEncode($pos['idUbicaciones'], fecha_actual());
 													$dialogo   = '¿Realmente deseas eliminar el dato?'; ?>
-													<a onClick="dialogBox('<?php echo $ubicacion ?>', '<?php echo $dialogo ?>')" title="Borrar Información" class="btn btn-metis-1 btn-sm tooltip"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+													<a onClick="dialogBox('<?php echo $ubicacion ?>', '<?php echo $dialogo ?>')" title="Borrar Información" class="btn btn-danger btn-sm tooltip"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
 												<?php } ?>
 											</div>
 										</td>
@@ -839,7 +839,7 @@ if(!empty($_GET['mod'])){
 										//se verifica que el usuario no sea uno mismo
 										$ubicacion = $new_location.'&del_zona='.simpleEncode($zona['idZona'], fecha_actual());
 										$dialogo   = '¿Realmente deseas eliminar el cuartel '.$zona['CuartelNombre'].'?'; ?>
-										<a onClick="dialogBox('<?php echo $ubicacion ?>', '<?php echo $dialogo ?>')" title="Borrar Información" class="btn btn-metis-1 btn-sm tooltip"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+										<a onClick="dialogBox('<?php echo $ubicacion ?>', '<?php echo $dialogo ?>')" title="Borrar Información" class="btn btn-danger btn-sm tooltip"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
 									<?php } ?>
 								</div>
 							</td>

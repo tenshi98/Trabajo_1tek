@@ -1741,7 +1741,7 @@ foreach ($arrPermisos as $prod) {
 										<?php
 										$ubicacion = $location.'&del_trab='.simpleEncode($trab['idResponsable'], fecha_actual());
 										$dialogo   = '¿Realmente deseas eliminar al trabajador '.$trab['Nombre'].' '.$trab['ApellidoPat'].' '.$trab['ApellidoMat'].'?'; ?>
-										<a onClick="dialogBox('<?php echo $ubicacion ?>', '<?php echo $dialogo ?>')" title="Borrar Trabajador" class="btn btn-metis-1 btn-sm tooltip"><i class="fa fa-trash-o" aria-hidden="true"></i></a>							
+										<a onClick="dialogBox('<?php echo $ubicacion ?>', '<?php echo $dialogo ?>')" title="Borrar Trabajador" class="btn btn-danger btn-sm tooltip"><i class="fa fa-trash-o" aria-hidden="true"></i></a>							
 									</div>
 								</td>
 							</tr>
@@ -1770,7 +1770,7 @@ foreach ($arrPermisos as $prod) {
 												<?php
 												$ubicacion = $location.'&del_ins='.simpleEncode($insumos['idMain'], fecha_actual());
 												$dialogo   = '¿Realmente deseas eliminar el insumo '.$insumos['NombreProducto'].'?'; ?>
-												<a onClick="dialogBox('<?php echo $ubicacion ?>', '<?php echo $dialogo ?>')" title="Borrar Insumo" class="btn btn-metis-1 btn-sm tooltip"><i class="fa fa-trash-o" aria-hidden="true"></i></a>							
+												<a onClick="dialogBox('<?php echo $ubicacion ?>', '<?php echo $dialogo ?>')" title="Borrar Insumo" class="btn btn-danger btn-sm tooltip"><i class="fa fa-trash-o" aria-hidden="true"></i></a>							
 											<?php } ?>
 										</div>
 									</td>
@@ -1802,7 +1802,7 @@ foreach ($arrPermisos as $prod) {
 												<?php
 												$ubicacion = $location.'&del_prod='.simpleEncode($prod['idMain'], fecha_actual());
 												$dialogo   = '¿Realmente deseas eliminar el producto '.$prod['NombreProducto'].'?'; ?>
-												<a onClick="dialogBox('<?php echo $ubicacion ?>', '<?php echo $dialogo ?>')" title="Borrar Producto" class="btn btn-metis-1 btn-sm tooltip"><i class="fa fa-trash-o" aria-hidden="true"></i></a>							
+												<a onClick="dialogBox('<?php echo $ubicacion ?>', '<?php echo $dialogo ?>')" title="Borrar Producto" class="btn btn-danger btn-sm tooltip"><i class="fa fa-trash-o" aria-hidden="true"></i></a>							
 											<?php } ?>
 										</div>
 									</td>
@@ -1887,7 +1887,7 @@ foreach ($arrPermisos as $prod) {
 												echo '<a href="'.$ubicacion.'&editobservacion_row=true" title="Editar Observacion" class="btn btn-success btn-sm tooltip"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>';
 											}
 										}
-										echo '<a onClick="dialogBox(\''.$ubicacion.'&del_tarea_row=true\', \''.$dialogo.'\')" title="Borrar Trabajo" class="btn btn-metis-1 btn-sm tooltip"><i class="fa fa-trash-o" aria-hidden="true"></i></a>';	
+										echo '<a onClick="dialogBox(\''.$ubicacion.'&del_tarea_row=true\', \''.$dialogo.'\')" title="Borrar Trabajo" class="btn btn-danger btn-sm tooltip"><i class="fa fa-trash-o" aria-hidden="true"></i></a>';	
 										?>
 									</div>
 								</td>
@@ -1968,7 +1968,7 @@ foreach ($arrPermisos as $prod) {
 																echo '<a href="'.$ubicacion.'&editproducto=true" title="Editar Producto" class="btn btn-success btn-sm tooltip"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>';
 															}
 														}
-														echo '<a onClick="dialogBox(\''.$ubicacion.'&del_tarea=true\', \''.$dialogo.'\')" title="Borrar Trabajo" class="btn btn-metis-1 btn-sm tooltip"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+														echo '<a onClick="dialogBox(\''.$ubicacion.'&del_tarea=true\', \''.$dialogo.'\')" title="Borrar Trabajo" class="btn btn-danger btn-sm tooltip"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
 													</div>
 												</td>
 											</tr>';

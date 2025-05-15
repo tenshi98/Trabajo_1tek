@@ -657,7 +657,7 @@ if(!empty($_GET['edit_itemizado'])){
 					if ($rowlevel>=3){
 						$ubicacion = $loc.'&del_idLevel='.simpleEncode($value['id'], fecha_actual()).'&lvl='.$lv.'&nmax='.$nmax;
 						$dialogo   = '¿Realmente deseas eliminar todos los datos relacionados a esta Rama?';
-						echo '<a onClick="dialogBox(\''.$ubicacion.'\', \''.$dialogo.'\')" title="Borrar Esta Rama" class="btn btn-metis-1 btn-sm tooltip"><i class="fa fa-trash-o" aria-hidden="true"></i></a>';
+						echo '<a onClick="dialogBox(\''.$ubicacion.'\', \''.$dialogo.'\')" title="Borrar Esta Rama" class="btn btn-danger btn-sm tooltip"><i class="fa fa-trash-o" aria-hidden="true"></i></a>';
 					}
 				echo '</div>';
 				//Boton para crear nueva subrama condicionado a solo si no se utiliza
@@ -1062,7 +1062,7 @@ if(!empty($_GET['edit_itemizado'])){
 									<?php if ($rowlevel['level']>=4){
 										$ubicacion = $new_location.'&del='.simpleEncode($area['idLicitacion'], fecha_actual());
 										$dialogo   = '¿Realmente deseas eliminar el registro '.$area['Nombre'].'?'; ?>
-										<a onClick="dialogBox('<?php echo $ubicacion ?>', '<?php echo $dialogo ?>')" title="Borrar Información" class="btn btn-metis-1 btn-sm tooltip"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+										<a onClick="dialogBox('<?php echo $ubicacion ?>', '<?php echo $dialogo ?>')" title="Borrar Información" class="btn btn-danger btn-sm tooltip"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
 									<?php } ?>
 								</div>
 							</td>

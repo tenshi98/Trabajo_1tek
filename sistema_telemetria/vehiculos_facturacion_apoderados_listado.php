@@ -223,7 +223,7 @@ if(!empty($_GET['moddatos'])){ ?>
 									<?php
 									$ubicacion = $location.'&view=true&del_cliente='.$hijo['idApoderado'];
 									$dialogo   = '¿Realmente deseas eliminar el dato '.$hijo['Apoderado'].'?'; ?>
-									<a onClick="dialogBox('<?php echo $ubicacion ?>', '<?php echo $dialogo ?>')" title="Borrar Cliente" class="btn btn-metis-1 btn-sm tooltip"><i class="fa fa-trash-o" aria-hidden="true"></i></a>							
+									<a onClick="dialogBox('<?php echo $ubicacion ?>', '<?php echo $dialogo ?>')" title="Borrar Cliente" class="btn btn-danger btn-sm tooltip"><i class="fa fa-trash-o" aria-hidden="true"></i></a>							
 								</div>
 							</td>
 						</tr>

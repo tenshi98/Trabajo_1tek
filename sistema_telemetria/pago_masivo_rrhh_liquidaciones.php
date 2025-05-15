@@ -128,7 +128,7 @@ $Form_Inputs = new Inputs();
 												<?php if ($rowlevel['level']>=2){
 													$ubicacion = $location.'&del_liquidacion='.$tipo['idFactTrab'].'&idFacturacion='.$_GET['idFacturacion'];
 													$dialogo   = '¿Realmente deseas eliminar la liquidacion de '.$tipo['TrabajadorNombre'].'?'; ?>
-													<a onClick="dialogBox('<?php echo $ubicacion ?>', '<?php echo $dialogo ?>')" title="Eliminar" class="btn btn-metis-1 btn-sm tooltip"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+													<a onClick="dialogBox('<?php echo $ubicacion ?>', '<?php echo $dialogo ?>')" title="Eliminar" class="btn btn-danger btn-sm tooltip"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
 												<?php } ?>
 											</div>
 										</td>
@@ -151,7 +151,7 @@ $Form_Inputs = new Inputs();
 										</td>
 										<td align="right">
 											<?php if(isset($tipo['ValorPagado'])&&$tipo['ValorPagado']!=0){ ?>
-												<a onclick="delpago(<?php echo $tipo['idFactTrab']; ?>)"  title="Borrar Información" class="btn btn-metis-1 btn-sm tooltip"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+												<a onclick="delpago(<?php echo $tipo['idFactTrab']; ?>)"  title="Borrar Información" class="btn btn-danger btn-sm tooltip"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
 											<?php }else{ ?>
 												<a onclick="addpago(<?php echo $tipo['idFactTrab']; ?>, <?php echo $TotalPagar; ?>)"  title="Asignar datos" class="btn btn-primary btn-sm tooltip"><i class="fa fa-check-square-o" aria-hidden="true"></i></a>
 											<?php } ?>

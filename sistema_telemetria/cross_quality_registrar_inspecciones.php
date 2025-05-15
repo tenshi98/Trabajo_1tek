@@ -947,7 +947,7 @@ if(!empty($_GET['addFile'])){ ?>
 										<?php
 										$ubicacion = $location.'&del_trab='.$trabajador['idTrabajador'];
 										$dialogo   = '¿Realmente deseas eliminar al trabajador '.$trabajador['Nombre'].'?'; ?>
-										<a onClick="dialogBox('<?php echo $ubicacion ?>', '<?php echo $dialogo ?>')" title="Borrar Trabajador" class="btn btn-metis-1 btn-sm tooltip"><i class="fa fa-trash-o" aria-hidden="true"></i></a>							
+										<a onClick="dialogBox('<?php echo $ubicacion ?>', '<?php echo $dialogo ?>')" title="Borrar Trabajador" class="btn btn-danger btn-sm tooltip"><i class="fa fa-trash-o" aria-hidden="true"></i></a>							
 									</div>
 								</td>
 							</tr>
@@ -974,7 +974,7 @@ if(!empty($_GET['addFile'])){ ?>
 										<?php
 										$ubicacion = $location.'&del_maq='.$maquina['idMaquina'];
 										$dialogo   = '¿Realmente deseas eliminar a Maquina '.$maquina['Nombre'].'?'; ?>
-										<a onClick="dialogBox('<?php echo $ubicacion ?>', '<?php echo $dialogo ?>')" title="Borrar Maquina" class="btn btn-metis-1 btn-sm tooltip"><i class="fa fa-trash-o" aria-hidden="true"></i></a>							
+										<a onClick="dialogBox('<?php echo $ubicacion ?>', '<?php echo $dialogo ?>')" title="Borrar Maquina" class="btn btn-danger btn-sm tooltip"><i class="fa fa-trash-o" aria-hidden="true"></i></a>							
 									</div>
 								</td>
 							</tr>
@@ -1013,7 +1013,7 @@ if(!empty($_GET['addFile'])){ ?>
 											<?php
 											$ubicacion = $location.'&del_muestra='.$producto['idMuestra'];
 											$dialogo   = '¿Realmente deseas eliminar el registro ?'; ?>
-											<a onClick="dialogBox('<?php echo $ubicacion ?>', '<?php echo $dialogo ?>')" title="Borrar Registro" class="btn btn-metis-1 btn-sm tooltip"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+											<a onClick="dialogBox('<?php echo $ubicacion ?>', '<?php echo $dialogo ?>')" title="Borrar Registro" class="btn btn-danger btn-sm tooltip"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
 										</div>
 									</td>
 								</tr>
@@ -1059,7 +1059,7 @@ if(!empty($_GET['addFile'])){ ?>
 									<?php
 									$ubicacion = $location.'&del_file='.$producto['idFile'];
 									$dialogo   = '¿Realmente deseas eliminar  '.str_replace('"','',$producto['Nombre']).'?'; ?>
-									<a onClick="dialogBox('<?php echo $ubicacion ?>', '<?php echo $dialogo ?>')" title="Borrar Archivo" class="btn btn-metis-1 btn-sm tooltip"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+									<a onClick="dialogBox('<?php echo $ubicacion ?>', '<?php echo $dialogo ?>')" title="Borrar Archivo" class="btn btn-danger btn-sm tooltip"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
 								</div>
 							</td>
 						</tr>

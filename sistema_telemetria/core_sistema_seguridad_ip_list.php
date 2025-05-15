@@ -120,7 +120,7 @@ if(!empty($_GET['submit_filter'])){
 											$ubicacion = $location.'&block_ip='.simpleEncode($tipo['IP_Client'], fecha_actual());
 											$ubicacion.='&Relacion='.simpleEncode($yrelacion.$tipo['Relacion'], fecha_actual());
 											$dialogo   = '¿Realmente deseas bloquear la IP '.$tipo['IP_Client'].'?'; ?>
-											<a onClick="dialogBox('<?php echo $ubicacion ?>', '<?php echo $dialogo ?>')" title="Bloquear Dirección IP" class="btn btn-metis-1 btn-sm tooltip"><i class="fa fa-ban" aria-hidden="true"></i></a>
+											<a onClick="dialogBox('<?php echo $ubicacion ?>', '<?php echo $dialogo ?>')" title="Bloquear Dirección IP" class="btn btn-danger btn-sm tooltip"><i class="fa fa-ban" aria-hidden="true"></i></a>
 										<?php } ?>
 									</div>
 								</td>

@@ -1785,7 +1785,7 @@ $total = 0;
 									<?php
 									$ubicacion = $new_location.'&del_prod='.simpleEncode($prod['idExistencia'], fecha_actual());
 									$dialogo   = '¿Realmente deseas eliminar el producto '.$prod['Nombre'].'?'; ?>
-									<a onClick="dialogBox('<?php echo $ubicacion ?>', '<?php echo $dialogo ?>')" title="Borrar Producto" class="btn btn-metis-1 btn-sm tooltip"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+									<a onClick="dialogBox('<?php echo $ubicacion ?>', '<?php echo $dialogo ?>')" title="Borrar Producto" class="btn btn-danger btn-sm tooltip"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
 								<?php } ?>
 							</div>
 						</td>
@@ -1826,7 +1826,7 @@ $total = 0;
 									<?php
 									$ubicacion = $new_location.'&del_ins='.simpleEncode($prod['idExistencia'], fecha_actual());
 									$dialogo   = '¿Realmente deseas eliminar el producto '.$prod['Nombre'].'?'; ?>
-									<a onClick="dialogBox('<?php echo $ubicacion ?>', '<?php echo $dialogo ?>')" title="Borrar Insumo" class="btn btn-metis-1 btn-sm tooltip"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+									<a onClick="dialogBox('<?php echo $ubicacion ?>', '<?php echo $dialogo ?>')" title="Borrar Insumo" class="btn btn-danger btn-sm tooltip"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
 								<?php } ?>
 							</div>
 						</td>
@@ -1867,7 +1867,7 @@ $total = 0;
 									<?php
 									$ubicacion = $new_location.'&del_arriendo='.simpleEncode($prod['idExistencia'], fecha_actual());
 									$dialogo   = '¿Realmente deseas eliminar el arriendo '.$prod['Nombre'].'?'; ?>
-									<a onClick="dialogBox('<?php echo $ubicacion ?>', '<?php echo $dialogo ?>')" title="Borrar Arriendo" class="btn btn-metis-1 btn-sm tooltip"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+									<a onClick="dialogBox('<?php echo $ubicacion ?>', '<?php echo $dialogo ?>')" title="Borrar Arriendo" class="btn btn-danger btn-sm tooltip"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
 								<?php } ?>
 							</div>
 						</td>
@@ -1910,7 +1910,7 @@ $total = 0;
 									<?php
 									$ubicacion = $new_location.'&del_servicio='.simpleEncode($prod['idExistencia'], fecha_actual());
 									$dialogo   = '¿Realmente deseas eliminar el servicio '.$prod['Nombre'].'?'; ?>
-									<a onClick="dialogBox('<?php echo $ubicacion ?>', '<?php echo $dialogo ?>')" title="Borrar Servicio" class="btn btn-metis-1 btn-sm tooltip"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+									<a onClick="dialogBox('<?php echo $ubicacion ?>', '<?php echo $dialogo ?>')" title="Borrar Servicio" class="btn btn-danger btn-sm tooltip"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
 								<?php } ?>
 							</div>
 						</td>
@@ -1949,7 +1949,7 @@ $total = 0;
 									<?php
 									$ubicacion = $new_location.'&del_otros='.simpleEncode($prod['idExistencia'], fecha_actual());
 									$dialogo   = '¿Realmente deseas eliminar  '.$prod['Nombre'].'?'; ?>
-									<a onClick="dialogBox('<?php echo $ubicacion ?>', '<?php echo $dialogo ?>')" title="Borrar Otros" class="btn btn-metis-1 btn-sm tooltip"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+									<a onClick="dialogBox('<?php echo $ubicacion ?>', '<?php echo $dialogo ?>')" title="Borrar Otros" class="btn btn-danger btn-sm tooltip"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
 								<?php } ?>
 							</div>
 						</td>
@@ -1983,7 +1983,7 @@ $total = 0;
 									<?php
 									$ubicacion = $new_location.'&del_boleta='.simpleEncode($prod['idExistencia'], fecha_actual());
 									$dialogo   = '¿Realmente deseas eliminar la boleta del trabajador '.$prod['TrabNombre'].' '.$prod['TrabApellidoPat'].'?'; ?>
-									<a onClick="dialogBox('<?php echo $ubicacion ?>', '<?php echo $dialogo ?>')" title="Borrar Boleta" class="btn btn-metis-1 btn-sm tooltip"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+									<a onClick="dialogBox('<?php echo $ubicacion ?>', '<?php echo $dialogo ?>')" title="Borrar Boleta" class="btn btn-danger btn-sm tooltip"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
 								<?php } ?>
 							</div>
 						</td>
@@ -2014,7 +2014,7 @@ $total = 0;
 									<?php
 									$ubicacion = $new_location.'&del_boleta_emp='.simpleEncode($prod['idExistencia'], fecha_actual());
 									$dialogo   = '¿Realmente deseas eliminar la boleta de la empresa?'; ?>
-									<a onClick="dialogBox('<?php echo $ubicacion ?>', '<?php echo $dialogo ?>')" title="Borrar Boleta" class="btn btn-metis-1 btn-sm tooltip"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+									<a onClick="dialogBox('<?php echo $ubicacion ?>', '<?php echo $dialogo ?>')" title="Borrar Boleta" class="btn btn-danger btn-sm tooltip"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
 								<?php } ?>
 							</div>
 						</td>
@@ -2078,7 +2078,7 @@ $total = 0;
 										$ubicacion .= '&del_sol_prod='.$producto['Prod_Soli'];
 										$ubicacion .= '&del_sol_cant='.Cantidades_decimales_justos($producto['Prod_Cantidad']);
 										$dialogo   = '¿Realmente deseas eliminar la solicitud de '.$producto['Prod_Nombre'].' por '.Cantidades_decimales_justos($producto['Prod_Cantidad']).' '.$producto['Prod_Medida'].' ?'; ?>
-										<a onClick="dialogBox('<?php echo $ubicacion ?>', '<?php echo $dialogo ?>')" title="Borrar Solicitud" class="btn btn-metis-1 btn-sm tooltip"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+										<a onClick="dialogBox('<?php echo $ubicacion ?>', '<?php echo $dialogo ?>')" title="Borrar Solicitud" class="btn btn-danger btn-sm tooltip"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
 									</div>
 								</td>
 							</tr>
@@ -2105,7 +2105,7 @@ $total = 0;
 										$ubicacion .= '&del_sol_prod='.$producto['Ins_Soli'];
 										$ubicacion .= '&del_sol_cant='.Cantidades_decimales_justos($producto['Ins_Cantidad']);
 										$dialogo   = '¿Realmente deseas eliminar la solicitud de '.$producto['Ins_Nombre'].' por '.Cantidades_decimales_justos($producto['Ins_Cantidad']).' '.$producto['Ins_Medida'].' ?'; ?>
-										<a onClick="dialogBox('<?php echo $ubicacion ?>', '<?php echo $dialogo ?>')" title="Borrar Solicitud" class="btn btn-metis-1 btn-sm tooltip"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+										<a onClick="dialogBox('<?php echo $ubicacion ?>', '<?php echo $dialogo ?>')" title="Borrar Solicitud" class="btn btn-danger btn-sm tooltip"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
 									</div>
 								</td>
 							</tr>
@@ -2132,7 +2132,7 @@ $total = 0;
 										$ubicacion .= '&del_sol_prod='.$producto['Arri_Soli'];
 										$ubicacion .= '&del_sol_cant='.Cantidades_decimales_justos($producto['Arri_Cantidad']);
 										$dialogo   = '¿Realmente deseas eliminar la solicitud de '.$producto['Arri_Nombre'].' por '.Cantidades_decimales_justos($producto['Arri_Cantidad']).' '.$producto['Arri_Medida'].' ?'; ?>
-										<a onClick="dialogBox('<?php echo $ubicacion ?>', '<?php echo $dialogo ?>')" title="Borrar Solicitud" class="btn btn-metis-1 btn-sm tooltip"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+										<a onClick="dialogBox('<?php echo $ubicacion ?>', '<?php echo $dialogo ?>')" title="Borrar Solicitud" class="btn btn-danger btn-sm tooltip"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
 									</div>
 								</td>
 							</tr>
@@ -2159,7 +2159,7 @@ $total = 0;
 										$ubicacion .= '&del_sol_prod='.$producto['Serv_Soli'];
 										$ubicacion .= '&del_sol_cant='.Cantidades_decimales_justos($producto['Serv_Cantidad']);
 										$dialogo   = '¿Realmente deseas eliminar la solicitud de '.$producto['Serv_Nombre'].' por '.Cantidades_decimales_justos($producto['Serv_Cantidad']).' '.$producto['Serv_Medida'].' ?'; ?>
-										<a onClick="dialogBox('<?php echo $ubicacion ?>', '<?php echo $dialogo ?>')" title="Borrar Solicitud" class="btn btn-metis-1 btn-sm tooltip"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+										<a onClick="dialogBox('<?php echo $ubicacion ?>', '<?php echo $dialogo ?>')" title="Borrar Solicitud" class="btn btn-danger btn-sm tooltip"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
 									</div>
 								</td>
 							</tr>
@@ -2186,7 +2186,7 @@ $total = 0;
 										$ubicacion .= '&del_sol_prod='.$producto['Otro_Soli'];
 										$ubicacion .= '&del_sol_cant='.Cantidades_decimales_justos($producto['Otro_Cantidad']);
 										$dialogo   = '¿Realmente deseas eliminar la solicitud de '.$producto['Otro_Nombre'].' por '.Cantidades_decimales_justos($producto['Otro_Cantidad']).' '.$producto['Otro_Medida'].' ?'; ?>
-										<a onClick="dialogBox('<?php echo $ubicacion ?>', '<?php echo $dialogo ?>')" title="Borrar Solicitud" class="btn btn-metis-1 btn-sm tooltip"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+										<a onClick="dialogBox('<?php echo $ubicacion ?>', '<?php echo $dialogo ?>')" title="Borrar Solicitud" class="btn btn-danger btn-sm tooltip"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
 									</div>
 								</td>
 							</tr>
@@ -2219,7 +2219,7 @@ $total = 0;
 								<?php
 								$ubicacion = $new_location.'&del_documento='.simpleEncode($prod['idDocumento'], fecha_actual());
 								$dialogo   = '¿Realmente deseas eliminar el documento '.$prod['Documento'].' N°'.str_replace('"','',$prod['NDocPago']).'?'; ?>
-								<a onClick="dialogBox('<?php echo $ubicacion ?>', '<?php echo $dialogo ?>')" title="Borrar Documento" class="btn btn-metis-1 btn-sm tooltip"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+								<a onClick="dialogBox('<?php echo $ubicacion ?>', '<?php echo $dialogo ?>')" title="Borrar Documento" class="btn btn-danger btn-sm tooltip"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
 							</div>
 						</td>
 					</tr>
@@ -2254,7 +2254,7 @@ $total = 0;
 								<?php
 								$ubicacion = $new_location.'&del_file='.simpleEncode($producto['idFile'], fecha_actual());
 								$dialogo   = '¿Realmente deseas eliminar  '.str_replace('"','',$producto['Nombre']).'?'; ?>
-								<a onClick="dialogBox('<?php echo $ubicacion ?>', '<?php echo $dialogo ?>')" title="Borrar Archivo" class="btn btn-metis-1 btn-sm tooltip"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+								<a onClick="dialogBox('<?php echo $ubicacion ?>', '<?php echo $dialogo ?>')" title="Borrar Archivo" class="btn btn-danger btn-sm tooltip"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
 							</div>
 						</td>
 					</tr>

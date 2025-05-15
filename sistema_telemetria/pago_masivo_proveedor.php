@@ -278,7 +278,7 @@ $Form_Inputs = new Inputs();
 											<?php if ($rowlevel['level']>=2){
 												$ubicacion = $location.'&del_insumo_ex='.$tipo['idFacturacion'];
 												$dialogo   = '¿Realmente deseas eliminar la '.$tipo['Documento'].' '.$tipo['N_Doc'].'?'; ?>
-												<a onClick="dialogBox('<?php echo $ubicacion ?>', '<?php echo $dialogo ?>')" title="Eliminar" class="btn btn-metis-1 btn-sm tooltip"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+												<a onClick="dialogBox('<?php echo $ubicacion ?>', '<?php echo $dialogo ?>')" title="Eliminar" class="btn btn-danger btn-sm tooltip"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
 											<?php } ?>
 										</div>
 									</td>
@@ -303,7 +303,7 @@ $Form_Inputs = new Inputs();
 										</td>
 										<td align="right">
 											<?php if(isset($tipo['FacRelacionada'])&&$tipo['FacRelacionada']!=''){ ?>
-												<a onclick="delDoc(1, <?php echo $tipo['idFacturacion']; ?>, <?php echo $tipo['idFacRelacionada']; ?>, <?php echo $tipo['ValorTotal']; ?>)"  title="Borrar Información" class="btn btn-metis-1 btn-sm tooltip"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+												<a onclick="delDoc(1, <?php echo $tipo['idFacturacion']; ?>, <?php echo $tipo['idFacRelacionada']; ?>, <?php echo $tipo['ValorTotal']; ?>)"  title="Borrar Información" class="btn btn-danger btn-sm tooltip"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
 											<?php }else{ ?>
 												<a onclick="addDoc(1, <?php echo $tipo['idFacturacion']; ?>, <?php echo $tipo['ValorTotal']; ?>)"  title="Asignar datos" class="btn btn-primary btn-sm tooltip"><i class="fa fa-check-square-o" aria-hidden="true"></i></a>
 											<?php } ?>
@@ -330,7 +330,7 @@ $Form_Inputs = new Inputs();
 										<td align="right">
 											<?php if(isset($NC_Pendientes)&&$NC_Pendientes==0){ ?>
 												<?php if(isset($tipo['ValorPagado'])&&$tipo['ValorPagado']!=''){ ?>
-													<a onclick="delpago(1, <?php echo $tipo['idFacturacion']; ?>)"  title="Borrar Información" class="btn btn-metis-1 btn-sm tooltip"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+													<a onclick="delpago(1, <?php echo $tipo['idFacturacion']; ?>)"  title="Borrar Información" class="btn btn-danger btn-sm tooltip"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
 												<?php }else{ ?>
 													<a onclick="addpago(1, <?php echo $tipo['idFacturacion']; ?>, <?php echo $total; ?>)"  title="Asignar datos" class="btn btn-primary btn-sm tooltip"><i class="fa fa-check-square-o" aria-hidden="true"></i></a>
 												<?php } ?>
@@ -356,7 +356,7 @@ $Form_Inputs = new Inputs();
 											<?php if ($rowlevel['level']>=2){
 												$ubicacion = $location.'&del_producto_ex='.$tipo['idFacturacion'];
 												$dialogo   = '¿Realmente deseas eliminar la '.$tipo['Documento'].' '.$tipo['N_Doc'].'?'; ?>
-												<a onClick="dialogBox('<?php echo $ubicacion ?>', '<?php echo $dialogo ?>')" title="Eliminar" class="btn btn-metis-1 btn-sm tooltip"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+												<a onClick="dialogBox('<?php echo $ubicacion ?>', '<?php echo $dialogo ?>')" title="Eliminar" class="btn btn-danger btn-sm tooltip"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
 											<?php } ?>
 										</div>
 									</td>
@@ -381,7 +381,7 @@ $Form_Inputs = new Inputs();
 										</td>
 										<td align="right">
 											<?php if(isset($tipo['FacRelacionada'])&&$tipo['FacRelacionada']!=''){ ?>
-												<a onclick="delDoc(2, <?php echo $tipo['idFacturacion']; ?>, <?php echo $tipo['idFacRelacionada']; ?>, <?php echo $tipo['ValorTotal']; ?>)"  title="Borrar Información" class="btn btn-metis-1 btn-sm tooltip"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+												<a onclick="delDoc(2, <?php echo $tipo['idFacturacion']; ?>, <?php echo $tipo['idFacRelacionada']; ?>, <?php echo $tipo['ValorTotal']; ?>)"  title="Borrar Información" class="btn btn-danger btn-sm tooltip"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
 											<?php }else{ ?>
 												<a onclick="addDoc(2, <?php echo $tipo['idFacturacion']; ?>, <?php echo $tipo['ValorTotal']; ?>)"  title="Asignar datos" class="btn btn-primary btn-sm tooltip"><i class="fa fa-check-square-o" aria-hidden="true"></i></a>
 											<?php } ?>
@@ -408,7 +408,7 @@ $Form_Inputs = new Inputs();
 										<td align="right">
 											<?php if(isset($NC_Pendientes)&&$NC_Pendientes==0){ ?>
 												<?php if(isset($tipo['ValorPagado'])&&$tipo['ValorPagado']!=''){ ?>
-													<a onclick="delpago(2, <?php echo $tipo['idFacturacion']; ?>)"  title="Borrar Información" class="btn btn-metis-1 btn-sm tooltip"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+													<a onclick="delpago(2, <?php echo $tipo['idFacturacion']; ?>)"  title="Borrar Información" class="btn btn-danger btn-sm tooltip"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
 												<?php }else{ ?>
 													<a onclick="addpago(2, <?php echo $tipo['idFacturacion']; ?>, <?php echo $total; ?>)"  title="Asignar datos" class="btn btn-primary btn-sm tooltip"><i class="fa fa-check-square-o" aria-hidden="true"></i></a>
 												<?php } ?>
@@ -434,7 +434,7 @@ $Form_Inputs = new Inputs();
 											<?php if ($rowlevel['level']>=2){
 												$ubicacion = $location.'&del_arriendo_ex='.$tipo['idFacturacion'];
 												$dialogo   = '¿Realmente deseas eliminar la '.$tipo['Documento'].' '.$tipo['N_Doc'].'?'; ?>
-												<a onClick="dialogBox('<?php echo $ubicacion ?>', '<?php echo $dialogo ?>')" title="Eliminar" class="btn btn-metis-1 btn-sm tooltip"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+												<a onClick="dialogBox('<?php echo $ubicacion ?>', '<?php echo $dialogo ?>')" title="Eliminar" class="btn btn-danger btn-sm tooltip"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
 											<?php } ?>
 										</div>
 									</td>
@@ -459,7 +459,7 @@ $Form_Inputs = new Inputs();
 										</td>
 										<td align="right">
 											<?php if(isset($tipo['FacRelacionada'])&&$tipo['FacRelacionada']!=''){ ?>
-												<a onclick="delDoc(3, <?php echo $tipo['idFacturacion']; ?>, <?php echo $tipo['idFacRelacionada']; ?>, <?php echo $tipo['ValorTotal']; ?>)"  title="Borrar Información" class="btn btn-metis-1 btn-sm tooltip"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+												<a onclick="delDoc(3, <?php echo $tipo['idFacturacion']; ?>, <?php echo $tipo['idFacRelacionada']; ?>, <?php echo $tipo['ValorTotal']; ?>)"  title="Borrar Información" class="btn btn-danger btn-sm tooltip"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
 											<?php }else{ ?>
 												<a onclick="addDoc(3, <?php echo $tipo['idFacturacion']; ?>, <?php echo $tipo['ValorTotal']; ?>)"  title="Asignar datos" class="btn btn-primary btn-sm tooltip"><i class="fa fa-check-square-o" aria-hidden="true"></i></a>
 											<?php } ?>
@@ -486,7 +486,7 @@ $Form_Inputs = new Inputs();
 										<td align="right">
 											<?php if(isset($NC_Pendientes)&&$NC_Pendientes==0){ ?>
 												<?php if(isset($tipo['ValorPagado'])&&$tipo['ValorPagado']!=''){ ?>
-													<a onclick="delpago(3, <?php echo $tipo['idFacturacion']; ?>)"  title="Borrar Información" class="btn btn-metis-1 btn-sm tooltip"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+													<a onclick="delpago(3, <?php echo $tipo['idFacturacion']; ?>)"  title="Borrar Información" class="btn btn-danger btn-sm tooltip"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
 												<?php }else{ ?>
 													<a onclick="addpago(3, <?php echo $tipo['idFacturacion']; ?>, <?php echo $total; ?>)"  title="Asignar datos" class="btn btn-primary btn-sm tooltip"><i class="fa fa-check-square-o" aria-hidden="true"></i></a>
 												<?php } ?>
@@ -512,7 +512,7 @@ $Form_Inputs = new Inputs();
 											<?php if ($rowlevel['level']>=2){
 												$ubicacion = $location.'&del_servicio_ex='.$tipo['idFacturacion'];
 												$dialogo   = '¿Realmente deseas eliminar la '.$tipo['Documento'].' '.$tipo['N_Doc'].'?'; ?>
-												<a onClick="dialogBox('<?php echo $ubicacion ?>', '<?php echo $dialogo ?>')" title="Eliminar" class="btn btn-metis-1 btn-sm tooltip"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+												<a onClick="dialogBox('<?php echo $ubicacion ?>', '<?php echo $dialogo ?>')" title="Eliminar" class="btn btn-danger btn-sm tooltip"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
 											<?php } ?>
 										</div>
 									</td>
@@ -537,7 +537,7 @@ $Form_Inputs = new Inputs();
 										</td>
 										<td align="right">
 											<?php if(isset($tipo['FacRelacionada'])&&$tipo['FacRelacionada']!=''){ ?>
-												<a onclick="delDoc(4, <?php echo $tipo['idFacturacion']; ?>, <?php echo $tipo['idFacRelacionada']; ?>, <?php echo $tipo['ValorTotal']; ?>)"  title="Borrar Información" class="btn btn-metis-1 btn-sm tooltip"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+												<a onclick="delDoc(4, <?php echo $tipo['idFacturacion']; ?>, <?php echo $tipo['idFacRelacionada']; ?>, <?php echo $tipo['ValorTotal']; ?>)"  title="Borrar Información" class="btn btn-danger btn-sm tooltip"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
 											<?php }else{ ?>
 												<a onclick="addDoc(4, <?php echo $tipo['idFacturacion']; ?>, <?php echo $tipo['ValorTotal']; ?>)"  title="Asignar datos" class="btn btn-primary btn-sm tooltip"><i class="fa fa-check-square-o" aria-hidden="true"></i></a>
 											<?php } ?>
@@ -564,7 +564,7 @@ $Form_Inputs = new Inputs();
 										<td align="right">
 											<?php if(isset($NC_Pendientes)&&$NC_Pendientes==0){ ?>
 												<?php if(isset($tipo['ValorPagado'])&&$tipo['ValorPagado']!=''){ ?>
-													<a onclick="delpago(4, <?php echo $tipo['idFacturacion']; ?>)"  title="Borrar Información" class="btn btn-metis-1 btn-sm tooltip"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+													<a onclick="delpago(4, <?php echo $tipo['idFacturacion']; ?>)"  title="Borrar Información" class="btn btn-danger btn-sm tooltip"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
 												<?php }else{ ?>
 													<a onclick="addpago(4, <?php echo $tipo['idFacturacion']; ?>, <?php echo $total; ?>)"  title="Asignar datos" class="btn btn-primary btn-sm tooltip"><i class="fa fa-check-square-o" aria-hidden="true"></i></a>
 												<?php } ?>

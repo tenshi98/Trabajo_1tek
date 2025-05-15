@@ -788,7 +788,7 @@ if(!empty($_GET['clone_idSolicitud'])){
 					<div class="input-group">
 						<?php $Form_Inputs->input_disabled('text', 'Dist Hileras', 'escribeme5', 0, 1); ?>
 						<div class="input-group-btn">
-							<button class="btn btn-metis-1 tooltip remove_cuartel" type="button" title="Borrar Información" > <i class="fa fa-trash-o" aria-hidden="true"></i> </button>
+							<button class="btn btn-danger tooltip remove_cuartel" type="button" title="Borrar Información" > <i class="fa fa-trash-o" aria-hidden="true"></i> </button>
 						</div>
 					</div>
 				</div>
@@ -822,7 +822,7 @@ if(!empty($_GET['clone_idSolicitud'])){
 					<div class="input-group">
 						<?php $Form_Inputs->input('text','Objetivo','Objetivo[]', '', 1); ?>
 						<div class="input-group-btn">
-							<button class="btn btn-metis-1 tooltip remove_producto" type="button" title="Borrar Información" > <i class="fa fa-trash-o" aria-hidden="true"></i> </button>
+							<button class="btn btn-danger tooltip remove_producto" type="button" title="Borrar Información" > <i class="fa fa-trash-o" aria-hidden="true"></i> </button>
 						</div>
 					</div>
 				</div>
@@ -850,7 +850,7 @@ if(!empty($_GET['clone_idSolicitud'])){
 					<div class="input-group">
 						<?php $Form_Inputs->select('Trabajador Asignado','idTrabajador[]', '',2, 'idTrabajador', 'Rut,Nombre,ApellidoPat', 'trabajadores_listado', $m,'', $dbConn); ?>
 						<div class="input-group-btn">
-							<button class="btn btn-metis-1 tooltip remove_tractor" type="button" title="Borrar Información" > <i class="fa fa-trash-o" aria-hidden="true"></i> </button>
+							<button class="btn btn-danger tooltip remove_tractor" type="button" title="Borrar Información" > <i class="fa fa-trash-o" aria-hidden="true"></i> </button>
 						</div>
 					</div>
 				</div>
@@ -864,7 +864,7 @@ if(!empty($_GET['clone_idSolicitud'])){
 					<div class="input-group">
 						<?php $Form_Inputs->select('Material de Seguridad','idMatSeguridad[]', '',2, 'idMatSeguridad', 'Nombre', 'cross_checking_materiales_seguridad', 'idEstado=1','', $dbConn); ?>
 						<div class="input-group-btn">
-							<button class="btn btn-metis-1 tooltip remove_material" type="button" title="Borrar Información" > <i class="fa fa-trash-o" aria-hidden="true"></i> </button>
+							<button class="btn btn-danger tooltip remove_material" type="button" title="Borrar Información" > <i class="fa fa-trash-o" aria-hidden="true"></i> </button>
 						</div>
 					</div>
 				</div>
@@ -1355,7 +1355,7 @@ if(!empty($_GET['clone_idSolicitud'])){
 										<?php
 										$ubicacion = $location.'&del_material='.$material['valor_id'];
 										$dialogo   = '¿Realmente deseas eliminar el material de seguridad '.$material['Nombre'].'?'; ?>
-										<a onClick="dialogBox('<?php echo $ubicacion ?>', '<?php echo $dialogo ?>')" title="Borrar Cuartel" class="btn btn-metis-1 btn-sm tooltip"><i class="fa fa-trash-o" aria-hidden="true"></i></a>							
+										<a onClick="dialogBox('<?php echo $ubicacion ?>', '<?php echo $dialogo ?>')" title="Borrar Cuartel" class="btn btn-danger btn-sm tooltip"><i class="fa fa-trash-o" aria-hidden="true"></i></a>							
 									</div>
 								</td>
 							</tr>
@@ -1400,7 +1400,7 @@ if(!empty($_GET['clone_idSolicitud'])){
 										<?php
 										$ubicacion = $location.'&del_cuartel='.$cuartel['valor_id'];
 										$dialogo   = '¿Realmente deseas eliminar el cuartel '.$cuartel['CuartelNombre'].'?'; ?>
-										<a onClick="dialogBox('<?php echo $ubicacion ?>', '<?php echo $dialogo ?>')" title="Borrar Cuartel" class="btn btn-metis-1 btn-sm tooltip"><i class="fa fa-trash-o" aria-hidden="true"></i></a>							
+										<a onClick="dialogBox('<?php echo $ubicacion ?>', '<?php echo $dialogo ?>')" title="Borrar Cuartel" class="btn btn-danger btn-sm tooltip"><i class="fa fa-trash-o" aria-hidden="true"></i></a>							
 									</div>
 								</td>
 							</tr>
@@ -1422,7 +1422,7 @@ if(!empty($_GET['clone_idSolicitud'])){
 												<?php 
 												$ubicacion = $location.'&cuartel_id='.$cuartel['valor_id'].'&del_trac='.$tract['valor_id'];
 												$dialogo   = '¿Realmente deseas eliminar el tractor '.$tract['Vehiculo'].'?'; ?>
-												<a onClick="dialogBox('<?php echo $ubicacion ?>', '<?php echo $dialogo ?>')" title="Borrar Tractor" class="btn btn-metis-1 btn-sm tooltip"><i class="fa fa-trash-o" aria-hidden="true"></i></a>							
+												<a onClick="dialogBox('<?php echo $ubicacion ?>', '<?php echo $dialogo ?>')" title="Borrar Tractor" class="btn btn-danger btn-sm tooltip"><i class="fa fa-trash-o" aria-hidden="true"></i></a>							
 											</div>
 										</td>
 									</tr>
@@ -1451,7 +1451,7 @@ if(!empty($_GET['clone_idSolicitud'])){
 												<?php 
 												$ubicacion = $location.'&cuartel_id='.$cuartel['valor_id'].'&del_prod='.$prod['valor_id'];
 												$dialogo   = '¿Realmente deseas eliminar el producto '.$prod['Producto'].'?'; ?>
-												<a onClick="dialogBox('<?php echo $ubicacion ?>', '<?php echo $dialogo ?>')" title="Borrar Producto" class="btn btn-metis-1 btn-sm tooltip"><i class="fa fa-trash-o" aria-hidden="true"></i></a>							
+												<a onClick="dialogBox('<?php echo $ubicacion ?>', '<?php echo $dialogo ?>')" title="Borrar Producto" class="btn btn-danger btn-sm tooltip"><i class="fa fa-trash-o" aria-hidden="true"></i></a>							
 											</div>
 										</td>
 									</tr>
@@ -1660,7 +1660,7 @@ if(!empty($_GET['clone_idSolicitud'])){
 					<div class="input-group">
 						<?php $Form_Inputs->input_disabled('text', 'Dist Hileras', 'escribeme5', 0, 1); ?>
 						<div class="input-group-btn">
-							<button class="btn btn-metis-1 tooltip remove_cuartel" type="button" title="Borrar Información" > <i class="fa fa-trash-o" aria-hidden="true"></i> </button>
+							<button class="btn btn-danger tooltip remove_cuartel" type="button" title="Borrar Información" > <i class="fa fa-trash-o" aria-hidden="true"></i> </button>
 						</div>
 					</div>
 				</div>
@@ -1694,7 +1694,7 @@ if(!empty($_GET['clone_idSolicitud'])){
 					<div class="input-group">
 						<?php $Form_Inputs->input('text','Objetivo','Objetivo[]', '', 1); ?>
 						<div class="input-group-btn">
-							<button class="btn btn-metis-1 tooltip remove_producto" type="button" title="Borrar Información" > <i class="fa fa-trash-o" aria-hidden="true"></i> </button>
+							<button class="btn btn-danger tooltip remove_producto" type="button" title="Borrar Información" > <i class="fa fa-trash-o" aria-hidden="true"></i> </button>
 						</div>
 					</div>
 				</div>
@@ -1722,7 +1722,7 @@ if(!empty($_GET['clone_idSolicitud'])){
 					<div class="input-group">
 						<?php $Form_Inputs->select('Trabajador Asignado','idTrabajador[]', '',2, 'idTrabajador', 'Rut,Nombre,ApellidoPat', 'trabajadores_listado', $m,'', $dbConn); ?>
 						<div class="input-group-btn">
-							<button class="btn btn-metis-1 tooltip remove_tractor" type="button" title="Borrar Información" > <i class="fa fa-trash-o" aria-hidden="true"></i> </button>
+							<button class="btn btn-danger tooltip remove_tractor" type="button" title="Borrar Información" > <i class="fa fa-trash-o" aria-hidden="true"></i> </button>
 						</div>
 					</div>
 				</div>
@@ -1736,7 +1736,7 @@ if(!empty($_GET['clone_idSolicitud'])){
 					<div class="input-group">
 						<?php $Form_Inputs->select('Material de Seguridad','idMatSeguridad[]', '',2, 'idMatSeguridad', 'Nombre', 'cross_checking_materiales_seguridad', 'idEstado=1','', $dbConn); ?>
 						<div class="input-group-btn">
-							<button class="btn btn-metis-1 tooltip remove_material" type="button" title="Borrar Información" > <i class="fa fa-trash-o" aria-hidden="true"></i> </button>
+							<button class="btn btn-danger tooltip remove_material" type="button" title="Borrar Información" > <i class="fa fa-trash-o" aria-hidden="true"></i> </button>
 						</div>
 					</div>
 				</div>
@@ -2288,7 +2288,7 @@ if(!empty($_GET['clone_idSolicitud'])){
 										<?php if ($rowlevel['level']>=4){
 											$ubicacion = $location.'&del_Solicitud='.simpleEncode($ot['idSolicitud'], fecha_actual());
 											$dialogo   = '¿Realmente deseas eliminar el registro de la Solicitud  '.n_doc($ot['idSolicitud'], 5).'?'; ?>
-											<a onClick="dialogBox('<?php echo $ubicacion ?>', '<?php echo $dialogo ?>')" title="Borrar Información" class="btn btn-metis-1 btn-sm tooltip"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+											<a onClick="dialogBox('<?php echo $ubicacion ?>', '<?php echo $dialogo ?>')" title="Borrar Información" class="btn btn-danger btn-sm tooltip"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
 										<?php } ?>
 									</div>
 								</td>

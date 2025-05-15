@@ -175,7 +175,7 @@ $arrAnexos = db_select_array (false, $SIS_query, 'trabajadores_listado_anexos', 
 								<?php
 								$ubicacion = $location.'&del_Documento='.simpleEncode($tipo['idAnexo'], fecha_actual());
 								$dialogo   = '¿Realmente deseas eliminar el documento '.$tipo['Documento'].'?'; ?>
-								<a onClick="dialogBox('<?php echo $ubicacion ?>', '<?php echo $dialogo ?>')" title="Borrar Información" class="btn btn-metis-1 btn-sm tooltip"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+								<a onClick="dialogBox('<?php echo $ubicacion ?>', '<?php echo $dialogo ?>')" title="Borrar Información" class="btn btn-danger btn-sm tooltip"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
 							</div>
 						</td>
 					</tr>

@@ -140,8 +140,8 @@ foreach ($arrTabMenu as $tab) {
 .noborderbox .header {background-color: #fff!important;color: #333!important;border-color: #ddd!important;}
 .noborderbox .header .nav-tabs {border-bottom: 1px solid #ddd!important;}
 .noborderbox .header .nav-tabs > li.active > a{color: #333 !important;border-color: #ddd!important;border-bottom-color: transparent!important;}
-.noborderbox .header .nav-tabs > li > a {color: #665F5F !important;}
-.noborderbox .header .nav-tabs > li > a:hover, .noborderbox .header .nav-tabs > li > a:focus {color: #fff !important;background-color: #2E2424;}
+.noborderbox .header .nav-tabs > li > a {color: #ffffff !important;}
+.noborderbox .header .nav-tabs > li > a:hover, .noborderbox .header .nav-tabs > li > a:focus {color: #fff !important;background-color: rgba(0, 0, 0, 0.4);}
 .noborderbox .header .nav-tabs > li.active > a:hover, .noborderbox .header .nav-tabs > li.active > a:focus{color: #333 !important;}
 </style>
 

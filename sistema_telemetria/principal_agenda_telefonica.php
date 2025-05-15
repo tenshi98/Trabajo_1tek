@@ -252,7 +252,7 @@ if(!empty($_GET['id'])){
 									<?php
 										$ubicacion = $location.'&del='.simpleEncode($cont['idAgenda'], fecha_actual());
 										$dialogo   = '¿Realmente deseas eliminar el contacto '.$cont['Nombre'].'?'; ?>
-										<a onClick="dialogBox('<?php echo $ubicacion ?>', '<?php echo $dialogo ?>')" title="Borrar Información" class="btn btn-metis-1 btn-sm tooltip"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+										<a onClick="dialogBox('<?php echo $ubicacion ?>', '<?php echo $dialogo ?>')" title="Borrar Información" class="btn btn-danger btn-sm tooltip"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
 									<?php } ?>
 								</div>
 							</td>

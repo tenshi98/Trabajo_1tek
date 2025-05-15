@@ -390,7 +390,7 @@ if(!empty($_GET['id'])){
 										<?php if ($rowlevel['level']>=4){
 											$ubicacion = $location.'&del='.simpleEncode($plan['idLicencia'], fecha_actual());
 											$dialogo   = '¿Realmente deseas eliminar la licencia del '.fecha_estandar($plan['Fecha_inicio']).'?'; ?>
-											<a onClick="dialogBox('<?php echo $ubicacion ?>', '<?php echo $dialogo ?>')" title="Borrar Información" class="btn btn-metis-1 btn-sm tooltip"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+											<a onClick="dialogBox('<?php echo $ubicacion ?>', '<?php echo $dialogo ?>')" title="Borrar Información" class="btn btn-danger btn-sm tooltip"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
 										<?php } ?>
 									<?php } ?>
 								</div>

@@ -152,7 +152,7 @@ if(isset($_SESSION['pagos_boletas_empresas'])){
 											<?php if ($rowlevel['level']>=2){
 												$ubicacion = $location.'&del_boleta='.$tipo['idFacturacion'];
 												$dialogo   = '¿Realmente deseas eliminar la Boleta N° '.$tipo['N_Doc'].'?'; ?>
-												<a onClick="dialogBox('<?php echo $ubicacion ?>', '<?php echo $dialogo ?>')" title="Eliminar" class="btn btn-metis-1 btn-sm tooltip"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+												<a onClick="dialogBox('<?php echo $ubicacion ?>', '<?php echo $dialogo ?>')" title="Eliminar" class="btn btn-danger btn-sm tooltip"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
 											<?php } ?>
 										</div>
 									</td>
@@ -175,7 +175,7 @@ if(isset($_SESSION['pagos_boletas_empresas'])){
 									</td>
 									<td align="right">
 										<?php if(isset($tipo['ValorReal'])&&$tipo['ValorReal']!=''){ ?>
-											<a onclick="delpago(<?php echo $tipo['idFacturacion']; ?>)"  title="Borrar Información" class="btn btn-metis-1 btn-sm tooltip"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+											<a onclick="delpago(<?php echo $tipo['idFacturacion']; ?>)"  title="Borrar Información" class="btn btn-danger btn-sm tooltip"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
 										<?php }else{ ?>
 											<a onclick="addpago(<?php echo $tipo['idFacturacion']; ?>, <?php echo $total; ?>)"  title="Asignar datos" class="btn btn-primary btn-sm tooltip"><i class="fa fa-check-square-o" aria-hidden="true"></i></a>
 										<?php } ?>

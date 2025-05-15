@@ -424,7 +424,7 @@ if(!empty($_GET['cancel_ejecution'])){ ?>
 									}
 									?>
 									<div class="btn-group" style="width: 175px;" >
-										<?php if ($rowlevel['level']>=2){ ?><a href="<?php echo $location.'&cancel_ejecution='.$ot['idSolicitud']; ?>" title="Cancelar Programacion" class="btn btn-metis-1 btn-sm tooltip"><i class="fa fa-arrow-left" aria-hidden="true"></i></a><?php } ?>
+										<?php if ($rowlevel['level']>=2){ ?><a href="<?php echo $location.'&cancel_ejecution='.$ot['idSolicitud']; ?>" title="Cancelar Programacion" class="btn btn-danger btn-sm tooltip"><i class="fa fa-arrow-left" aria-hidden="true"></i></a><?php } ?>
 										<?php if ($rowlevel['level']>=1){ ?><a href="<?php echo 'view_solicitud_aplicacion.php?view='.simpleEncode($ot['idSolicitud'], fecha_actual()); ?>" title="Ver Solicitud" class="iframe btn btn-primary btn-sm tooltip"><i class="fa fa-list" aria-hidden="true"></i></a><?php } ?>
 										<?php if ($rowlevel['level']>=2){ ?><a href="<?php echo 'cross_solicitud_aplicacion_editar.php?view='.$ot['idSolicitud']; ?>" title="Editar Solicitud" class="btn btn-success btn-sm tooltip"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a><?php } ?>
 										<?php if ($rowlevel['level']>=2){ ?><a href="<?php echo 'cross_solicitud_aplicacion_cerrar_cuartel.php?view='.$ot['idSolicitud']; ?>" title="Cerrar Cuarteles (<?php echo $ot['Cuartel_Abierto'].' Abiertos'; ?>)" class="btn <?php echo $btn_color; ?> btn-sm tooltip"><i class="fa <?php echo $btn_icon; ?>" aria-hidden="true"></i></a><?php } ?>
