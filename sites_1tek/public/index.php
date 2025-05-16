@@ -37,7 +37,9 @@ $f3->set('AUTOLOAD',$Autoload);                  //Autoload
 /******************************/
 //rutas disponibles
 $f3->route('GET /', 'main->index'); //Vista - de la pagina
-$f3->route('GET /inicio', 'main->index'); //Vista - de la pagina
+$f3->route('GET /feature/view/@id', 'main->View');          //Mostrar Detallado
+
+
 $f3->route('GET /crearProyecto', 'main->index'); //Vista - de la pagina
 $f3->route('GET /solicitarReunion', 'main->index'); //Vista - de la pagina
 
