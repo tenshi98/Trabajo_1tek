@@ -1,166 +1,121 @@
 <div class="modal-header">
-    <h5 class="modal-title"><i class="bi bi-file-earmark"></i> Ver Datos</h5>
+    <h5 class="modal-title"><i class="bi bi-file-earmark"></i> <?php echo $data['ViewData']['ModalTitle']; ?></h5>
     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 </div>
 <div class="modal-body" style="min-height: 400px;">
-    <div class="row gutters">
-		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
-            <div class="card-body p-0">
-                <div class="kanban-container">
-                    <div class="kanban-header">
-                        <div class="row gutters">
 
+    <!-- ======= About Boxes Section ======= -->
+    <section id="about-boxes" class="about-boxes no-bg">
+        <div class="container" data-aos="fade-up">
 
-                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
-                                <div class="float-end">
-                                    <a target="new" href="<?php echo $BASE.'/'.$data['UserAccess']['RouteAccess'].'/print/'.$data['Fnc_Codification']->encrypt_decrypt('encrypt', $data['rowData']['idKanban']); ?>" class="btn btn-primary btn-sm" ><i class="bi bi-printer"></i> Imprimir Tarea</a>
-                                </div>
-                            </div>
-                            <div class="clearfix"></div>
+            <div class="section-title head-title" >
+                <h2><?php echo $data['ViewData']['Subtitulo']; ?></h2>
+            </div>
 
-                            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
-                                <address>
-                                    <p>
-                                        <span class="badge <?php echo $data['rowData']['PrioridadColor']; ?>"><?php echo 'Prioridad: '.$data['rowData']['PrioridadNombre']; ?></span>
-                                        <span class="badge <?php echo $data['rowData']['KanbanColor']; ?>"><?php echo 'Tablero: '.$data['rowData']['KanbanEstado']; ?></span>
-                                        <span class="badge <?php echo $data['rowData']['EstadoCierreColor']; ?>"><?php echo 'Estado Cierre: '.$data['rowData']['EstadoCierreNombre']; ?></span>
-                                    </p>
-                                </address>
-                            </div>
-                            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
-                                <address>
-                                    <span class="float-end date"><i class="bi bi-calendar3"></i> <?php echo $data['Fnc_DataDate']->Fecha_estandar($data['rowData']['Fecha']); ?></span>
-                                </address>
-                            </div>
-                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
-                                <p class="title"><strong><?php echo $data['rowData']['Titulo']; ?></strong></p>
-                            </div>
-                        </div>
-                        <div class="row gutters">
-                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
-                                <div class="kanban-details">
-                                    <address>
-                                        <?php echo $data['rowData']['Descripcion']; ?>
-                                    </address>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Row end -->
-                    </div>
-                    <div class="kanban-body">
-                        <div class="row gutters">
-
-                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
-                                <p class="text-facture">
-                                    <strong><i class="bi bi-clipboard-plus"></i> Tareas</strong>
-                                </p>
-                            </div>
-                            <div class="clearfix"></div>
-
-                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
-                                <div class="table-responsive">
-                                    <table class="table table-bordered">
-                                        <tbody>
-                                            <?php
-                                            //Se verifica si se permite usar tareas especificas
-                                            if($data['UserData']["KanbanTareasUsoTareas"]==2){ ?>
-                                                <?php foreach ($data['arrTareas'] AS $task){ ?>
-                                                    <tr>
-                                                        <td><?php echo $task['Trabajo'].'<br> - '.$task['Tarea'];?></td>
-                                                        <td width=120><span class="badge <?php echo $task['EstadoColor']?>"><?php echo '<i class="'.$task['EstadoIcon'].'"></i> '.$task['EstadoNombre']?></span></td>
-                                                    </tr>
-                                                <?php } ?>
-                                            <?php }else{ ?>
-                                                <?php foreach ($data['arrTareas'] AS $task){ ?>
-                                                    <tr>
-                                                        <td><?php echo $task['Tarea']?></td>
-                                                        <td width=120><span class="badge <?php echo $task['EstadoColor']?>"><?php echo '<i class="'.$task['EstadoIcon'].'"></i> '.$task['EstadoNombre']?></span></td>
-                                                    </tr>
-                                                <?php } ?>
-                                            <?php } ?>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-
-                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
-                                <p class="text-facture">
-                                    <strong><i class="bi bi-person-plus"></i> Participantes</strong>
-                                </p>
-                            </div>
-                            <div class="clearfix"></div>
-
-                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
-                                <div class="table-responsive">
-                                    <table class="table table-bordered">
-                                        <tbody>
-                                            <?php foreach ($data['arrParticipantes'] AS $task){
-                                                //verifico si existe imagen
-                                                if(isset($task['UsuarioImg'])&&$task['UsuarioImg']!=''){
-                                                    $UserIMG = $BASE.'/upload/'.$task['UsuarioImg'];
-                                                }else{
-                                                    $UserIMG = $BASE.'/img/profile-img.jpg';
-                                                } ?>
-                                                <tr>
-                                                    <td><img src="<?php echo $UserIMG; ?>" alt="Profile" class="rounded-circle" style="width: 30px;height: 30px;border: 1px solid #ebeef4;"> <?php echo $task['UsuarioNombre']; ?></td>
-                                                </tr>
-                                            <?php } ?>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-
-                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
-                                <p class="text-facture">
-                                    <strong><i class="bi bi-person-plus"></i> Historial</strong>
-                                </p>
-                            </div>
-                            <div class="clearfix"></div>
-
-                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
-                                <div class="table-responsive">
-                                    <table class="table table-bordered">
-                                        <thead>
-                                            <tr>
-                                                <th scope="col">Creador</th>
-                                                <th scope="col">Fecha</th>
-                                                <th scope="col">Descripción</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <?php
-                                            //variables
-                                            $vowels = array('&lt;br&gt;', '&lt;br/&gt;');
-                                            //recorro
-                                            foreach ($data['arrHistorial'] AS $task){
-                                                //verifico si existe imagen
-                                                if(isset($task['UsuarioImg'])&&$task['UsuarioImg']!=''){
-                                                    $UserIMG = $BASE.'/upload/'.$task['UsuarioImg'];
-                                                }else{
-                                                    $UserIMG = $BASE.'/img/profile-img.jpg';
-                                                } ?>
-                                                <tr>
-                                                    <td><img src="<?php echo $UserIMG; ?>" alt="Profile" class="rounded-circle" style="width: 30px;height: 30px;border: 1px solid #ebeef4;"> <?php echo $task['UsuarioNombre']; ?></td>
-                                                    <td>
-                                                        <?php echo '<i class="bi bi-calendar"></i> '.$data['Fnc_DataDate']->Fecha_estandar($task['Fecha']); ?>
-                                                        <?php echo '<br/><i class="bi bi-clock"></i> '.$task['Hora']; ?>
-                                                    </td>
-                                                    <td><?php echo str_replace($vowels, '<br>', $task['Descripcion']); ?></td>
-                                                </tr>
-                                            <?php } ?>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <h3><?php echo $data['ViewData']['Contenido1_Titulo']; ?></h3>
+                    <p><?php echo norm_text($data['ViewData']['Contenido1_Texto']); ?></p>
                 </div>
             </div>
-		</div>
-	</div>
+
+            <div class="row">
+                <div class="col-lg-4 video-box align-self-baseline" data-aos="zoom-in" data-aos-delay="100">
+                    <img src="<?php echo $BASE.'/assets/img/view_servicio/'.$data['ViewData']['Contenido2_IMG']; ?>" class="img-fluid" alt="">
+                </div>
+                <div class="col-lg-8 pt-3 pt-lg-0 content">
+                    <h3><?php echo $data['ViewData']['Contenido2_Titulo']; ?></h3>
+                    <p><?php echo norm_text($data['ViewData']['Contenido2_Texto']); ?></p>
+                </div>
+            </div>
+
+        </div>
+    </section><!-- End About Boxes Section -->
+
+
+    <!-- ======= Services Section ======= -->
+    <section id="services" class="services section-bg">
+        <div class="container" data-aos="fade-up">
+            <div class="section-title head-title">
+                <h2><?php echo $data['ViewData']['porHacerTitulo']; ?></h2>
+            </div>
+            <div class="row" data-aos="fade-up" data-aos-delay="200">
+                <?php
+                foreach ($data['ViewData']['porHacerPuntos'] as $val) {
+                    echo '
+                    <div class="col-md-6">
+                        <div class="icon-box">
+                            <i class="'.$val['Icono'].'"></i>
+                            <h4><a href="#">'.$val['Titulo'].'</a></h4>
+                            <p>'.norm_text($val['Texto']).'</p>
+                        </div>
+                    </div>';
+                } ?>
+            </div>
+        </div>
+    </section><!-- End Services Section -->
+
+    <!-- ======= About Boxes Section ======= -->
+    <section id="about-boxes" class="about-boxes no-bg">
+        <div class="container" data-aos="fade-up">
+
+            <div class="section-title head-title" >
+                <h2><?php echo $data['ViewData']['CaracteristicasTitulo']; ?></h2>
+            </div>
+
+            <?php
+            //Contador
+            $count = 0;
+            //recorro
+            foreach ($data['ViewData']['CaracteristicasPuntos'] as $val) {
+                if($count%2){
+                    echo '
+                    <div class="row pt-3">
+                        <div class="col-lg-4 video-box align-self-baseline" data-aos="zoom-in" data-aos-delay="100">
+                            <img src="'.$BASE.'/assets/img/view_servicio/'.$val['IMG'].'" class="img-fluid" alt="">
+                        </div>
+                        <div class="col-lg-8 pt-3 content">
+                            <h3>'.$val['Titulo'].'</h3>
+                            <p>'.norm_text($val['Texto']).'</p>
+                        </div>
+                    </div>';
+                }else{
+                    echo '
+                    <div class="row pt-3">
+                        <div class="col-lg-8 pt-3 content">
+                            <h3>'.$val['Titulo'].'</h3>
+                            <p>'.norm_text($val['Texto']).'</p>
+                        </div>
+                        <div class="col-lg-4 video-box align-self-baseline" data-aos="zoom-in" data-aos-delay="100">
+                            <img src="'.$BASE.'/assets/img/view_servicio/'.$val['IMG'].'" class="img-fluid" alt="">
+                        </div>
+                    </div>';
+                }
+                $count++;
+            }
+            ?>
+        </div>
+    </section><!-- End About Boxes Section -->
+
+
+
+
+
+
+
 
 </div>
 <div class="modal-footer">
     <button type="button" class="btn btn-danger" data-bs-dismiss="modal"><i class="bx bi-x-circle"></i> Cerrar</button>
 </div>
+
+<?php
+function norm_text($Text){
+    //Datos buscados
+    $healthy = array('&lt;', '&gt;', '&quot;');
+    $yummy   = array('<', '>', '"');
+    //devolver
+    return str_replace($healthy, $yummy, $Text);
+
+}
+?>

@@ -31,7 +31,7 @@
             <div class="row">
 
                 <div class="col-lg-6 video-box align-self-baseline" data-aos="zoom-in" data-aos-delay="100">
-                    <img src="<?php echo $BASE.'/assets/img/about.jpg'; ?>" class="img-fluid" alt="">
+                    <img src="<?php echo $BASE.'/assets/img/about.jpg'; ?>" class="img-fluid img-radius" alt="">
                     <a href="<?php echo $data['About']['Video']; ?>" class="glightbox play-btn mb-4"></a>
                 </div>
 
@@ -47,6 +47,7 @@
                         }
                         ?>
                     </ul>
+                    <a type="button" class="btn-linkBtn scrollto"  href="#contact">Contacto</a>
                 </div>
 
             </div>
@@ -88,6 +89,7 @@
                             <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0">
                                 <h3>'.$links['Title'].'</h3>
                                 '.norm_text($links['Text']).'
+                                <button type="button" class="btn-linkBtn" onclick="ViewFeature('.$links['ID'].')">Ver mas</button>
                             </div>
                             <div class="col-lg-6 order-1 order-lg-2 text-center">
                                 <img src="'.$BASE.$links['Img'].'" alt="" class="img-fluid">
@@ -258,6 +260,25 @@
 
 </main><!-- End #main -->
 
+<script>
+    /*********************************************************************/
+    /*                        OPCIONES DE LA TABLA                       */
+    /*********************************************************************/
+    /******************************************/
+    function ViewFeature(ID) {
+        //Cargo el loader
+        $('#preloader').show();
+        //Ejecuto
+        let Div       = '#modalContent';
+        let URL       = '<?php echo $BASE.'/feature/view/'; ?>'+ID;
+        const Options = {
+            showModal : '#viewModal',
+            closeObject:'#preloader',
+        };
+        //Se envian los datos al formulario
+        UpdateContentId(Div, URL, Options);
+    }
+</script>
 <?php
 function norm_text($Text){
     //Datos buscados
@@ -267,5 +288,4 @@ function norm_text($Text){
     return str_replace($healthy, $yummy, $Text);
 
 }
-
 ?>
