@@ -1,4 +1,10 @@
+        <div class="modal fade" id="viewModal" tabindex="-1">
+            <div class="modal-dialog modal-xl modal-dialog-scrollable">
+                <div class="modal-content" id="modalContent">
 
+                </div>
+            </div>
+        </div>
         <!-- ======= Footer ======= -->
         <footer id="footer">
             <div class="footer-top">
@@ -86,6 +92,7 @@
 
         <!-- Template Main JS File -->
         <script src="<?php echo $BASE.'/assets/js/main.js'; ?>"></script>
+        <script src="<?php echo $BASE.'/assets/js/functions.js'; ?>"></script>
 
     </body>
 

@@ -32,6 +32,7 @@
 
         <!-- Template Main CSS File -->
         <link rel="stylesheet" type="text/css" href="<?php echo $BASE.'/assets/css/style.css'; ?>">
+        <script src="<?php echo $BASE.'/assets/js/jquery-3.7.1.min.js'; ?>"></script>
 
         <!-- Facebook Meta Tags -->
         <meta property="og:url"         content="<?php echo $data['PageURL']; ?>">
