@@ -2,25 +2,15 @@
 /*******************************************************************************************************************/
 /*                                              Se define la clase                                                 */
 /*******************************************************************************************************************/
-class main extends ControllerBase {
-    /******************************************************************************/
-    //Variables
-    private $DBConn;
-    private $QBuilder;
+class main extends ControllerWeb {
 
     /******************************************************************************/
     //Constructor
     public function __construct(){
         //se instancian los datos
-        $MySQL_conn    = Database::getMySQLConnection(); //Conexion a la base de datos MySQL
-        $queryBuilder  = new QueryBuilder();
         $mailSender    = new MailSender();
-        $checkData     = new CheckData();
-        //instancias para uso interno
-        $this->DBConn    = $MySQL_conn;
-        $this->QBuilder  = $queryBuilder;
         //se entregan datos a la clase padre
-        parent::__construct($MySQL_conn, $queryBuilder, $mailSender, $checkData);
+        parent::__construct($mailSender);
     }
 
     /******************************************************************************/
