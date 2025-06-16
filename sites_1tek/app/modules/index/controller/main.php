@@ -164,8 +164,8 @@ class main extends ControllerWeb {
             'PageTitle'       => '1Tek',
             'PageSlogan'      => 'Digitalización de tu Negocio',
             'PageDescription' => 'Optimiza tu éxito empresarial: digitaliza tus procesos, simplifica tu camino al progreso',
-            'PageAuthor'      => 'asd',
-            'PageKeywords'    => 'asd',
+            'PageAuthor'      => ConfigAPP::SOFTWARE['SoftwareName'],
+            'PageKeywords'    => ConfigAPP::SOFTWARE['SoftwareName'],
             'PageVideoTitle'  => 'Get Started',
             'PageVideoText'   => 'Watch Video',
             'PageVideoURL'    => '',
@@ -327,9 +327,9 @@ class main extends ControllerWeb {
         $f3->data = [
             /*=========== Datos de la Pagina ===========*/
             'PageTitle'       => 'Página de error',
-            'PageDescription' => 'asd',
-            'PageAuthor'      => 'asd',
-            'PageKeywords'    => 'asd',
+            'PageDescription' => 'Página de error',
+            'PageAuthor'      => ConfigAPP::SOFTWARE['SoftwareName'],
+            'PageKeywords'    => ConfigAPP::SOFTWARE['SoftwareName'],
         ];
 
         //Se instancia la vista

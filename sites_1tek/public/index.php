@@ -46,9 +46,9 @@ $f3->route('GET /solicitarReunion', 'main->index'); //Vista - de la pagina
 
 /******************************/
 //Pagina de error
-//$f3->route('GET /error', 'main->error404');
+$f3->route('GET /error', 'main->error404');
 /******************************/
 //Error en caso de no existir ruta
-//$f3->set('ONERROR',function($f3){$f3->reroute('/error');});
+$f3->set('ONERROR',function($f3){$f3->reroute('/error');});
 //Ejecuta
 $f3->run();
