@@ -77,6 +77,7 @@ if ($zip->open($Nombre_zip, ZipArchive::CREATE) === TRUE){
     // Cerrar el archivo
     $zip->close();
 }
+
 /**********************************************************/
 //Se copia el archivo comprimido
 copy($Nombre_zip,$Destino);
