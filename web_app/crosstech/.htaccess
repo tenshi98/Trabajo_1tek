@@ -1,0 +1,60 @@
+#### No permitir el listado de archivos
+Options All -Indexes
+#### Permitir el acceso a otras carpetas desde el sitio
+Options +FollowSymLinks 
+#### Modificacion del comportamiento
+RewriteEngine On 
+#### restringir al archivo /proc/self/environ
+RewriteCond %{QUERY_STRING} proc/self/environ [OR]
+#### bloquear cualquier script que pretenda establecer un valor mosConfig mediante una URL
+RewriteCond %{QUERY_STRING} mosConfig_[a-zA-Z_]{1,21}(=|\%3D) [OR]
+#### Block out any script trying to base64_encode data within the URL.
+RewriteCond %{QUERY_STRING} base64_encode[^(]*\([^)]*\) [OR]
+#### Block out any script that includes a <script> tag in URL.
+RewriteCond %{QUERY_STRING} (<|%3C)([^s]*s)+cript.*(>|%3E) [NC,OR]
+#### Block out any script trying to set a PHP GLOBALS variable via URL.
+RewriteCond %{QUERY_STRING} GLOBALS(=|\[|\%[0-9A-Z]{0,2}) [OR]
+#### Block out any script trying to modify a _REQUEST variable via URL.
+RewriteCond %{QUERY_STRING} _REQUEST(=|\[|\%[0-9A-Z]{0,2})
+#### Return 403 Forbidden header and show the content of the root homepage
+RewriteRule .* index.php [F]
+#### 
+RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+#### has not already been internally rewritten to the index.php script
+RewriteCond %{REQUEST_URI} !^/index\.php
+#### 
+RewriteCond %{REQUEST_URI} /component/|(/[^.]*|\.(php|html?|feed|pdf|vcf|raw))$ [NC]
+####  and the requested path and file doesn't directly match a physical file
+RewriteCond %{REQUEST_FILENAME} !-f
+####  and the requested path and file doesn't directly match a physical folder
+RewriteCond %{REQUEST_FILENAME} !-d
+####  internally rewrite the request to the index.php script
+RewriteRule .* index.php [L]
+####  Set the “ea-php56” package as the default “PHP” programming language.
+<IfModule mime_module>
+####  To switch to PHP 4.4:
+# AddType application/x-httpd-php4 .php .php4 .php3 .phtml
+####  To switch to PHP 5.0:
+# AddType application/x-httpd-php5 .php .php5 .php4 .php3 .phtml
+####  To switch to PHP 5.1:
+# AddType application/x-httpd-php51 .php .php5 .php4 .php3 .phtml
+####  To switch to PHP 5.2:
+# AddType application/x-httpd-php52 .php .php5 .php4 .php3 .phtml
+####  To switch to PHP 5.3:
+# AddType application/x-httpd-php53 .php .php5 .php4 .php3 .phtml
+####  To switch to PHP 5.4:
+# AddType application/x-httpd-php54 .php .php5 .php4 .php3 .phtml
+####  To switch to PHP 5.5:
+# AddType application/x-httpd-php55 .php .php5 .php4 .php3 .phtml
+####  To switch to PHP 5.6:
+AddType application/x-httpd-ea-php56 .php .php5 .phtml
+####  To switch to PHP 7:
+# AddType application/x-httpd-php7 .php
+####  To switch to PHP 7.1:
+# AddType application/x-httpd-php71 .php
+</IfModule>
+#### Proteger el propio htaccess
+<Files .htaccess>
+Order allow,deny
+Deny from all
+</Files>
