@@ -80,16 +80,12 @@ core_sistemas.Contrato_Fecha,
 core_sistemas.Contrato_Duracion,
 core_sistemas.Config_IDGoogle,
 core_theme_colors.Nombre AS Tema,
-bodegas_productos_listado.Nombre AS BodegaProd,
-bodegas_insumos_listado.Nombre AS BodegaIns,
 core_sistemas.Rubro
 
 FROM `core_sistemas`
 LEFT JOIN `core_theme_colors`              ON core_theme_colors.idTheme            = core_sistemas.Config_idTheme
 LEFT JOIN `core_ubicacion_ciudad`          ON core_ubicacion_ciudad.idCiudad       = core_sistemas.idCiudad
 LEFT JOIN `core_ubicacion_comunas`         ON core_ubicacion_comunas.idComuna      = core_sistemas.idComuna
-LEFT JOIN `bodegas_productos_listado`      ON bodegas_productos_listado.idBodega   = core_sistemas.OT_idBodegaProd
-LEFT JOIN `bodegas_insumos_listado`        ON bodegas_insumos_listado.idBodega     = core_sistemas.OT_idBodegaIns
 
 WHERE core_sistemas.idSistema =".$_GET['id'];
 //Consulta
@@ -290,12 +286,6 @@ if($_SESSION['usuario']['basic_data']['idTipoUsuario']==1){
 							<h2 class="text-primary">Configuracion</h2>
 							<p class="text-muted word_break">
 								<strong>Tema : </strong><?php echo $rowData['Tema']; ?><br/>
-							</p>
-
-							<h2 class="text-primary">Bodegas OT</h2>
-							<p class="text-muted word_break">
-								<strong>Bodega Productos : </strong><?php echo $rowData['BodegaProd']; ?><br/>
-								<strong>Bodega Insumos : </strong><?php echo $rowData['BodegaIns']; ?><br/>
 							</p>
 						</div>
 					</div>

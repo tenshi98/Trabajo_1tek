@@ -48,15 +48,13 @@ core_sistemas.Contacto_Fono1,
 core_sistemas.Contacto_Fono2,
 core_sistemas.Contacto_Fax,
 core_sistemas.Contacto_Web,
-core_sistemas.email_principal, 
+core_sistemas.email_principal,
 core_sistemas.Contrato_Nombre,
-core_sistemas.Contrato_Numero, 
-core_sistemas.Contrato_Fecha, 
+core_sistemas.Contrato_Numero,
+core_sistemas.Contrato_Fecha,
 core_sistemas.Contrato_Duracion,
 core_sistemas.Config_IDGoogle,
 core_theme_colors.Nombre AS Tema,
-bodegas_productos_listado.Nombre AS BodegaProd,
-bodegas_insumos_listado.Nombre AS BodegaIns,
 core_sistemas.Rubro,
 socialUso.Nombre AS SocialUso,
 core_sistemas.Social_idUso,
@@ -71,8 +69,6 @@ $SIS_join  = '
 LEFT JOIN `core_theme_colors`                  ON core_theme_colors.idTheme            = core_sistemas.Config_idTheme
 LEFT JOIN `core_ubicacion_ciudad`              ON core_ubicacion_ciudad.idCiudad       = core_sistemas.idCiudad
 LEFT JOIN `core_ubicacion_comunas`             ON core_ubicacion_comunas.idComuna      = core_sistemas.idComuna
-LEFT JOIN `bodegas_productos_listado`          ON bodegas_productos_listado.idBodega   = core_sistemas.OT_idBodegaProd
-LEFT JOIN `bodegas_insumos_listado`            ON bodegas_insumos_listado.idBodega     = core_sistemas.OT_idBodegaIns
 LEFT JOIN `core_sistemas_opciones`  socialUso  ON socialUso.idOpciones                 = core_sistemas.Social_idUso';
 $SIS_where = 'core_sistemas.idSistema = '.$_SESSION['usuario']['basic_data']['idSistema'];
 $rowData = db_select_data (false, $SIS_query, 'core_sistemas',$SIS_join, $SIS_where, $dbConn, $_SESSION['usuario']['basic_data']['Nombre'], $original, 'rowData');
@@ -247,12 +243,6 @@ if($_SESSION['usuario']['basic_data']['idTipoUsuario']==1){
 							<p class="text-muted word_break">
 								<strong>Tema : </strong><?php echo $rowData['Tema']; ?><br/>
 								<strong>ID Google : </strong><?php echo $rowData['Config_IDGoogle']; ?><br/>
-							</p>
-
-							<h2 class="text-primary">Bodegas OT</h2>
-							<p class="text-muted word_break">
-								<strong>Bodega Productos : </strong><?php echo $rowData['BodegaProd']; ?><br/>
-								<strong>Bodega Insumos : </strong><?php echo $rowData['BodegaIns']; ?><br/>
 							</p>
 
 							<h2 class="text-primary">Social</h2>
