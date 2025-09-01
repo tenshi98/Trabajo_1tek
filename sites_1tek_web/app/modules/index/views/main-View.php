@@ -2,7 +2,7 @@
     <h5 class="modal-title"><i class="bi bi-file-earmark"></i> <?php echo $data['ViewData']['ModalTitle']; ?></h5>
     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 </div>
-<div class="modal-body" style="min-height: 400px;">
+<div class="modal-body">
 
     <!-- ======= About Boxes Section ======= -->
     <section id="about-boxes" class="about-boxes no-bg">
