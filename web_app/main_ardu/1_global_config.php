@@ -148,4 +148,14 @@ $Global_inf_semanal_SA_NW_ExcesoVelocidad         = 50;   //Crones - Reporte Sem
 $Global_inf_semanal_SA_NW_FueraLinea              = 19;   //Crones - Reporte Semana - Notificacion Whatsapp - Fuera de Linea
 $Global_inf_semanal_SA_NW_FueraLineaActual        = 61;   //Crones - Reporte Semana - Notificacion Whatsapp - Fuera de Linea Actual
 
+/**************************************************************/
+//  CONFIGURACION DEL ARCHIVO cron_reporte_diario.php
+$Global_reporte_diario_TextFile_User             = "logs_cron_reporte_diario.txt";
+$Global_reporte_diario_NC_MedicionesActuales     = 63;   //Crones - Reporte Dia - Notificacion Correo - Mediciones Actuales
+$Global_reporte_diario_NW_MedicionesActuales     = 64;   //Crones - Reporte Dia - Notificacion Whatsapp - Mediciones Actuales
+
+
+
+
+
 ?>

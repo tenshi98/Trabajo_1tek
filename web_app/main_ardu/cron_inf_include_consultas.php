@@ -131,6 +131,8 @@ $SIS_where.= ' AND telemetria_listado.idEstado = 1';                 //Solo equi
 $SIS_where.= ' AND core_sistemas.idEstado = 1';                      //Solo sistemas activos
 $SIS_where.= ' AND usuarios_listado.idEstado = 1';                   //Solo usuarios activos
 $SIS_where.= ' AND telemetria_mnt_correos_list.idCorreosCat != 62';  //Se deja fuera Crones - Prevision temperatura
+$SIS_where.= ' AND telemetria_mnt_correos_list.idCorreosCat != 63';  //Se deja fuera Crones - Reporte Dia - Notificacion Correo - Mediciones Actuales
+$SIS_where.= ' AND telemetria_mnt_correos_list.idCorreosCat != 64';  //Se deja fuera Crones - Reporte Dia - Notificacion Whatsapp - Mediciones Actuales
 $SIS_where.= ' GROUP BY telemetria_mnt_correos_list.idUsuario,telemetria_listado.idSistema,usuarios_equipos_telemetria.idTelemetria,telemetria_mnt_correos_list.idCorreosCat';
 $SIS_order = 'telemetria_mnt_correos_list.idUsuario ASC,telemetria_listado.idSistema ASC,usuarios_equipos_telemetria.idTelemetria ASC,telemetria_mnt_correos_list.idCorreosCat ASC';
 $arrCorreos = array();
