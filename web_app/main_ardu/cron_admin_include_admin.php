@@ -170,7 +170,11 @@ switch ($TipoEnvio) {
 		//envio notificacion
 		foreach ($arrPhone as $phone) {
 			if(isset($phone)&&$phone!=''){
-				WhatsappSendMessage($WhatsappToken, $WhatsappInstanceId, $phone, $Message_Whatsapp);
+				//Se genera cuerpo
+				$Body['Phone']  = $phone;
+				$Body['Cuerpo'] = $Message_Whatsapp;
+				//Se envia whatsapp
+				WhatsappSendTemplate($WhatsappToken, $WhatsappInstanceId, 3, $Body);
 			}
 		}
 
@@ -335,7 +339,11 @@ switch ($TipoEnvio) {
 		//envio notificacion
 		foreach ($arrPhone as $phone) {
 			if(isset($phone)&&$phone!=''){
-				WhatsappSendMessage($WhatsappToken, $WhatsappInstanceId, $phone, $Message_Whatsapp);
+				//Se genera cuerpo
+				$Body['Phone']  = $phone;
+				$Body['Cuerpo'] = $Message_Whatsapp;
+				//Se envia whatsapp
+				WhatsappSendTemplate($WhatsappToken, $WhatsappInstanceId, 3, $Body);
 			}
 		}
 
@@ -359,7 +367,11 @@ switch ($TipoEnvio) {
 		//envio notificacion
 		foreach ($arrPhone as $phone) {
 			if(isset($phone)&&$phone!=''){
-				WhatsappSendMessage($WhatsappToken, $WhatsappInstanceId, $phone, $Message_Whatsapp);
+				//Se genera cuerpo
+				$Body['Phone']  = $phone;
+				$Body['Cuerpo'] = $Message_Whatsapp;
+				//Se envia whatsapp
+				WhatsappSendTemplate($WhatsappToken, $WhatsappInstanceId, 3, $Body);
 			}
 		}
 
@@ -446,8 +458,11 @@ switch ($TipoEnvio) {
 		/*****************************************************************************/
 		//envio notificacion
 		foreach ($arrPhone as $phone) {
-			if(isset($phone)&&$phone!=''){
-				WhatsappSendMessage($WhatsappToken, $WhatsappInstanceId, $phone, $Message_Whatsapp);
+			if(isset($phone)&&$phone!=''){//Se genera cuerpo
+				$Body['Phone']  = $phone;
+				$Body['Cuerpo'] = $Message_Whatsapp;
+				//Se envia whatsapp
+				WhatsappSendTemplate($WhatsappToken, $WhatsappInstanceId, 3, $Body);
 			}
 		}
 

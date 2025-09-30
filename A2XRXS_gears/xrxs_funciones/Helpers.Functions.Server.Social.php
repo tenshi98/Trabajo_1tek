@@ -104,14 +104,14 @@ function WhatsappSendMessage($Token, $InstanceId, $Phone, $Body){
 }
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 /***********************************************************************
-* Envio de mensajes a un grupo whatsapp (No funciona)
+* Envio de mensajes whatsapp
 *
 *===========================     Detalles    ===========================
-* Permite el envio de mensajes a grupos de whatsapp a traves de chat-api
+* Permite el envio de mensajes whatsapp a traves de chat-api
 *===========================    Modo de uso  ===========================
 *
 * 	//se obtiene dato
-* 	WhatsappGroupSendMessage('asdertcvbtrtr', '356644', 'groupTest', 'test');
+* 	WhatsappSendTemplate('asdertcvbtrtr', '356644', 1, 'test');
 *
 *===========================    Parametros   ===========================
 * String   $Token        Token de la plataforma
@@ -121,40 +121,256 @@ function WhatsappSendMessage($Token, $InstanceId, $Phone, $Body){
 * @return  String
 ************************************************************************/
 //Funcion
-function WhatsappGroupSendMessage($Token, $InstanceId, $Group, $Body){
+function WhatsappSendTemplate($Token, $InstanceId, $Type, $Body){
+
+	/**********************/
+	//Validaciones
+	if(!isset($Token) OR $Token==''){           return false;}
+	if(!isset($InstanceId) OR $InstanceId==''){ return false;}
+	if(!isset($Type) OR $Type==''){             return false;}
+	if(!is_array($Body) OR empty($Body)){       return false;}
+
+	/**********************/
+	//Se limpian los datos
+	$myPhone = clearWhatsappNumber($Body['Phone']);
 
 	/**************************************/
-	//verifico la existencia de datos
-	if(isset($Group, $InstanceId, $Token)&&$Group!=''&&$InstanceId!=''&&$Token!=''){
-		$data = [
-			'chatId' => $Group, // Receivers phone
-			'body' => $Body, // Message
-		];
-		$json = json_encode($data); // Encode data to JSON
-		// URL for request POST /message
+	//Se arma el mensaje
+	switch ($Type) {
+		/*********************************************************/
+		//Recuperacion contraseña
+		case 1:
+			$data = [
+				"token"     => $Token,
+				"namespace" => "512f752c_ac4f_45a8_b5b5_2adcfe3ed73a",
+				"template"  => "1tek_pass",
+				"language" => [
+					"policy" => "deterministic",
+					"code"   => "es"
+				],
+				"params" => [
+					[
+						"type" => "body",
+						"parameters" => [
+							["type" => "text", "text" => clearWhatsappText($Body['Usuario'])],
+							["type" => "text", "text" => $Body['Password']],
+						]
+					]
+				],
+				"phone" => $myPhone
+			];
+			break;
+		/*********************************************************/
+		//Alertas ardu
+		case 2:
+			$data = [
+				"token"     => $Token,
+				"namespace" => "512f752c_ac4f_45a8_b5b5_2adcfe3ed73a",
+				"template"  => "1tek_alertas_ardu_1",
+				"language" => [
+					"policy" => "deterministic",
+					"code"   => "es"
+				],
+				"params" => [
+					[
+						"type" => "body",
+						"parameters" => [
+							["type" => "text", "text" => clearWhatsappText($Body['Titulo'])],
+							["type" => "text", "text" => clearWhatsappText($Body['Cuerpo'])],
+						]
+					]
+				],
+				"phone" => $myPhone
+			];
+			break;
+		/*********************************************************/
+		//Alertas Admin
+		case 3:
+			$data = [
+				"token"     => $Token,
+				"namespace" => "512f752c_ac4f_45a8_b5b5_2adcfe3ed73a",
+				"template"  => "1tek_noti_admin",
+				"language" => [
+					"policy" => "deterministic",
+					"code"   => "es"
+				],
+				"params" => [
+					[
+						"type" => "body",
+						"parameters" => [
+							["type" => "text", "text" => clearWhatsappText($Body['Cuerpo'])],
+						]
+					]
+				],
+				"phone" => $myPhone
+			];
+			break;
+		/*********************************************************/
+		//Alertas Usuario
+		case 4:
+			$data = [
+				"token"     => $Token,
+				"namespace" => "512f752c_ac4f_45a8_b5b5_2adcfe3ed73a",
+				"template"  => "1tek_noti_usuario",
+				"language" => [
+					"policy" => "deterministic",
+					"code"   => "es"
+				],
+				"params" => [
+					[
+						"type" => "body",
+						"parameters" => [
+							["type" => "text", "text" => clearWhatsappText($Body['Cuerpo'])],
+						]
+					]
+				],
+				"phone" => $myPhone
+			];
+			break;
+		/*********************************************************/
+		//Cron Proyecciones
+		case 5:
+			$data = [
+				"token"     => $Token,
+				"namespace" => "512f752c_ac4f_45a8_b5b5_2adcfe3ed73a",
+				"template"  => "1tek_noti_proyecciones",
+				"language" => [
+					"policy" => "deterministic",
+					"code"   => "es"
+				],
+				"params" => [
+					[
+						"type" => "body",
+						"parameters" => [
+							["type" => "text", "text" => clearWhatsappText($Body['Cuerpo'])],
+						]
+					]
+				],
+				"phone" => $myPhone
+			];
+			break;
+		/*********************************************************/
+		//Cron reporte diario
+		case 6:
+			$data = [
+				"token"     => $Token,
+				"namespace" => "512f752c_ac4f_45a8_b5b5_2adcfe3ed73a",
+				"template"  => "1tek_noti_reportes",
+				"language" => [
+					"policy" => "deterministic",
+					"code"   => "es"
+				],
+				"params" => [
+					[
+						"type" => "body",
+						"parameters" => [
+							["type" => "text", "text" => clearWhatsappText($Body['Titulo'])],
+							["type" => "text", "text" => clearWhatsappText($Body['Cuerpo'])],
+						]
+					]
+				],
+				"phone" => $myPhone
+			];
+			break;
+		/*********************************************************/
+		//Alertas Admin
+		case 999:
+			$data = [
+				"token"     => $Token,
+				"namespace" => "512f752c_ac4f_45a8_b5b5_2adcfe3ed73a",
+				"template"  => "alerta_iot",
+				"language" => [
+					"policy" => "deterministic",
+					"code"   => "es"
+				],
+				"params" => [
+					[
+						"type" => "body",
+						"parameters" => [
+							["type" => "text", "text" => clearWhatsappText($Body['Titulo'])],
+							["type" => "text", "text" => clearWhatsappText($Body['Cuerpo'])],
+							["type" => "text", "text" => "asd2"],
+							["type" => "text", "text" => "asd3"],
+							["type" => "text", "text" => "asd4"],
+							["type" => "text", "text" => "asd5"]
+						]
+					]
+				],
+				"phone" => $myPhone
+			];
+			break;
 
-		$url = 'https://api.chat-api.com/instance'.$InstanceId.'/sendMessage?token='.$Token;
-		// Make a POST request
-		$options = stream_context_create(['http' => [
-				'method'  => 'POST',
-				'header'  => 'Content-type: application/json',
-				'content' => $json
-			]
-		]);
-		// Send a request
-		$result = file_get_contents($url, false, $options);
-
-		//return $result;
-	//guardo el log
-	}else{
-		error_log("===============================================", 0);
-		error_log("Group:".$Group, 0);
-		error_log("InstanceId:".$InstanceId, 0);
-		error_log("Token:".$Token, 0);
-		error_log("===============================================", 0);
 	}
+	//Se transforman a un array json
+	$data_string = json_encode($data);
+
+	/**************************************/
+	//Se hace el envio
+	$url = 'https://api.1msg.io/'.$InstanceId.'/sendTemplate';
+	$ch = curl_init($url);
+	curl_setopt($ch, CURLOPT_POSTFIELDS, $data_string);
+	curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type:application/json'));
+	curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+	$result = curl_exec($ch);
+	curl_close($ch);
+	return $result;
 
 }
+function clearWhatsappNumber($Phone){
+
+	/**************************************/
+	//verifico si numero comienza con +56 o con 56
+	$myNumber = $Phone;
+	$findme_1 = '+';
+	$findme_2 = '+56';
+	$findme_3 = '56';
+
+	$pos_1 = strpos($myNumber, $findme_1);
+	$pos_2 = strpos($myNumber, $findme_2);
+	$pos_3 = strpos($myNumber, $findme_3);
+
+	//si comienza con el +
+	if ($pos_1 !== false && $pos_1==0) {
+		//comienza con el +56
+		if ($pos_2 !== false && $pos_2==0) {
+			$myPhone = $Phone;
+		//no comienza con el +56, es otro numero
+		} else {
+			$myPhone = '';
+		}
+	//no comienza por el +
+	} else {
+		//comienza con el 56
+		if ($pos_3 !== false && $pos_3==0) {
+			$myPhone = '+'.$Phone;
+		//no comienza con el 56, es otro numero
+		} else {
+			$myPhone = '+56'.$Phone;
+		}
+	}
+
+	/**************************************/
+	return $myPhone;
+}
+function clearWhatsappText($Texto){
+
+	/**************************************/
+	//Normalizo el mensaje
+	$saltoLinea = '
+';
+
+	$vowels_1 = array('<br/>', '<br>', '</br>');
+	$vowels_2 = array('<strong>', '</strong>');
+	$Texto     = str_replace($vowels_1, $saltoLinea, $Texto);
+	$Texto     = str_replace($vowels_2, '*', $Texto);
+
+	/**************************************/
+	return $Texto;
+}
+
+
+
+
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 /***********************************************************************
 * Obtiene el contenido de un archivo

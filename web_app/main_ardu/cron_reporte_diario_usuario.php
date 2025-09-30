@@ -132,18 +132,16 @@ foreach($arrCorreos as $usuarios=>$correos){
 	/*                                       ENVIO DE WHATSAPP                                  */
 	/********************************************************************************************/
 	//Verifico existencias
-	if(isset($SistemaWhatsappToken, $SistemaWhatsappInstance, $usuarioFono)&&$SistemaWhatsappToken!=''&&$SistemaWhatsappInstance!=''&&$usuarioFono!=''&&$CountNotiNW!=0){
+	if(isset($SistemaWhatsappToken, $SistemaWhatsappInstance, $usuarioFono, $MSG_NW)&&$SistemaWhatsappToken!=''&&$SistemaWhatsappInstance!=''&&$usuarioFono!=''&&$CountNotiNW!=0&&$MSG_NW!=''){
 		/*******************************************************************/
-		//Se le da una interfaz al mensaje
-		$MSG_Whatsapp = 'Resumen Estado Equipos<br/>' ; //Se vacia el mensaje de whatsapp
-		/**************************************/
-		if($MSG_NW!=''){
-			$MSG_Whatsapp .= $MSG_NW;
-		}
 		//se intenta enviar la notificacion
 		try {
+			//Definicion del cuerpo
+			$Body['Phone']  = $usuarioFono;
+			$Body['Titulo'] = 'Resumen Estado Equipos<br/>';
+			$Body['Cuerpo'] = $MSG_NW;
 			//envio notificacion
-			WhatsappSendMessage($SistemaWhatsappToken, $SistemaWhatsappInstance, $usuarioFono, $MSG_Whatsapp);
+			WhatsappSendTemplate($WhatsappToken, $WhatsappInstanceId, 6, $Body);
 			//guardo el registro de los mensajes enviados
 			$dir .= "	- NW/".$SistemaNombre.": ".$usuarioCorreo." / (Envio Correcto->".$usuarioFono.")\n";
 			//contador del envio correcto

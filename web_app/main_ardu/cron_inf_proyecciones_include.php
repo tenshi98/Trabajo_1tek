@@ -112,8 +112,11 @@ foreach ($arrPrevs as $key => $value) {
 						/*******************************************/
 						//se intenta enviar la notificacion
 						try {
+							//Se arma cuerpo del mensaje
+							$Body['Phone']  = $usuarioFono;
+							$Body['Cuerpo'] = $MSG_Whatsapp;
 							//envio notificacion
-							WhatsappSendMessage($SistemaWhatsappToken, $SistemaWhatsappInstance, $usuarioFono, $MSG_Whatsapp);
+							WhatsappSendTemplate($SistemaWhatsappToken, $SistemaWhatsappInstance, 5, $Body);
 							//guardo el registro de los mensajes enviados
 							$MSGDir .= "	- NW/".$SistemaNombre.": ".$usuarioCorreo." / (Envio Correcto->".$usuarioFono.")\n";
 							//envio correcto

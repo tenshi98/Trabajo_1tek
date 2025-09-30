@@ -158,13 +158,12 @@ if($rowData['idAlertaTemprana']==1){
 							$usuarioFono         = $correo['UsuarioFono'];
 
 							//Definicion del cuerpo
-
-							$msgBody = "⚠️ Alerta estándar ".DeSanitizar($rowData['Nombre'])." :".$saltoLinea;
-							//detalle de alertas
-							$msgBody .= $Alertas_perso;
+							$Body['Phone']  = $usuarioFono;
+							$Body['Titulo'] = "⚠️ Alerta estándar ".DeSanitizar($rowData['Nombre'])." :".$saltoLinea;
+							$Body['Cuerpo'] = $Alertas_perso;
 
 							//envio notificacion
-							WhatsappSendMessage($WhatsappToken, $WhatsappInstanceId, $usuarioFono, $msgBody);
+							WhatsappSendTemplate($WhatsappToken, $WhatsappInstanceId, 2, $Body);
 							//Se guarda el log
 							$LogAlertas .= "	- Alerta temprana - Notificacion Whatsapp - Alertas Normales: ".$correo['UsuarioEmail']." / (Envio Correcto)\n";
 							//Se guardan registro del envio del correo
@@ -185,13 +184,12 @@ if($rowData['idAlertaTemprana']==1){
 							$usuarioFono         = $correo['UsuarioFono'];
 
 							//Definicion del cuerpo
-
-							$msgBody = "⚠️ Alerta temprana - Fuera de Geocerca ".DeSanitizar($rowData['Nombre'])." :".$saltoLinea;
-							//detalle de alertas
-							$msgBody .= $FueraGeoCerca;
+							$Body['Phone']  = $usuarioFono;
+							$Body['Titulo'] = "⚠️ Alerta temprana - Fuera de Geocerca ".DeSanitizar($rowData['Nombre'])." :".$saltoLinea;
+							$Body['Cuerpo'] = $FueraGeoCerca;
 
 							//envio notificacion
-							WhatsappSendMessage($WhatsappToken, $WhatsappInstanceId, $usuarioFono, $msgBody);
+							WhatsappSendTemplate($WhatsappToken, $WhatsappInstanceId, 2, $Body);
 							//Se guarda el log
 							$LogAlertas .= "	- Alerta temprana - Notificacion Whatsapp - Alertas Normales: ".$correo['UsuarioEmail']." / (Envio Correcto)\n";
 							//Se guardan registro del envio del correo
@@ -208,15 +206,15 @@ if($rowData['idAlertaTemprana']==1){
 							//Variables
 							$WhatsappToken       = $correo['SistemaWhatsappToken'];
 							$WhatsappInstanceId  = $correo['SistemaWhatsappInstanceId'];
-							$WhatsappChat_id     = $correo['SistemaWhatsappChat_id'];
+							$usuarioFono         = $correo['UsuarioFono'];
 
 							//Definicion del cuerpo
-							$msgBody = "⚠️ Alerta temprana - Velocidad ".DeSanitizar($rowData['Nombre'])." :".$saltoLinea;
-							//detalle de alertas
-							$msgBody .= $Velocidad;
+							$Body['Phone']  = $usuarioFono;
+							$Body['Titulo'] = "⚠️ Alerta temprana - Velocidad ".DeSanitizar($rowData['Nombre'])." :".$saltoLinea;
+							$Body['Cuerpo'] = $FueraGeoCerca;
 
 							//envio notificacion
-							WhatsappGroupSendMessage($WhatsappToken, $WhatsappInstanceId, $WhatsappChat_id, $msgBody);
+							WhatsappSendTemplate($WhatsappToken, $WhatsappInstanceId, 2, $Body);
 							//Se guarda el log
 							$LogAlertas .= "	- Alerta temprana - Notificacion Grupo Whatsapp - Alertas Normales: ".$correo['UsuarioEmail']." / (Envio Correcto)\n";
 							//Se guardan registro del envio del correo
@@ -236,13 +234,12 @@ if($rowData['idAlertaTemprana']==1){
 							$usuarioFono         = $correo['UsuarioFono'];
 
 							//Definicion del cuerpo
-
-							$msgBody = "⚠️ Alerta temprana - Fuera de Linea ".DeSanitizar($rowData['Nombre'])." :".$saltoLinea;
-							//detalle de alertas
-							$msgBody .= $FueraLinea;
+							$Body['Phone']  = $usuarioFono;
+							$Body['Titulo'] = "⚠️ Alerta temprana - Fuera de Linea ".DeSanitizar($rowData['Nombre'])." :".$saltoLinea;
+							$Body['Cuerpo'] = $FueraLinea;
 
 							//envio notificacion
-							WhatsappSendMessage($WhatsappToken, $WhatsappInstanceId, $usuarioFono, $msgBody);
+							WhatsappSendTemplate($WhatsappToken, $WhatsappInstanceId, 2, $Body);
 							//Se guarda el log
 							$LogAlertas .= "	- Alerta temprana - Notificacion Whatsapp - Alertas Normales: ".$correo['UsuarioEmail']." / (Envio Correcto)\n";
 							//Se guardan registro del envio del correo

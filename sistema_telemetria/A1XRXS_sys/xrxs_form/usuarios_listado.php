@@ -1486,11 +1486,14 @@ require_once '0_validate_user_1.php';
 					/*******************************************************/
 					//Envio de whatsapp
 					if(isset($rowUsr['Fono'])&&$rowUsr['Fono']!=''){
-
+						//Se arma
+						$Body['Phone']      = $rowUsr['Fono'];
+						$Body['Usuario']    = $rowUsr['usuario'];
+						$Body['Password']   = $clave;
 						//se intenta enviar la notificacion
 						try {
 							//envio notificacion
-							WhatsappSendMessage($rowSistema['SistemaWhatsappToken'], $rowSistema['SistemaWhatsappInstanceId'], $rowUsr['Fono'], $Body);
+							WhatsappSendTemplate($rowSistema['SistemaWhatsappToken'], $rowSistema['SistemaWhatsappInstanceId'], 1, $Body);
 							//se guarda el log
 							log_response(1, 'Envio Correcto->'.$rowUsr['Fono'], $Body);
 							//se entrega noti

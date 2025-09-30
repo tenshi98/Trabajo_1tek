@@ -50,18 +50,17 @@ foreach ($arrCorreos as $correo) {
 						$usuarioFono         = $correo['UsuarioFono'];
 
 						//Definicion del cuerpo
-						$msgBody = "🚨 Alerta Critica ".DeSanitizar($rowData['Nombre']).":".$saltoLinea;
-						$msgBody.= $Alertas_criticas;
+						$Body['Phone']  = $usuarioFono;
+						$Body['Titulo'] = "🚨 Alerta Critica ".DeSanitizar($rowData['Nombre']).":".$saltoLinea;
+						$Body['Cuerpo'] = $Alertas_criticas;
 
-						//verificacion que el cuerpo tiene datos
-						if($msgBody!=''&&$msgBody!='🚨 Alerta Critica '.DeSanitizar($rowData['Nombre']).' :'.$saltoLinea){
-							//envio notificacion
-							WhatsappSendMessage($WhatsappToken, $WhatsappInstanceId, $usuarioFono, $msgBody);
-							//Se guarda el log
-							$LogAlertas .= "	- Alerta temprana - Notificacion Whatsapp - Alertas Catastroficas: ".$correo['UsuarioEmail']." / (Envio Correcto)\n";
-							//Se guardan registro del envio del correo
-							insertSendCorreo($idSistema, $correo['idUsuario'], $correo['idCorreosCat'], $FechaSistema, $HoraSistema, $idTelemetria, $dbConn );
-						}
+						//envio notificacion
+						WhatsappSendTemplate($WhatsappToken, $WhatsappInstanceId, 2, $Body);
+						//Se guarda el log
+						$LogAlertas .= "	- Alerta temprana - Notificacion Whatsapp - Alertas Catastroficas: ".$correo['UsuarioEmail']." / (Envio Correcto)\n";
+						//Se guardan registro del envio del correo
+						insertSendCorreo($idSistema, $correo['idUsuario'], $correo['idCorreosCat'], $FechaSistema, $HoraSistema, $idTelemetria, $dbConn );
+
 					}
 				}
 			break;

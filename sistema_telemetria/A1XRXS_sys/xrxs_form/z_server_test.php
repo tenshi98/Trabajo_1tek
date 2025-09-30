@@ -220,29 +220,19 @@ require_once '0_validate_user_1.php';
 /*******************************************************************************************************************/
 		case 'send_whatsapp':
 
-			//Se elimina la restriccion del sql 5.7
-			mysqli_query($dbConn, "SET SESSION sql_mode = ''");
-
-			//Si no hay errores ejecuto el codigo
-			if(empty($error)){
-
-				//envio mensaje
-				if(isset($fono)&&$fono!=''){
-					$resultado =  WhatsappSendMessage($Token, $InstanceId, $fono, $mensaje);
-
-					echo '<pre>';
-						var_dump($resultado);
-					echo '</pre>';
-				}elseif(isset($grupo)&&$grupo!=''){
-					$resultado =  WhatsappGroupSendMessage($Token, $InstanceId, $grupo, $mensaje);
-
-					echo '<pre>';
-						var_dump($resultado);
-					echo '</pre>';
-				}else{
-					echo '<pre>nada</pre>';
-				}
-
+			//envio mensaje
+			if(isset($fono)&&$fono!=''){
+				//Se arma
+				$Body['Phone']   = $fono;
+				$Body['Cuerpo']  = $mensaje;
+				//se envia
+				$resultado =  WhatsappSendTemplate($Token, $InstanceId, 3, $Body);
+				//imprimo respuesta
+				echo '<pre>';
+					var_dump($resultado);
+				echo '</pre>';
+			}else{
+				echo '<pre>nada</pre>';
 			}
 
 		break;

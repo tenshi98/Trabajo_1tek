@@ -412,8 +412,11 @@ foreach($arrCorreos as $usuarios=>$correos){
 
 			//se intenta enviar la notificacion
 			try {
+				//Se arna cuerpo
+				$Body['Phone']  = $usuarioFono;
+				$Body['Cuerpo'] = $MSG_Whatsapp;
 				//envio notificacion
-				WhatsappSendMessage($SistemaWhatsappToken, $SistemaWhatsappInstance, $usuarioFono, $MSG_Whatsapp);
+				WhatsappSendTemplate($SistemaWhatsappToken, $SistemaWhatsappInstance, 4, $Body);
 				//guardo el registro de los mensajes enviados
 				$dir .= "	- NW/".$SistemaNombre.": ".$usuarioCorreo." / (Envio Correcto->".$usuarioFono.")\n";
 				//contador del envio correcto
