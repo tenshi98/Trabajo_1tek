@@ -28,9 +28,9 @@ foreach ($arrCorreos as $correo) {
 
 					//Envio del mensaje
 					if ($rmail!=1) {
-						$LogAlertas .= "	- Alerta Catastrofica: ".$correo['UsuarioEmail']." / (Envio Fallido->".$rmail.")\n";
+						$LogAlertas .= "- Alerta Catastrofica: ".$correo['UsuarioEmail']." / (Envio Fallido->".$rmail.")\n";
 					} else {
-						$LogAlertas .= "	- Alerta Catastrofica: ".$correo['UsuarioEmail']." / (Envio Correcto)\n";
+						$LogAlertas .= "- Alerta Catastrofica: ".$correo['UsuarioEmail']." / (Envio Correcto)\n";
 						/***************************************/
 						//Se guardan registro del envio del correo
 						insertSendCorreo($idSistema, $correo['idUsuario'], $correo['idCorreosCat'], $FechaSistema, $HoraSistema, $idTelemetria, $dbConn );
@@ -51,16 +51,23 @@ foreach ($arrCorreos as $correo) {
 
 						//Definicion del cuerpo
 						$Body['Phone']  = $usuarioFono;
-						$Body['Titulo'] = "🚨 Alerta Critica ".DeSanitizar($rowData['Nombre']).":".$saltoLinea;
-						$Body['Cuerpo'] = $Alertas_criticas;
+						$Body['Cuerpo'] = "🚨 Alerta Critica ".DeSanitizar($rowData['Nombre']).":<br>";
+						$Body['Cuerpo'].= $Alertas_criticas;
 
 						//envio notificacion
-						WhatsappSendTemplate($WhatsappToken, $WhatsappInstanceId, 2, $Body);
-						//Se guarda el log
-						$LogAlertas .= "	- Alerta temprana - Notificacion Whatsapp - Alertas Catastroficas: ".$correo['UsuarioEmail']." / (Envio Correcto)\n";
-						//Se guardan registro del envio del correo
-						insertSendCorreo($idSistema, $correo['idUsuario'], $correo['idCorreosCat'], $FechaSistema, $HoraSistema, $idTelemetria, $dbConn );
-
+						$whatsappResult = WhatsappSendTemplate($WhatsappToken, $WhatsappInstanceId, 1, $Body);
+						//transformo a objeto
+						$whatsappRes = json_decode($whatsappResult);
+						//Si es el resultado esperado
+						if($whatsappRes->sent === true){
+							//Se guarda el log
+							$LogAlertas .= "- Alerta temprana - Notificacion Whatsapp - Alertas Catastroficas: ".$usuarioFono." (".$correo['UsuarioEmail'].") / (Envio Correcto)\n";
+							//Se guardan registro del envio del correo
+							insertSendCorreo($idSistema, $correo['idUsuario'], $correo['idCorreosCat'], $FechaSistema, $HoraSistema, $idTelemetria, $dbConn );
+						}else{
+							//Se guarda el log
+							$LogAlertas .= "- Alerta temprana - Notificacion Whatsapp - Alertas Catastroficas: ".$usuarioFono." (".$correo['UsuarioEmail'].") / (Envio Fallido->".$whatsappResult.")\n";
+						}
 					}
 				}
 			break;

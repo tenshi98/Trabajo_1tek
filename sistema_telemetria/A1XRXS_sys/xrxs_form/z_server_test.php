@@ -225,12 +225,22 @@ require_once '0_validate_user_1.php';
 				//Se arma
 				$Body['Phone']   = $fono;
 				$Body['Cuerpo']  = $mensaje;
-				//se envia
-				$resultado =  WhatsappSendTemplate($Token, $InstanceId, 3, $Body);
-				//imprimo respuesta
-				echo '<pre>';
-					var_dump($resultado);
-				echo '</pre>';
+				//envio notificacion
+				$whatsappResult = WhatsappSendTemplate($Token, $InstanceId, 1, $Body);
+				//transformo a objeto
+				$whatsappRes = json_decode($whatsappResult);
+				//Si es el resultado esperado
+				if($whatsappRes->sent === true){
+					//imprimo respuesta
+					echo '<pre>';
+						var_dump($whatsappRes);
+					echo '</pre>';
+				}else{
+					//imprimo respuesta
+					echo '<pre>';
+						var_dump($whatsappRes);
+					echo '</pre>';
+				}
 			}else{
 				echo '<pre>nada</pre>';
 			}

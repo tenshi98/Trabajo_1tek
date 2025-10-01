@@ -55,9 +55,9 @@ if($rowData['idAlertaTemprana']==1){
 
 						//Envio del mensaje
 						if ($rmail!=1) {
-							$LogAlertas .= "	- Alerta temprana - Alertas Normales: ".$correo['UsuarioEmail']." / (Envio Fallido->".$rmail.")\n";
+							$LogAlertas .= "- Alerta temprana - Alertas Normales: ".$correo['UsuarioEmail']." / (Envio Fallido->".$rmail.")\n";
 						} else {
-							$LogAlertas .= "	- Alerta temprana - Alertas Normales: ".$correo['UsuarioEmail']." / (Envio Correcto)\n";
+							$LogAlertas .= "- Alerta temprana - Alertas Normales: ".$correo['UsuarioEmail']." / (Envio Correcto)\n";
 							/***************************************/
 							//Se guardan registro del envio del correo
 							insertSendCorreo($idSistema, $correo['idUsuario'], $correo['idCorreosCat'], $FechaSistema, $HoraSistema, $idTelemetria, $dbConn );
@@ -82,9 +82,9 @@ if($rowData['idAlertaTemprana']==1){
 
 						//Envio del mensaje
 						if ($rmail!=1) {
-							$LogAlertas .= "	- Alerta temprana - Equipo Fuera de Geocerca: ".$correo['UsuarioEmail']." / (Envio Fallido->".$rmail.")\n";
+							$LogAlertas .= "- Alerta temprana - Equipo Fuera de Geocerca: ".$correo['UsuarioEmail']." / (Envio Fallido->".$rmail.")\n";
 						} else {
-							$LogAlertas .= "	- Alerta temprana - Equipo Fuera de Geocerca: ".$correo['UsuarioEmail']." / (Envio Correcto)\n";
+							$LogAlertas .= "- Alerta temprana - Equipo Fuera de Geocerca: ".$correo['UsuarioEmail']." / (Envio Correcto)\n";
 							/***************************************/
 							//Se guardan registro del envio del correo
 							insertSendCorreo($idSistema, $correo['idUsuario'], $correo['idCorreosCat'], $FechaSistema, $HoraSistema, $idTelemetria, $dbConn );
@@ -109,9 +109,9 @@ if($rowData['idAlertaTemprana']==1){
 
 						//Envio del mensaje
 						if ($rmail!=1) {
-							$LogAlertas .= "	- Alerta temprana - Velocidad: ".$correo['UsuarioEmail']." / (Envio Fallido->".$rmail.")\n";
+							$LogAlertas .= "- Alerta temprana - Velocidad: ".$correo['UsuarioEmail']." / (Envio Fallido->".$rmail.")\n";
 						} else {
-							$LogAlertas .= "	- Alerta temprana - Velocidad: ".$correo['UsuarioEmail']." / (Envio Correcto)\n";
+							$LogAlertas .= "- Alerta temprana - Velocidad: ".$correo['UsuarioEmail']." / (Envio Correcto)\n";
 							/***************************************/
 							//Se guardan registro del envio del correo
 							insertSendCorreo($idSistema, $correo['idUsuario'], $correo['idCorreosCat'], $FechaSistema, $HoraSistema, $idTelemetria, $dbConn );
@@ -136,9 +136,9 @@ if($rowData['idAlertaTemprana']==1){
 
 						//Envio del mensaje
 						if ($rmail!=1) {
-							$LogAlertas .= "	- Alerta temprana - Fuera de Linea: ".$correo['UsuarioEmail']." / (Envio Fallido->".$rmail.")\n";
+							$LogAlertas .= "- Alerta temprana - Fuera de Linea: ".$correo['UsuarioEmail']." / (Envio Fallido->".$rmail.")\n";
 						} else {
-							$LogAlertas .= "	- Alerta temprana - Fuera de Linea: ".$correo['UsuarioEmail']." / (Envio Correcto)\n";
+							$LogAlertas .= "- Alerta temprana - Fuera de Linea: ".$correo['UsuarioEmail']." / (Envio Correcto)\n";
 							/***************************************/
 							//Se guardan registro del envio del correo
 							insertSendCorreo($idSistema, $correo['idUsuario'], $correo['idCorreosCat'], $FechaSistema, $HoraSistema, $idTelemetria, $dbConn );
@@ -159,16 +159,23 @@ if($rowData['idAlertaTemprana']==1){
 
 							//Definicion del cuerpo
 							$Body['Phone']  = $usuarioFono;
-							$Body['Titulo'] = "⚠️ Alerta estándar ".DeSanitizar($rowData['Nombre'])." :".$saltoLinea;
-							$Body['Cuerpo'] = $Alertas_perso;
+							$Body['Cuerpo'] = "⚠️ Alerta estándar ".DeSanitizar($rowData['Nombre']).":<br>";
+							$Body['Cuerpo'].= $Alertas_perso;
 
 							//envio notificacion
-							WhatsappSendTemplate($WhatsappToken, $WhatsappInstanceId, 2, $Body);
-							//Se guarda el log
-							$LogAlertas .= "	- Alerta temprana - Notificacion Whatsapp - Alertas Normales: ".$correo['UsuarioEmail']." / (Envio Correcto)\n";
-							//Se guardan registro del envio del correo
-							insertSendCorreo($idSistema, $correo['idUsuario'], $correo['idCorreosCat'], $FechaSistema, $HoraSistema, $idTelemetria, $dbConn );
-
+							$whatsappResult = WhatsappSendTemplate($WhatsappToken, $WhatsappInstanceId, 1, $Body);
+							//transformo a objeto
+							$whatsappRes = json_decode($whatsappResult);
+							//Si es el resultado esperado
+							if($whatsappRes->sent === true){
+								//Se guarda el log
+								$LogAlertas .= "- Alerta temprana - Notificacion Whatsapp - Alertas Normales: ".$usuarioFono." (".$correo['UsuarioEmail'].") / (Envio Correcto)\n";
+								//Se guardan registro del envio del correo
+								insertSendCorreo($idSistema, $correo['idUsuario'], $correo['idCorreosCat'], $FechaSistema, $HoraSistema, $idTelemetria, $dbConn );
+							}else{
+								//Se guarda el log
+								$LogAlertas .= "- Alerta temprana - Notificacion Whatsapp - Alertas Normales: ".$usuarioFono." (".$correo['UsuarioEmail'].") / (Envio Fallido->".$whatsappResult.")\n";
+							}
 						}
 					}
 				break;
@@ -185,15 +192,23 @@ if($rowData['idAlertaTemprana']==1){
 
 							//Definicion del cuerpo
 							$Body['Phone']  = $usuarioFono;
-							$Body['Titulo'] = "⚠️ Alerta temprana - Fuera de Geocerca ".DeSanitizar($rowData['Nombre'])." :".$saltoLinea;
-							$Body['Cuerpo'] = $FueraGeoCerca;
+							$Body['Cuerpo'] = "⚠️ Alerta temprana - Fuera de Geocerca ".DeSanitizar($rowData['Nombre']).":<br>";
+							$Body['Cuerpo'].= $FueraGeoCerca;
 
 							//envio notificacion
-							WhatsappSendTemplate($WhatsappToken, $WhatsappInstanceId, 2, $Body);
-							//Se guarda el log
-							$LogAlertas .= "	- Alerta temprana - Notificacion Whatsapp - Alertas Normales: ".$correo['UsuarioEmail']." / (Envio Correcto)\n";
-							//Se guardan registro del envio del correo
-							insertSendCorreo($idSistema, $correo['idUsuario'], $correo['idCorreosCat'], $FechaSistema, $HoraSistema, $idTelemetria, $dbConn );
+							$whatsappResult = WhatsappSendTemplate($WhatsappToken, $WhatsappInstanceId, 1, $Body);
+							//transformo a objeto
+							$whatsappRes = json_decode($whatsappResult);
+							//Si es el resultado esperado
+							if($whatsappRes->sent === true){
+								//Se guarda el log
+								$LogAlertas .= "- Alerta temprana - Notificacion Whatsapp - Alertas Normales: ".$usuarioFono." (".$correo['UsuarioEmail'].") / (Envio Correcto)\n";
+								//Se guardan registro del envio del correo
+								insertSendCorreo($idSistema, $correo['idUsuario'], $correo['idCorreosCat'], $FechaSistema, $HoraSistema, $idTelemetria, $dbConn );
+							}else{
+								//Se guarda el log
+								$LogAlertas .= "- Alerta temprana - Notificacion Whatsapp - Alertas Normales: ".$usuarioFono." (".$correo['UsuarioEmail'].") / (Envio Fallido->".$whatsappResult.")\n";
+							}
 						}
 					}
 				break;
@@ -210,15 +225,23 @@ if($rowData['idAlertaTemprana']==1){
 
 							//Definicion del cuerpo
 							$Body['Phone']  = $usuarioFono;
-							$Body['Titulo'] = "⚠️ Alerta temprana - Velocidad ".DeSanitizar($rowData['Nombre'])." :".$saltoLinea;
-							$Body['Cuerpo'] = $FueraGeoCerca;
+							$Body['Cuerpo'] = "⚠️ Alerta temprana - Velocidad ".DeSanitizar($rowData['Nombre']).":<br>";
+							$Body['Cuerpo'].= $FueraGeoCerca;
 
 							//envio notificacion
-							WhatsappSendTemplate($WhatsappToken, $WhatsappInstanceId, 2, $Body);
-							//Se guarda el log
-							$LogAlertas .= "	- Alerta temprana - Notificacion Grupo Whatsapp - Alertas Normales: ".$correo['UsuarioEmail']." / (Envio Correcto)\n";
-							//Se guardan registro del envio del correo
-							insertSendCorreo($idSistema, $correo['idUsuario'], $correo['idCorreosCat'], $FechaSistema, $HoraSistema, $idTelemetria, $dbConn );
+							$whatsappResult = WhatsappSendTemplate($WhatsappToken, $WhatsappInstanceId, 1, $Body);
+							//transformo a objeto
+							$whatsappRes = json_decode($whatsappResult);
+							//Si es el resultado esperado
+							if($whatsappRes->sent === true){
+								//Se guarda el log
+								$LogAlertas .= "- Alerta temprana - Notificacion Whatsapp - Alertas Normales: ".$usuarioFono." (".$correo['UsuarioEmail'].") / (Envio Correcto)\n";
+								//Se guardan registro del envio del correo
+								insertSendCorreo($idSistema, $correo['idUsuario'], $correo['idCorreosCat'], $FechaSistema, $HoraSistema, $idTelemetria, $dbConn );
+							}else{
+								//Se guarda el log
+								$LogAlertas .= "- Alerta temprana - Notificacion Whatsapp - Alertas Normales: ".$usuarioFono." (".$correo['UsuarioEmail'].") / (Envio Fallido->".$whatsappResult.")\n";
+							}
 						}
 					}
 				break;
@@ -235,15 +258,23 @@ if($rowData['idAlertaTemprana']==1){
 
 							//Definicion del cuerpo
 							$Body['Phone']  = $usuarioFono;
-							$Body['Titulo'] = "⚠️ Alerta temprana - Fuera de Linea ".DeSanitizar($rowData['Nombre'])." :".$saltoLinea;
-							$Body['Cuerpo'] = $FueraLinea;
+							$Body['Cuerpo'] = "⚠️ Alerta temprana - Fuera de Linea ".DeSanitizar($rowData['Nombre']).":<br>";
+							$Body['Cuerpo'].= $FueraLinea;
 
 							//envio notificacion
-							WhatsappSendTemplate($WhatsappToken, $WhatsappInstanceId, 2, $Body);
-							//Se guarda el log
-							$LogAlertas .= "	- Alerta temprana - Notificacion Whatsapp - Alertas Normales: ".$correo['UsuarioEmail']." / (Envio Correcto)\n";
-							//Se guardan registro del envio del correo
-							insertSendCorreo($idSistema, $correo['idUsuario'], $correo['idCorreosCat'], $FechaSistema, $HoraSistema, $idTelemetria, $dbConn );
+							$whatsappResult = WhatsappSendTemplate($WhatsappToken, $WhatsappInstanceId, 1, $Body);
+							//transformo a objeto
+							$whatsappRes = json_decode($whatsappResult);
+							//Si es el resultado esperado
+							if($whatsappRes->sent === true){
+								//Se guarda el log
+								$LogAlertas .= "- Alerta temprana - Notificacion Whatsapp - Alertas Normales: ".$usuarioFono." (".$correo['UsuarioEmail'].") / (Envio Correcto)\n";
+								//Se guardan registro del envio del correo
+								insertSendCorreo($idSistema, $correo['idUsuario'], $correo['idCorreosCat'], $FechaSistema, $HoraSistema, $idTelemetria, $dbConn );
+							}else{
+								//Se guarda el log
+								$LogAlertas .= "- Alerta temprana - Notificacion Whatsapp - Alertas Normales: ".$usuarioFono." (".$correo['UsuarioEmail'].") / (Envio Fallido->".$whatsappResult.")\n";
+							}
 						}
 					}
 				break;

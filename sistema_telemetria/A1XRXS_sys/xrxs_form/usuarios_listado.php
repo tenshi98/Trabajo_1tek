@@ -1487,20 +1487,27 @@ require_once '0_validate_user_1.php';
 					//Envio de whatsapp
 					if(isset($rowUsr['Fono'])&&$rowUsr['Fono']!=''){
 						//Se arma
-						$Body['Phone']      = $rowUsr['Fono'];
-						$Body['Usuario']    = $rowUsr['usuario'];
-						$Body['Password']   = $clave;
+						$Body['Phone']  = $rowUsr['Fono'];
+						$Body['Cuerpo'] = $Body;
 						//se intenta enviar la notificacion
 						try {
 							//envio notificacion
-							WhatsappSendTemplate($rowSistema['SistemaWhatsappToken'], $rowSistema['SistemaWhatsappInstanceId'], 1, $Body);
-							//se guarda el log
-							log_response(1, 'Envio Correcto->'.$rowUsr['Fono'], $Body);
-							//se entrega noti
-							$error['email'] = 'sucess/La nueva contraseña fue enviada a tu correo';
+							$whatsappResult = WhatsappSendTemplate($rowSistema['SistemaWhatsappToken'], $rowSistema['SistemaWhatsappInstanceId'], 1, $Body);
+							//transformo a objeto
+							$whatsappRes = json_decode($whatsappResult);
+							//Si es el resultado esperado
+							if($whatsappRes->sent === true){
+								//se guarda el log
+								log_response(1, 'Envio Noti Whatsapp Correcto->'.$rowUsr['Fono'].' ('.$rowUsr['email'].')', $Body);
+								//se entrega noti
+								$error['email'] = 'sucess/La nueva contraseña fue enviada a tu correo';
+							}else{
+								//Se guarda el log
+								log_response(1, 'Envio Noti Whatsapp Fallido->'.$rowUsr['Fono'].' ('.$rowUsr['email'].')', $Body.'->'.$whatsappResult);
+							}
 						} catch (Exception $e) {
 							//se guarda el log
-							log_response(1, 'Envio Noti Whatsapp Fallido->'.$e->getMessage(), $Body);
+							log_response(1, 'Envio Noti Whatsapp Fallido->'.$rowUsr['Fono'], $Body.'->'.$e->getMessage());
 							//se entrega noti
 							$error['email'] = 'error/Envio Noti Whatsapp Fallido';
 						}

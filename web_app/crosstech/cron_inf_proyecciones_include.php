@@ -116,23 +116,30 @@ foreach ($arrPrevs as $key => $value) {
 							$Body['Phone']  = $usuarioFono;
 							$Body['Cuerpo'] = $MSG_Whatsapp;
 							//envio notificacion
-							WhatsappSendTemplate($SistemaWhatsappToken, $SistemaWhatsappInstance, 5, $Body);
-							//guardo el registro de los mensajes enviados
-							$MSGDir .= "	- NW/".$SistemaNombre.": ".$usuarioCorreo." / (Envio Correcto->".$usuarioFono.")\n";
-							//envio correcto
-							if(isset($usuario_idSistema) && $usuario_idSistema!=''){       $SIS_data  = "'".$usuario_idSistema."'";      }else{$SIS_data  = "''";}
-							if(isset($usuario_idUsuario) && $usuario_idUsuario!=''){       $SIS_data .= ",'".$usuario_idUsuario."'";     }else{$SIS_data .= ",''";}
-							if(isset($usuario_idCorreosCat) && $usuario_idCorreosCat!=''){ $SIS_data .= ",'".$usuario_idCorreosCat."'";  }else{$SIS_data .= ",''";}
-							//El timestamp
-							if(isset($FechaSistema) && $FechaSistema != ''&&isset($HoraSistema) && $HoraSistema!=''){
-								$SIS_data .= ",'".$FechaSistema." ".$HoraSistema."'";
+							$whatsappResult = WhatsappSendTemplate($SistemaWhatsappToken, $SistemaWhatsappInstance, 1, $Body);
+							//transformo a objeto
+							$whatsappRes = json_decode($whatsappResult);
+							//Si es el resultado esperado
+							if($whatsappRes->sent === true){
+								//guardo el registro de los mensajes enviados
+								$MSGDir .= "	- NW/".$SistemaNombre.": ".$usuarioFono." (".$usuarioCorreo.") / (Envio Correcto)\n";
+								//envio correcto
+								if(isset($usuario_idSistema) && $usuario_idSistema!=''){       $SIS_data  = "'".$usuario_idSistema."'";      }else{$SIS_data  = "''";}
+								if(isset($usuario_idUsuario) && $usuario_idUsuario!=''){       $SIS_data .= ",'".$usuario_idUsuario."'";     }else{$SIS_data .= ",''";}
+								if(isset($usuario_idCorreosCat) && $usuario_idCorreosCat!=''){ $SIS_data .= ",'".$usuario_idCorreosCat."'";  }else{$SIS_data .= ",''";}
+								//El timestamp
+								if(isset($FechaSistema) && $FechaSistema != ''&&isset($HoraSistema) && $HoraSistema!=''){
+									$SIS_data .= ",'".$FechaSistema." ".$HoraSistema."'";
+								}else{
+									$SIS_data .= ",''";
+								}
+								// inserto los datos de registro en la db
+								$SIS_columns = 'idSistema, idUsuario, idCorreosCat, TimeStamp';
+								$ultimo_id = db_insert_data (false, $SIS_columns, $SIS_data, 'telemetria_mnt_correos_list_sended', $dbConn, 'Cron', basename($_SERVER["REQUEST_URI"], ".php"), 'insertCorreoSended');
 							}else{
-								$SIS_data .= ",''";
+								//guardo el registro de los mensajes enviados
+								$MSGDir .= "	- NW/".$SistemaNombre.": ".$usuarioFono." (".$usuarioCorreo.") / (Envio Fallido->".$whatsappResult.")\n";
 							}
-							// inserto los datos de registro en la db
-							$SIS_columns = 'idSistema, idUsuario, idCorreosCat, TimeStamp';
-							$ultimo_id = db_insert_data (false, $SIS_columns, $SIS_data, 'telemetria_mnt_correos_list_sended', $dbConn, 'Cron', basename($_SERVER["REQUEST_URI"], ".php"), 'insertCorreoSended');
-
 						} catch (Exception $e) {
 							$MSGDir .= "	- NW/Excepción capturada: / (Envio Noti Whatsapp Fallido->".$e->getMessage().")\n";
 						}

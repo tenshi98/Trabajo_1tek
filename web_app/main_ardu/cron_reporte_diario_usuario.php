@@ -138,14 +138,22 @@ foreach($arrCorreos as $usuarios=>$correos){
 		try {
 			//Definicion del cuerpo
 			$Body['Phone']  = $usuarioFono;
-			$Body['Titulo'] = 'Resumen Estado Equipos<br/>';
-			$Body['Cuerpo'] = $MSG_NW;
+			$Body['Cuerpo'] = 'Resumen Estado Equipos<br/>';
+			$Body['Cuerpo'].= $MSG_NW;
 			//envio notificacion
-			WhatsappSendTemplate($WhatsappToken, $WhatsappInstanceId, 6, $Body);
-			//guardo el registro de los mensajes enviados
-			$dir .= "	- NW/".$SistemaNombre.": ".$usuarioCorreo." / (Envio Correcto->".$usuarioFono.")\n";
-			//contador del envio correcto
-			$CountSend++;
+			$whatsappResult = WhatsappSendTemplate($WhatsappToken, $WhatsappInstanceId, 1, $Body);
+			//transformo a objeto
+			$whatsappRes = json_decode($whatsappResult);
+			//Si es el resultado esperado
+			if($whatsappRes->sent === true){
+				//guardo el registro de los mensajes enviados
+				$dir .= "	- NW/".$SistemaNombre.": ".$usuarioFono." (".$usuarioCorreo.") / (Envio Correcto)\n";
+				//contador del envio correcto
+				$CountSend++;
+			}else{
+				//guardo el registro de los mensajes enviados
+				$dir .= "	- NW/".$SistemaNombre.": ".$usuarioFono." (".$usuarioCorreo.") / (Envio Fallido->".$whatsappResult.")\n";
+			}
 		} catch (Exception $e) {
 			$dir .= "	- NW/Excepción capturada: / (Envio Noti Whatsapp Fallido->".$e->getMessage().")\n";
 		}

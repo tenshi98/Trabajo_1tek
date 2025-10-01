@@ -44,8 +44,6 @@ $FueraLinea        = '';             //Mensaje FueraLinea
 $LogAlertas        = '';             //Log de las alertas enviadas
 $FechaSistema      = fecha_actual(); //Fecha del servidor
 $HoraSistema       = hora_actual();  //Hora del servidor
-$saltoLinea = '
-';
 
 //Obtengo los valores enviados por el equipo
 include 'ardu_include_01_gets.php';

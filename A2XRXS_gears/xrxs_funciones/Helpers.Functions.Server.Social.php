@@ -35,47 +35,9 @@ function WhatsappSendMessage($Token, $InstanceId, $Phone, $Body){
 	if($Body=='' OR $Body=='0'){ return false;}
 
 	/**********************/
-	//Si todo esta ok
-	/**************************************/
-	//Normalizo el mensaje
-	$saltoLinea = '
-';
-
-	$vowels_1 = array('<br/>', '<br>', '</br>');
-	$vowels_2 = array('<strong>', '</strong>');
-	$Body     = str_replace($vowels_1, $saltoLinea, $Body);
-	$Body     = str_replace($vowels_2, '*', $Body);
-
-	/**************************************/
-	//verifico si numero comienza con +56 o con 56
-	$myNumber = $Phone;
-	$findme_1 = '+';
-	$findme_2 = '+56';
-	$findme_3 = '56';
-
-	$pos_1 = strpos($myNumber, $findme_1);
-	$pos_2 = strpos($myNumber, $findme_2);
-	$pos_3 = strpos($myNumber, $findme_3);
-
-	//si comienza con el +
-	if ($pos_1 !== false && $pos_1==0) {
-		//comienza con el +56
-		if ($pos_2 !== false && $pos_2==0) {
-			$myPhone = $Phone;
-		//no comienza con el +56, es otro numero
-		} else {
-			$myPhone = '';
-		}
-	//no comienza por el +
-	} else {
-		//comienza con el 56
-		if ($pos_3 !== false && $pos_3==0) {
-			$myPhone = '+'.$Phone;
-		//no comienza con el 56, es otro numero
-		} else {
-			$myPhone = '+56'.$Phone;
-		}
-	}
+	//Se limpian los datos
+	$myPhone = clearWhatsappNumber($Phone);
+	$Body    = clearWhatsappText($Body);
 
 	/**************************************/
 	//verifico la existencia de datos
@@ -138,12 +100,12 @@ function WhatsappSendTemplate($Token, $InstanceId, $Type, $Body){
 	//Se arma el mensaje
 	switch ($Type) {
 		/*********************************************************/
-		//Recuperacion contraseña
+		//Alertas solo un dato
 		case 1:
 			$data = [
 				"token"     => $Token,
 				"namespace" => "512f752c_ac4f_45a8_b5b5_2adcfe3ed73a",
-				"template"  => "1tek_pass",
+				"template"  => "1tek_alerta_1",
 				"language" => [
 					"policy" => "deterministic",
 					"code"   => "es"
@@ -152,119 +114,6 @@ function WhatsappSendTemplate($Token, $InstanceId, $Type, $Body){
 					[
 						"type" => "body",
 						"parameters" => [
-							["type" => "text", "text" => clearWhatsappText($Body['Usuario'])],
-							["type" => "text", "text" => $Body['Password']],
-						]
-					]
-				],
-				"phone" => $myPhone
-			];
-			break;
-		/*********************************************************/
-		//Alertas ardu
-		case 2:
-			$data = [
-				"token"     => $Token,
-				"namespace" => "512f752c_ac4f_45a8_b5b5_2adcfe3ed73a",
-				"template"  => "1tek_alertas_ardu_1",
-				"language" => [
-					"policy" => "deterministic",
-					"code"   => "es"
-				],
-				"params" => [
-					[
-						"type" => "body",
-						"parameters" => [
-							["type" => "text", "text" => clearWhatsappText($Body['Titulo'])],
-							["type" => "text", "text" => clearWhatsappText($Body['Cuerpo'])],
-						]
-					]
-				],
-				"phone" => $myPhone
-			];
-			break;
-		/*********************************************************/
-		//Alertas Admin
-		case 3:
-			$data = [
-				"token"     => $Token,
-				"namespace" => "512f752c_ac4f_45a8_b5b5_2adcfe3ed73a",
-				"template"  => "1tek_noti_admin",
-				"language" => [
-					"policy" => "deterministic",
-					"code"   => "es"
-				],
-				"params" => [
-					[
-						"type" => "body",
-						"parameters" => [
-							["type" => "text", "text" => clearWhatsappText($Body['Cuerpo'])],
-						]
-					]
-				],
-				"phone" => $myPhone
-			];
-			break;
-		/*********************************************************/
-		//Alertas Usuario
-		case 4:
-			$data = [
-				"token"     => $Token,
-				"namespace" => "512f752c_ac4f_45a8_b5b5_2adcfe3ed73a",
-				"template"  => "1tek_noti_usuario",
-				"language" => [
-					"policy" => "deterministic",
-					"code"   => "es"
-				],
-				"params" => [
-					[
-						"type" => "body",
-						"parameters" => [
-							["type" => "text", "text" => clearWhatsappText($Body['Cuerpo'])],
-						]
-					]
-				],
-				"phone" => $myPhone
-			];
-			break;
-		/*********************************************************/
-		//Cron Proyecciones
-		case 5:
-			$data = [
-				"token"     => $Token,
-				"namespace" => "512f752c_ac4f_45a8_b5b5_2adcfe3ed73a",
-				"template"  => "1tek_noti_proyecciones",
-				"language" => [
-					"policy" => "deterministic",
-					"code"   => "es"
-				],
-				"params" => [
-					[
-						"type" => "body",
-						"parameters" => [
-							["type" => "text", "text" => clearWhatsappText($Body['Cuerpo'])],
-						]
-					]
-				],
-				"phone" => $myPhone
-			];
-			break;
-		/*********************************************************/
-		//Cron reporte diario
-		case 6:
-			$data = [
-				"token"     => $Token,
-				"namespace" => "512f752c_ac4f_45a8_b5b5_2adcfe3ed73a",
-				"template"  => "1tek_noti_reportes",
-				"language" => [
-					"policy" => "deterministic",
-					"code"   => "es"
-				],
-				"params" => [
-					[
-						"type" => "body",
-						"parameters" => [
-							["type" => "text", "text" => clearWhatsappText($Body['Titulo'])],
 							["type" => "text", "text" => clearWhatsappText($Body['Cuerpo'])],
 						]
 					]
@@ -356,8 +205,7 @@ function clearWhatsappText($Texto){
 
 	/**************************************/
 	//Normalizo el mensaje
-	$saltoLinea = '
-';
+	$saltoLinea = ' // ';
 
 	$vowels_1 = array('<br/>', '<br>', '</br>');
 	$vowels_2 = array('<strong>', '</strong>');
