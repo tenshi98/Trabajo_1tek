@@ -292,7 +292,7 @@ class main extends ControllerWeb {
 
     /******************************************************************************/
     //Envio de correo por SMTP (solo un correo, con uno o varios receptores)
-    public function sendMail(){
+    public function sendMail($f3){
         /************************************************/
         //Se crea cadena de mensaje
         $Cadena  = '';
@@ -315,7 +315,7 @@ class main extends ControllerWeb {
             'Post'      => $arrData,
         ];
         //Ejecuto la query
-        echo $this->Base_SMTPMail($query);
+        echo $this->Base_SMTPMail($f3, $query);
     }
 
     /******************************************************************************/
