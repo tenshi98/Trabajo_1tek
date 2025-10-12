@@ -7,12 +7,15 @@ class main extends ControllerWeb {
     /******************************************************************************/
     //Constructor
     public function __construct(){
-        //se instancian los datos
+        /*=========== Se instancian los datos ===========*/
         $mailSender    = new MailSender();
-        //se entregan datos a la clase padre
+        /*=========== Se instancian los datos ===========*/
         parent::__construct($mailSender);
     }
 
+    /******************************************************************************/
+    /*                                  VISTAS                                    */
+    /******************************************************************************/
     /******************************************************************************/
     //Vista - Index
     public function index($f3){
