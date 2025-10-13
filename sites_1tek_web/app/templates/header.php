@@ -9,7 +9,6 @@
         <meta name="description" content="<?php echo $data['PageDescription']; ?>">
         <meta name="author"      content="<?php echo $data['PageAuthor']; ?>">
         <meta name="keywords"    content="<?php echo $data['PageKeywords']; ?>">
-        <meta name="robots"      content="nofollow, noindex" />
 
         <!-- Favicons -->
         <link rel="icon"             type="image/png"                    href="<?php echo $BASE.'/assets/img/favicon/mifavicon.png'; ?>" >
