@@ -11,13 +11,12 @@ class ConfigAPP{
         'CompanyName'     => '1Tek',                                                       //Nombre de la compañia
         'CompanyEmail'    => 'contacto@1Tek.cl',                                           //Email de la compañia
         'CompanyCredits'  => '',                                                           //Creditos
+        'URL'             => 'https://1Tek.cl',                                            //URL
     ];
 
     //Configuracion de la aplicacion
     const APP = [
         'N_MaxItems'      => 10000,                                         //Numero maximo de registros sin paginar
-        'N_Items'         => 60,                                            //Numero de registros a mostrar en la paginacion
-        'uploadFolder'    => __DIR__ .'/../../../admin/sites_1tek/upload/', //Carpeta de subida de archivos
     ];
 
 }

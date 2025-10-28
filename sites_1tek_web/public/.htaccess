@@ -1,18 +1,34 @@
 
+#### Proteger el propio htaccess
+<Files .htaccess>
+    Order allow,deny
+    Deny from all
+</Files>
 
+# Bloquea acceso a archivos ocultos (.htaccess, .env, etc.)
+<FilesMatch "^\.">
+    Require all denied
+</FilesMatch>
 
 <IfModule mod_rewrite.c>
+    #### No permitir obtener caracteristicas del servidor
+    ServerSignature Off
+    #### No permitir el listado de archivos
+    Options All -Indexes
     #### Modificacion del comportamiento
     RewriteEngine On
-
+    #### Error al tratar de entrar a estos directorios
     RewriteRule ^(app|dict|ns|tmp)\/|\.ini$ - [R=404]
-
+    ####  y la ruta y el archivo solicitados no es un enlace simbolico
     RewriteCond %{REQUEST_FILENAME} !-l
+    ####  y la ruta y el archivo solicitados no coinciden directamente con un archivo físico
     RewriteCond %{REQUEST_FILENAME} !-f
+    ####  y la ruta y el archivo solicitados no coinciden directamente con una carpeta física
     RewriteCond %{REQUEST_FILENAME} !-d
+    ####  Esta regla indica que todas las solicitudes (por eso el patrón .*) deben redirigirse internamente a index.php.
     RewriteRule .* index.php [L,QSA]
+    ####  Esta regla no redirige nada (por eso el guion - como destino), pero establece una variable de entorno llamada HTTP_AUTHORIZATION.
     RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization},L]
-
     #### Modificacion del comportamiento
     ErrorDocument 400 /400.php
     ErrorDocument 401 /401.php
@@ -73,12 +89,6 @@
     RewriteCond %{QUERY_STRING} (sp_executesql) [NC]
     RewriteRule ^(.*)$ - [F]
 </IfModule>
-
-#### Proteger el propio htaccess
-<Files .htaccess>
-    Order allow,deny
-    Deny from all
-</Files>
 
 #### Uso de .htaccess para mejorar la velocidad del sitio
 <ifModule mod_headers.c>
