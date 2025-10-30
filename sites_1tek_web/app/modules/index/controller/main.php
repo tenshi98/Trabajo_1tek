@@ -317,8 +317,21 @@ class main extends ControllerWeb {
             'template'  => 1,
             'Post'      => $arrData,
         ];
+        /******************************/
+        //Datos del correo
+        $UserData = [
+            'Sistema_IMGLogo'   => '',
+            'Sistema_Direccion' => 'A108 Adam Street <br>NY 535022, USA<br>',
+            'Sistema_Email'     => 'contacto@1tek.cl',
+            'Social_X'          => '',
+            'Social_Facebook'   => '',
+            'Social_Instagram'  => '',
+            'Social_Linkedin'   => '',
+            'baseUrl'           => $f3->get('BASE')
+        ];
+
         //Ejecuto la query
-        echo $this->Base_SMTPMail($f3, $query);
+        echo $this->Base_SMTPMail($f3, $query, $UserData);
     }
 
     /******************************************************************************/
