@@ -480,5 +480,4 @@ if(!empty($_GET['new_plantilla'])){
 /*                                             Se llama al pie del documento html                                                 */
 /**********************************************************************************************************************************/
 require_once 'core/Web.Footer.Main.php';
-
 ?>

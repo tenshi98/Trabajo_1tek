@@ -120,7 +120,6 @@ LEFT JOIN `core_ubicacion_comunas`   apocom     ON apocom.idComuna              
 LEFT JOIN `core_ubicacion_ciudad`    apociu     ON apociu.idCiudad                      = apoderados_listado.idCiudad';
 $SIS_where = 'vehiculos_facturacion_listado_detalle.idFacturacionDetalle ='.$X_Puntero;
 $rowDatos = db_select_data (false, $SIS_query, 'vehiculos_facturacion_listado_detalle', $SIS_join, $SIS_where, $dbConn, $_SESSION['usuario']['basic_data']['Nombre'], basename($_SERVER["REQUEST_URI"], ".php"), 'rowDatos');
-
 ?>
 
 <div class="col-xs-12">
@@ -296,5 +295,4 @@ if(isset($_GET['return'])&&$_GET['return']!=''){
 /*                                             Se llama al pie del documento html                                                 */
 /**********************************************************************************************************************************/
 require_once 'core/Web.Footer.Views.php';
-
 ?>

@@ -204,7 +204,6 @@ if(isset($_GET['type'])&&$_GET['type']!=''&&$_GET['type']==1){
 }else{
 //Verifico el tipo de usuario que esta ingresando
 $z = "idSistema=".$_SESSION['usuario']['basic_data']['idSistema'];
-
 ?>
 
 <div class="col-xs-12 col-sm-10 col-md-9 col-lg-8 fcenter">
@@ -278,5 +277,4 @@ $z = "idSistema=".$_SESSION['usuario']['basic_data']['idSistema'];
 /*                                             Se llama al pie del documento html                                                 */
 /**********************************************************************************************************************************/
 require_once 'core/Web.Footer.Main.php';
-
 ?>

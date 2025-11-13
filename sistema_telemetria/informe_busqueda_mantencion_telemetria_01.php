@@ -86,7 +86,6 @@ LEFT JOIN `usuarios_listado`     ON usuarios_listado.idUsuario        = telemetr
 $SIS_order = $order_by.' LIMIT '.$comienzo.', '.$cant_reg;
 $arrMantenciones = array();
 $arrMantenciones = db_select_array (false, $SIS_query, 'telemetria_historial_mantencion', $SIS_join, $SIS_where, $SIS_order, $dbConn, $_SESSION['usuario']['basic_data']['Nombre'], $original, 'arrMantenciones');
-
 ?>
 
 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 breadcrumb-bar">
@@ -223,5 +222,4 @@ if($_SESSION['usuario']['basic_data']['idTipoUsuario']!=1){
 /*                                             Se llama al pie del documento html                                                 */
 /**********************************************************************************************************************************/
 require_once 'core/Web.Footer.Main.php';
-
 ?>

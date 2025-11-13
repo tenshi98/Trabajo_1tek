@@ -211,7 +211,6 @@ $SIS_where = 'sitios_listado_body.idSitio = '.simpleDecode($_GET['id'], fecha_ac
 $SIS_order = 'core_sitios_tipos_body.Nombre ASC, sitios_listado_body.idPosicion ASC';
 $arrBody = array();
 $arrBody = db_select_array (false, $SIS_query, 'sitios_listado_body', $SIS_join, $SIS_where, $SIS_order, $dbConn, $_SESSION['usuario']['basic_data']['Nombre'], $original, 'arrBody');
-
 ?>
 
 <style>
@@ -553,7 +552,6 @@ $SIS_join  = 'LEFT JOIN `core_sistemas` ON core_sistemas.idSistema = sitios_list
 $SIS_order = $order_by.' LIMIT '.$comienzo.', '.$cant_reg;
 $arrSitio = array();
 $arrSitio = db_select_array (false, $SIS_query, 'sitios_listado', $SIS_join, $SIS_where, $SIS_order, $dbConn, $_SESSION['usuario']['basic_data']['Nombre'], $original, 'arrSitio');
-
 ?>
 
 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 breadcrumb-bar">
@@ -657,5 +655,4 @@ $arrSitio = db_select_array (false, $SIS_query, 'sitios_listado', $SIS_join, $SI
 /*                                             Se llama al pie del documento html                                                 */
 /**********************************************************************************************************************************/
 require_once 'core/Web.Footer.Main.php';
-
 ?>

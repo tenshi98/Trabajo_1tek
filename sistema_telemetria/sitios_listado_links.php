@@ -76,7 +76,6 @@ $SIS_query = 'Nombre,Enlace,PalabrasClave,idEstado';
 $SIS_join  = '';
 $SIS_where = 'idLinks ='.$_GET['edit'];
 $rowData = db_select_data (false, $SIS_query, 'sitios_listado_links', $SIS_join, $SIS_where, $dbConn, $_SESSION['usuario']['basic_data']['Nombre'], $original, 'rowData');
-
 ?>
 
 <div class="col-xs-12 col-sm-10 col-md-9 col-lg-8 fcenter">
@@ -177,7 +176,6 @@ $SIS_where = 'sitios_listado_links.idSitio = '.simpleDecode($_GET['id'], fecha_a
 $SIS_order = 'sitios_listado_links.Nombre ASC';
 $arrLinks = array();
 $arrLinks = db_select_array (false, $SIS_query, 'sitios_listado_links', $SIS_join, $SIS_where, $SIS_order, $dbConn, $_SESSION['usuario']['basic_data']['Nombre'], $original, 'arrLinks');
-
 ?>
 
 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
@@ -254,5 +252,4 @@ $arrLinks = db_select_array (false, $SIS_query, 'sitios_listado_links', $SIS_joi
 /*                                             Se llama al pie del documento html                                                 */
 /**********************************************************************************************************************************/
 require_once 'core/Web.Footer.Main.php';
-
 ?>

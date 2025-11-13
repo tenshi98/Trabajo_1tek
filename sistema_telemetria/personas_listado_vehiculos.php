@@ -76,7 +76,6 @@ $SIS_query = 'Marca,Modelo';
 $SIS_join  = '';
 $SIS_where = 'idVehiculos = '.$_GET['edit'];
 $rowData = db_select_data (false, $SIS_query, 'personas_listado_vehiculos', $SIS_join, $SIS_where, $dbConn, $_SESSION['usuario']['basic_data']['Nombre'], $original, 'rowData');
-
 ?>
 
 <div class="col-xs-12 col-sm-10 col-md-9 col-lg-8 fcenter">
@@ -165,7 +164,6 @@ $SIS_where = 'idPersona = '.$_GET['id'];
 $SIS_order = 'Marca ASC';
 $arrMarca = array();
 $arrMarca = db_select_array (false, $SIS_query, 'personas_listado_vehiculos', $SIS_join, $SIS_where, $SIS_order, $dbConn, $_SESSION['usuario']['basic_data']['Nombre'], $original, 'arrMarca');
-
 ?>
 
 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
@@ -240,5 +238,4 @@ $arrMarca = db_select_array (false, $SIS_query, 'personas_listado_vehiculos', $S
 /*                                             Se llama al pie del documento html                                                 */
 /**********************************************************************************************************************************/
 require_once 'core/Web.Footer.Main.php';
-
 ?>

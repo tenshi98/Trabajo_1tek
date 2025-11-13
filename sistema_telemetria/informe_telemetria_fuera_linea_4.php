@@ -85,7 +85,6 @@ telemetria_listado.id_Geo';
 $SIS_order = 'idFueraLinea DESC LIMIT '.$comienzo.', '.$cant_reg;
 $arrErrores = array();
 $arrErrores = db_select_array (false, $SIS_query, 'telemetria_listado_error_fuera_linea', $SIS_join, $SIS_where, $SIS_order, $dbConn, $_SESSION['usuario']['basic_data']['Nombre'], $original, 'arrErrores');
-
 ?>
 
 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 clearfix">
@@ -208,5 +207,4 @@ if(isset($_SESSION['usuario']['basic_data']['idInterfaz'])&&$_SESSION['usuario']
 /*                                             Se llama al pie del documento html                                                 */
 /**********************************************************************************************************************************/
 require_once 'core/Web.Footer.Main.php';
-
 ?>

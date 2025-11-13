@@ -85,7 +85,6 @@ telemetria_listado.Nombre AS NombreEquipo';
 $SIS_order = 'telemetria_listado_historial_encendidos.idEncendido DESC LIMIT '.$comienzo.', '.$cant_reg;
 $arrEncendidos = array();
 $arrEncendidos = db_select_array (false, $SIS_query, 'telemetria_listado_historial_encendidos', $SIS_join, $SIS_where, $SIS_order, $dbConn, $_SESSION['usuario']['basic_data']['Nombre'], $original, 'arrEncendidos');
-
 ?>
 
 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 clearfix">
@@ -199,5 +198,4 @@ if(isset($_SESSION['usuario']['basic_data']['idInterfaz'])&&$_SESSION['usuario']
 /*                                             Se llama al pie del documento html                                                 */
 /**********************************************************************************************************************************/
 require_once 'core/Web.Footer.Main.php';
-
 ?>

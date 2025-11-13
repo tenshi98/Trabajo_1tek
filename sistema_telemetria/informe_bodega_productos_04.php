@@ -684,5 +684,4 @@ if($s_Ingreso_Manual=='true'){    $s_data .= ',tipo9';}
 /*                                             Se llama al pie del documento html                                                 */
 /**********************************************************************************************************************************/
 require_once 'core/Web.Footer.Main.php';
-
 ?>

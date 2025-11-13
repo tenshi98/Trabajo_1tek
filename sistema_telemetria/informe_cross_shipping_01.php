@@ -141,7 +141,6 @@ LEFT JOIN `core_cross_shipping_consolidacion_posicion`    ON core_cross_shipping
 $SIS_order = 'cross_shipping_consolidacion.Creacion_fecha ASC LIMIT '.$comienzo.', '.$cant_reg;
 $arrTipo = array();
 $arrTipo = db_select_array (false, $SIS_query, 'cross_shipping_consolidacion_estibas', $SIS_join, $SIS_where, $SIS_order, $dbConn, $_SESSION['usuario']['basic_data']['Nombre'], $original, 'arrTipo');
-
 ?>
 
 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 clearfix">
@@ -216,7 +215,6 @@ $arrTipo = db_select_array (false, $SIS_query, 'cross_shipping_consolidacion_est
 }else{
 //Verifico el tipo de usuario que esta ingresando
 $z="idSistema=".$_SESSION['usuario']['basic_data']['idSistema'];
-
 ?>
 
 <div class="col-xs-12 col-sm-10 col-md-9 col-lg-8 fcenter">
@@ -318,5 +316,4 @@ $z="idSistema=".$_SESSION['usuario']['basic_data']['idSistema'];
 /*                                             Se llama al pie del documento html                                                 */
 /**********************************************************************************************************************************/
 require_once 'core/Web.Footer.Main.php';
-
 ?>

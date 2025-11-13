@@ -128,17 +128,6 @@ FROM `solicitud_listado_existencias_otros`
 WHERE idExistencia = ".$_GET['edit_Otros'];
 //Consulta
 $resultado = mysqli_query ($dbConn, $query);
-//Si ejecuto correctamente la consulta
-if(!$resultado){
-	//Genero numero aleatorio
-	$vardata = genera_password(8,'alfanumerico');
-					
-	//Guardo el error en una variable temporal
-	
-	
-	
-					
-}
 $rowData = mysqli_fetch_assoc ($resultado);	 
 	 
 ?>
@@ -184,17 +173,6 @@ FROM `solicitud_listado_existencias_productos`
 WHERE idExistencia = ".$_GET['edit_Productos'];
 //Consulta
 $resultado = mysqli_query ($dbConn, $query);
-//Si ejecuto correctamente la consulta
-if(!$resultado){
-	//Genero numero aleatorio
-	$vardata = genera_password(8,'alfanumerico');
-					
-	//Guardo el error en una variable temporal
-	
-	
-	
-					
-}
 $rowData = mysqli_fetch_assoc ($resultado);	 
 	 
 ?>
@@ -240,17 +218,6 @@ FROM `solicitud_listado_existencias_insumos`
 WHERE idExistencia = ".$_GET['edit_Insumos'];
 //Consulta
 $resultado = mysqli_query ($dbConn, $query);
-//Si ejecuto correctamente la consulta
-if(!$resultado){
-	//Genero numero aleatorio
-	$vardata = genera_password(8,'alfanumerico');
-					
-	//Guardo el error en una variable temporal
-	
-	
-	
-					
-}
 $rowData = mysqli_fetch_assoc ($resultado);	 
 	 
 ?>
@@ -296,17 +263,6 @@ FROM `solicitud_listado_existencias_arriendos`
 WHERE idExistencia = ".$_GET['edit_Arriendos'];
 //Consulta
 $resultado = mysqli_query ($dbConn, $query);
-//Si ejecuto correctamente la consulta
-if(!$resultado){
-	//Genero numero aleatorio
-	$vardata = genera_password(8,'alfanumerico');
-					
-	//Guardo el error en una variable temporal
-	
-	
-	
-					
-}
 $rowData = mysqli_fetch_assoc ($resultado);	 
 	 
 ?>
@@ -352,17 +308,6 @@ FROM `solicitud_listado_existencias_servicios`
 WHERE idExistencia = ".$_GET['edit_Servicios'];
 //Consulta
 $resultado = mysqli_query ($dbConn, $query);
-//Si ejecuto correctamente la consulta
-if(!$resultado){
-	//Genero numero aleatorio
-	$vardata = genera_password(8,'alfanumerico');
-					
-	//Guardo el error en una variable temporal
-	
-	
-	
-					
-}
 $rowData = mysqli_fetch_assoc ($resultado);	 
 	 
 ?>
@@ -437,17 +382,6 @@ WHERE solicitud_listado_existencias_productos.idOcompra=0
 ORDER BY solicitud_listado_existencias_productos.idProveedor ASC";
 //Consulta
 $resultado = mysqli_query ($dbConn, $query);
-//Si ejecuto correctamente la consulta
-if(!$resultado){
-	//Genero numero aleatorio
-	$vardata = genera_password(8,'alfanumerico');
-					
-	//Guardo el error en una variable temporal
-	
-	
-	
-					
-}
 while ( $row = mysqli_fetch_assoc ($resultado)){
 array_push( $arrProductos,$row );
 }
@@ -470,17 +404,6 @@ WHERE solicitud_listado_existencias_insumos.idOcompra=0
 ORDER BY solicitud_listado_existencias_insumos.idProveedor ASC";
 //Consulta
 $resultado = mysqli_query ($dbConn, $query);
-//Si ejecuto correctamente la consulta
-if(!$resultado){
-	//Genero numero aleatorio
-	$vardata = genera_password(8,'alfanumerico');
-					
-	//Guardo el error en una variable temporal
-	
-	
-	
-					
-}
 while ( $row = mysqli_fetch_assoc ($resultado)){
 array_push( $arrInsumos,$row );
 }
@@ -504,17 +427,6 @@ WHERE solicitud_listado_existencias_arriendos.idOcompra=0
 ORDER BY solicitud_listado_existencias_arriendos.idProveedor ASC";
 //Consulta
 $resultado = mysqli_query ($dbConn, $query);
-//Si ejecuto correctamente la consulta
-if(!$resultado){
-	//Genero numero aleatorio
-	$vardata = genera_password(8,'alfanumerico');
-					
-	//Guardo el error en una variable temporal
-	
-	
-	
-					
-}
 while ( $row = mysqli_fetch_assoc ($resultado)){
 array_push( $arrMaquinasArriendo,$row );
 }
@@ -538,17 +450,6 @@ WHERE solicitud_listado_existencias_servicios.idOcompra=0
 ORDER BY solicitud_listado_existencias_servicios.idProveedor ASC";
 //Consulta
 $resultado = mysqli_query ($dbConn, $query);
-//Si ejecuto correctamente la consulta
-if(!$resultado){
-	//Genero numero aleatorio
-	$vardata = genera_password(8,'alfanumerico');
-					
-	//Guardo el error en una variable temporal
-	
-	
-	
-					
-}
 while ( $row = mysqli_fetch_assoc ($resultado)){
 array_push( $arrServicios,$row );
 }	 
@@ -570,17 +471,6 @@ WHERE solicitud_listado_existencias_otros.idOcompra=0
 ";
 //Consulta
 $resultado = mysqli_query ($dbConn, $query);
-//Si ejecuto correctamente la consulta
-if(!$resultado){
-	//Genero numero aleatorio
-	$vardata = genera_password(8,'alfanumerico');
-					
-	//Guardo el error en una variable temporal
-	
-	
-	
-					
-}
 while ( $row = mysqli_fetch_assoc ($resultado)){
 array_push( $arrOtros,$row );
 }
@@ -594,17 +484,6 @@ WHERE idEstado=1
 ";
 //Consulta
 $resultado = mysqli_query ($dbConn, $query);
-//Si ejecuto correctamente la consulta
-if(!$resultado){
-	//Genero numero aleatorio
-	$vardata = genera_password(8,'alfanumerico');
-					
-	//Guardo el error en una variable temporal
-	
-	
-	
-					
-}
 while ( $row = mysqli_fetch_assoc ($resultado)){
 array_push( $arrProveedores,$row );
 }
@@ -916,5 +795,4 @@ array_push( $arrProveedores,$row );
 /*                                             Se llama al pie del documento html                                                 */
 /**********************************************************************************************************************************/
 require_once 'core/Web.Footer.Main.php';
-
 ?>

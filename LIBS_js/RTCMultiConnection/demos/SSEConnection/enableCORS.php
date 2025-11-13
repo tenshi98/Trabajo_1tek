@@ -29,5 +29,4 @@ function enableCORS()
 }
 
 enableCORS();
-
 ?>

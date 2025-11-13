@@ -215,5 +215,4 @@ $Archivo3 = '1_logs_error_log_php.txt';
 /*                                             Se llama al pie del documento html                                                 */
 /**********************************************************************************************************************************/
 require_once 'core/Web.Footer.Main.php';
-
 ?>

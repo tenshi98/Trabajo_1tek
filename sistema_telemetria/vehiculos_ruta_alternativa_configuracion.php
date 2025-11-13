@@ -77,17 +77,6 @@ FROM `vehiculos_ruta_alternativa`
 WHERE idRutaAlt = ".$_GET['id'];
 //Consulta
 $resultado = mysqli_query ($dbConn, $query);
-//Si ejecuto correctamente la consulta
-if(!$resultado){
-	//Genero numero aleatorio
-	$vardata = genera_password(8,'alfanumerico');
-					
-	//Guardo el error en una variable temporal
-	
-	
-	
-					
-}
 $rowData = mysqli_fetch_assoc ($resultado);
 
 //Se traen las rutas
@@ -96,17 +85,7 @@ FROM `vehiculos_ruta_alternativa_ubicaciones`
 WHERE idUbicaciones = ".$_GET['mod'];
 //Consulta
 $resultado = mysqli_query ($dbConn, $query);
-//Si ejecuto correctamente la consulta
-if(!$resultado){
-	//Genero numero aleatorio
-	$vardata = genera_password(8,'alfanumerico');
-					
-	//Guardo el error en una variable temporal
-	
-	
-	
-					
-}
+
 $rowUbicacion = mysqli_fetch_assoc ($resultado);
 
 //Se traen las rutas
@@ -117,17 +96,6 @@ WHERE idRutaAlt = ".$_GET['id']."
 ORDER BY idUbicaciones ASC";
 //Consulta
 $resultado = mysqli_query ($dbConn, $query);
-//Si ejecuto correctamente la consulta
-if(!$resultado){
-	//Genero numero aleatorio
-	$vardata = genera_password(8,'alfanumerico');
-					
-	//Guardo el error en una variable temporal
-	
-	
-	
-					
-}
 while ( $row = mysqli_fetch_assoc ($resultado)){
 array_push( $arrRutas,$row );
 }
@@ -397,17 +365,6 @@ FROM `vehiculos_ruta_alternativa`
 WHERE idRutaAlt = ".$_GET['id'];
 //Consulta
 $resultado = mysqli_query ($dbConn, $query);
-//Si ejecuto correctamente la consulta
-if(!$resultado){
-	//Genero numero aleatorio
-	$vardata = genera_password(8,'alfanumerico');
-					
-	//Guardo el error en una variable temporal
-	
-	
-	
-					
-}
 $rowData = mysqli_fetch_assoc ($resultado);
 
 //Se traen las rutas
@@ -418,17 +375,6 @@ WHERE idRuta = ".$rowData['idRuta']."
 ORDER BY idUbicaciones ASC";
 //Consulta
 $resultado = mysqli_query ($dbConn, $query);
-//Si ejecuto correctamente la consulta
-if(!$resultado){
-	//Genero numero aleatorio
-	$vardata = genera_password(8,'alfanumerico');
-					
-	//Guardo el error en una variable temporal
-	
-	
-	
-					
-}
 while ( $row = mysqli_fetch_assoc ($resultado)){
 array_push( $arrRutas,$row );
 }
@@ -441,17 +387,6 @@ WHERE idRutaAlt = ".$_GET['id']."
 ORDER BY idUbicaciones ASC";
 //Consulta
 $resultado = mysqli_query ($dbConn, $query);
-//Si ejecuto correctamente la consulta
-if(!$resultado){
-	//Genero numero aleatorio
-	$vardata = genera_password(8,'alfanumerico');
-					
-	//Guardo el error en una variable temporal
-	
-	
-	
-					
-}
 while ( $row = mysqli_fetch_assoc ($resultado)){
 array_push( $arrRutasAlt,$row );
 } ?>
@@ -730,5 +665,4 @@ array_push( $arrRutasAlt,$row );
 /*                                             Se llama al pie del documento html                                                 */
 /**********************************************************************************************************************************/
 require_once 'core/Web.Footer.Main.php';
-
 ?>

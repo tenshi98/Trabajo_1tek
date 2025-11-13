@@ -85,7 +85,6 @@ $SIS_join  = 'LEFT JOIN telemetria_listado ON telemetria_listado.idTelemetria = 
 $SIS_order = 'telemetria_listado.Nombre ASC, telemetria_listado_errores.Fecha DESC LIMIT 10000';
 $arrEquipos2 = array();
 $arrEquipos2 = db_select_array (false, $SIS_query, 'telemetria_listado_errores', $SIS_join, $SIS_where_2, $SIS_order, $dbConn, $_SESSION['usuario']['basic_data']['Nombre'], $original, 'arrEquipos2');
-
 ?>
 
 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 clearfix">
@@ -265,5 +264,4 @@ if(isset($_SESSION['usuario']['basic_data']['idInterfaz'])&&$_SESSION['usuario']
 /*                                             Se llama al pie del documento html                                                 */
 /**********************************************************************************************************************************/
 require_once 'core/Web.Footer.Main.php';
-
 ?>

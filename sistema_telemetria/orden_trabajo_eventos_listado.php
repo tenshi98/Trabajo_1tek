@@ -90,17 +90,6 @@ LEFT JOIN `clientes_listado`      ON clientes_listado.idCliente         = orden_
 WHERE orden_trabajo_eventos_listado.idEvento = ".$_GET['id'];
 //Consulta
 $resultado = mysqli_query ($dbConn, $query);
-//Si ejecuto correctamente la consulta
-if(!$resultado){
-	//Genero numero aleatorio
-	$vardata = genera_password(8,'alfanumerico');
-					
-	//Guardo el error en una variable temporal
-	
-	
-	
-					
-}
 $rowData = mysqli_fetch_assoc ($resultado);	
 
 //Listado de archivos
@@ -110,17 +99,6 @@ FROM `orden_trabajo_eventos_listado_archivos`
 WHERE idEvento = ".$_GET['id'];
 //Consulta
 $resultado = mysqli_query ($dbConn, $query);
-//Si ejecuto correctamente la consulta
-if(!$resultado){
-	//Genero numero aleatorio
-	$vardata = genera_password(8,'alfanumerico');
-					
-	//Guardo el error en una variable temporal
-	
-	
-	
-					
-}
 while ( $row = mysqli_fetch_assoc ($resultado)){
 array_push( $arrArchivos,$row );
 }
@@ -212,7 +190,7 @@ validaPermisoUser($rowlevel['level'], 3, $dbConn);
 //se crea filtro
 $w = "idSistema=".$_SESSION['usuario']['basic_data']['idSistema']." AND idEstado=1";
 $y = "idSistema=".$_SESSION['usuario']['basic_data']['idSistema']." AND idEstado=1";
-$m = "idSistema=".$_SESSION['usuario']['basic_data']['idSistema']." AND idConfig_1=1 AND idEstado=1";		
+$m = "idSistema=".$_SESSION['usuario']['basic_data']['idSistema']." AND idConfig_1=1 AND idEstado=1";
 ?>
 
 <div class="col-xs-12 col-sm-10 col-md-9 col-lg-8 fcenter">
@@ -344,7 +322,6 @@ LEFT JOIN `clientes_listado`      ON clientes_listado.idCliente         = orden_
 $SIS_order = $order_by.' LIMIT '.$comienzo.', '.$cant_reg;
 $arrTipo = array();
 $arrTipo = db_select_array (false, $SIS_query, 'orden_trabajo_eventos_listado', $SIS_join, $SIS_where, $SIS_order, $dbConn, $_SESSION['usuario']['basic_data']['Nombre'], $original, 'arrTipo');
-
 ?>
 
 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 breadcrumb-bar">
@@ -500,5 +477,4 @@ $arrTipo = db_select_array (false, $SIS_query, 'orden_trabajo_eventos_listado', 
 /*                                             Se llama al pie del documento html                                                 */
 /**********************************************************************************************************************************/
 require_once 'core/Web.Footer.Main.php';
-
 ?>

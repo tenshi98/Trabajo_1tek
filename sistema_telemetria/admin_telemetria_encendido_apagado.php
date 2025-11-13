@@ -108,7 +108,6 @@ LEFT JOIN `core_estado_encendido`  ON core_estado_encendido.idEstadoEncendido  =
 $SIS_order = $order_by.' LIMIT '.$comienzo.', '.$cant_reg;
 $arrUsers = array();
 $arrUsers = db_select_array (false, $SIS_query, 'telemetria_listado', $SIS_join, $SIS_where, $SIS_order, $dbConn, $_SESSION['usuario']['basic_data']['Nombre'], $original, 'arrUsers');
-
 ?>
 
 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 breadcrumb-bar">
@@ -229,5 +228,4 @@ $arrUsers = db_select_array (false, $SIS_query, 'telemetria_listado', $SIS_join,
 /*                                             Se llama al pie del documento html                                                 */
 /**********************************************************************************************************************************/
 require_once 'core/Web.Footer.Main.php';
-
 ?>

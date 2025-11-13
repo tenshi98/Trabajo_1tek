@@ -61,7 +61,6 @@ LEFT JOIN `usuarios_listado` usuario_queja  ON usuario_queja.idUsuario          
 LEFT JOIN `core_tipo_queja_general`         ON core_tipo_queja_general.idTipoQueja  = gestion_quejas.idTipoQueja';
 $SIS_where = 'gestion_quejas.idQueja ='.$X_Puntero;
 $rowData = db_select_data (false, $SIS_query, 'gestion_quejas', $SIS_join, $SIS_where, $dbConn, $_SESSION['usuario']['basic_data']['Nombre'], basename($_SERVER["REQUEST_URI"], ".php"), 'rowData');
-
 ?>
 
 <section class="invoice">
@@ -139,5 +138,4 @@ if(isset($_GET['return'])&&$_GET['return']!=''){
 /*                                             Se llama al pie del documento html                                                 */
 /**********************************************************************************************************************************/
 require_once 'core/Web.Footer.Views.php';
-
 ?>

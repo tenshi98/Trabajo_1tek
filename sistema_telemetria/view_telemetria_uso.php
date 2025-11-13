@@ -395,5 +395,4 @@ if(isset($ndata_1)&&$ndata_1>=10001){
 require_once 'core/Web.Footer.Views.php';
 //cuadro mensajes
 widget_avgrund();
-
 ?>

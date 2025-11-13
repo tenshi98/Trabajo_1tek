@@ -330,5 +330,4 @@ if(isset($rowData['id_Sensores'])&&$rowData['id_Sensores']==1){
 /*                                             Se llama al pie del documento html                                                 */
 /**********************************************************************************************************************************/
 require_once 'core/Web.Footer.Views.php';
-
 ?>

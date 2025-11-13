@@ -154,7 +154,6 @@ cross_quality_analisis_calidad.idSistema';
 $SIS_join  = '';
 $SIS_where = 'cross_quality_analisis_calidad.idAnalisis ='.$_GET['edit'];
 $rowData = db_select_data (false, $SIS_query, 'cross_quality_analisis_calidad', $SIS_join, $SIS_where, $dbConn, $_SESSION['usuario']['basic_data']['Nombre'], $original, 'rowData');
-
 ?>
 
 <div class="col-xs-12 col-sm-10 col-md-9 col-lg-8 fcenter">
@@ -241,7 +240,6 @@ $rowData = db_select_data (false, $SIS_query, 'cross_quality_analisis_calidad', 
 //Verifico el tipo de usuario que esta ingresando
 $w = "idSistema=".$_SESSION['usuario']['basic_data']['idSistema']." AND idEstado=1";
 $z = "idSistema=".$_SESSION['usuario']['basic_data']['idSistema'];
-
 ?>
 
 <div class="col-xs-12 col-sm-10 col-md-9 col-lg-8 fcenter">
@@ -414,7 +412,6 @@ $rowData = db_select_data (false, $SIS_query, 'cross_quality_analisis_calidad', 
 //Verifico el tipo de usuario que esta ingresando
 $w = "idSistema=".$_SESSION['usuario']['basic_data']['idSistema']." AND idEstado=1";
 $z = "idSistema=".$_SESSION['usuario']['basic_data']['idSistema'];
-
 ?>
 
 <div class="col-xs-12 col-sm-10 col-md-9 col-lg-8 fcenter">
@@ -578,7 +575,6 @@ $rowData = db_select_data (false, $SIS_query, 'cross_quality_analisis_calidad', 
 //Verifico el tipo de usuario que esta ingresando
 $w = "idSistema=".$_SESSION['usuario']['basic_data']['idSistema']." AND idEstado=1";
 $z = "idSistema=".$_SESSION['usuario']['basic_data']['idSistema'];
-
 ?>
 
 <div class="col-xs-12 col-sm-10 col-md-9 col-lg-8 fcenter">
@@ -719,7 +715,6 @@ $rowData = db_select_data (false, $SIS_query, 'cross_quality_analisis_calidad', 
 /*************************************************************/
 //Verifico el tipo de usuario que esta ingresando
 $z = "idSistema=".$_SESSION['usuario']['basic_data']['idSistema']." AND idEstado=1";
-
 ?>
 
 <div class="col-xs-12 col-sm-10 col-md-9 col-lg-8 fcenter">
@@ -777,7 +772,6 @@ $rowData = db_select_data (false, $SIS_query, 'cross_quality_analisis_calidad', 
 /*************************************************************/
 //Verifico el tipo de usuario que esta ingresando
 $z = "idSistema=".$_SESSION['usuario']['basic_data']['idSistema']." AND idEstado=1";
-
 ?>
 
 <div class="col-xs-12 col-sm-10 col-md-9 col-lg-8 fcenter">
@@ -831,7 +825,6 @@ $SIS_query = 'Creacion_fecha,idTipo,Temporada,idCategoria,idProducto,idUbicacion
 $SIS_join  = '';
 $SIS_where = 'idAnalisis ='.$_GET['edit'];
 $rowData = db_select_data (false, $SIS_query, 'cross_quality_analisis_calidad', $SIS_join, $SIS_where, $dbConn, $_SESSION['usuario']['basic_data']['Nombre'], $original, 'rowData');
-
 ?>
 
 <div class="col-xs-12 col-sm-10 col-md-9 col-lg-8 fcenter">
@@ -978,7 +971,6 @@ $SIS_where = 'idAnalisis ='.$_GET['edit'];
 $SIS_order = 'Nombre ASC';
 $arrArchivos = array();
 $arrArchivos = db_select_array (false, $SIS_query, 'cross_quality_analisis_calidad_archivo', $SIS_join, $SIS_where, $SIS_order, $dbConn, $_SESSION['usuario']['basic_data']['Nombre'], $original, 'arrArchivos');
-
 ?>
 
 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
@@ -1185,5 +1177,4 @@ $arrArchivos = db_select_array (false, $SIS_query, 'cross_quality_analisis_calid
 /*                                             Se llama al pie del documento html                                                 */
 /**********************************************************************************************************************************/
 require_once 'core/Web.Footer.Main.php';
-
 ?>

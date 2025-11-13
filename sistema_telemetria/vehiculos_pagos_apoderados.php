@@ -52,17 +52,7 @@ FROM `apoderados_listado`
 WHERE idApoderado = '".$_GET['idApoderado']."' ";
 //Consulta
 $resultado = mysqli_query ($dbConn, $query);
-//Si ejecuto correctamente la consulta
-if(!$resultado){
-	//Genero numero aleatorio
-	$vardata = genera_password(8,'alfanumerico');
-					
-	//Guardo el error en una variable temporal
-	
-	
-	
-					
-}
+
 $rowCliente = mysqli_fetch_assoc ($resultado);
 
 //obtengo los datos de la ultima facturacion
@@ -74,19 +64,8 @@ ORDER BY Ano DESC, idMes DESC
 LIMIT 1";
 //Consulta
 $resultado = mysqli_query ($dbConn, $query);
-//Si ejecuto correctamente la consulta
-if(!$resultado){
-	//Genero numero aleatorio
-	$vardata = genera_password(8,'alfanumerico');
-					
-	//Guardo el error en una variable temporal
-	
-	
-	
-					
-}
-$rowFacturacion = mysqli_fetch_assoc ($resultado);
 
+$rowFacturacion = mysqli_fetch_assoc ($resultado);
 ?>
  
  
@@ -192,17 +171,7 @@ FROM `apoderados_listado`
 WHERE idApoderado = '".$_GET['idApoderado']."' ";
 //Consulta
 $resultado = mysqli_query ($dbConn, $query);
-//Si ejecuto correctamente la consulta
-if(!$resultado){
-	//Genero numero aleatorio
-	$vardata = genera_password(8,'alfanumerico');
-					
-	//Guardo el error en una variable temporal
-	
-	
-	
-					
-}
+
 $rowCliente = mysqli_fetch_assoc ($resultado);
 
 //obtengo los datos de la ultima facturacion
@@ -214,17 +183,7 @@ ORDER BY Ano DESC, idMes DESC
 LIMIT 1";
 //Consulta
 $resultado = mysqli_query ($dbConn, $query);
-//Si ejecuto correctamente la consulta
-if(!$resultado){
-	//Genero numero aleatorio
-	$vardata = genera_password(8,'alfanumerico');
-					
-	//Guardo el error en una variable temporal
-	
-	
-	
-					
-}
+
 $rowFacturacion = mysqli_fetch_assoc ($resultado);
 
 //obtengo las facturaciones atrasadas
@@ -243,17 +202,6 @@ AND vehiculos_facturacion_apoderados_listado_detalle.idEstadoPago = 1
 ORDER BY vehiculos_facturacion_apoderados_listado_detalle.Ano DESC, vehiculos_facturacion_apoderados_listado_detalle.idMes DESC";
 //Consulta
 $resultado = mysqli_query ($dbConn, $query);
-//Si ejecuto correctamente la consulta
-if(!$resultado){
-	//Genero numero aleatorio
-	$vardata = genera_password(8,'alfanumerico');
-					
-	//Guardo el error en una variable temporal
-	
-	
-	
-					
-}
 while ( $row = mysqli_fetch_assoc ($resultado)){
 array_push( $arrFacturaciones,$row );
 }	
@@ -357,7 +305,6 @@ array_push( $arrFacturaciones,$row );
 }else{
 //filtro sistema
 $z = 'idSistema='.$_SESSION['usuario']['basic_data']['idSistema'];
-
 ?>
 
 <div class="col-xs-12 col-sm-10 col-md-9 col-lg-8 fcenter">
@@ -401,5 +348,4 @@ $z = 'idSistema='.$_SESSION['usuario']['basic_data']['idSistema'];
 /*                                             Se llama al pie del documento html                                                 */
 /**********************************************************************************************************************************/
 require_once 'core/Web.Footer.Main.php';
-
 ?>

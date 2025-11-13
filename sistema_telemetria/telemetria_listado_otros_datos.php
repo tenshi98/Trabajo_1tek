@@ -191,5 +191,4 @@ $w.= " AND telemetria_listado.idTab=9";//Power-Energy
 /*                                             Se llama al pie del documento html                                                 */
 /**********************************************************************************************************************************/
 require_once 'core/Web.Footer.Main.php';
-
 ?>

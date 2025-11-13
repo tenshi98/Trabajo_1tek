@@ -60,17 +60,6 @@ GROUP BY Creacion_ano,Creacion_mes,idTipo
 ORDER BY Creacion_ano ASC, Creacion_mes ASC";
 //Consulta
 $resultado = mysqli_query ($dbConn, $query);
-//Si ejecuto correctamente la consulta
-if(!$resultado){
-	//Genero numero aleatorio
-	$vardata = genera_password(8,'alfanumerico');
-					
-	//Guardo el error en una variable temporal
-	
-	
-	
-					
-}
 while ( $row = mysqli_fetch_assoc ($resultado)){
 array_push( $arrExistencias,$row );
 }
@@ -744,17 +733,6 @@ GROUP BY Creacion_ano,Creacion_mes,idTipo
 ORDER BY Creacion_ano ASC, Creacion_mes ASC";
 //Consulta
 $resultado = mysqli_query ($dbConn, $query);
-//Si ejecuto correctamente la consulta
-if(!$resultado){
-	//Genero numero aleatorio
-	$vardata = genera_password(8,'alfanumerico');
-					
-	//Guardo el error en una variable temporal
-	
-	
-	
-					
-}
 while ( $row = mysqli_fetch_assoc ($resultado)){
 array_push( $arrExistencias,$row );
 }
@@ -1429,17 +1407,6 @@ GROUP BY Creacion_ano,Creacion_mes,idTipo
 ORDER BY Creacion_ano ASC, Creacion_mes ASC";
 //Consulta
 $resultado = mysqli_query ($dbConn, $query);
-//Si ejecuto correctamente la consulta
-if(!$resultado){
-	//Genero numero aleatorio
-	$vardata = genera_password(8,'alfanumerico');
-					
-	//Guardo el error en una variable temporal
-	
-	
-	
-					
-}
 while ( $row = mysqli_fetch_assoc ($resultado)){
 array_push( $arrExistencias,$row );
 }
@@ -1646,5 +1613,4 @@ if($s_Ventas=='true'){            $s_data .= ',tipo2';}
 /*                                             Se llama al pie del documento html                                                 */
 /**********************************************************************************************************************************/
 require_once 'core/Web.Footer.Main.php';
-
 ?>

@@ -62,7 +62,6 @@ $arrMediciones = db_select_array (false, $SIS_query, 'telemetria_listado_tablare
 //consulto
 $arrPuntos = array();
 $arrPuntos = db_select_array (false, 'idUbicaciones, Latitud, Longitud', 'cross_predios_listado_zonas_ubicaciones', '', 'idZona ='.$_GET['idZona'], 'idUbicaciones ASC', $dbConn, $_SESSION['usuario']['basic_data']['Nombre'], $original, 'arrPuntos');
-
 ?>
 
 <section class="invoice">
@@ -188,5 +187,4 @@ $arrPuntos = db_select_array (false, 'idUbicaciones, Latitud, Longitud', 'cross_
 /*                                             Se llama al pie del documento html                                                 */
 /**********************************************************************************************************************************/
 require_once 'core/Web.Footer.Views.php';
-
 ?>

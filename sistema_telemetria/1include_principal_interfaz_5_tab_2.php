@@ -74,7 +74,6 @@ $SIS_where = '(TimeStamp BETWEEN "'.$f_inicio.' '.$h_inicio .'" AND "'.$f_termin
 $SIS_order = 'FechaSistema ASC, HoraSistema ASC';
 $arrMediciones = array();
 $arrMediciones = db_select_array (false, $SIS_query, 'telemetria_listado_tablarelacionada_'.$arrEquipo[0]['idTelemetria'], $SIS_join, $SIS_where, $SIS_order, $dbConn, $_SESSION['usuario']['basic_data']['Nombre'], basename($_SERVER["REQUEST_URI"], ".php"), 'arrMediciones');
-
 ?>
 
 <style>

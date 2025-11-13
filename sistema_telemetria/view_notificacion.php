@@ -71,7 +71,6 @@ usuarios_listado.Direccion_img';
 $SIS_join  = 'LEFT JOIN `usuarios_listado` ON usuarios_listado.idUsuario = principal_notificaciones_listado.idUsuario';
 $SIS_where = 'principal_notificaciones_listado.idNotificaciones ='.$X_Puntero;
 $rowData = db_select_data (false, $SIS_query, 'principal_notificaciones_listado', $SIS_join, $SIS_where, $dbConn, $_SESSION['usuario']['basic_data']['Nombre'], basename($_SERVER["REQUEST_URI"], ".php"), 'rowData');
-
 ?>
 
 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
@@ -184,5 +183,4 @@ if(isset($_GET['return'])&&$_GET['return']!=''){
 /*                                             Se llama al pie del documento html                                                 */
 /**********************************************************************************************************************************/
 require_once 'core/Web.Footer.Views.php';
-
 ?>

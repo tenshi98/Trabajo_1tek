@@ -68,17 +68,6 @@ FROM `sistema_variedades_categorias`
 WHERE sistema_variedades_categorias.idCategoria = ".$_GET['id'];
 //Consulta
 $resultado = mysqli_query ($dbConn, $query);
-//Si ejecuto correctamente la consulta
-if(!$resultado){
-	//Genero numero aleatorio
-	$vardata = genera_password(8,'alfanumerico');
-					
-	//Guardo el error en una variable temporal
-	
-	
-	
-					
-}
 $rowData = mysqli_fetch_assoc ($resultado);
 
 // Se trae un listado con todos los elementos
@@ -96,17 +85,6 @@ WHERE sistema_variedades_categorias_matriz_calidad.idCategoria = ".$_GET['id']."
 AND sistema_variedades_categorias_matriz_calidad.idSistema=".$_SESSION['usuario']['basic_data']['idSistema'];
 //Consulta
 $resultado = mysqli_query ($dbConn, $query);
-//Si ejecuto correctamente la consulta
-if(!$resultado){
-	//Genero numero aleatorio
-	$vardata = genera_password(8,'alfanumerico');
-					
-	//Guardo el error en una variable temporal
-	
-	
-	
-					
-}
 while ( $row = mysqli_fetch_assoc ($resultado)){
 array_push( $arrMatrizCalidad,$row );
 }
@@ -125,17 +103,6 @@ WHERE sistema_variedades_categorias_matriz_proceso.idCategoria = ".$_GET['id']."
 AND sistema_variedades_categorias_matriz_proceso.idSistema=".$_SESSION['usuario']['basic_data']['idSistema'];
 //Consulta
 $resultado = mysqli_query ($dbConn, $query);
-//Si ejecuto correctamente la consulta
-if(!$resultado){
-	//Genero numero aleatorio
-	$vardata = genera_password(8,'alfanumerico');
-					
-	//Guardo el error en una variable temporal
-	
-	
-	
-					
-}
 while ( $row = mysqli_fetch_assoc ($resultado)){
 array_push( $arrMatrizProceso,$row );
 }
@@ -155,17 +122,6 @@ WHERE sistema_variedades_categorias_tipo_emb.idCategoria = ".$_GET['id']."
 AND sistema_variedades_categorias_tipo_emb.idSistema=".$_SESSION['usuario']['basic_data']['idSistema'];
 //Consulta
 $resultado = mysqli_query ($dbConn, $query);
-//Si ejecuto correctamente la consulta
-if(!$resultado){
-	//Genero numero aleatorio
-	$vardata = genera_password(8,'alfanumerico');
-					
-	//Guardo el error en una variable temporal
-	
-	
-	
-					
-}
 while ( $row = mysqli_fetch_assoc ($resultado)){
 array_push( $arrTiposEmbalaje,$row );
 }
@@ -386,7 +342,6 @@ $SIS_join  = '';
 $SIS_order = $order_by.' LIMIT '.$comienzo.', '.$cant_reg;
 $arrCategorias = array();
 $arrCategorias = db_select_array (false, $SIS_query, 'sistema_variedades_categorias', $SIS_join, $SIS_where, $SIS_order, $dbConn, $_SESSION['usuario']['basic_data']['Nombre'], $original, 'arrCategorias');
-
 ?>
 
 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 breadcrumb-bar">
@@ -487,5 +442,4 @@ $arrCategorias = db_select_array (false, $SIS_query, 'sistema_variedades_categor
 /*                                             Se llama al pie del documento html                                                 */
 /**********************************************************************************************************************************/
 require_once 'core/Web.Footer.Main.php';
-
 ?>

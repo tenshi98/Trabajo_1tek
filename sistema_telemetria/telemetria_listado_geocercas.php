@@ -68,7 +68,6 @@ validaPermisoUser($rowlevel['level'], 3, $dbConn);
 //se crea filtro
 //Verifico el tipo de usuario que esta ingresando
 $w = "idSistema=".$_SESSION['usuario']['basic_data']['idSistema']." AND idEstado=1";
-
 ?>
 
 <div class="col-xs-12 col-sm-10 col-md-9 col-lg-8 fcenter">
@@ -110,7 +109,6 @@ $rowData = db_select_data (false, 'Nombre,id_Geo, id_Sensores', 'telemetria_list
 // consulto los datos
 $arrGeocerca = array();
 $arrGeocerca = db_select_array (false, 'telemetria_listado_geocercas.idGeocerca,telemetria_geocercas.Nombre AS Geocerca', 'telemetria_listado_geocercas', 'LEFT JOIN `telemetria_geocercas` ON telemetria_geocercas.idZona = telemetria_listado_geocercas.idZona', 'telemetria_listado_geocercas.idTelemetria ='.$_GET['id'], 'telemetria_geocercas.Nombre ASC', $dbConn, $_SESSION['usuario']['basic_data']['Nombre'], $original, 'arrGeocerca');
-
 ?>
 
 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
@@ -196,5 +194,4 @@ $arrGeocerca = db_select_array (false, 'telemetria_listado_geocercas.idGeocerca,
 /*                                             Se llama al pie del documento html                                                 */
 /**********************************************************************************************************************************/
 require_once 'core/Web.Footer.Main.php';
-
 ?>

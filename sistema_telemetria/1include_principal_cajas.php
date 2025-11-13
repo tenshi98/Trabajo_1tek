@@ -33,7 +33,6 @@ LEFT JOIN `caja_chica_facturacion_tipo`  ON caja_chica_facturacion_tipo.idTipo  
 $SIS_order = 'caja_chica_facturacion.Creacion_fecha DESC LIMIT 50';
 $arrTipo = array();
 $arrTipo = db_select_array (false, $SIS_query, 'caja_chica_facturacion', $SIS_join, $SIS_where, $SIS_order, $dbConn, $_SESSION['usuario']['basic_data']['Nombre'], basename($_SERVER["REQUEST_URI"], ".php"), 'arrTipo');
-
 ?>
 
 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">

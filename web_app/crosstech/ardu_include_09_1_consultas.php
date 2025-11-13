@@ -58,5 +58,4 @@ $SIS_where.= ' GROUP BY telemetria_mnt_correos_list.idUsuario, telemetria_mnt_co
 $SIS_order = 'telemetria_mnt_correos_list.idUsuario ASC';
 $arrCorreos = array();
 $arrCorreos = db_select_array (false, $SIS_query, 'telemetria_mnt_correos_list', $SIS_join, $SIS_where, $SIS_order, $dbConn, 'ardu_include_notificaciones', basename($_SERVER["REQUEST_URI"], ".php"), 'arrCorreos');
-
 ?>

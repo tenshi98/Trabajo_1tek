@@ -53,7 +53,6 @@ $SIS_query = 'Nombre,Rut, Direccion,idCiudad, idComuna, Rubro, RepresentanteNomb
 $SIS_join  = '';
 $SIS_where = 'idSistema ='.$_GET['id'];
 $rowData = db_select_data (false, $SIS_query, 'core_sistemas',$SIS_join, $SIS_where, $dbConn, $_SESSION['usuario']['basic_data']['Nombre'], $original, 'rowData');
-
 ?>
 
 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
@@ -138,5 +137,4 @@ $rowData = db_select_data (false, $SIS_query, 'core_sistemas',$SIS_join, $SIS_wh
 /*                                             Se llama al pie del documento html                                                 */
 /**********************************************************************************************************************************/
 require_once 'core/Web.Footer.Main.php';
-
 ?>

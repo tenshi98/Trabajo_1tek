@@ -242,5 +242,4 @@ foreach ($arrGrupos as $sen) {    $arrGruposEx[$sen['idGrupo']] = $sen['Nombre']
 require_once 'core/Web.Footer.Views.php';
 //cuadro mensajes
 widget_avgrund();
-
 ?>

@@ -92,7 +92,6 @@ $SIS_where = 'cursos_listado_videoconferencia.idCurso ='.$X_Puntero;
 $SIS_order = 'cursos_listado_videoconferencia.Nombre ASC';
 $arrVideo = array();
 $arrVideo = db_select_array (false, $SIS_query, 'cursos_listado_videoconferencia', $SIS_join, $SIS_where, $SIS_order, $dbConn, $_SESSION['usuario']['basic_data']['Nombre'], basename($_SERVER["REQUEST_URI"], ".php"), 'arrVideo');
-
 ?>
 
 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
@@ -243,5 +242,4 @@ if(isset($_GET['return'])&&$_GET['return']!=''){
 /*                                             Se llama al pie del documento html                                                 */
 /**********************************************************************************************************************************/
 require_once 'core/Web.Footer.Views.php';
-
 ?>

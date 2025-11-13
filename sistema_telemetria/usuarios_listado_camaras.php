@@ -224,7 +224,6 @@ $SIS_where = 'seguridad_camaras_listado.idSistema='.$_SESSION['usuario']['basic_
 $SIS_order = 'seguridad_camaras_listado.Nombre ASC';
 $arrCamaras = array();
 $arrCamaras = db_select_array (false, $SIS_query, 'seguridad_camaras_listado', $SIS_join, $SIS_where, $SIS_order, $dbConn, $_SESSION['usuario']['basic_data']['Nombre'], $original, 'arrCamaras');
-
 ?>
 
 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
@@ -332,5 +331,4 @@ $arrCamaras = db_select_array (false, $SIS_query, 'seguridad_camaras_listado', $
 /*                                             Se llama al pie del documento html                                                 */
 /**********************************************************************************************************************************/
 require_once 'core/Web.Footer.Main.php';
-
 ?>

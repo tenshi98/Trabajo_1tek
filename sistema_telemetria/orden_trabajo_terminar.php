@@ -172,5 +172,4 @@ if(!empty($_GET['addInsumo'])){ ?>
 /*                                             Se llama al pie del documento html                                                 */
 /**********************************************************************************************************************************/
 require_once 'core/Web.Footer.Main.php';
-
 ?>

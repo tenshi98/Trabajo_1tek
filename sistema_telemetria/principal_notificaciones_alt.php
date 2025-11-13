@@ -89,5 +89,4 @@ require_once 'core/Web.Header.Views.php';
 /*                                             Se llama al pie del documento html                                                 */
 /**********************************************************************************************************************************/
 require_once 'core/Web.Footer.Views.php';
-
 ?>

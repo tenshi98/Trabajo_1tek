@@ -88,7 +88,6 @@ $SIS_where = 'seg_vecinal_clientes_observaciones.idCliente ='.$X_Puntero;
 $SIS_order = 'seg_vecinal_clientes_observaciones.idObservacion ASC LIMIT 15';
 $arrObservaciones = array();
 $arrObservaciones = db_select_array (false, $SIS_query, 'seg_vecinal_clientes_observaciones', $SIS_join, $SIS_where, $SIS_order, $dbConn, $_SESSION['usuario']['basic_data']['Nombre'], basename($_SERVER["REQUEST_URI"], ".php"), 'arrObservaciones');
-
 ?>
 
 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
@@ -246,5 +245,4 @@ if(isset($_GET['return'])&&$_GET['return']!=''){
 /*                                             Se llama al pie del documento html                                                 */
 /**********************************************************************************************************************************/
 require_once 'core/Web.Footer.Views.php';
-
 ?>

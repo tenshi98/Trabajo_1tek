@@ -60,5 +60,4 @@ if($post_query){@fwrite($fh, 'POST_QUERY: '.$post_query."\r\n");}
 /*                                             Se llama al pie del documento html                                                 */
 /**********************************************************************************************************************************/
 require_once 'core/Web.Footer.Error.php';
-
 ?>

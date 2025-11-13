@@ -2,7 +2,7 @@
 
 require_once("qrcode.php");
 
-$qr = QRCode::getMinimumQRCode("QRÉRÅ[Éh", QR_ERROR_CORRECT_LEVEL_L);
+$qr = QRCode::getMinimumQRCode("QRÔøΩRÔøΩ[ÔøΩh", QR_ERROR_CORRECT_LEVEL_L);
 
 header("Content-type: text/xml");
 
@@ -17,5 +17,4 @@ for ($r = 0; $r < $qr->getModuleCount(); $r++) {
 }
 
 print("</qrcode>");
-
 ?>

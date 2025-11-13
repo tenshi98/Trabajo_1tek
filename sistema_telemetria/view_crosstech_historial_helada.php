@@ -106,7 +106,6 @@ foreach($arrHistorial as $hist) {
 }
 $arrData[1]['Name'] = "'Temperatura Proyectada (°C)'";
 //$arrData[2]['Name'] = "'Temperatura Real (°C)'";
-
 ?>
 
 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
@@ -177,5 +176,4 @@ if(isset($_GET['return'])&&$_GET['return']!=''){
 /*                                             Se llama al pie del documento html                                                 */
 /**********************************************************************************************************************************/
 require_once 'core/Web.Footer.Views.php';
-
 ?>

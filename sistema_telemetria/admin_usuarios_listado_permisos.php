@@ -122,7 +122,6 @@ $SIS_where.= ' OR core_permisos_listado.visualizacion=9998';
 $SIS_order = 'core_permisos_categorias.Nombre ASC,  core_permisos_listado.Nombre ASC';
 $arrPermisos = array();
 $arrPermisos = db_select_array (false, $SIS_query, 'core_permisos_listado', $SIS_join, $SIS_where, $SIS_order, $dbConn, $_SESSION['usuario']['basic_data']['Nombre'], $original, 'arrPermisos');
-
 ?>
 
 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
@@ -233,5 +232,4 @@ $arrPermisos = db_select_array (false, $SIS_query, 'core_permisos_listado', $SIS
 /*                                             Se llama al pie del documento html                                                 */
 /**********************************************************************************************************************************/
 require_once 'core/Web.Footer.Main.php';
-
 ?>

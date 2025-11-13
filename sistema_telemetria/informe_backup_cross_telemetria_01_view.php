@@ -119,5 +119,4 @@ $arrMediciones = db_select_array (false, $SIS_query, 'backup_telemetria_listado_
 /*                                             Se llama al pie del documento html                                                 */
 /**********************************************************************************************************************************/
 require_once 'core/Web.Footer.Views.php';
-
 ?>

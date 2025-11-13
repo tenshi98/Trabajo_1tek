@@ -18,7 +18,6 @@ require_once 'core/Load.Utils.Error.php';
 /*                                         Se llaman a la cabecera del documento html                                             */
 /**********************************************************************************************************************************/
 require_once 'core/Web.Header.Error.php';
-
 ?>
 
 <div class="container">
@@ -37,5 +36,4 @@ require_once 'core/Web.Header.Error.php';
 /*                                             Se llama al pie del documento html                                                 */
 /**********************************************************************************************************************************/
 require_once 'core/Web.Footer.Error.php';
-
 ?>

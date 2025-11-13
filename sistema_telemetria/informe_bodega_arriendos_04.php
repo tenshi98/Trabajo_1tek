@@ -243,5 +243,4 @@ if($s_Ventas=='true'){            $s_data .= ',tipo2';}
 /*                                             Se llama al pie del documento html                                                 */
 /**********************************************************************************************************************************/
 require_once 'core/Web.Footer.Main.php';
-
 ?>

@@ -449,5 +449,4 @@ $Cent_zonaLongitud  = $arrZonas[0]['Longitud'];
 /*                                             Se llama al pie del documento html                                                 */
 /**********************************************************************************************************************************/
 require_once 'core/Web.Footer.Views.php';
-
 ?>

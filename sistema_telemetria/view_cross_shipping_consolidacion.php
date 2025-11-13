@@ -160,7 +160,6 @@ $arrArchivos = db_select_array (false, $SIS_query, 'cross_shipping_consolidacion
 <?php
 $zz  = '?idSistema='.simpleEncode($_SESSION['usuario']['basic_data']['idSistema'], fecha_actual());
 $zz .= '&view='.$_GET['view'];
-
 ?>
 
 <div class="no-print">
@@ -441,5 +440,4 @@ if(isset($_GET['return'])&&$_GET['return']!=''){
 /*                                             Se llama al pie del documento html                                                 */
 /**********************************************************************************************************************************/
 require_once 'core/Web.Footer.Views.php';
-
 ?>

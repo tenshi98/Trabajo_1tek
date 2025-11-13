@@ -59,17 +59,6 @@ LEFT JOIN `core_sistemas`                ON core_sistemas.idSistema             
 WHERE licitacion_listado.idLicitacion=".$_GET['idLicitacion'];
 //Consulta
 $resultado = mysqli_query ($dbConn, $query);
-//Si ejecuto correctamente la consulta
-if(!$resultado){
-	//Genero numero aleatorio
-	$vardata = genera_password(8,'alfanumerico');
-					
-	//Guardo el error en una variable temporal
-	
-	
-	
-					
-}
 $rowData = mysqli_fetch_assoc ($resultado);
 
 /*************************************************************/
@@ -110,17 +99,6 @@ ORDER BY licitacion_listado_level_1.Codigo ASC ".$orderby."
 ";
 //Consulta
 $resultado = mysqli_query ($dbConn, $query);
-//Si ejecuto correctamente la consulta
-if(!$resultado){
-	//Genero numero aleatorio
-	$vardata = genera_password(8,'alfanumerico');
-					
-	//Guardo el error en una variable temporal
-	
-	
-	
-					
-}
 while ( $row = mysqli_fetch_assoc ($resultado)){
 array_push( $arrLicitacion,$row );
 }
@@ -305,17 +283,6 @@ $query = "SELECT idFrecuencia, Nombre
 FROM `core_tiempo_frecuencia`";
 //Consulta
 $resultado = mysqli_query ($dbConn, $query);
-//Si ejecuto correctamente la consulta
-if(!$resultado){
-	//Genero numero aleatorio
-	$vardata = genera_password(8,'alfanumerico');
-					
-	//Guardo el error en una variable temporal
-	
-	
-	
-					
-}
 while ( $row = mysqli_fetch_assoc ($resultado)){
 array_push( $arrUML,$row );
 }
@@ -340,17 +307,6 @@ GROUP BY item_tabla,item_tabla_id
 ORDER BY item_tabla ASC, item_tabla_id ASC";
 //Consulta
 $resultado = mysqli_query ($dbConn, $query);
-//Si ejecuto correctamente la consulta
-if(!$resultado){
-	//Genero numero aleatorio
-	$vardata = genera_password(8,'alfanumerico');
-					
-	//Guardo el error en una variable temporal
-	
-	
-	
-					
-}
 while ( $row = mysqli_fetch_assoc ($resultado)){
 array_push( $arrOTRealizadas,$row );
 }	
@@ -383,17 +339,6 @@ orden_trabajo_listado_trabajos.item_tabla ASC,
 orden_trabajo_listado_trabajos.item_tabla_id ASC";
 //Consulta
 $resultado = mysqli_query ($dbConn, $query);
-//Si ejecuto correctamente la consulta
-if(!$resultado){
-	//Genero numero aleatorio
-	$vardata = genera_password(8,'alfanumerico');
-					
-	//Guardo el error en una variable temporal
-	
-	
-	
-					
-}
 while ( $row = mysqli_fetch_assoc ($resultado)){
 array_push( $arrFlujo,$row );
 }
@@ -437,17 +382,6 @@ bodegas_productos_facturacion_existencias.Creacion_mes ASC
 
 //Consulta
 $resultado = mysqli_query ($dbConn, $query);
-//Si ejecuto correctamente la consulta
-if(!$resultado){
-	//Genero numero aleatorio
-	$vardata = genera_password(8,'alfanumerico');
-					
-	//Guardo el error en una variable temporal
-	
-	
-	
-					
-}
 while ( $row = mysqli_fetch_assoc ($resultado)){
 array_push( $arrCompProd,$row );
 }
@@ -484,17 +418,6 @@ bodegas_insumos_facturacion_existencias.Creacion_mes ASC
 
 //Consulta
 $resultado = mysqli_query ($dbConn, $query);
-//Si ejecuto correctamente la consulta
-if(!$resultado){
-	//Genero numero aleatorio
-	$vardata = genera_password(8,'alfanumerico');
-					
-	//Guardo el error en una variable temporal
-	
-	
-	
-					
-}
 while ( $row = mysqli_fetch_assoc ($resultado)){
 array_push( $arrCompIns,$row );
 }
@@ -1388,7 +1311,6 @@ function arrayFlujo(array $array, array $FlujoMensual, array $UML, $nmax, $ano_m
 //sistema
 $y = "licitacion_listado.idEstado=1 AND licitacion_listado.idAprobado=2 ";
 $w = "idSistema=".$_SESSION['usuario']['basic_data']['idSistema']." AND idEstado=1";
-
 ?>
 
 <div class="col-xs-12 col-sm-10 col-md-9 col-lg-8 fcenter">
@@ -1431,5 +1353,4 @@ $w = "idSistema=".$_SESSION['usuario']['basic_data']['idSistema']." AND idEstado
 /*                                             Se llama al pie del documento html                                                 */
 /**********************************************************************************************************************************/
 require_once 'core/Web.Footer.Main.php';
-
 ?>

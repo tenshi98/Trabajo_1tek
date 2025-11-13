@@ -178,7 +178,6 @@ $arrTrabajo = db_select_array (false, $SIS_query, 'orden_trabajo_listado_trabajo
 /***************************************************/
 $zz  = '?idSistema='.simpleEncode($_SESSION['usuario']['basic_data']['idSistema'], fecha_actual());
 $zz .= '&view='.$_GET['view'];
-
 ?>
 
 <div class="col-xs-12">
@@ -415,5 +414,4 @@ if(isset($_GET['return'])&&$_GET['return']!=''){
 /*                                             Se llama al pie del documento html                                                 */
 /**********************************************************************************************************************************/
 require_once 'core/Web.Footer.Views.php';
-
 ?>

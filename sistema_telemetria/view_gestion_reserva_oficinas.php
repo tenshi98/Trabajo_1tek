@@ -65,7 +65,6 @@ LEFT JOIN `core_sistemas_opciones`   ON core_sistemas_opciones.idOpciones   = ge
 LEFT JOIN `oficinas_listado`         ON oficinas_listado.idOficina          = gestion_reserva_oficinas.idOficina';
 $SIS_where = 'gestion_reserva_oficinas.idReserva ='.$X_Puntero;
 $rowData = db_select_data (false, $SIS_query, 'gestion_reserva_oficinas', $SIS_join, $SIS_where, $dbConn, $_SESSION['usuario']['basic_data']['Nombre'], basename($_SERVER["REQUEST_URI"], ".php"), 'rowData');
-
 ?>
 
 <section class="invoice">
@@ -150,5 +149,4 @@ if(isset($_GET['return'])&&$_GET['return']!=''){
 /*                                             Se llama al pie del documento html                                                 */
 /**********************************************************************************************************************************/
 require_once 'core/Web.Footer.Views.php';
-
 ?>

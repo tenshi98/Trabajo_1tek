@@ -87,7 +87,6 @@ for ($i = 1; $i <= $rowData['cantSensores']; $i++) {
 //se consulta
 $arrConsulta = array();
 $arrConsulta = db_select_array (false, 'Fecha'.$subquery, 'telemetria_listado_historial_uso', '', $SIS_where, 'telemetria_listado_historial_uso.Fecha ASC', $dbConn, $_SESSION['usuario']['basic_data']['Nombre'], $original, 'arrConsulta');
-
 ?>
 
 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
@@ -199,5 +198,4 @@ if(isset($_SESSION['usuario']['basic_data']['idInterfaz'])&&$_SESSION['usuario']
 /*                                             Se llama al pie del documento html                                                 */
 /**********************************************************************************************************************************/
 require_once 'core/Web.Footer.Main.php';
-
 ?>

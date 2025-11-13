@@ -77,17 +77,6 @@ FROM `sistema_variedades_categorias_matriz_proceso`
 WHERE idVarMatriz = ".$_GET['edit'];
 //Consulta
 $resultado = mysqli_query ($dbConn, $query);
-//Si ejecuto correctamente la consulta
-if(!$resultado){
-	//Genero numero aleatorio
-	$vardata = genera_password(8,'alfanumerico');
-					
-	//Guardo el error en una variable temporal
-	
-	
-	
-					
-}
 $rowData = mysqli_fetch_assoc ($resultado); 	
 ?>
 
@@ -134,7 +123,6 @@ validaPermisoUser($rowlevel['level'], 3, $dbConn);
 //se crea filtro
 //verifico que sea un administrador
 $z = "idSistema=".$_SESSION['usuario']['basic_data']['idSistema'];
-
 ?>
 
 <div class="col-xs-12 col-sm-10 col-md-9 col-lg-8 fcenter">
@@ -181,17 +169,6 @@ FROM `sistema_variedades_categorias`
 WHERE idCategoria = ".$_GET['id'];
 //Consulta
 $resultado = mysqli_query ($dbConn, $query);
-//Si ejecuto correctamente la consulta
-if(!$resultado){
-	//Genero numero aleatorio
-	$vardata = genera_password(8,'alfanumerico');
-					
-	//Guardo el error en una variable temporal
-	
-	
-	
-					
-}
 $rowData = mysqli_fetch_assoc ($resultado);
 
 // Se trae un listado con todos los elementos
@@ -211,17 +188,6 @@ WHERE sistema_variedades_categorias_matriz_proceso.idCategoria = ".$_GET['id']."
 AND sistema_variedades_categorias_matriz_proceso.idSistema = ".$_SESSION['usuario']['basic_data']['idSistema'];
 //Consulta
 $resultado = mysqli_query ($dbConn, $query);
-//Si ejecuto correctamente la consulta
-if(!$resultado){
-	//Genero numero aleatorio
-	$vardata = genera_password(8,'alfanumerico');
-					
-	//Guardo el error en una variable temporal
-	
-	
-	
-					
-}
 while ( $row = mysqli_fetch_assoc ($resultado)){
 array_push( $arrProductos,$row );
 }
@@ -302,5 +268,4 @@ array_push( $arrProductos,$row );
 /*                                             Se llama al pie del documento html                                                 */
 /**********************************************************************************************************************************/
 require_once 'core/Web.Footer.Main.php';
-
 ?>

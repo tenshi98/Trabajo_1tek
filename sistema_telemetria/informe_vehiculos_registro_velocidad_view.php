@@ -33,7 +33,6 @@ vehiculos_listado_tablarelacionada_'.simpleDecode($_GET['idVehiculo'], fecha_act
 $SIS_join  = 'LEFT JOIN `vehiculos_listado` ON vehiculos_listado.idVehiculo = vehiculos_listado_tablarelacionada_'.simpleDecode($_GET['idVehiculo'], fecha_actual()).'.idVehiculo';
 $SIS_where = 'vehiculos_listado_tablarelacionada_'.simpleDecode($_GET['idVehiculo'], fecha_actual()).'.idTabla = '.simpleDecode($_GET['view'], fecha_actual());
 $rowData = db_select_data (false, $SIS_query, 'vehiculos_listado_tablarelacionada_'.simpleDecode($_GET['idVehiculo'], fecha_actual()), $SIS_join, $SIS_where, $dbConn, $_SESSION['usuario']['basic_data']['Nombre'], basename($_SERVER["REQUEST_URI"], ".php"), 'rowData');
-
 ?>
 
 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
@@ -58,5 +57,4 @@ $rowData = db_select_data (false, $SIS_query, 'vehiculos_listado_tablarelacionad
 /*                                             Se llama al pie del documento html                                                 */
 /**********************************************************************************************************************************/
 require_once 'core/Web.Footer.Views.php';
-
 ?>

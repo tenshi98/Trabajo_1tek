@@ -1049,17 +1049,6 @@ AND bodegas_insumos_facturacion.idFacturacionRelacionado=0
 ORDER BY bodegas_insumos_facturacion.Creacion_fecha DESC";
 //Consulta
 $resultado = mysqli_query ($dbConn, $query);
-//Si ejecuto correctamente la consulta
-if(!$resultado){
-	//Genero numero aleatorio
-	$vardata = genera_password(8,'alfanumerico');
-					
-	//Guardo el error en una variable temporal
-	
-	
-	
-					
-}
 while ( $row = mysqli_fetch_assoc ($resultado)){
 array_push( $arrTipo1,$row );
 }
@@ -1119,17 +1108,6 @@ AND bodegas_productos_facturacion.idFacturacionRelacionado=0
 ORDER BY bodegas_productos_facturacion.Creacion_fecha DESC";
 //Consulta
 $resultado = mysqli_query ($dbConn, $query);
-//Si ejecuto correctamente la consulta
-if(!$resultado){
-	//Genero numero aleatorio
-	$vardata = genera_password(8,'alfanumerico');
-					
-	//Guardo el error en una variable temporal
-	
-	
-	
-					
-}
 while ( $row = mysqli_fetch_assoc ($resultado)){
 array_push( $arrTipo2,$row );
 }
@@ -1189,17 +1167,6 @@ AND bodegas_arriendos_facturacion.idFacturacionRelacionado=0
 ORDER BY bodegas_arriendos_facturacion.Creacion_fecha DESC";
 //Consulta
 $resultado = mysqli_query ($dbConn, $query);
-//Si ejecuto correctamente la consulta
-if(!$resultado){
-	//Genero numero aleatorio
-	$vardata = genera_password(8,'alfanumerico');
-					
-	//Guardo el error en una variable temporal
-	
-	
-	
-					
-}
 while ( $row = mysqli_fetch_assoc ($resultado)){
 array_push( $arrTipo3,$row );
 }
@@ -1259,17 +1226,6 @@ AND bodegas_servicios_facturacion.idFacturacionRelacionado=0
 ORDER BY bodegas_servicios_facturacion.Creacion_fecha DESC";
 //Consulta
 $resultado = mysqli_query ($dbConn, $query);
-//Si ejecuto correctamente la consulta
-if(!$resultado){
-	//Genero numero aleatorio
-	$vardata = genera_password(8,'alfanumerico');
-					
-	//Guardo el error en una variable temporal
-	
-	
-	
-					
-}
 while ( $row = mysqli_fetch_assoc ($resultado)){
 array_push( $arrTipo4,$row );
 }	
@@ -1695,5 +1651,4 @@ $z = "idSistema=".$_SESSION['usuario']['basic_data']['idSistema'];
 /*                                             Se llama al pie del documento html                                                 */
 /**********************************************************************************************************************************/
 require_once 'core/Web.Footer.Main.php';
-
 ?>

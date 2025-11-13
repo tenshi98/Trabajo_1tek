@@ -66,7 +66,6 @@ orden_trabajo_eventos_listado.idMaquina';
 $SIS_join  = 'orden_trabajo_eventos_listado.idEvento = '.$_GET['id'];
 $SIS_where = '';
 $rowData = db_select_data (false, $SIS_query, 'orden_trabajo_eventos_listado', $SIS_join, $SIS_where, $dbConn, $_SESSION['usuario']['basic_data']['Nombre'], $original, 'rowData');
-
 ?>
 
 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
@@ -135,5 +134,4 @@ $rowData = db_select_data (false, $SIS_query, 'orden_trabajo_eventos_listado', $
 /*                                             Se llama al pie del documento html                                                 */
 /**********************************************************************************************************************************/
 require_once 'core/Web.Footer.Main.php';
-
 ?>

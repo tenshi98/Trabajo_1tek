@@ -65,17 +65,6 @@ FROM `core_sistemas`
 WHERE idSistema = ".$_GET['id'];
 //Consulta
 $resultado = mysqli_query ($dbConn, $query);
-//Si ejecuto correctamente la consulta
-if(!$resultado){
-	//Genero numero aleatorio
-	$vardata = genera_password(8,'alfanumerico');
-					
-	//Guardo el error en una variable temporal
-	
-	
-	
-					
-}
 $rowData = mysqli_fetch_assoc ($resultado);
 
 //Listado de productos
@@ -90,17 +79,6 @@ FROM `sistema_variedades_categorias`
 ORDER BY sistema_variedades_categorias.Nombre ASC";
 //Consulta
 $resultado = mysqli_query ($dbConn, $query);
-//Si ejecuto correctamente la consulta
-if(!$resultado){
-	//Genero numero aleatorio
-	$vardata = genera_password(8,'alfanumerico');
-					
-	//Guardo el error en una variable temporal
-	
-	
-	
-					
-}
 while ( $row = mysqli_fetch_assoc ($resultado)){
 array_push( $arrProductos,$row );
 }
@@ -175,17 +153,6 @@ FROM usuarios_listado
 WHERE usuarios_listado.idUsuario='1' ";
 //Consulta
 $resultado = mysqli_query ($dbConn, $query);
-//Si ejecuto correctamente la consulta
-if(!$resultado){
-	//Genero numero aleatorio
-	$vardata = genera_password(8,'alfanumerico');
-					
-	//Guardo el error en una variable temporal
-	
-	
-	
-					
-}
 $rowData_x = mysqli_fetch_assoc ($resultado);
 
 //verifico que sea un administrador
@@ -299,5 +266,4 @@ if($_SESSION['usuario']['basic_data']['idTipoUsuario']==1){
 /*                                             Se llama al pie del documento html                                                 */
 /**********************************************************************************************************************************/
 require_once 'core/Web.Footer.Main.php';
-
 ?>

@@ -53,5 +53,4 @@ $HoraTermino    = '23:59:59';
 /****************************************************************/
 //includes con las ejecuciones
 include '0cron_crossenergy_acumulado_dia_include.php';
-
 ?>

@@ -76,7 +76,6 @@ $SIS_query = 'URL,Comentario';
 $SIS_join  = '';
 $SIS_where = 'idRedes = '.$_GET['edit'];
 $rowData = db_select_data (false, $SIS_query, 'personas_listado_redes_sociales', $SIS_join, $SIS_where, $dbConn, $_SESSION['usuario']['basic_data']['Nombre'], $original, 'rowData');
-
 ?>
 
 <div class="col-xs-12 col-sm-10 col-md-9 col-lg-8 fcenter">
@@ -165,7 +164,6 @@ $SIS_where = 'idPersona = '.$_GET['id'];
 $SIS_order = 'URL ASC';
 $arrURL = array();
 $arrURL = db_select_array (false, $SIS_query, 'personas_listado_redes_sociales', $SIS_join, $SIS_where, $SIS_order, $dbConn, $_SESSION['usuario']['basic_data']['Nombre'], $original, 'arrURL');
-
 ?>
 
 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
@@ -238,5 +236,4 @@ $arrURL = db_select_array (false, $SIS_query, 'personas_listado_redes_sociales',
 /*                                             Se llama al pie del documento html                                                 */
 /**********************************************************************************************************************************/
 require_once 'core/Web.Footer.Main.php';
-
 ?>

@@ -154,7 +154,6 @@ LEFT JOIN `core_sistemas`                        ON core_sistemas.idSistema     
 $SIS_order = $order_by.' LIMIT '.$comienzo.', '.$cant_reg;
 $arrMatriz = array();
 $arrMatriz = db_select_array (false, $SIS_query, 'cross_quality_proceso_matriz', $SIS_join, $SIS_where, $SIS_order, $dbConn, $_SESSION['usuario']['basic_data']['Nombre'], $original, 'arrMatriz');
-
 ?>
 
 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 breadcrumb-bar">
@@ -289,5 +288,4 @@ $arrMatriz = db_select_array (false, $SIS_query, 'cross_quality_proceso_matriz',
 /*                                             Se llama al pie del documento html                                                 */
 /**********************************************************************************************************************************/
 require_once 'core/Web.Footer.Main.php';
-
 ?>

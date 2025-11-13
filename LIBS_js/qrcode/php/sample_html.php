@@ -4,33 +4,32 @@ require_once("qrcode.php");
 
 //---------------------------------------------------------
 
-print("<h4>–¾Ž¦“I‚ÉŒ^”Ô‚ðŽw’è</h4>");
+print("<h4>ï¿½ï¿½ï¿½ï¿½ï¿½Iï¿½ÉŒ^ï¿½Ô‚ï¿½ï¿½wï¿½ï¿½</h4>");
 
 $qr = new QRCode();
-// ƒGƒ‰[’ù³ƒŒƒxƒ‹‚ðÝ’è
+// ï¿½Gï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½xï¿½ï¿½ï¿½ï¿½Ý’ï¿½
 // QR_ERROR_CORRECT_LEVEL_L : 7%
 // QR_ERROR_CORRECT_LEVEL_M : 15%
 // QR_ERROR_CORRECT_LEVEL_Q : 25%
 // QR_ERROR_CORRECT_LEVEL_H : 30%
 $qr->setErrorCorrectLevel(QR_ERROR_CORRECT_LEVEL_L);
-// Œ^”Ô(‘å‚«‚³)‚ðÝ’è
-// 1`40
+// ï¿½^ï¿½ï¿½(ï¿½å‚«ï¿½ï¿½)ï¿½ï¿½Ý’ï¿½
+// 1ï¿½`40
 $qr->setTypeNumber(4);
-// ƒf[ƒ^(•¶Žš—ñ¦)‚ðÝ’è
-// ¦“ú–{Œê‚ÍSJIS
-$qr->addData("QRƒR[ƒh");
-// QRƒR[ƒh‚ðì¬
+// ï¿½fï¿½[ï¿½^(ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½)ï¿½ï¿½Ý’ï¿½
+// ï¿½ï¿½ï¿½ï¿½ï¿½{ï¿½ï¿½ï¿½SJIS
+$qr->addData("QRï¿½Rï¿½[ï¿½h");
+// QRï¿½Rï¿½[ï¿½hï¿½ï¿½ï¿½ì¬
 $qr->make();
-// HTMLo—Í
+// HTMLï¿½oï¿½ï¿½
 $qr->printHTML();
 
 //---------------------------------------------------------
 
-print("<h4>Œ^”ÔŽ©“®</h4>");
+print("<h4>ï¿½^ï¿½ÔŽï¿½ï¿½ï¿½</h4>");
 
-// Œ^”Ô‚ªÅ¬‚Æ‚È‚éQRƒR[ƒh‚ðì¬
-$qr = QRCode::getMinimumQRCode("QRƒR[ƒh", QR_ERROR_CORRECT_LEVEL_L);
-// HTMLo—Í
+// ï¿½^ï¿½Ô‚ï¿½ï¿½Åï¿½ï¿½Æ‚È‚ï¿½QRï¿½Rï¿½[ï¿½hï¿½ï¿½ï¿½ì¬
+$qr = QRCode::getMinimumQRCode("QRï¿½Rï¿½[ï¿½h", QR_ERROR_CORRECT_LEVEL_L);
+// HTMLï¿½oï¿½ï¿½
 $qr->printHTML();
-
 ?>

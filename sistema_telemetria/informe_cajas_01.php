@@ -91,7 +91,6 @@ LEFT JOIN `caja_chica_facturacion_tipo`  ON caja_chica_facturacion_tipo.idTipo  
 $SIS_order = 'caja_chica_facturacion.Creacion_fecha ASC LIMIT '.$comienzo.', '.$cant_reg;
 $arrTipo = array();
 $arrTipo = db_select_array (false, $SIS_query, 'caja_chica_facturacion', $SIS_join, $SIS_where, $SIS_order, $dbConn, $_SESSION['usuario']['basic_data']['Nombre'], $original, 'arrTipo');
-
 ?>
 
 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 breadcrumb-bar">
@@ -249,5 +248,4 @@ if($_SESSION['usuario']['basic_data']['idTipoUsuario']!=1){
 /*                                             Se llama al pie del documento html                                                 */
 /**********************************************************************************************************************************/
 require_once 'core/Web.Footer.Main.php';
-
 ?>

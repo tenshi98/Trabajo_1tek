@@ -214,7 +214,6 @@ foreach ($_SESSION['tareas_responsables'] as $key => $trab){
 }
 $responsables .= ')';
 $usrfil .= $responsables;
-
 ?>
 
 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
@@ -608,7 +607,6 @@ if($_SESSION['usuario']['basic_data']['idTipoUsuario']!=1){
 }elseif(!empty($_GET['new'])){
 //valido los permisos
 validaPermisoUser($rowlevel['level'], 3, $dbConn);
-
 ?>
 
 <div class="col-xs-12 col-sm-10 col-md-9 col-lg-8 fcenter">
@@ -717,7 +715,6 @@ LEFT JOIN `core_sistemas`                    ON core_sistemas.idSistema         
 $SIS_order = $order_by.' LIMIT '.$comienzo.', '.$cant_reg;
 $arrTareas = array();
 $arrTareas = db_select_array (false, $SIS_query, 'tareas_pendientes_listado', $SIS_join, $SIS_where, $SIS_order, $dbConn, $_SESSION['usuario']['basic_data']['Nombre'], $original, 'arrTareas');
-
 ?>
 
 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 breadcrumb-bar">
@@ -875,5 +872,4 @@ $arrTareas = db_select_array (false, $SIS_query, 'tareas_pendientes_listado', $S
 /*                                             Se llama al pie del documento html                                                 */
 /**********************************************************************************************************************************/
 require_once 'core/Web.Footer.Main.php';
-
 ?>

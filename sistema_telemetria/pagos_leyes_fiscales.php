@@ -693,7 +693,6 @@ input[type="date"].form-control{
 }elseif(!empty($_GET['addPago'])){
 //se dibujan los inputs
 $Form_Inputs = new Inputs();
-
 ?>
 
 <style>
@@ -1150,7 +1149,6 @@ validaPermisoUser($rowlevel['level'], 2, $dbConn); ?>
 <?php //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 }elseif(!empty($_GET['modBase'])){
 $w = "idSistema=".$_SESSION['usuario']['basic_data']['idSistema']." AND idEstado=1";
-
 ?>
 
 <div class="col-xs-12 col-sm-10 col-md-9 col-lg-8 fcenter">
@@ -1196,7 +1194,6 @@ $w = "idSistema=".$_SESSION['usuario']['basic_data']['idSistema']." AND idEstado
 <?php //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 }elseif(!empty($_GET['view'])){
 $Form_Inputs = new Inputs();
-
 ?>
 
 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="margin-bottom:30px">
@@ -1965,5 +1962,4 @@ if($_SESSION['usuario']['basic_data']['idTipoUsuario']!=1){
 /*                                             Se llama al pie del documento html                                                 */
 /**********************************************************************************************************************************/
 require_once 'core/Web.Footer.Main.php';
-
 ?>

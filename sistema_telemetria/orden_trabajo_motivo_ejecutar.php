@@ -196,7 +196,6 @@ $SIS_query = 'idSistema, idUbicacion, idUbicacion_lvl_1, idUbicacion_lvl_2, idUb
 $SIS_join  = '';
 $SIS_where = 'idOT ='.$_GET['view'];
 $rowData = db_select_data (false, $SIS_query, 'orden_trabajo_tareas_listado', $SIS_join, $SIS_where, $dbConn, $_SESSION['usuario']['basic_data']['Nombre'], $original, 'rowData');
-
 ?>
 
 <div class="col-xs-12 col-sm-10 col-md-9 col-lg-8 fcenter">
@@ -466,7 +465,6 @@ $SIS_join  = 'LEFT JOIN `sistema_productos_uml` ON sistema_productos_uml.idUml =
 $SIS_order = 'sistema_productos_uml.Nombre ASC';
 $arrTipo = array();
 $arrTipo = db_select_array (false, $SIS_query, 'productos_listado', $SIS_join, $SIS_where, $SIS_order, $dbConn, $_SESSION['usuario']['basic_data']['Nombre'], $original, 'arrTipo');
-
 ?>
 
 <div class="col-xs-12 col-sm-10 col-md-9 col-lg-8 fcenter">
@@ -556,7 +554,6 @@ LEFT JOIN `productos_listado`         ON productos_listado.idProducto  = orden_t
 LEFT JOIN `sistema_productos_uml`     ON sistema_productos_uml.idUml   = productos_listado.idUml';
 $SIS_where = 'idProductos ='.$_GET['edit_prod'];
 $rowData = db_select_data (false, $SIS_query, 'orden_trabajo_tareas_listado_productos', $SIS_join, $SIS_where, $dbConn, $_SESSION['usuario']['basic_data']['Nombre'], $original, 'rowData');
-
 ?>
 
 <div class="col-xs-12 col-sm-10 col-md-9 col-lg-8 fcenter">
@@ -636,7 +633,6 @@ $SIS_join  = 'LEFT JOIN `sistema_productos_uml` ON sistema_productos_uml.idUml =
 $SIS_order = 'sistema_productos_uml.Nombre ASC';
 $arrTipo = array();
 $arrTipo = db_select_array (false, $SIS_query, 'insumos_listado', $SIS_join, $SIS_where, $SIS_order, $dbConn, $_SESSION['usuario']['basic_data']['Nombre'], $original, 'arrTipo');
-
 ?>
 
 <div class="col-xs-12 col-sm-10 col-md-9 col-lg-8 fcenter">
@@ -726,7 +722,6 @@ LEFT JOIN `insumos_listado`         ON insumos_listado.idProducto  = orden_traba
 LEFT JOIN `sistema_productos_uml`   ON sistema_productos_uml.idUml = insumos_listado.idUml';
 $SIS_where = 'idInsumos ='.$_GET['edit_ins'];
 $rowData = db_select_data (false, $SIS_query, 'orden_trabajo_tareas_listado_insumos', $SIS_join, $SIS_where, $dbConn, $_SESSION['usuario']['basic_data']['Nombre'], $original, 'rowData');
-
 ?>
 
 <div class="col-xs-12 col-sm-10 col-md-9 col-lg-8 fcenter">
@@ -786,7 +781,6 @@ $rowData = db_select_data (false, $SIS_query, 'orden_trabajo_tareas_listado', $S
 
 //Verifico el tipo de usuario que esta ingresando
 $z = "idSistema=".$_SESSION['usuario']['basic_data']['idSistema']." AND idEstado=1";
-
 ?>
 
 <div class="col-xs-12 col-sm-10 col-md-9 col-lg-8 fcenter">
@@ -843,7 +837,6 @@ $rowData = db_select_data (false, $SIS_query, 'orden_trabajo_tareas_listado_resp
 
 //Verifico el tipo de usuario que esta ingresando
 $z = "idSistema=".$_SESSION['usuario']['basic_data']['idSistema']." AND idEstado=1";
-
 ?>
 
 <div class="col-xs-12 col-sm-10 col-md-9 col-lg-8 fcenter">
@@ -884,7 +877,6 @@ $SIS_query = 'Observaciones';
 $SIS_join  = '';
 $SIS_where = 'idOT ='.$_GET['view'];
 $rowData = db_select_data (false, $SIS_query, 'orden_trabajo_tareas_listado', $SIS_join, $SIS_where, $dbConn, $_SESSION['usuario']['basic_data']['Nombre'], $original, 'rowData');
-
 ?>
 
 <div class="col-xs-12 col-sm-10 col-md-9 col-lg-8 fcenter">
@@ -1088,7 +1080,6 @@ $SIS_where = 'orden_trabajo_tareas_listado_historial.idOT ='.$_GET['view'];
 $SIS_order = 'orden_trabajo_tareas_listado_historial.idHistorial ASC';
 $arrHistorial = array();
 $arrHistorial = db_select_array (false, $SIS_query, 'orden_trabajo_tareas_listado_historial', $SIS_join, $SIS_where, $SIS_order, $dbConn, $_SESSION['usuario']['basic_data']['Nombre'], $original, 'arrHistorial');
-
 ?>
 
 <div class="col-xs-12 col-sm-11 col-md-11 col-lg-11 fcenter table-responsive">
@@ -1500,7 +1491,6 @@ LEFT JOIN `ubicacion_listado_level_5`   ON ubicacion_listado_level_5.idLevel_5  
 $SIS_order = $order_by;
 $arrOTS = array();
 $arrOTS = db_select_array (false, $SIS_query, 'orden_trabajo_tareas_listado', $SIS_join, $SIS_where, $SIS_order, $dbConn, $_SESSION['usuario']['basic_data']['Nombre'], $original, 'arrOTS');
-
 ?>
 
 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 breadcrumb-bar">
@@ -1655,5 +1645,4 @@ $arrOTS = db_select_array (false, $SIS_query, 'orden_trabajo_tareas_listado', $S
 /*                                             Se llama al pie del documento html                                                 */
 /**********************************************************************************************************************************/
 require_once 'core/Web.Footer.Main.php';
-
 ?>

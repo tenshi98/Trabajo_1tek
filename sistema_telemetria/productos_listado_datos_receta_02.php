@@ -290,7 +290,6 @@ $SIS_where = 'productos_recetas.idProducto = '.$_GET['id'];
 $SIS_order = 'productos_listado.Nombre ASC';
 $arrRecetas = array();
 $arrRecetas = db_select_array (false, $SIS_query, 'productos_recetas', $SIS_join, $SIS_where, $SIS_order, $dbConn, $_SESSION['usuario']['basic_data']['Nombre'], $original, 'arrRecetas');
-
 ?>
 
 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
@@ -378,5 +377,4 @@ $arrRecetas = db_select_array (false, $SIS_query, 'productos_recetas', $SIS_join
 /*                                             Se llama al pie del documento html                                                 */
 /**********************************************************************************************************************************/
 require_once 'core/Web.Footer.Main.php';
-
 ?>

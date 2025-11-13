@@ -60,7 +60,6 @@ if( in_array( $_SERVER['REMOTE_ADDR'], $whitelist) ){
 
 //Consulta de los datos del sistema del equipo
 $rowEmpresa = db_select_data (false, 'email_principal, Config_WhatsappToken, Config_WhatsappInstanceId', 'core_sistemas','', 'idSistema='.$_SESSION['usuario']['basic_data']['idSistema'], $dbConn, $_SESSION['usuario']['basic_data']['Nombre'], basename($_SERVER["REQUEST_URI"], ".php"), 'rowEmpresa');
-
 ?>
 
 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
@@ -110,5 +109,4 @@ $rowEmpresa = db_select_data (false, 'email_principal, Config_WhatsappToken, Con
 /*                                             Se llama al pie del documento html                                                 */
 /**********************************************************************************************************************************/
 require_once 'core/Web.Footer.Main.php';
-
 ?>

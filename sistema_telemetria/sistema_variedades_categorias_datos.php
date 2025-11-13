@@ -53,7 +53,6 @@ $SIS_query = 'Nombre,Temp_optima_min, Temp_optima_max, Temp_optima_margen_critic
 $SIS_join  = '';
 $SIS_where = 'idCategoria = '.$_GET['id'];
 $rowData = db_select_data (false, $SIS_query, 'sistema_variedades_categorias', $SIS_join, $SIS_where, $dbConn, $_SESSION['usuario']['basic_data']['Nombre'], $original, 'rowData');
-
 ?>
 
 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
@@ -122,5 +121,4 @@ $rowData = db_select_data (false, $SIS_query, 'sistema_variedades_categorias', $
 /*                                             Se llama al pie del documento html                                                 */
 /**********************************************************************************************************************************/
 require_once 'core/Web.Footer.Main.php';
-
 ?>

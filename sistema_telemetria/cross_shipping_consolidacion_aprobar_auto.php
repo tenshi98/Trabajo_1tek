@@ -400,5 +400,4 @@ if(!empty($_GET['consolidacion_rechazo'])){ ?>
 /*                                             Se llama al pie del documento html                                                 */
 /**********************************************************************************************************************************/
 require_once 'core/Web.Footer.Main.php';
-
 ?>

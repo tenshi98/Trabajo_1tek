@@ -115,7 +115,6 @@ LEFT JOIN `cross_shipping_instructivo`      ON cross_shipping_instructivo.idInst
 $SIS_order = $order_by.' LIMIT '.$comienzo.', '.$cant_reg;
 $arrTipo = array();
 $arrTipo = db_select_array (false, $SIS_query, 'cross_shipping_consolidacion', $SIS_join, $SIS_where, $SIS_order, $dbConn, $_SESSION['usuario']['basic_data']['Nombre'], $original, 'arrTipo');
-
 ?>
 
 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 breadcrumb-bar">
@@ -250,5 +249,4 @@ $arrTipo = db_select_array (false, $SIS_query, 'cross_shipping_consolidacion', $
 /*                                             Se llama al pie del documento html                                                 */
 /**********************************************************************************************************************************/
 require_once 'core/Web.Footer.Main.php';
-
 ?>

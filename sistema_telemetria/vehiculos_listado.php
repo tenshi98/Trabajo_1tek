@@ -139,17 +139,6 @@ LEFT JOIN `vehiculos_tipo_carga`               ON vehiculos_tipo_carga.idTipoCar
 WHERE vehiculos_listado.idVehiculo = ".$_GET['id'];
 //Consulta
 $resultado = mysqli_query ($dbConn, $query);
-//Si ejecuto correctamente la consulta
-if(!$resultado){
-	//Genero numero aleatorio
-	$vardata = genera_password(8,'alfanumerico');
-					
-	//Guardo el error en una variable temporal
-	
-	
-	
-					
-}
 $rowData = mysqli_fetch_assoc ($resultado);
 	
 if(isset($rowData['idOpciones_5'])&&$rowData['idOpciones_5']==1){
@@ -287,17 +276,6 @@ FROM usuarios_listado
 WHERE usuarios_listado.idUsuario='".$_GET['id']."' ";
 //Consulta
 $resultado = mysqli_query ($dbConn, $query);
-//Si ejecuto correctamente la consulta
-if(!$resultado){
-	//Genero numero aleatorio
-	$vardata = genera_password(8,'alfanumerico');
-					
-	//Guardo el error en una variable temporal
-	
-	
-	
-					
-}
 $rowDatax = mysqli_fetch_assoc ($resultado);
 
 
@@ -808,7 +786,6 @@ LEFT JOIN `core_estado_aprobacion_vehiculos`   ON core_estado_aprobacion_vehicul
 $SIS_order = $order_by.' LIMIT '.$comienzo.', '.$cant_reg;
 $arrTrabajador = array();
 $arrTrabajador = db_select_array (false, $SIS_query, 'vehiculos_listado', $SIS_join, $SIS_where, $SIS_order, $dbConn, $_SESSION['usuario']['basic_data']['Nombre'], $original, 'arrTrabajador');
-
 ?>
 
 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 breadcrumb-bar">
@@ -964,5 +941,4 @@ $arrTrabajador = db_select_array (false, $SIS_query, 'vehiculos_listado', $SIS_j
 /*                                             Se llama al pie del documento html                                                 */
 /**********************************************************************************************************************************/
 require_once 'core/Web.Footer.Main.php';
-
 ?>

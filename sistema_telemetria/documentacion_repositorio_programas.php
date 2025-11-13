@@ -52,5 +52,4 @@ if(isset($error)&&$error!=''){echo notifications_list($error);}
 /*                                             Se llama al pie del documento html                                                 */
 /**********************************************************************************************************************************/
 require_once 'core/Web.Footer.Main.php';
-
 ?>

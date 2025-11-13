@@ -59,7 +59,6 @@ LEFT JOIN `sistema_variedades_categorias` ON sistema_variedades_categorias.idCat
 LEFT JOIN `core_estados`                  ON core_estados.idEstado                      = variedades_listado.idEstado';
 $SIS_where = 'variedades_listado.idProducto ='.$X_Puntero;
 $rowData = db_select_data (false, $SIS_query, 'variedades_listado', $SIS_join, $SIS_where, $dbConn, $_SESSION['usuario']['basic_data']['Nombre'], basename($_SERVER["REQUEST_URI"], ".php"), 'rowData');
-
 ?>
 
 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
@@ -153,5 +152,4 @@ if(isset($_GET['return'])&&$_GET['return']!=''){
 /*                                             Se llama al pie del documento html                                                 */
 /**********************************************************************************************************************************/
 require_once 'core/Web.Footer.Views.php';
-
 ?>

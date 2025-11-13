@@ -71,22 +71,10 @@ LEFT JOIN `core_telemetria_servicio_tecnico` ON core_telemetria_servicio_tecnico
 WHERE telemetria_historial_mantencion.idMantencion = ".$_GET['id'];
 //Consulta
 $resultado = mysqli_query ($dbConn, $query);
-//Si ejecuto correctamente la consulta
-if(!$resultado){
-	//Genero numero aleatorio
-	$vardata = genera_password(8,'alfanumerico');
-					
-	//Guardo el error en una variable temporal
-	
-	
-	
-					
-}
 $rowData = mysqli_fetch_assoc ($resultado);
 
 //filtro para los equipos
 $w = "telemetria_listado.idSistema=".$rowData['idSistema']." AND telemetria_listado.idEstado=1";
-
 ?>
 
 <div class="col-xs-12 col-sm-10 col-md-9 col-lg-8 fcenter">
@@ -133,17 +121,6 @@ LEFT JOIN `core_telemetria_servicio_tecnico` ON core_telemetria_servicio_tecnico
 WHERE telemetria_historial_mantencion.idMantencion = ".$_GET['id'];
 //Consulta
 $resultado = mysqli_query ($dbConn, $query);
-//Si ejecuto correctamente la consulta
-if(!$resultado){
-	//Genero numero aleatorio
-	$vardata = genera_password(8,'alfanumerico');
-					
-	//Guardo el error en una variable temporal
-	
-	
-	
-					
-}
 $rowData = mysqli_fetch_assoc ($resultado);
 
 // consulto los datos
@@ -157,17 +134,6 @@ LEFT JOIN `telemetria_listado`  ON telemetria_listado.idTelemetria  = telemetria
 WHERE telemetria_historial_mantencion_equipos.idMantencion = ".$_GET['id'];
 //Consulta
 $resultado = mysqli_query ($dbConn, $query);
-//Si ejecuto correctamente la consulta
-if(!$resultado){
-	//Genero numero aleatorio
-	$vardata = genera_password(8,'alfanumerico');
-					
-	//Guardo el error en una variable temporal
-	
-	
-	
-					
-}
 while ( $row = mysqli_fetch_assoc ($resultado)){
 array_push( $arrEquipos,$row );
 }
@@ -243,5 +209,4 @@ array_push( $arrEquipos,$row );
 /*                                             Se llama al pie del documento html                                                 */
 /**********************************************************************************************************************************/
 require_once 'core/Web.Footer.Main.php';
-
 ?>

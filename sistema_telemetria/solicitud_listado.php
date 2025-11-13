@@ -396,7 +396,7 @@ if(!empty($_GET['editOtros'])){  ?>
 	</div>
 </div>
 <?php //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-}elseif(!empty($_GET['editIns'])){  
+}elseif(!empty($_GET['editIns'])){
 //filtro
 $zx2 = "idProducto=0";
 //Se revisan los permisos a los productos
@@ -406,17 +406,6 @@ FROM `core_sistemas_insumos`
 WHERE idSistema=".$_SESSION['usuario']['basic_data']['idSistema'];
 //Consulta
 $resultado = mysqli_query ($dbConn, $query);
-//Si ejecuto correctamente la consulta
-if(!$resultado){
-	//Genero numero aleatorio
-	$vardata = genera_password(8,'alfanumerico');
-					
-	//Guardo el error en una variable temporal
-	
-	
-	
-					
-}
 while ( $row = mysqli_fetch_assoc ($resultado)){
 array_push( $arrPermisos,$row );
 }
@@ -459,7 +448,7 @@ foreach ($arrPermisos as $prod) {
 	</div>
 </div>
 <?php //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-}elseif(!empty($_GET['addIns'])){  
+}elseif(!empty($_GET['addIns'])){
 //filtro
 $zx2 = "idProducto=0";
 //Se revisan los permisos a los productos
@@ -469,17 +458,6 @@ FROM `core_sistemas_insumos`
 WHERE idSistema=".$_SESSION['usuario']['basic_data']['idSistema'];
 //Consulta
 $resultado = mysqli_query ($dbConn, $query);
-//Si ejecuto correctamente la consulta
-if(!$resultado){
-	//Genero numero aleatorio
-	$vardata = genera_password(8,'alfanumerico');
-					
-	//Guardo el error en una variable temporal
-	
-	
-	
-					
-}
 while ( $row = mysqli_fetch_assoc ($resultado)){
 array_push( $arrPermisos,$row );
 }
@@ -520,7 +498,7 @@ foreach ($arrPermisos as $prod) {
 	</div>
 </div>
 <?php //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-}elseif(!empty($_GET['editProd'])){  
+}elseif(!empty($_GET['editProd'])){
 //filtro
 $zx1 = "idProducto=0";
 //Se revisan los permisos a los productos
@@ -530,17 +508,6 @@ FROM `core_sistemas_productos`
 WHERE idSistema=".$_SESSION['usuario']['basic_data']['idSistema'];
 //Consulta
 $resultado = mysqli_query ($dbConn, $query);
-//Si ejecuto correctamente la consulta
-if(!$resultado){
-	//Genero numero aleatorio
-	$vardata = genera_password(8,'alfanumerico');
-					
-	//Guardo el error en una variable temporal
-	
-	
-	
-					
-}
 while ( $row = mysqli_fetch_assoc ($resultado)){
 array_push( $arrPermisos,$row );
 }
@@ -592,17 +559,6 @@ FROM `core_sistemas_productos`
 WHERE idSistema=".$_SESSION['usuario']['basic_data']['idSistema'];
 //Consulta
 $resultado = mysqli_query ($dbConn, $query);
-//Si ejecuto correctamente la consulta
-if(!$resultado){
-	//Genero numero aleatorio
-	$vardata = genera_password(8,'alfanumerico');
-					
-	//Guardo el error en una variable temporal
-	
-	
-	
-					
-}
 while ( $row = mysqli_fetch_assoc ($resultado)){
 array_push( $arrPermisos,$row );
 }
@@ -683,7 +639,7 @@ foreach ($arrPermisos as $prod) {
 <?php //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 }elseif(!empty($_GET['view'])){
 //Variable para sacar el total
-$total = 0;		
+$total = 0;
 ?>
 
 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="margin-bottom:30px">
@@ -990,7 +946,6 @@ $SIS_join  = 'LEFT JOIN `usuarios_listado` ON usuarios_listado.idUsuario = solic
 $SIS_order = $order_by.' LIMIT '.$comienzo.', '.$cant_reg;
 $arrSolicitudes = array();
 $arrSolicitudes = db_select_array (false, $SIS_query, 'solicitud_listado', $SIS_join, $SIS_where, $SIS_order, $dbConn, $_SESSION['usuario']['basic_data']['Nombre'], $original, 'arrSolicitudes');
-
 ?>
 
 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 breadcrumb-bar">
@@ -1126,5 +1081,4 @@ $arrSolicitudes = db_select_array (false, $SIS_query, 'solicitud_listado', $SIS_
 /*                                             Se llama al pie del documento html                                                 */
 /**********************************************************************************************************************************/
 require_once 'core/Web.Footer.Main.php';
-
 ?>

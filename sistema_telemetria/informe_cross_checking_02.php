@@ -154,7 +154,6 @@ LEFT JOIN `telemetria_listado_sensores_nombre`             ON telemetria_listado
 $SIS_order = $order_by.' LIMIT '.$comienzo.', '.$cant_reg;
 $arrOTS = array();
 $arrOTS = db_select_array (false, $SIS_query, 'cross_solicitud_aplicacion_listado', $SIS_join, $SIS_where, $SIS_order, $dbConn, $_SESSION['usuario']['basic_data']['Nombre'], $original, 'arrOTS');
-
 ?>
 
 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 breadcrumb-bar">
@@ -258,7 +257,6 @@ if($_SESSION['usuario']['basic_data']['idTipoUsuario']!=1){
 }
 $y = "idEstado=1";
 $x = "idSistema=".$_SESSION['usuario']['basic_data']['idSistema']." AND idEstado=1";
-
 ?>
 
 <div class="col-xs-12 col-sm-10 col-md-9 col-lg-8 fcenter">
@@ -323,5 +321,4 @@ $x = "idSistema=".$_SESSION['usuario']['basic_data']['idSistema']." AND idEstado
 /*                                             Se llama al pie del documento html                                                 */
 /**********************************************************************************************************************************/
 require_once 'core/Web.Footer.Main.php';
-
 ?>

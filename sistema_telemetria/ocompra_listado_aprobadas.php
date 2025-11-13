@@ -128,7 +128,6 @@ LEFT JOIN `proveedor_listado`   ON proveedor_listado.idProveedor   = ocompra_lis
 $SIS_order = $order_by.' LIMIT '.$comienzo.', '.$cant_reg;
 $arrSolicitudes = array();
 $arrSolicitudes = db_select_array (false, $SIS_query, 'ocompra_listado', $SIS_join, $SIS_where, $SIS_order, $dbConn, $_SESSION['usuario']['basic_data']['Nombre'], $original, 'arrSolicitudes');
-
 ?>
 
 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 breadcrumb-bar">
@@ -248,5 +247,4 @@ $arrSolicitudes = db_select_array (false, $SIS_query, 'ocompra_listado', $SIS_jo
 /*                                             Se llama al pie del documento html                                                 */
 /**********************************************************************************************************************************/
 require_once 'core/Web.Footer.Main.php';
-
 ?>

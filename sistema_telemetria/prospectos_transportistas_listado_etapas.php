@@ -77,17 +77,6 @@ FROM `prospectos_transportistas_etapa_fidelizacion`
 WHERE idEtapaFide = ".$_GET['edit'];
 //Consulta
 $resultado = mysqli_query ($dbConn, $query);
-//Si ejecuto correctamente la consulta
-if(!$resultado){
-	//Genero numero aleatorio
-	$vardata = genera_password(8,'alfanumerico');
-					
-	//Guardo el error en una variable temporal
-	
-	
-	
-					
-}
 $rowData = mysqli_fetch_assoc ($resultado); 
  ?>
 
@@ -170,17 +159,6 @@ FROM `prospectos_transportistas_listado`
 WHERE idProspecto = ".$_GET['id'];
 //Consulta
 $resultado = mysqli_query ($dbConn, $query);
-//Si ejecuto correctamente la consulta
-if(!$resultado){
-	//Genero numero aleatorio
-	$vardata = genera_password(8,'alfanumerico');
-					
-	//Guardo el error en una variable temporal
-	
-	
-	
-					
-}
 $rowData = mysqli_fetch_assoc ($resultado);
 
 // Se trae un listado con todas las etapa el Prospecto
@@ -199,17 +177,6 @@ WHERE prospectos_transportistas_etapa_fidelizacion.idProspecto = ".$_GET['id']."
 ORDER BY prospectos_transportistas_etapa.Nombre DESC ";
 //Consulta
 $resultado = mysqli_query ($dbConn, $query);
-//Si ejecuto correctamente la consulta
-if(!$resultado){
-	//Genero numero aleatorio
-	$vardata = genera_password(8,'alfanumerico');
-					
-	//Guardo el error en una variable temporal
-	
-	
-	
-					
-}
 while ( $row = mysqli_fetch_assoc ($resultado)){
 array_push( $arrEtapa,$row );
 }
@@ -278,5 +245,4 @@ array_push( $arrEtapa,$row );
 /*                                             Se llama al pie del documento html                                                 */
 /**********************************************************************************************************************************/
 require_once 'core/Web.Footer.Main.php';
-
 ?>

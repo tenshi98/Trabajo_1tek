@@ -229,7 +229,6 @@ $SIS_where.= ' AND licitacion_listado.idAprobado=2';
 $SIS_order = 'licitacion_listado.idEstado ASC, licitacion_listado.idSistema ASC, licitacion_listado.Nombre ASC';
 $arrContratos = array();
 $arrContratos = db_select_array (false, $SIS_query, 'licitacion_listado', $SIS_join, $SIS_where, $SIS_order, $dbConn, $_SESSION['usuario']['basic_data']['Nombre'], $original, 'arrContratos');
-
 ?>
 
 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
@@ -338,5 +337,4 @@ $arrContratos = db_select_array (false, $SIS_query, 'licitacion_listado', $SIS_j
 /*                                             Se llama al pie del documento html                                                 */
 /**********************************************************************************************************************************/
 require_once 'core/Web.Footer.Main.php';
-
 ?>

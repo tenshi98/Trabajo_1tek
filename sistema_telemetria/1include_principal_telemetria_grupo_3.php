@@ -43,7 +43,6 @@ $SIS_where = ' (TimeStamp BETWEEN "'.$f_inicio.' '.$h_inicio .'" AND "'.$f_termi
 $SIS_order = 'telemetria_listado_tablarelacionada_'.simpleDecode($_GET['idTelemetria'], fecha_actual()).'.TimeStamp ASC';
 $arrRutas = array();
 $arrRutas = db_select_array (false, $SIS_query, 'telemetria_listado_tablarelacionada_'.simpleDecode($_GET['idTelemetria'], fecha_actual()), $SIS_join, $SIS_where, $SIS_order, $dbConn, $_SESSION['usuario']['basic_data']['Nombre'], basename($_SERVER["REQUEST_URI"], ".php"), 'arrRutas');
-
 ?>
 
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>

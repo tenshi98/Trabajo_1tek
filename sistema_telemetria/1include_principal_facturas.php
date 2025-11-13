@@ -57,7 +57,6 @@ $SIS_where.= $z4;
 $SIS_order = 'Pago_dia ASC';
 $arrFacturas_4 = array();
 $arrFacturas_4 = db_select_array (false, $SIS_query, 'bodegas_servicios_facturacion', $SIS_join, $SIS_where, $SIS_order, $dbConn, $_SESSION['usuario']['basic_data']['Nombre'], basename($_SERVER["REQUEST_URI"], ".php"), 'arrFacturas_4');
-
 ?>
 
 <style>

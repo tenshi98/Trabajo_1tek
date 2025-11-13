@@ -61,7 +61,6 @@ core_estado_contrato.Nombre AS EstadoContrato';
 $SIS_join  = 'LEFT JOIN `core_estado_contrato`  ON core_estado_contrato.idEstadoContrato = postulantes_listado.idEstadoContrato';
 $SIS_where = 'idPostulante ='.$_GET['id'];
 $rowData = db_select_data (false, $SIS_query, 'postulantes_listado', $SIS_join, $SIS_where, $dbConn, $_SESSION['usuario']['basic_data']['Nombre'], $original, 'rowData');
-
 ?>
 
 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
@@ -130,5 +129,4 @@ $rowData = db_select_data (false, $SIS_query, 'postulantes_listado', $SIS_join, 
 /*                                             Se llama al pie del documento html                                                 */
 /**********************************************************************************************************************************/
 require_once 'core/Web.Footer.Main.php';
-
 ?>

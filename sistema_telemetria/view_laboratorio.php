@@ -81,7 +81,6 @@ $SIS_where = 'laboratorio_observaciones.idLaboratorio ='.$X_Puntero;
 $SIS_order = 'laboratorio_observaciones.idObservacion ASC LIMIT 15';
 $arrObservaciones = array();
 $arrObservaciones = db_select_array (false, $SIS_query, 'laboratorio_observaciones', $SIS_join, $SIS_where, $SIS_order, $dbConn, $_SESSION['usuario']['basic_data']['Nombre'], basename($_SERVER["REQUEST_URI"], ".php"), 'arrObservaciones');
-
 ?>
 
 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
@@ -211,5 +210,4 @@ if(isset($_GET['return'])&&$_GET['return']!=''){
 /*                                             Se llama al pie del documento html                                                 */
 /**********************************************************************************************************************************/
 require_once 'core/Web.Footer.Views.php';
-
 ?>

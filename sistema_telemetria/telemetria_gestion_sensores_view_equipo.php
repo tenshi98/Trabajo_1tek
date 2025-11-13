@@ -105,7 +105,6 @@ $SIS_where = 'idTelemetria ='.simpleDecode($_GET['view'], fecha_actual());
 $SIS_order = 'idFueraLinea DESC LIMIT 20';
 $arrFlinea = array();
 $arrFlinea = db_select_array (false, $SIS_query, 'telemetria_listado_error_fuera_linea', $SIS_join, $SIS_where, $SIS_order, $dbConn, $_SESSION['usuario']['basic_data']['Nombre'], basename($_SERVER["REQUEST_URI"], ".php"), 'arrFlinea');
-
 ?>
 
 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
@@ -307,5 +306,4 @@ $arrFlinea = db_select_array (false, $SIS_query, 'telemetria_listado_error_fuera
 /*                                             Se llama al pie del documento html                                                 */
 /**********************************************************************************************************************************/
 require_once 'core/Web.Footer.Views.php';
-
 ?>

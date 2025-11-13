@@ -70,7 +70,6 @@ if(!empty($_GET['id'])){
 validaPermisoUser($rowlevel['level'], 2, $dbConn);
 // consulto los datos
 $rowData = db_select_data (false, 'Nombre,Funcion, idSensorFuncion', 'telemetria_listado_sensores', '', 'idSensores ='.$_GET['id'], $dbConn, $_SESSION['usuario']['basic_data']['Nombre'], $original, 'rowData');
-
 ?>
 
 <div class="col-xs-12 col-sm-10 col-md-9 col-lg-8 fcenter">
@@ -187,7 +186,6 @@ $total_paginas = ceil($cuenta_registros / $cant_reg);
 $SIS_order     = $order_by.' LIMIT '.$comienzo.', '.$cant_reg;
 $arrCategorias = array();
 $arrCategorias = db_select_array (false, 'telemetria_listado_sensores.idSensores,telemetria_listado_sensores.Nombre,telemetria_listado_sensores.Funcion,core_sensores_funciones.Nombre AS SensorFuncion', 'telemetria_listado_sensores', 'LEFT JOIN `core_sensores_funciones` ON core_sensores_funciones.idSensorFuncion = telemetria_listado_sensores.idSensorFuncion', $SIS_where, $SIS_order, $dbConn, $_SESSION['usuario']['basic_data']['Nombre'], $original, 'arrCategorias');
-
 ?>
 
 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 breadcrumb-bar">
@@ -307,5 +305,4 @@ $arrCategorias = db_select_array (false, 'telemetria_listado_sensores.idSensores
 /*                                             Se llama al pie del documento html                                                 */
 /**********************************************************************************************************************************/
 require_once 'core/Web.Footer.Main.php';
-
 ?>

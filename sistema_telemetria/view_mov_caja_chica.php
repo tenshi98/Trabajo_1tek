@@ -141,7 +141,6 @@ $SIS_where = 'caja_chica_facturacion_historial.idFacturacion ='.$X_Puntero;
 $SIS_order = 'caja_chica_facturacion_historial.idHistorial ASC';
 $arrHistorial = array();
 $arrHistorial = db_select_array (false, $SIS_query, 'caja_chica_facturacion_historial', $SIS_join, $SIS_where, $SIS_order, $dbConn, $_SESSION['usuario']['basic_data']['Nombre'], basename($_SERVER["REQUEST_URI"], ".php"), 'arrHistorial');
-
 ?>
 
 <section class="invoice">
@@ -434,5 +433,4 @@ if(isset($_GET['return'])&&$_GET['return']!=''){
 /*                                             Se llama al pie del documento html                                                 */
 /**********************************************************************************************************************************/
 require_once 'core/Web.Footer.Views.php';
-
 ?>

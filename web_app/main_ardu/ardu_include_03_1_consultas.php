@@ -82,5 +82,4 @@ LEFT JOIN `telemetria_listado_sensores_unimed`          ON telemetria_listado_se
 LEFT JOIN `telemetria_listado_sensores_tipo`            ON telemetria_listado_sensores_tipo.idTelemetria           = telemetria_listado.idTelemetria';
 $SIS_where = 'telemetria_listado.Identificador ="'.$Identificador.'"';
 $rowData = db_select_data (false, $SIS_query, 'telemetria_listado', $SIS_join, $SIS_where, $dbConn, 'ardu_include_consultas', basename($_SERVER["REQUEST_URI"], ".php"), 'rowData');
-
 ?>

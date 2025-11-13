@@ -151,17 +151,6 @@ LEFT JOIN `clientes_listado`              ON clientes_listado.idCliente         
 WHERE maquinas_listado.idMaquina=".$_GET['id'];
 //Consulta
 $resultado = mysqli_query ($dbConn, $query);
-//Si ejecuto correctamente la consulta
-if(!$resultado){
-	//Genero numero aleatorio
-	$vardata = genera_password(8,'alfanumerico');
-					
-	//Guardo el error en una variable temporal
-	
-	
-	
-					
-}
 $rowData = mysqli_fetch_assoc ($resultado);
 
 
@@ -776,7 +765,6 @@ validaPermisoUser($rowlevel['level'], 3, $dbConn);
 //verifico que sea un administrador
 $w = "idSistema=".$_SESSION['usuario']['basic_data']['idSistema']." AND idEstado=1";
 $z = "idSistema=".$_SESSION['usuario']['basic_data']['idSistema'];
-
 ?>
 
 <div class="col-xs-12 col-sm-10 col-md-9 col-lg-8 fcenter">
@@ -879,7 +867,6 @@ LEFT JOIN `clientes_listado`   ON clientes_listado.idCliente   = maquinas_listad
 $SIS_order = $order_by;
 $arrMaquina = array();
 $arrMaquina = db_select_array (false, $SIS_query, 'maquinas_listado', $SIS_join, $SIS_where, $SIS_order, $dbConn, $_SESSION['usuario']['basic_data']['Nombre'], $original, 'arrMaquina');
-
 ?>
 
 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 breadcrumb-bar">
@@ -1012,5 +999,4 @@ $arrMaquina = db_select_array (false, $SIS_query, 'maquinas_listado', $SIS_join,
 /*                                             Se llama al pie del documento html                                                 */
 /**********************************************************************************************************************************/
 require_once 'core/Web.Footer.Main.php';
-
 ?>

@@ -60,7 +60,6 @@ $SIS_join  = '';
 $SIS_order  = 'ApellidoPat ASC, ApellidoMat ASC';
 $arrAsistencias = array();
 $arrAsistencias = db_select_array (false, $SIS_query, 'trabajadores_listado', $SIS_join, $SIS_where, $SIS_order, $dbConn, $_SESSION['usuario']['basic_data']['Nombre'], $original, 'arrAsistencias');
-
 ?>
 
 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 clearfix">
@@ -154,5 +153,4 @@ $y = "idSistema=".$_SESSION['usuario']['basic_data']['idSistema']." AND idEstado
 /*                                             Se llama al pie del documento html                                                 */
 /**********************************************************************************************************************************/
 require_once 'core/Web.Footer.Main.php';
-
 ?>

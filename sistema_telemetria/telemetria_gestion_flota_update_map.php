@@ -50,7 +50,6 @@ $SIS_join = '';
 $SIS_order = 'telemetria_listado.Nombre ASC';
 $arrEquipo = array();
 $arrEquipo = db_select_array (false, $SIS_query, 'telemetria_listado', $SIS_join, $SIS_where, $SIS_order, $dbConn, $_SESSION['usuario']['basic_data']['Nombre'], basename($_SERVER["REQUEST_URI"], ".php"), 'arrEquipo');
-
 ?>
 <table id="dataTable" class="table table-bordered table-condensed table-hover table-striped dataTable">
 	<thead>

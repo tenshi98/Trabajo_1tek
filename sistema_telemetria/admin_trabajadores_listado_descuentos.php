@@ -76,7 +76,6 @@ $SIS_query = 'idDescuentoFijo,idAFP,Monto';
 $SIS_join  = '';
 $SIS_where = 'idDescuento = '.$_GET['edit'];
 $rowData = db_select_data (false, $SIS_query, 'trabajadores_listado_descuentos_fijos', $SIS_join, $SIS_where, $dbConn, $_SESSION['usuario']['basic_data']['Nombre'], $original, 'rowData');
-
 ?>
 
 <div class="col-xs-12 col-sm-10 col-md-9 col-lg-8 fcenter">
@@ -174,7 +173,6 @@ $SIS_where = 'trabajadores_listado_descuentos_fijos.idTrabajador = '.$_GET['id']
 $SIS_order = 'sistema_descuentos_fijos.Nombre ASC';
 $arrDescuentos = array();
 $arrDescuentos = db_select_array (false, $SIS_query, 'trabajadores_listado_descuentos_fijos', $SIS_join, $SIS_where, $SIS_order, $dbConn, $_SESSION['usuario']['basic_data']['Nombre'], $original, 'arrDescuentos');
-
 ?>
 
 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
@@ -261,5 +259,4 @@ $arrDescuentos = db_select_array (false, $SIS_query, 'trabajadores_listado_descu
 /*                                             Se llama al pie del documento html                                                 */
 /**********************************************************************************************************************************/
 require_once 'core/Web.Footer.Main.php';
-
 ?>

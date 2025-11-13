@@ -79,7 +79,6 @@ if($_SESSION['usuario']['basic_data']['idTipoUsuario']!=1){
 $SIS_order = 'sistema_documentos_pago.Nombre ASC, pagos_facturas_proveedores.F_Pago ASC, proveedor_listado.Nombre ASC';
 $arrCheques = array();
 $arrCheques = db_select_array (false, $SIS_query, 'pagos_facturas_proveedores', $SIS_join, $SIS_where, $SIS_order, $dbConn, $_SESSION['usuario']['basic_data']['Nombre'], $original, 'arrCheques');
-
 ?>
 
 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 breadcrumb-bar">
@@ -193,5 +192,4 @@ $arrCheques = db_select_array (false, $SIS_query, 'pagos_facturas_proveedores', 
 /*                                             Se llama al pie del documento html                                                 */
 /**********************************************************************************************************************************/
 require_once 'core/Web.Footer.Main.php';
-
 ?>

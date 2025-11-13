@@ -125,7 +125,6 @@ LEFT JOIN `core_estado_ejecucion`                          ON core_estado_ejecuc
 $SIS_order = 'cross_solicitud_aplicacion_listado.NSolicitud ASC';
 $arrOTS = array();
 $arrOTS = db_select_array (false, $SIS_query, 'cross_solicitud_aplicacion_listado', $SIS_join, $SIS_where, $SIS_order, $dbConn, $_SESSION['usuario']['basic_data']['Nombre'], $original, 'arrOTS');
-
 ?>
 
 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 clearfix">
@@ -420,5 +419,4 @@ $w = "idSistema=".$_SESSION['usuario']['basic_data']['idSistema'];
 /*                                             Se llama al pie del documento html                                                 */
 /**********************************************************************************************************************************/
 require_once 'core/Web.Footer.Main.php';
-
 ?>

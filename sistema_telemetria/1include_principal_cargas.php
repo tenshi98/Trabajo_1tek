@@ -19,7 +19,6 @@ $SIS_where = 'telemetria_carga_bam.Ano='.$Ano.' AND telemetria_carga_bam.Mes='.$
 $SIS_order = 'telemetria_carga_bam.FechaVencimiento ASC';
 $arrEventos = array();
 $arrEventos = db_select_array (false, $SIS_query, 'telemetria_carga_bam', $SIS_join, $SIS_where, $SIS_order, $dbConn, $_SESSION['usuario']['basic_data']['Nombre'], basename($_SERVER["REQUEST_URI"], ".php"), 'arrEventos');
-
 ?>
 
 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">

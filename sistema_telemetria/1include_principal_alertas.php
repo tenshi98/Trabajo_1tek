@@ -18,7 +18,6 @@ $SIS_where = 'nivel='.$nivel.' AND Creacion_mes='.$Mes.' AND Creacion_ano='.$Ano
 $SIS_order = 0;
 $arrAlertas = array();
 $arrAlertas = db_select_array (false, $SIS_query, 'analisis_listado_alertas', $SIS_join, $SIS_where, $SIS_order, $dbConn, $_SESSION['usuario']['basic_data']['Nombre'], basename($_SERVER["REQUEST_URI"], ".php"), 'arrAlertas');
-
 ?>
 
 <style>

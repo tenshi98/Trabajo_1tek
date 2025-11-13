@@ -655,5 +655,4 @@ if(!empty($_GET['clone_idUsuario'])){ ?>
 /*                                             Se llama al pie del documento html                                                 */
 /**********************************************************************************************************************************/
 require_once 'core/Web.Footer.Main.php';
-
 ?>

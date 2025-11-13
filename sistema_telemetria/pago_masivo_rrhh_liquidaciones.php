@@ -372,7 +372,6 @@ $location .= '&idFacturacion='.$_GET['idFacturacion'];
 // Se trae un listado con todos los trabajadores
 $arrTrabajador = array();
 $arrTrabajador = db_select_array (false, 'idFactTrab,TrabajadorNombre,TrabajadorRut,TotalHaberes,TotalDescuentos,TotalAPagar,MontoPagado', 'rrhh_sueldos_facturacion_trabajadores', '', 'idFacturacion ='.$_GET['idFacturacion'].' AND TotalAPagar>MontoPagado', 0, $dbConn, $_SESSION['usuario']['basic_data']['Nombre'], $original, 'arrTrabajador');
-
 ?>
 
 <div class="row inbox">
@@ -638,5 +637,4 @@ $_SESSION['form_require'].=',idFacturacion';
 /*                                             Se llama al pie del documento html                                                 */
 /**********************************************************************************************************************************/
 require_once 'core/Web.Footer.Main.php';
-
 ?>

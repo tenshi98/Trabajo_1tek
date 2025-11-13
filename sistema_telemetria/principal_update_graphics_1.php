@@ -59,7 +59,6 @@ $SIS_order = 'FechaSistema ASC, HoraSistema ASC';
 $SIS_order = ' LIMIT 10000';
 $arrMediciones = array();
 $arrMediciones = db_select_array (false, $SIS_query, 'telemetria_listado_tablarelacionada_'.$_GET['idEquipoActual'], $SIS_join, $SIS_where, $SIS_order, $dbConn, $_SESSION['usuario']['basic_data']['Nombre'], $original, 'arrMediciones');
-
 ?>
 
 <script>

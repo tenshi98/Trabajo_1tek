@@ -81,5 +81,4 @@ foreach ($arrSeleccion as $tel) {
 /**************************************************/
 //elimino los datos
 $resultado = db_delete_data (false, $tabla_2, 'idErrores BETWEEN 1 AND '.$rowPuntero['idErrores'], $dbConn, 'Cron', basename($_SERVER["REQUEST_URI"], ".php"), 'db_delete_data');
-
 ?>

@@ -76,7 +76,6 @@ $SIS_query = 'Nombre,ApellidoPat, ApellidoMat, idSexo, FNacimiento, idEstado';
 $SIS_join  = '';
 $SIS_where = 'idCarga = '.$_GET['edit'];
 $rowData = db_select_data (false, $SIS_query, 'trabajadores_listado_cargas', $SIS_join, $SIS_where, $dbConn, $_SESSION['usuario']['basic_data']['Nombre'], $original, 'rowData');
-
 ?>
 
 <div class="col-xs-12 col-sm-10 col-md-9 col-lg-8 fcenter">
@@ -187,7 +186,6 @@ $SIS_where = 'trabajadores_listado_cargas.idTrabajador = '.$_GET['id'];
 $SIS_order = 'trabajadores_listado_cargas.idCarga ASC';
 $arrCargas = array();
 $arrCargas = db_select_array (false, $SIS_query, 'trabajadores_listado_cargas', $SIS_join, $SIS_where, $SIS_order, $dbConn, $_SESSION['usuario']['basic_data']['Nombre'], $original, 'arrCargas');
-
 ?>
 
 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
@@ -276,5 +274,4 @@ $arrCargas = db_select_array (false, $SIS_query, 'trabajadores_listado_cargas', 
 /*                                             Se llama al pie del documento html                                                 */
 /**********************************************************************************************************************************/
 require_once 'core/Web.Footer.Main.php';
-
 ?>

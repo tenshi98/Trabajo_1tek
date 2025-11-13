@@ -372,5 +372,4 @@ $z  = "telemetria_listado.idTelemetria!=0";   //Siempre pasa
 /*                                             Se llama al pie del documento html                                                 */
 /**********************************************************************************************************************************/
 require_once 'core/Web.Footer.Main.php';
-
 ?>

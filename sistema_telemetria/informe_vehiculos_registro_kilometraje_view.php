@@ -60,5 +60,4 @@ $rowData = db_select_data (false, $SIS_query, 'vehiculos_listado_tablarelacionad
 /*                                             Se llama al pie del documento html                                                 */
 /**********************************************************************************************************************************/
 require_once 'core/Web.Footer.Views.php';
-
 ?>

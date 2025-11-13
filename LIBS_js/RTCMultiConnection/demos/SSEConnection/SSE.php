@@ -26,5 +26,4 @@ foreach ($json as $receiver => $val) {
 
 ob_flush();
 flush();
-
 ?>

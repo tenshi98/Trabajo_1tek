@@ -56,7 +56,6 @@ $SIS_query = 'Nombre,Rut, RazonSocial, Giro, idRubro, idTipo';
 $SIS_join  = '';
 $SIS_where = 'idCliente = '.$_GET['id'];
 $rowData = db_select_data (false, $SIS_query, 'clientes_listado', $SIS_join, $SIS_where, $dbConn, $_SESSION['usuario']['basic_data']['Nombre'], $original, 'rowData');
-
 ?>
 
 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
@@ -130,5 +129,4 @@ $rowData = db_select_data (false, $SIS_query, 'clientes_listado', $SIS_join, $SI
 /*                                             Se llama al pie del documento html                                                 */
 /**********************************************************************************************************************************/
 require_once 'core/Web.Footer.Main.php';
-
 ?>

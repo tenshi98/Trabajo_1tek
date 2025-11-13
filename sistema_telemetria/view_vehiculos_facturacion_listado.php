@@ -107,7 +107,6 @@ $SIS_where = 'vehiculos_facturacion_listado_detalle.idFacturacion ='.$X_Puntero;
 $SIS_order = 'vehiculos_facturacion_listado_detalle.idFacturacionDetalle ASC';
 $arrHijos = array();
 $arrHijos = db_select_array (false, $SIS_query, 'vehiculos_facturacion_listado_detalle', $SIS_join, $SIS_where, $SIS_order, $dbConn, $_SESSION['usuario']['basic_data']['Nombre'], basename($_SERVER["REQUEST_URI"], ".php"), 'arrHijos');
-
 ?>
 
 <div class="col-xs-12 col-sm-11 col-md-11 col-lg-11 fcenter table-responsive">
@@ -280,5 +279,4 @@ if(isset($_GET['return'])&&$_GET['return']!=''){
 /*                                             Se llama al pie del documento html                                                 */
 /**********************************************************************************************************************************/
 require_once 'core/Web.Footer.Main.php';
-
 ?>

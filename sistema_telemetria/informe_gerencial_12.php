@@ -98,17 +98,6 @@ GROUP BY bodegas_arriendos_facturacion.idCliente, bodegas_arriendos_facturacion.
 ORDER BY bodegas_arriendos_facturacion.Creacion_mes DESC";
 //Consulta
 $resultado = mysqli_query ($dbConn, $query);
-//Si ejecuto correctamente la consulta
-if(!$resultado){
-	//Genero numero aleatorio
-	$vardata = genera_password(8,'alfanumerico');
-					
-	//Guardo el error en una variable temporal
-	
-	
-	
-					
-}
 while ( $row = mysqli_fetch_assoc ($resultado)){
 array_push( $arrTemporal_1,$row );
 }
@@ -129,17 +118,6 @@ GROUP BY bodegas_insumos_facturacion.idCliente, bodegas_insumos_facturacion.Crea
 ORDER BY bodegas_insumos_facturacion.Creacion_mes DESC";
 //Consulta
 $resultado = mysqli_query ($dbConn, $query);
-//Si ejecuto correctamente la consulta
-if(!$resultado){
-	//Genero numero aleatorio
-	$vardata = genera_password(8,'alfanumerico');
-					
-	//Guardo el error en una variable temporal
-	
-	
-	
-					
-}
 while ( $row = mysqli_fetch_assoc ($resultado)){
 array_push( $arrTemporal_2,$row );
 }
@@ -160,17 +138,6 @@ GROUP BY bodegas_productos_facturacion.idCliente, bodegas_productos_facturacion.
 ORDER BY bodegas_productos_facturacion.Creacion_mes DESC";
 //Consulta
 $resultado = mysqli_query ($dbConn, $query);
-//Si ejecuto correctamente la consulta
-if(!$resultado){
-	//Genero numero aleatorio
-	$vardata = genera_password(8,'alfanumerico');
-					
-	//Guardo el error en una variable temporal
-	
-	
-	
-					
-}
 while ( $row = mysqli_fetch_assoc ($resultado)){
 array_push( $arrTemporal_3,$row );
 }
@@ -191,17 +158,6 @@ GROUP BY bodegas_servicios_facturacion.idCliente, bodegas_servicios_facturacion.
 ORDER BY bodegas_servicios_facturacion.Creacion_mes DESC";
 //Consulta
 $resultado = mysqli_query ($dbConn, $query);
-//Si ejecuto correctamente la consulta
-if(!$resultado){
-	//Genero numero aleatorio
-	$vardata = genera_password(8,'alfanumerico');
-					
-	//Guardo el error en una variable temporal
-	
-	
-	
-					
-}
 while ( $row = mysqli_fetch_assoc ($resultado)){
 array_push( $arrTemporal_4,$row );
 }
@@ -248,7 +204,6 @@ $Total_1 = 0;
 $Total_2 = 0;
 $Total_3 = 0;
 $Total_4 = 0;
-
 ?>
 
 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 clearfix">
@@ -542,17 +497,6 @@ GROUP BY bodegas_arriendos_facturacion.idCliente, bodegas_arriendos_facturacion.
 ORDER BY bodegas_arriendos_facturacion.Creacion_fecha DESC";
 //Consulta
 $resultado = mysqli_query ($dbConn, $query);
-//Si ejecuto correctamente la consulta
-if(!$resultado){
-	//Genero numero aleatorio
-	$vardata = genera_password(8,'alfanumerico');
-					
-	//Guardo el error en una variable temporal
-	
-	
-	
-					
-}
 while ( $row = mysqli_fetch_assoc ($resultado)){
 array_push( $arrTemporal_1,$row );
 }
@@ -573,17 +517,6 @@ GROUP BY bodegas_insumos_facturacion.idCliente, bodegas_insumos_facturacion.Crea
 ORDER BY bodegas_insumos_facturacion.Creacion_fecha DESC";
 //Consulta
 $resultado = mysqli_query ($dbConn, $query);
-//Si ejecuto correctamente la consulta
-if(!$resultado){
-	//Genero numero aleatorio
-	$vardata = genera_password(8,'alfanumerico');
-					
-	//Guardo el error en una variable temporal
-	
-	
-	
-					
-}
 while ( $row = mysqli_fetch_assoc ($resultado)){
 array_push( $arrTemporal_2,$row );
 }
@@ -604,17 +537,6 @@ GROUP BY bodegas_productos_facturacion.idCliente, bodegas_productos_facturacion.
 ORDER BY bodegas_productos_facturacion.Creacion_fecha DESC";
 //Consulta
 $resultado = mysqli_query ($dbConn, $query);
-//Si ejecuto correctamente la consulta
-if(!$resultado){
-	//Genero numero aleatorio
-	$vardata = genera_password(8,'alfanumerico');
-					
-	//Guardo el error en una variable temporal
-	
-	
-	
-					
-}
 while ( $row = mysqli_fetch_assoc ($resultado)){
 array_push( $arrTemporal_3,$row );
 }
@@ -635,17 +557,6 @@ GROUP BY bodegas_servicios_facturacion.idCliente, bodegas_servicios_facturacion.
 ORDER BY bodegas_servicios_facturacion.Creacion_fecha DESC";
 //Consulta
 $resultado = mysqli_query ($dbConn, $query);
-//Si ejecuto correctamente la consulta
-if(!$resultado){
-	//Genero numero aleatorio
-	$vardata = genera_password(8,'alfanumerico');
-					
-	//Guardo el error en una variable temporal
-	
-	
-	
-					
-}
 while ( $row = mysqli_fetch_assoc ($resultado)){
 array_push( $arrTemporal_4,$row );
 }
@@ -692,7 +603,6 @@ $Total_1 = 0;
 $Total_2 = 0;
 $Total_3 = 0;
 $Total_4 = 0;
-
 ?>
 
 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 clearfix">
@@ -985,17 +895,6 @@ GROUP BY bodegas_arriendos_facturacion.idCliente, bodegas_arriendos_facturacion.
 ORDER BY bodegas_arriendos_facturacion.Creacion_Semana DESC";
 //Consulta
 $resultado = mysqli_query ($dbConn, $query);
-//Si ejecuto correctamente la consulta
-if(!$resultado){
-	//Genero numero aleatorio
-	$vardata = genera_password(8,'alfanumerico');
-					
-	//Guardo el error en una variable temporal
-	
-	
-	
-					
-}
 while ( $row = mysqli_fetch_assoc ($resultado)){
 array_push( $arrTemporal_1,$row );
 }
@@ -1016,17 +915,6 @@ GROUP BY bodegas_insumos_facturacion.idCliente, bodegas_insumos_facturacion.Crea
 ORDER BY bodegas_insumos_facturacion.Creacion_Semana DESC";
 //Consulta
 $resultado = mysqli_query ($dbConn, $query);
-//Si ejecuto correctamente la consulta
-if(!$resultado){
-	//Genero numero aleatorio
-	$vardata = genera_password(8,'alfanumerico');
-					
-	//Guardo el error en una variable temporal
-	
-	
-	
-					
-}
 while ( $row = mysqli_fetch_assoc ($resultado)){
 array_push( $arrTemporal_2,$row );
 }
@@ -1047,17 +935,6 @@ GROUP BY bodegas_productos_facturacion.idCliente, bodegas_productos_facturacion.
 ORDER BY bodegas_productos_facturacion.Creacion_Semana DESC";
 //Consulta
 $resultado = mysqli_query ($dbConn, $query);
-//Si ejecuto correctamente la consulta
-if(!$resultado){
-	//Genero numero aleatorio
-	$vardata = genera_password(8,'alfanumerico');
-					
-	//Guardo el error en una variable temporal
-	
-	
-	
-					
-}
 while ( $row = mysqli_fetch_assoc ($resultado)){
 array_push( $arrTemporal_3,$row );
 }
@@ -1078,17 +955,6 @@ GROUP BY bodegas_servicios_facturacion.idCliente, bodegas_servicios_facturacion.
 ORDER BY bodegas_servicios_facturacion.Creacion_Semana DESC";
 //Consulta
 $resultado = mysqli_query ($dbConn, $query);
-//Si ejecuto correctamente la consulta
-if(!$resultado){
-	//Genero numero aleatorio
-	$vardata = genera_password(8,'alfanumerico');
-					
-	//Guardo el error en una variable temporal
-	
-	
-	
-					
-}
 while ( $row = mysqli_fetch_assoc ($resultado)){
 array_push( $arrTemporal_4,$row );
 }
@@ -1135,7 +1001,6 @@ $Total_1 = 0;
 $Total_2 = 0;
 $Total_3 = 0;
 $Total_4 = 0;
-
 ?>
 
 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 clearfix">
@@ -1421,17 +1286,6 @@ LEFT JOIN `clientes_listado`    ON clientes_listado.idCliente   = bodegas_arrien
 GROUP BY bodegas_arriendos_facturacion.idCliente";
 //Consulta
 $resultado = mysqli_query ($dbConn, $query);
-//Si ejecuto correctamente la consulta
-if(!$resultado){
-	//Genero numero aleatorio
-	$vardata = genera_password(8,'alfanumerico');
-					
-	//Guardo el error en una variable temporal
-	
-	
-	
-					
-}
 while ( $row = mysqli_fetch_assoc ($resultado)){
 array_push( $arrTemporal_1,$row );
 }
@@ -1450,17 +1304,6 @@ LEFT JOIN `clientes_listado`    ON clientes_listado.idCliente   = bodegas_insumo
 GROUP BY bodegas_insumos_facturacion.idCliente";
 //Consulta
 $resultado = mysqli_query ($dbConn, $query);
-//Si ejecuto correctamente la consulta
-if(!$resultado){
-	//Genero numero aleatorio
-	$vardata = genera_password(8,'alfanumerico');
-					
-	//Guardo el error en una variable temporal
-	
-	
-	
-					
-}
 while ( $row = mysqli_fetch_assoc ($resultado)){
 array_push( $arrTemporal_2,$row );
 }
@@ -1479,17 +1322,6 @@ LEFT JOIN `clientes_listado`    ON clientes_listado.idCliente   = bodegas_produc
 GROUP BY bodegas_productos_facturacion.idCliente";
 //Consulta
 $resultado = mysqli_query ($dbConn, $query);
-//Si ejecuto correctamente la consulta
-if(!$resultado){
-	//Genero numero aleatorio
-	$vardata = genera_password(8,'alfanumerico');
-					
-	//Guardo el error en una variable temporal
-	
-	
-	
-					
-}
 while ( $row = mysqli_fetch_assoc ($resultado)){
 array_push( $arrTemporal_3,$row );
 }
@@ -1508,17 +1340,6 @@ LEFT JOIN `clientes_listado`    ON clientes_listado.idCliente   = bodegas_servic
 GROUP BY bodegas_servicios_facturacion.idCliente";
 //Consulta
 $resultado = mysqli_query ($dbConn, $query);
-//Si ejecuto correctamente la consulta
-if(!$resultado){
-	//Genero numero aleatorio
-	$vardata = genera_password(8,'alfanumerico');
-					
-	//Guardo el error en una variable temporal
-	
-	
-	
-					
-}
 while ( $row = mysqli_fetch_assoc ($resultado)){
 array_push( $arrTemporal_4,$row );
 }
@@ -1561,7 +1382,6 @@ $Total_1 = 0;
 $Total_2 = 0;
 $Total_3 = 0;
 $Total_4 = 0;
-
 ?>
 
 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 clearfix">
@@ -1790,7 +1610,6 @@ $Total_4 = 0;
 }else{
 //Verifico el tipo de usuario que esta ingresando
 $z = "idSistema=".$_SESSION['usuario']['basic_data']['idSistema'];
-
 ?>
 
 <div class="col-xs-12 col-sm-10 col-md-9 col-lg-8 fcenter">
@@ -1833,5 +1652,4 @@ $z = "idSistema=".$_SESSION['usuario']['basic_data']['idSistema'];
 /*                                             Se llama al pie del documento html                                                 */
 /**********************************************************************************************************************************/
 require_once 'core/Web.Footer.Main.php';
-
 ?>

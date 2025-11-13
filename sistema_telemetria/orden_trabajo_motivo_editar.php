@@ -411,7 +411,6 @@ $SIS_join  = 'LEFT JOIN `sistema_productos_uml` ON sistema_productos_uml.idUml =
 $SIS_order = 'sistema_productos_uml.Nombre ASC';
 $arrTipo = array();
 $arrTipo = db_select_array (false, $SIS_query, 'productos_listado', $SIS_join, $SIS_where, $SIS_order, $dbConn, $_SESSION['usuario']['basic_data']['Nombre'], $original, 'arrTipo');
-
 ?>
 
 <div class="col-xs-12 col-sm-10 col-md-9 col-lg-8 fcenter">
@@ -524,7 +523,6 @@ $SIS_join  = 'LEFT JOIN `sistema_productos_uml` ON sistema_productos_uml.idUml =
 $SIS_order = 'sistema_productos_uml.Nombre ASC';
 $arrTipo = array();
 $arrTipo = db_select_array (false, $SIS_query, 'productos_listado', $SIS_join, $SIS_where, $SIS_order, $dbConn, $_SESSION['usuario']['basic_data']['Nombre'], $original, 'arrTipo');
-
 ?>
 
 <div class="col-xs-12 col-sm-10 col-md-9 col-lg-8 fcenter">
@@ -620,7 +618,6 @@ $SIS_join  = 'LEFT JOIN `sistema_productos_uml` ON sistema_productos_uml.idUml =
 $SIS_order = 'sistema_productos_uml.Nombre ASC';
 $arrTipo = array();
 $arrTipo = db_select_array (false, $SIS_query, 'insumos_listado', $SIS_join, $SIS_where, $SIS_order, $dbConn, $_SESSION['usuario']['basic_data']['Nombre'], $original, 'arrTipo');
-
 ?>
 
 <div class="col-xs-12 col-sm-10 col-md-9 col-lg-8 fcenter">
@@ -733,7 +730,6 @@ $SIS_join  = 'LEFT JOIN `sistema_productos_uml` ON sistema_productos_uml.idUml =
 $SIS_order = 'sistema_productos_uml.Nombre ASC';
 $arrTipo = array();
 $arrTipo = db_select_array (false, $SIS_query, 'insumos_listado', $SIS_join, $SIS_where, $SIS_order, $dbConn, $_SESSION['usuario']['basic_data']['Nombre'], $original, 'arrTipo');
-
 ?>
 
 <div class="col-xs-12 col-sm-10 col-md-9 col-lg-8 fcenter">
@@ -809,7 +805,6 @@ $rowData = db_select_data (false, $SIS_query, 'orden_trabajo_tareas_listado', $S
 
 //Verifico el tipo de usuario que esta ingresando
 $z = "idSistema=".$_SESSION['usuario']['basic_data']['idSistema']." AND idEstado=1";
-
 ?>
 
 <div class="col-xs-12 col-sm-10 col-md-9 col-lg-8 fcenter">
@@ -867,7 +862,6 @@ $rowData = db_select_data (false, $SIS_query, 'orden_trabajo_tareas_listado_resp
 
 //Verifico el tipo de usuario que esta ingresando
 $z = "idSistema=".$_SESSION['usuario']['basic_data']['idSistema']." AND idEstado=1";
-
 ?>
 
 <div class="col-xs-12 col-sm-10 col-md-9 col-lg-8 fcenter">
@@ -908,7 +902,6 @@ $SIS_query = 'Observaciones';
 $SIS_join  = '';
 $SIS_where = 'idOT ='.$_GET['view'];
 $rowData = db_select_data (false, $SIS_query, 'orden_trabajo_tareas_listado', $SIS_join, $SIS_where, $dbConn, $_SESSION['usuario']['basic_data']['Nombre'], $original, 'rowData');
-
 ?>
 
 <div class="col-xs-12 col-sm-10 col-md-9 col-lg-8 fcenter">
@@ -948,7 +941,6 @@ $SIS_query = 'idUbicacion, idUbicacion_lvl_1, idUbicacion_lvl_2, idUbicacion_lvl
 $SIS_join  = '';
 $SIS_where = 'idOT ='.$_GET['view'];
 $rowData = db_select_data (false, $SIS_query, 'orden_trabajo_tareas_listado', $SIS_join, $SIS_where, $dbConn, $_SESSION['usuario']['basic_data']['Nombre'], $original, 'rowData');
-
 ?>
 	
 								
@@ -1156,7 +1148,6 @@ $SIS_where = 'orden_trabajo_tareas_listado_historial.idOT ='.$_GET['view'];
 $SIS_order = 'orden_trabajo_tareas_listado_historial.idHistorial ASC';
 $arrHistorial = array();
 $arrHistorial = db_select_array (false, $SIS_query, 'orden_trabajo_tareas_listado_historial', $SIS_join, $SIS_where, $SIS_order, $dbConn, $_SESSION['usuario']['basic_data']['Nombre'], $original, 'arrHistorial');
-
 ?>
 
 <div class="col-xs-12 col-sm-11 col-md-11 col-lg-11 fcenter table-responsive">
@@ -1456,5 +1447,4 @@ $arrHistorial = db_select_array (false, $SIS_query, 'orden_trabajo_tareas_listad
 /*                                             Se llama al pie del documento html                                                 */
 /**********************************************************************************************************************************/
 require_once 'core/Web.Footer.Main.php';
-
 ?>

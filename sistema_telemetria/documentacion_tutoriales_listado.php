@@ -45,5 +45,4 @@ echo file_explorer(2, 'connector_tutoriales', DB_SITE_MAIN_PATH, $_SESSION['usua
 /*                                             Se llama al pie del documento html                                                 */
 /**********************************************************************************************************************************/
 require_once 'core/Web.Footer.Main.php';
-
 ?>

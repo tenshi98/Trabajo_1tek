@@ -126,7 +126,6 @@ $colegios    = $rowDatax['tran_12'];
 $todos = $telemetria + $bodega + $ruta + $trabajador + $pasajeros + $peonetas + $colegios;
 
 $idTipoUsuario  = $_SESSION['usuario']['basic_data']['idTipoUsuario'];
-
 ?>
 
 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
@@ -237,5 +236,4 @@ $idTipoUsuario  = $_SESSION['usuario']['basic_data']['idTipoUsuario'];
 /*                                             Se llama al pie del documento html                                                 */
 /**********************************************************************************************************************************/
 require_once 'core/Web.Footer.Main.php';
-
 ?>

@@ -33,7 +33,6 @@ bodegas_arriendos_facturacion.N_Doc AS NumDoc';
 $SIS_order = 'Devolucion_dia ASC';
 $arrFacturas_1 = array();
 $arrFacturas_1 = db_select_array (false, $SIS_query, 'bodegas_arriendos_facturacion', $SIS_join, $SIS_where, $SIS_order, $dbConn, $_SESSION['usuario']['basic_data']['Nombre'], basename($_SERVER["REQUEST_URI"], ".php"), 'arrFacturas_1');
-
 ?>
 
 <style>

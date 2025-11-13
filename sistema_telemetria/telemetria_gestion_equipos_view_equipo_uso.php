@@ -178,5 +178,4 @@ for ($i = 1; $i <= $rowData['cantSensores']; $i++) {
 /*                                             Se llama al pie del documento html                                                 */
 /**********************************************************************************************************************************/
 require_once 'core/Web.Footer.Views.php';
-
 ?>

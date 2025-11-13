@@ -423,10 +423,9 @@ if(!empty($_GET['addFile'])){ ?>
 	</div>
 </div>
 <?php //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-}elseif(!empty($_GET['editBoleta'])){  
+}elseif(!empty($_GET['editBoleta'])){
 //Verifico el tipo de usuario que esta ingresando
 $z = "idSistema=".$_SESSION['usuario']['basic_data']['idSistema']." AND idEstado=1";
-
 ?>
 
 <div class="col-xs-12 col-sm-10 col-md-9 col-lg-8 fcenter">
@@ -467,7 +466,7 @@ $z = "idSistema=".$_SESSION['usuario']['basic_data']['idSistema']." AND idEstado
 	</div>
 </div>
 <?php //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-}elseif(!empty($_GET['addBoleta'])){  
+}elseif(!empty($_GET['addBoleta'])){
 //Verifico el tipo de usuario que esta ingresando
 $z = "idSistema=".$_SESSION['usuario']['basic_data']['idSistema']." AND idEstado=1"; ?>
 
@@ -841,9 +840,9 @@ $z = "idSistema=".$_SESSION['usuario']['basic_data']['idSistema']." AND idEstado
 	</div>
 </div>
 <?php //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-}elseif(!empty($_GET['editIns'])){  
-//Traigo los datos del producto previamente seleccionado	 
-$query = "SELECT  
+}elseif(!empty($_GET['editIns'])){
+//Traigo los datos del producto previamente seleccionado
+$query = "SELECT
 insumos_listado.idProducto,
 sistema_productos_uml.Nombre AS Unimed,
 proveedor_listado.Nombre AS Proveedor
@@ -853,17 +852,6 @@ LEFT JOIN `proveedor_listado`       ON proveedor_listado.idProveedor    = insumo
 WHERE insumos_listado.idProducto='".$_SESSION['ocompra_insumos'][$_GET['editIns']]['idProducto']."'";
 //Consulta
 $resultado = mysqli_query ($dbConn, $query);
-//Si ejecuto correctamente la consulta
-if(!$resultado){
-	//Genero numero aleatorio
-	$vardata = genera_password(8,'alfanumerico');
-					
-	//Guardo el error en una variable temporal
-	
-	
-	
-					
-}
 $rowData = mysqli_fetch_assoc ($resultado);
 
 //filtro
@@ -875,17 +863,6 @@ FROM `core_sistemas_insumos`
 WHERE idSistema=".$_SESSION['usuario']['basic_data']['idSistema'];
 //Consulta
 $resultado = mysqli_query ($dbConn, $query);
-//Si ejecuto correctamente la consulta
-if(!$resultado){
-	//Genero numero aleatorio
-	$vardata = genera_password(8,'alfanumerico');
-					
-	//Guardo el error en una variable temporal
-	
-	
-	
-					
-}
 while ( $row = mysqli_fetch_assoc ($resultado)){
 array_push( $arrPermisos,$row );
 }
@@ -958,7 +935,7 @@ foreach ($arrPermisos as $prod) {
 	</div>
 </div>
 <?php //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-}elseif(!empty($_GET['addIns'])){  
+}elseif(!empty($_GET['addIns'])){
 //filtro
 $zx2 = "idProducto=0";
 //Se revisan los permisos a los productos
@@ -968,25 +945,12 @@ FROM `core_sistemas_insumos`
 WHERE idSistema=".$_SESSION['usuario']['basic_data']['idSistema'];
 //Consulta
 $resultado = mysqli_query ($dbConn, $query);
-//Si ejecuto correctamente la consulta
-if(!$resultado){
-	//Genero numero aleatorio
-	$vardata = genera_password(8,'alfanumerico');
-					
-	//Guardo el error en una variable temporal
-	
-	
-	
-					
-}
 while ( $row = mysqli_fetch_assoc ($resultado)){
 array_push( $arrPermisos,$row );
 }
 foreach ($arrPermisos as $prod) {
 	$zx2 .= " OR (idEstado=1 AND idProducto=".$prod['idProducto'].")";
 }
-	 
-	 
 ?>
 
 <div class="col-xs-12 col-sm-10 col-md-9 col-lg-8 fcenter">
@@ -1031,8 +995,8 @@ foreach ($arrPermisos as $prod) {
 	</div>
 </div>
 <?php //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-}elseif(!empty($_GET['editProd'])){  
-//Traigo los datos del producto previamente seleccionado	 
+}elseif(!empty($_GET['editProd'])){
+//Traigo los datos del producto previamente seleccionado
 $query = "SELECT  
 productos_listado.idProducto,
 sistema_productos_uml.Nombre AS Unimed,
@@ -1043,17 +1007,6 @@ LEFT JOIN `proveedor_listado`       ON proveedor_listado.idProveedor    = produc
 WHERE productos_listado.idProducto='".$_SESSION['ocompra_productos'][$_GET['editProd']]['idProducto']."'";
 //Consulta
 $resultado = mysqli_query ($dbConn, $query);
-//Si ejecuto correctamente la consulta
-if(!$resultado){
-	//Genero numero aleatorio
-	$vardata = genera_password(8,'alfanumerico');
-					
-	//Guardo el error en una variable temporal
-	
-	
-	
-					
-}
 $rowData = mysqli_fetch_assoc ($resultado);
 
 //filtro
@@ -1065,17 +1018,6 @@ FROM `core_sistemas_productos`
 WHERE idSistema=".$_SESSION['usuario']['basic_data']['idSistema'];
 //Consulta
 $resultado = mysqli_query ($dbConn, $query);
-//Si ejecuto correctamente la consulta
-if(!$resultado){
-	//Genero numero aleatorio
-	$vardata = genera_password(8,'alfanumerico');
-					
-	//Guardo el error en una variable temporal
-	
-	
-	
-					
-}
 while ( $row = mysqli_fetch_assoc ($resultado)){
 array_push( $arrPermisos,$row );
 }
@@ -1157,17 +1099,6 @@ FROM `core_sistemas_productos`
 WHERE idSistema=".$_SESSION['usuario']['basic_data']['idSistema'];
 //Consulta
 $resultado = mysqli_query ($dbConn, $query);
-//Si ejecuto correctamente la consulta
-if(!$resultado){
-	//Genero numero aleatorio
-	$vardata = genera_password(8,'alfanumerico');
-					
-	//Guardo el error en una variable temporal
-	
-	
-	
-					
-}
 while ( $row = mysqli_fetch_assoc ($resultado)){
 array_push( $arrPermisos,$row );
 }
@@ -1221,7 +1152,6 @@ foreach ($arrPermisos as $prod) {
 }elseif(!empty($_GET['modBase'])){
 //Verifico el tipo de usuario que esta ingresando
 $w="idSistema=".$_SESSION['usuario']['basic_data']['idSistema']." AND idEstado=1";
-
 ?>
 
 <div class="col-xs-12 col-sm-10 col-md-9 col-lg-8 fcenter">
@@ -1265,7 +1195,7 @@ $w="idSistema=".$_SESSION['usuario']['basic_data']['idSistema']." AND idEstado=1
 <?php //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 }elseif(!empty($_GET['view'])){
 //Variable para sacar el total
-$total = 0;		
+$total = 0;
 ?>
 
 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="margin-bottom:30px">
@@ -1688,7 +1618,6 @@ validaPermisoUser($rowlevel['level'], 3, $dbConn);
 //se crea filtro
 //Verifico el tipo de usuario que esta ingresando
 $w="idSistema=".$_SESSION['usuario']['basic_data']['idSistema']." AND idEstado=1";
-
 ?>
 
 <div class="col-xs-12 col-sm-10 col-md-9 col-lg-8 fcenter">
@@ -1788,7 +1717,6 @@ LEFT JOIN `proveedor_listado`   ON proveedor_listado.idProveedor   = ocompra_lis
 $SIS_order = $order_by.' LIMIT '.$comienzo.', '.$cant_reg;
 $arrSolicitudes = array();
 $arrSolicitudes = db_select_array (false, $SIS_query, 'ocompra_listado', $SIS_join, $SIS_where, $SIS_order, $dbConn, $_SESSION['usuario']['basic_data']['Nombre'], $original, 'arrSolicitudes');
-
 ?>
 
 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 breadcrumb-bar">
@@ -1937,5 +1865,4 @@ $arrSolicitudes = db_select_array (false, $SIS_query, 'ocompra_listado', $SIS_jo
 /*                                             Se llama al pie del documento html                                                 */
 /**********************************************************************************************************************************/
 require_once 'core/Web.Footer.Main.php';
-
 ?>

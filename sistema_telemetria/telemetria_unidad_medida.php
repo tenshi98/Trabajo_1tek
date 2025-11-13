@@ -64,7 +64,6 @@ if(!empty($_GET['id'])){
 validaPermisoUser($rowlevel['level'], 2, $dbConn);
 // Se tre el nombre
 $rowData = db_select_data (false, 'Nombre,NombreLargo', 'telemetria_listado_unidad_medida', '', 'idUniMed='.$_GET['id'], $dbConn, $_SESSION['usuario']['basic_data']['Nombre'], $original, 'rowUnimed');
-
 ?>
 
 <div class="col-xs-12 col-sm-10 col-md-9 col-lg-8 fcenter">
@@ -156,7 +155,6 @@ $arrUnimed = db_select_array (false, 'idUniMed,Nombre,NombreLargo', 'telemetria_
 
 //paginador
 $search='';
-
 ?>
 
 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
@@ -216,5 +214,4 @@ $search='';
 /*                                             Se llama al pie del documento html                                                 */
 /**********************************************************************************************************************************/
 require_once 'core/Web.Footer.Main.php';
-
 ?>

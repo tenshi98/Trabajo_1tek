@@ -67,17 +67,6 @@ FROM `vehiculos_rutas`
 WHERE idRuta = ".$_GET['id'];
 //Consulta
 $resultado = mysqli_query ($dbConn, $query);
-//Si ejecuto correctamente la consulta
-if(!$resultado){
-	//Genero numero aleatorio
-	$vardata = genera_password(8,'alfanumerico');
-					
-	//Guardo el error en una variable temporal
-	
-	
-	
-					
-}
 $rowData = mysqli_fetch_assoc ($resultado);
 
 //Se traen las rutas
@@ -88,17 +77,6 @@ WHERE idRuta = ".$_GET['id']."
 ORDER BY idUbicaciones ASC";
 //Consulta
 $resultado = mysqli_query ($dbConn, $query);
-//Si ejecuto correctamente la consulta
-if(!$resultado){
-	//Genero numero aleatorio
-	$vardata = genera_password(8,'alfanumerico');
-					
-	//Guardo el error en una variable temporal
-	
-	
-	
-					
-}
 while ( $row = mysqli_fetch_assoc ($resultado)){
 array_push( $arrRutas,$row );
 }
@@ -379,7 +357,6 @@ $SIS_join  = 'LEFT JOIN `core_sistemas` ON core_sistemas.idSistema = vehiculos_r
 $SIS_order = $order_by.' LIMIT '.$comienzo.', '.$cant_reg;
 $arrUsers = array();
 $arrUsers = db_select_array (false, $SIS_query, 'vehiculos_rutas', $SIS_join, $SIS_where, $SIS_order, $dbConn, $_SESSION['usuario']['basic_data']['Nombre'], $original, 'arrUsers');
-
 ?>
 
 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 breadcrumb-bar">
@@ -492,5 +469,4 @@ $arrUsers = db_select_array (false, $SIS_query, 'vehiculos_rutas', $SIS_join, $S
 /*                                             Se llama al pie del documento html                                                 */
 /**********************************************************************************************************************************/
 require_once 'core/Web.Footer.Main.php';
-
 ?>

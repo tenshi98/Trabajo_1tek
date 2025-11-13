@@ -76,7 +76,6 @@ $SIS_where = 'core_sistemas.idEstado=1';
 $SIS_order = 'core_sistemas.Nombre ASC';
 $arrSistemas = array();
 $arrSistemas = db_select_array (false, $SIS_query, 'usuarios_sistemas',$SIS_join, $SIS_where, $SIS_order, $dbConn, $_SESSION['usuario']['basic_data']['Nombre'], $original, 'arrSistemas');
-
 ?>
 
 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
@@ -168,5 +167,4 @@ $arrSistemas = db_select_array (false, $SIS_query, 'usuarios_sistemas',$SIS_join
 /*                                             Se llama al pie del documento html                                                 */
 /**********************************************************************************************************************************/
 require_once 'core/Web.Footer.Main.php';
-
 ?>

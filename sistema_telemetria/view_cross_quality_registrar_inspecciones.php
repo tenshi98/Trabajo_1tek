@@ -108,7 +108,6 @@ $SIS_where = 'Nombre!=""';
 $SIS_order = 'Nombre ASC';
 $arrUnidadMedida = array();
 $arrUnidadMedida = db_select_array (false, $SIS_query, 'sistema_cross_analisis_uml', $SIS_join, $SIS_where, $SIS_order, $dbConn, $_SESSION['usuario']['basic_data']['Nombre'], basename($_SERVER["REQUEST_URI"], ".php"), 'arrUnidadMedida');
-
 ?>	
 		
 <section class="invoice">
@@ -371,7 +370,6 @@ $SIS_where = 'idAnalisis ='.$X_Puntero;
 $SIS_order = 'Nombre ASC';
 $arrArchivos = array();
 $arrArchivos = db_select_array (false, $SIS_query, 'cross_quality_registrar_inspecciones_archivo', $SIS_join, $SIS_where, $SIS_order, $dbConn, $_SESSION['usuario']['basic_data']['Nombre'], basename($_SERVER["REQUEST_URI"], ".php"), 'arrArchivos');
-
 ?>
 
 <section class="invoice">
@@ -558,5 +556,4 @@ if(isset($_GET['return'])&&$_GET['return']!=''){
 /*                                             Se llama al pie del documento html                                                 */
 /**********************************************************************************************************************************/
 require_once 'core/Web.Footer.Views.php';
-
 ?>

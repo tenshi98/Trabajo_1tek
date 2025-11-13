@@ -339,7 +339,6 @@ $SIS_query = 'idDocPago, NDocPago, Fpago, vTotal, idSistema';
 $SIS_join  = '';
 $SIS_where = 'idDocumento ='.$_GET['editDoc'];
 $rowData = db_select_data (false, $SIS_query, 'ocompra_listado_documentos', $SIS_join, $SIS_where, $dbConn, $_SESSION['usuario']['basic_data']['Nombre'], $original, 'rowData');
-
 ?>
 
 <div class="col-xs-12 col-sm-10 col-md-9 col-lg-8 fcenter">
@@ -445,7 +444,6 @@ $SIS_query = 'Descripcion, Valor';
 $SIS_join  = '';
 $SIS_where = 'idExistencia ='.$_GET['editBoletaEmp'];
 $rowData = db_select_data (false, $SIS_query, 'ocompra_listado_existencias_boletas_empresas', $SIS_join, $SIS_where, $dbConn, $_SESSION['usuario']['basic_data']['Nombre'], $original, 'rowData');
-
 ?>
 
 <div class="col-xs-12 col-sm-10 col-md-9 col-lg-8 fcenter">
@@ -532,7 +530,6 @@ $rowData = db_select_data (false, $SIS_query, 'ocompra_listado_existencias_bolet
 
 //Verifico el tipo de usuario que esta ingresando
 $z = "idSistema=".$_SESSION['usuario']['basic_data']['idSistema']." AND idEstado=1";
-
 ?>
 
 <div class="col-xs-12 col-sm-10 col-md-9 col-lg-8 fcenter">
@@ -576,7 +573,7 @@ $z = "idSistema=".$_SESSION['usuario']['basic_data']['idSistema']." AND idEstado
 	</div>
 </div>
 <?php //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-}elseif(!empty($_GET['addBoleta'])){  
+}elseif(!empty($_GET['addBoleta'])){
 //Verifico el tipo de usuario que esta ingresando
 $z = "idSistema=".$_SESSION['usuario']['basic_data']['idSistema']." AND idEstado=1"; ?>
 
@@ -621,13 +618,12 @@ $z = "idSistema=".$_SESSION['usuario']['basic_data']['idSistema']." AND idEstado
 </div>
 
 <?php //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-}elseif(!empty($_GET['editOtros'])){  
+}elseif(!empty($_GET['editOtros'])){
 // Se consulta
 $SIS_query = 'Nombre,Cantidad, vUnitario, idSistema, vTotal, idFrecuencia';
 $SIS_join  = '';
 $SIS_where = 'idExistencia ='.$_GET['editOtros'];
 $rowData = db_select_data (false, $SIS_query, 'ocompra_listado_existencias_otros', $SIS_join, $SIS_where, $dbConn, $_SESSION['usuario']['basic_data']['Nombre'], $original, 'rowData');
-
 ?>
 
 <div class="col-xs-12 col-sm-10 col-md-9 col-lg-8 fcenter">
@@ -761,7 +757,7 @@ $rowData = db_select_data (false, $SIS_query, 'ocompra_listado_existencias_otros
 </div>
 
 <?php //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-}elseif(!empty($_GET['editServicios'])){  
+}elseif(!empty($_GET['editServicios'])){
 //Traigo los datos del producto previamente seleccionado
 $SIS_query = '
 ocompra_listado_existencias_servicios.idServicio, 
@@ -778,7 +774,6 @@ LEFT JOIN `servicios_listado`          ON servicios_listado.idServicio          
 LEFT JOIN `proveedor_listado`          ON proveedor_listado.idProveedor          = servicios_listado.idProveedor';
 $SIS_where = 'ocompra_listado_existencias_servicios.idExistencia ='.$_GET['editServicios'];
 $rowData = db_select_data (false, $SIS_query, 'ocompra_listado_existencias_servicios', $SIS_join, $SIS_where, $dbConn, $_SESSION['usuario']['basic_data']['Nombre'], $original, 'rowData');
-
 ?>
 
 <div class="col-xs-12 col-sm-10 col-md-9 col-lg-8 fcenter">
@@ -911,7 +906,7 @@ $rowData = db_select_data (false, $SIS_query, 'ocompra_listado_existencias_servi
 	</div>
 </div>
 <?php //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-}elseif(!empty($_GET['editArriendo'])){  
+}elseif(!empty($_GET['editArriendo'])){
 //Traigo los datos del producto previamente seleccionado
 $SIS_query = '
 ocompra_listado_existencias_arriendos.idEquipo, 
@@ -928,7 +923,6 @@ LEFT JOIN `equipos_arriendo_listado`   ON equipos_arriendo_listado.idEquipo     
 LEFT JOIN `proveedor_listado`          ON proveedor_listado.idProveedor          = equipos_arriendo_listado.idProveedor';
 $SIS_where = 'ocompra_listado_existencias_arriendos.idExistencia ='.$_GET['editArriendo'];
 $rowData = db_select_data (false, $SIS_query, 'ocompra_listado_existencias_arriendos', $SIS_join, $SIS_where, $dbConn, $_SESSION['usuario']['basic_data']['Nombre'], $original, 'rowData');
-
 ?>
 
 <div class="col-xs-12 col-sm-10 col-md-9 col-lg-8 fcenter">
@@ -1061,7 +1055,7 @@ $rowData = db_select_data (false, $SIS_query, 'ocompra_listado_existencias_arrie
 	</div>
 </div>
 <?php //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-}elseif(!empty($_GET['editIns'])){  
+}elseif(!empty($_GET['editIns'])){
 //Traigo los datos del producto previamente seleccionado	
 $SIS_query = '
 ocompra_listado_existencias_insumos.idProducto, 
@@ -1169,7 +1163,7 @@ foreach ($arrPermisos as $prod) {
 	</div>
 </div>
 <?php //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-}elseif(!empty($_GET['addIns'])){  
+}elseif(!empty($_GET['addIns'])){
 //Se revisan los permisos a los productos
 $SIS_query = 'idProducto';
 $SIS_join  = '';
@@ -1240,7 +1234,7 @@ foreach ($arrPermisos as $prod) {
 	</div>
 </div>
 <?php //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-}elseif(!empty($_GET['editProd'])){  
+}elseif(!empty($_GET['editProd'])){
 //Traigo los datos del producto previamente seleccionado
 $SIS_query = '
 ocompra_listado_existencias_productos.idProducto, 
@@ -1430,7 +1424,6 @@ $rowData = db_select_data (false, $SIS_query, 'ocompra_listado', $SIS_join, $SIS
 /*************************************/
 //Verifico el tipo de usuario que esta ingresando
 $w="idSistema=".$_SESSION['usuario']['basic_data']['idSistema']." AND idEstado=1";
-
 ?>
 
 <div class="col-xs-12 col-sm-10 col-md-9 col-lg-8 fcenter">
@@ -1686,7 +1679,7 @@ $arrSolMat = array();
 $arrSolMat = db_select_array (false, $SIS_query, 'ocompra_listado_sol_rel', $SIS_join, $SIS_where, $SIS_order, $dbConn, $_SESSION['usuario']['basic_data']['Nombre'], $original, 'arrSolMat');
 
 //Variable para sacar el total
-$total = 0;		
+$total = 0;
 ?>
 
 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="margin-bottom:30px">
@@ -2277,5 +2270,4 @@ $total = 0;
 /*                                             Se llama al pie del documento html                                                 */
 /**********************************************************************************************************************************/
 require_once 'core/Web.Footer.Main.php';
-
 ?>

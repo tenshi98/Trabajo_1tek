@@ -83,7 +83,6 @@ if(isset($error)&&$error!=''){echo notifications_list($error);}
 if(!empty($_GET['clone_idMatriz'])){
 //valido los permisos
 validaPermisoUser($rowlevel['level'], 3, $dbConn);
-
 ?>
 
 <div class="col-xs-12 col-sm-10 col-md-9 col-lg-8 fcenter">
@@ -132,7 +131,6 @@ $SIS_query .= ',PuntoidGrupo_'.$_GET['mod'].' AS Grupo';
 $SIS_join  = '';
 $SIS_where = 'idMatriz ='.$_GET['idMatriz'];
 $rowData = db_select_data (false, $SIS_query, 'maquinas_listado_matriz', $SIS_join, $SIS_where, $dbConn, $_SESSION['usuario']['basic_data']['Nombre'], $original, 'rowData');
-
 ?>
 
 <div class="col-xs-12 col-sm-10 col-md-9 col-lg-8 fcenter">
@@ -393,7 +391,6 @@ $SIS_query = 'Nombre,cantPuntos, idEstado';
 $SIS_join  = '';
 $SIS_where = 'idMatriz ='.$_GET['idMatriz_2'];
 $rowData = db_select_data (false, $SIS_query, 'maquinas_listado_matriz', $SIS_join, $SIS_where, $dbConn, $_SESSION['usuario']['basic_data']['Nombre'], $original, 'rowData');
-
 ?>
 
 <div class="col-xs-12 col-sm-10 col-md-9 col-lg-8 fcenter">
@@ -437,7 +434,6 @@ validaPermisoUser($rowlevel['level'], 3, $dbConn);
 //se crea filtro
 //verifico que sea un administrador
 $z = "idSistema=".$_SESSION['usuario']['basic_data']['idSistema'];
-
 ?>
 
 <div class="col-xs-12 col-sm-10 col-md-9 col-lg-8 fcenter">
@@ -495,7 +491,6 @@ $SIS_where = 'maquinas_listado_matriz.idMaquina ='.$_GET['id'];
 $SIS_order = 'maquinas_listado_matriz.Nombre ASC';
 $arrMatriz = array();
 $arrMatriz = db_select_array (false, $SIS_query, 'maquinas_listado_matriz', $SIS_join, $SIS_where, $SIS_order, $dbConn, $_SESSION['usuario']['basic_data']['Nombre'], $original, 'arrMatriz');
-
 ?>
 
 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
@@ -584,5 +579,4 @@ $arrMatriz = db_select_array (false, $SIS_query, 'maquinas_listado_matriz', $SIS
 /*                                             Se llama al pie del documento html                                                 */
 /**********************************************************************************************************************************/
 require_once 'core/Web.Footer.Main.php';
-
 ?>

@@ -98,5 +98,4 @@ $SIS_where.= ' GROUP BY telemetria_mnt_correos_list.idUsuario,telemetria_listado
 $SIS_order = 'telemetria_mnt_correos_list.idUsuario ASC,telemetria_listado.idSistema ASC,telemetria_mnt_correos_list.idCorreosCat ASC,usuarios_equipos_telemetria.idTelemetria ASC';
 $arrCorreos = array();
 $arrCorreos = db_select_array (true, $SIS_query, 'telemetria_mnt_correos_list', $SIS_join, $SIS_where, $SIS_order, $dbConn, 'cron', basename($_SERVER["REQUEST_URI"], ".php"), 'arrCorreos');
-
 ?>

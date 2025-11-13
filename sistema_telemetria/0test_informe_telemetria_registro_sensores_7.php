@@ -48,7 +48,6 @@ require_once '../A2XRXS_gears/xrxs_configuracion/Load.User.Permission.php';
 /*                                         Se llaman a la cabecera del documento html                                             */
 /**********************************************************************************************************************************/
 require_once 'core/Web.Header.Views.php';
-
 ?>
 
 <div class="col-xs-12 col-sm-10 col-md-9 col-lg-8 fcenter">
@@ -86,5 +85,4 @@ require_once 'core/Web.Header.Views.php';
 /*                                             Se llama al pie del documento html                                                 */
 /**********************************************************************************************************************************/
 require_once 'core/Web.Footer.Views.php';
-
 ?>

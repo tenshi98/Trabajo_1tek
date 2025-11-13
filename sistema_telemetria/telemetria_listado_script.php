@@ -109,7 +109,6 @@ LEFT JOIN `core_sistemas_opciones`        opc3   ON opc3.idOpciones             
 $SIS_where = 'telemetria_listado_script.idScript ='.$_GET['edit'];
 // consulto los datos
 $rowData = db_select_data (false, $SIS_query, 'telemetria_listado_script', $SIS_join, $SIS_where, $dbConn, $_SESSION['usuario']['basic_data']['Nombre'], $original, 'rowData');
-
 ?>
 
 <div class="col-xs-12 col-sm-10 col-md-9 col-lg-8 fcenter">
@@ -210,7 +209,6 @@ LEFT JOIN `core_sistemas_opciones`        opc3   ON opc3.idOpciones             
 LEFT JOIN `telemetria_listado_sensores_tipo`     ON telemetria_listado_sensores_tipo.idTelemetria      = telemetria_listado.idTelemetria';
 $SIS_where = 'telemetria_listado.idTelemetria ='.$_GET['id'];
 $rowData = db_select_data (false, $SIS_query , 'telemetria_listado', $SIS_join, $SIS_where, $dbConn, $_SESSION['usuario']['basic_data']['Nombre'], $original, 'rowData');
-
 ?>
 
 <div class="col-xs-12 col-sm-10 col-md-9 col-lg-8 fcenter">
@@ -294,7 +292,6 @@ $SIS_where = 'telemetria_listado_script.idTelemetria ='.$_GET['id'];
 $SIS_order = 'telemetria_listado_script.idScript ASC';
 $arrScripts = array();
 $arrScripts = db_select_array (false, $SIS_query, 'telemetria_listado_script', $SIS_join, $SIS_where, $SIS_order, $dbConn, $_SESSION['usuario']['basic_data']['Nombre'], $original, 'arrScripts');
-
 ?>
 
 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
@@ -395,5 +392,4 @@ $arrScripts = db_select_array (false, $SIS_query, 'telemetria_listado_script', $
 /*                                             Se llama al pie del documento html                                                 */
 /**********************************************************************************************************************************/
 require_once 'core/Web.Footer.Main.php';
-
 ?>

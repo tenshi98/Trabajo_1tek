@@ -113,7 +113,6 @@ $SIS_where = 'idTrabajador = '.$_GET['id'];
 $SIS_order = 'Fecha_ingreso DESC';
 $arrAnexos = array();
 $arrAnexos = db_select_array (false, $SIS_query, 'trabajadores_listado_anexos', $SIS_join, $SIS_where, $SIS_order, $dbConn, $_SESSION['usuario']['basic_data']['Nombre'], $original, 'arrAnexos');
-
 ?>
 
 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
@@ -199,5 +198,4 @@ $arrAnexos = db_select_array (false, $SIS_query, 'trabajadores_listado_anexos', 
 /*                                             Se llama al pie del documento html                                                 */
 /**********************************************************************************************************************************/
 require_once 'core/Web.Footer.Main.php';
-
 ?>

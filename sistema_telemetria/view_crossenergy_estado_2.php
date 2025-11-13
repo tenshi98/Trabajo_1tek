@@ -334,7 +334,6 @@ if(isset($arrGraficos)&&$arrGraficos!=false && !empty($arrGraficos) && $arrGrafi
 	$Graphics_lineColors .= '];';
 	$Graphics_lineDash   .= '];';
 	$Graphics_lineWidth  .= '];';
-
 ?>
 
 <script>
@@ -534,5 +533,4 @@ if(isset($_GET['return'])&&$_GET['return']!=''){
 /*                                             Se llama al pie del documento html                                                 */
 /**********************************************************************************************************************************/
 require_once 'core/Web.Footer.Views.php';
-
 ?>

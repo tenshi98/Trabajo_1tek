@@ -56,7 +56,6 @@ if(isset($_GET['f_creacion_inicio'], $_GET['f_creacion_termino'])&&$_GET['f_crea
 // Se trae un listado con todos los trabajadores
 $arrTrabajador = array();
 $arrTrabajador = db_select_array (false, 'idFactTrab,TrabajadorNombre,TrabajadorRut,TotalHaberes,TotalDescuentos,TotalAPagar,MontoPagado', 'rrhh_sueldos_facturacion_trabajadores', '',$z1,0, $dbConn, $_SESSION['usuario']['basic_data']['Nombre'], $original, 'arrTrabajador');
-
 ?>
 
 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
@@ -157,5 +156,4 @@ $y = "idSistema=".$_SESSION['usuario']['basic_data']['idSistema']." AND idEstado
 /*                                             Se llama al pie del documento html                                                 */
 /**********************************************************************************************************************************/
 require_once 'core/Web.Footer.Main.php';
-
 ?>

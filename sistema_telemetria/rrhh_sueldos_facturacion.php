@@ -99,17 +99,6 @@ FROM `rrhh_sueldos_facturacion`
 WHERE idFacturacion = ".$_GET['details'];
 //Consulta
 $resultado = mysqli_query ($dbConn, $query);
-//Si ejecuto correctamente la consulta
-if(!$resultado){
-	//Genero numero aleatorio
-	$vardata = genera_password(8,'alfanumerico');
-					
-	//Guardo el error en una variable temporal
-	
-	
-	
-					
-}
 $rowData = mysqli_fetch_assoc ($resultado);
 // Se trae un listado con todos los trabajadores
 $arrTrabajador = array();
@@ -119,17 +108,6 @@ FROM `rrhh_sueldos_facturacion_trabajadores`
 WHERE idFacturacion = ".$_GET['details'];
 //Consulta
 $resultado = mysqli_query ($dbConn, $query);
-//Si ejecuto correctamente la consulta
-if(!$resultado){
-	//Genero numero aleatorio
-	$vardata = genera_password(8,'alfanumerico');
-					
-	//Guardo el error en una variable temporal
-	
-	
-	
-					
-}
 while ( $row = mysqli_fetch_assoc ($resultado)){
 array_push( $arrTrabajador,$row );
 }	
@@ -140,17 +118,6 @@ FROM `rrhh_sueldos_facturacion_archivos`
 WHERE idFacturacion = ".$_GET['details'];
 //Consulta
 $resultado = mysqli_query ($dbConn, $query);
-//Si ejecuto correctamente la consulta
-if(!$resultado){
-	//Genero numero aleatorio
-	$vardata = genera_password(8,'alfanumerico');
-					
-	//Guardo el error en una variable temporal
-	
-	
-	
-					
-}
 while ( $row = mysqli_fetch_assoc ($resultado)){
 array_push( $arrArchivos,$row );
 }
@@ -683,7 +650,6 @@ $SIS_join  = 'LEFT JOIN `core_sistemas` ON core_sistemas.idSistema = rrhh_sueldo
 $SIS_order = $order_by.' LIMIT '.$comienzo.', '.$cant_reg;
 $arrTipo = array();
 $arrTipo = db_select_array (false, $SIS_query, 'rrhh_sueldos_facturacion', $SIS_join, $SIS_where, $SIS_order, $dbConn, $_SESSION['usuario']['basic_data']['Nombre'], $original, 'arrTipo');
-
 ?>
 
 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 breadcrumb-bar">
@@ -806,5 +772,4 @@ $arrTipo = db_select_array (false, $SIS_query, 'rrhh_sueldos_facturacion', $SIS_
 /*                                             Se llama al pie del documento html                                                 */
 /**********************************************************************************************************************************/
 require_once 'core/Web.Footer.Main.php';
-
 ?>

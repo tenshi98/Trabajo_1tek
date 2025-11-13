@@ -126,7 +126,6 @@ $SIS_where = 'prospectos_etapa_fidelizacion.idProspecto ='.$X_Puntero;
 $SIS_order = 'prospectos_etapa.Nombre DESC';
 $arrEtapa = array();
 $arrEtapa = db_select_array (false, $SIS_query, 'prospectos_etapa_fidelizacion', $SIS_join, $SIS_where, $SIS_order, $dbConn, $_SESSION['usuario']['basic_data']['Nombre'], basename($_SERVER["REQUEST_URI"], ".php"), 'arrEtapa');
-
 ?>
 
 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
@@ -330,5 +329,4 @@ if(isset($_GET['return'])&&$_GET['return']!=''){
 /*                                             Se llama al pie del documento html                                                 */
 /**********************************************************************************************************************************/
 require_once 'core/Web.Footer.Views.php';
-
 ?>

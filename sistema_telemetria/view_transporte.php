@@ -73,7 +73,6 @@ LEFT JOIN `transportes_tipos`      ON transportes_tipos.idTipo        = transpor
 LEFT JOIN `core_rubros`            ON core_rubros.idRubro             = transportes_listado.idRubro';
 $SIS_where = 'transportes_listado.idTransporte ='.$X_Puntero;
 $rowData = db_select_data (false, $SIS_query, 'transportes_listado', $SIS_join, $SIS_where, $dbConn, $_SESSION['usuario']['basic_data']['Nombre'], basename($_SERVER["REQUEST_URI"], ".php"), 'rowData');
-
 ?>
 
 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
@@ -195,5 +194,4 @@ if(isset($_GET['return'])&&$_GET['return']!=''){
 /*                                             Se llama al pie del documento html                                                 */
 /**********************************************************************************************************************************/
 require_once 'core/Web.Footer.Views.php';
-
 ?>

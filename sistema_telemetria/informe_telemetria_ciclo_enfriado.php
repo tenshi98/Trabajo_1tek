@@ -72,7 +72,6 @@ LEFT JOIN `variedades_listado`             ON variedades_listado.idProducto     
 $SIS_order = 'telemetria_ciclo_enfriado.f_inicio DESC';
 $arrCategorias = array();
 $arrCategorias = db_select_array (false, $SIS_query, 'telemetria_ciclo_enfriado', $SIS_join, $SIS_where, $SIS_order, $dbConn, $_SESSION['usuario']['basic_data']['Nombre'], $original, 'arrCategorias');
-
 ?>
 
 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
@@ -192,5 +191,4 @@ if(isset($_SESSION['usuario']['basic_data']['idInterfaz'])&&$_SESSION['usuario']
 /*                                             Se llama al pie del documento html                                                 */
 /**********************************************************************************************************************************/
 require_once 'core/Web.Footer.Main.php';
-
 ?>

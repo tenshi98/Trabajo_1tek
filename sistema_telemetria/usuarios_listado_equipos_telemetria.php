@@ -101,7 +101,6 @@ $SIS_where = 'telemetria_listado.idSistema='.$_SESSION['usuario']['basic_data'][
 $SIS_order = 'telemetria_listado.idEstado ASC, telemetria_listado.idSistema ASC, telemetria_listado.Nombre ASC';
 $arrEquipos = array();
 $arrEquipos = db_select_array (false, $SIS_query, 'telemetria_listado', $SIS_join, $SIS_where, $SIS_order, $dbConn, $_SESSION['usuario']['basic_data']['Nombre'], $original, 'arrEquipos');
-
 ?>
 
 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
@@ -189,5 +188,4 @@ $arrEquipos = db_select_array (false, $SIS_query, 'telemetria_listado', $SIS_joi
 /*                                             Se llama al pie del documento html                                                 */
 /**********************************************************************************************************************************/
 require_once 'core/Web.Footer.Main.php';
-
 ?>

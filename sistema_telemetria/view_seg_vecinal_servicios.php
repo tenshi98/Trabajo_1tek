@@ -62,7 +62,6 @@ LEFT JOIN `core_ubicacion_ciudad`        ON core_ubicacion_ciudad.idCiudad     =
 LEFT JOIN `core_ubicacion_comunas`       ON core_ubicacion_comunas.idComuna    = seg_vecinal_servicios_listado.idComuna';
 $SIS_where = 'seg_vecinal_servicios_listado.idServicio ='.$X_Puntero;
 $rowData = db_select_data (false, $SIS_query, 'seg_vecinal_servicios_listado', $SIS_join, $SIS_where, $dbConn, $_SESSION['usuario']['basic_data']['Nombre'], basename($_SERVER["REQUEST_URI"], ".php"), 'rowData');
-
 ?>
 
 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
@@ -193,5 +192,4 @@ if(isset($_GET['return'])&&$_GET['return']!=''){
 /*                                             Se llama al pie del documento html                                                 */
 /**********************************************************************************************************************************/
 require_once 'core/Web.Footer.Views.php';
-
 ?>

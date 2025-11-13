@@ -40,7 +40,6 @@ LEFT JOIN `telemetria_listado_sensores_unimed`  ON telemetria_listado_sensores_u
 LEFT JOIN `telemetria_listado_unidad_medida`    ON telemetria_listado_unidad_medida.idUniMed         = telemetria_listado_sensores_unimed.SensoresUniMed_'.simpleDecode($_GET['sensorn'], fecha_actual());
 $SIS_where = 'telemetria_listado_tablarelacionada_'.simpleDecode($_GET['idTelemetria'], fecha_actual()).'.idTabla = '.simpleDecode($_GET['view'], fecha_actual());
 $rowData = db_select_data (false, $SIS_query, 'telemetria_listado_tablarelacionada_'.simpleDecode($_GET['idTelemetria'], fecha_actual()), $SIS_join, $SIS_where, $dbConn, $_SESSION['usuario']['basic_data']['Nombre'], basename($_SERVER["REQUEST_URI"], ".php"), 'rowData');
-
 ?>
 
 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
@@ -69,5 +68,4 @@ $rowData = db_select_data (false, $SIS_query, 'telemetria_listado_tablarelaciona
 /*                                             Se llama al pie del documento html                                                 */
 /**********************************************************************************************************************************/
 require_once 'core/Web.Footer.Views.php';
-
 ?>

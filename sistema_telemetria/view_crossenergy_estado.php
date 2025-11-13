@@ -369,7 +369,6 @@ if(isset($arrGraficos)&&$arrGraficos!=false && !empty($arrGraficos) && $arrGrafi
 	$SIS_join  = '';
 	$SIS_where = 'idUniMed='.$Temp_2;
 	$rowUniMed = db_select_data (false, $SIS_query, 'telemetria_listado_unidad_medida', $SIS_join, $SIS_where, $dbConn, $_SESSION['usuario']['basic_data']['Nombre'], basename($_SERVER["REQUEST_URI"], ".php"), 'rowUniMed');
-
 ?>
 
 <script>
@@ -569,5 +568,4 @@ if(isset($_GET['return'])&&$_GET['return']!=''){
 /*                                             Se llama al pie del documento html                                                 */
 /**********************************************************************************************************************************/
 require_once 'core/Web.Footer.Views.php';
-
 ?>

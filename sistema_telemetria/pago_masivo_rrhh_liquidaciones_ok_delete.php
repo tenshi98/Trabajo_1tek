@@ -8,5 +8,4 @@ ini_set( "session.cookie_lifetime", $timeout );  //Establecer la duración de la
 session_start();                                 //Iniciar una nueva sesión
 //elimino el valor pagado
 $_SESSION['pago_rrhh_liquidaciones'][$_GET['idFactTrab']]['ValorPagado'] = 0;
-
 ?>

@@ -62,7 +62,6 @@ $SIS_where = 'idRutaAlt ='.$X_Puntero;
 $SIS_order = 'idUbicaciones ASC';
 $arrRutasAlt = array();
 $arrRutasAlt = db_select_array (false, $SIS_query, 'vehiculos_ruta_alternativa_ubicaciones', $SIS_join, $SIS_where, $SIS_order, $dbConn, $_SESSION['usuario']['basic_data']['Nombre'], basename($_SERVER["REQUEST_URI"], ".php"), 'arrRutasAlt');
-
 ?>
 
 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
@@ -311,5 +310,4 @@ if(isset($_GET['return'])&&$_GET['return']!=''){
 /*                                             Se llama al pie del documento html                                                 */
 /**********************************************************************************************************************************/
 require_once 'core/Web.Footer.Views.php';
-
 ?>

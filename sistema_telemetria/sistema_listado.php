@@ -90,17 +90,6 @@ LEFT JOIN `core_ubicacion_comunas`         ON core_ubicacion_comunas.idComuna   
 WHERE core_sistemas.idSistema =".$_GET['id'];
 //Consulta
 $resultado = mysqli_query ($dbConn, $query);
-//Si ejecuto correctamente la consulta
-if(!$resultado){
-	//Genero numero aleatorio
-	$vardata = genera_password(8,'alfanumerico');
-					
-	//Guardo el error en una variable temporal
-	
-	
-	
-					
-}
 $rowData = mysqli_fetch_assoc ($resultado);
 
 /******************************************************/
@@ -172,17 +161,6 @@ FROM usuarios_listado
 WHERE usuarios_listado.idUsuario='1' ";
 //Consulta
 $resultado = mysqli_query ($dbConn, $query);
-//Si ejecuto correctamente la consulta
-if(!$resultado){
-	//Genero numero aleatorio
-	$vardata = genera_password(8,'alfanumerico');
-					
-	//Guardo el error en una variable temporal
-	
-	
-	
-					
-}
 $rowData_x = mysqli_fetch_assoc ($resultado);
 
 //verifico que sea un administrador
@@ -429,7 +407,6 @@ $SIS_join  = 'LEFT JOIN `core_estados`  ON core_estados.idEstado = core_sistemas
 $SIS_order = $order_by.' LIMIT '.$comienzo.', '.$cant_reg;
 $arrUsers = array();
 $arrUsers = db_select_array (false, $SIS_query, 'core_sistemas',$SIS_join, $SIS_where, $SIS_order, $dbConn, $_SESSION['usuario']['basic_data']['Nombre'], $original, 'arrUsers');
-
 ?>
 
 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 breadcrumb-bar">
@@ -548,5 +525,4 @@ $arrUsers = db_select_array (false, $SIS_query, 'core_sistemas',$SIS_join, $SIS_
 /*                                             Se llama al pie del documento html                                                 */
 /**********************************************************************************************************************************/
 require_once 'core/Web.Footer.Main.php';
-
 ?>

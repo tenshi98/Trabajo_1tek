@@ -66,7 +66,6 @@ $rowData = db_select_data (false, $SIS_query, 'clientes_listado', $SIS_join, $SI
 //Listado con los tabs
 $arrHistorial = array();
 $arrHistorial = db_select_array (false, 'clientes_listado_historial_contratos.Creacion_fecha, clientes_listado_historial_contratos.Observacion, usuarios_listado.Nombre AS NombreUsuario', 'clientes_listado_historial_contratos', 'LEFT JOIN `usuarios_listado` ON usuarios_listado.idUsuario = clientes_listado_historial_contratos.idUsuario', 'clientes_listado_historial_contratos.idCliente='.$_GET['id'], 'clientes_listado_historial_contratos.Creacion_fecha ASC', $dbConn, $_SESSION['usuario']['basic_data']['Nombre'], $original, 'arrHistorial');
-
 ?>
 
 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
@@ -216,5 +215,4 @@ $arrHistorial = db_select_array (false, 'clientes_listado_historial_contratos.Cr
 /*                                             Se llama al pie del documento html                                                 */
 /**********************************************************************************************************************************/
 require_once 'core/Web.Footer.Main.php';
-
 ?>

@@ -391,7 +391,6 @@ $Graphics_names_1       = 'var names = ['.$DataName_1.','.$DataName_2.'];';
 $Graphics_info_1        = "var grf_info = [''];";
 $Graphics_markerColor_1 = "var markerColor = [''];";
 $Graphics_markerLine_1  = "var markerLine = [''];";
-
 ?>
 
 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
@@ -485,5 +484,4 @@ if(isset($_SESSION['usuario']['basic_data']['idInterfaz'])&&$_SESSION['usuario']
 /*                                             Se llama al pie del documento html                                                 */
 /**********************************************************************************************************************************/
 require_once 'core/Web.Footer.Main.php';
-
 ?>

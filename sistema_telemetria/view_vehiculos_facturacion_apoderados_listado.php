@@ -88,7 +88,6 @@ $SIS_where = 'vehiculos_facturacion_apoderados_listado_detalle.idFacturacion ='.
 $SIS_order = 'apoderados_listado.ApellidoPat ASC';
 $arrDetalle = array();
 $arrDetalle = db_select_array (false, $SIS_query, 'vehiculos_facturacion_apoderados_listado_detalle', $SIS_join, $SIS_where, $SIS_order, $dbConn, $_SESSION['usuario']['basic_data']['Nombre'], basename($_SERVER["REQUEST_URI"], ".php"), 'arrDetalle');
-
 ?>
 
 <div class="col-xs-12">
@@ -232,5 +231,4 @@ if(isset($_GET['return'])&&$_GET['return']!=''){
 /*                                             Se llama al pie del documento html                                                 */
 /**********************************************************************************************************************************/
 require_once 'core/Web.Footer.Views.php';
-
 ?>

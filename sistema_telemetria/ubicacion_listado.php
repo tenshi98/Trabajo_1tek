@@ -73,17 +73,6 @@ LEFT JOIN `core_estados`  ON core_estados.idEstado   = ubicacion_listado.idEstad
 WHERE ubicacion_listado.idUbicacion=".$_GET['id'];
 //Consulta
 $resultado = mysqli_query ($dbConn, $query);
-//Si ejecuto correctamente la consulta
-if(!$resultado){
-	//Genero numero aleatorio
-	$vardata = genera_password(8,'alfanumerico');
-					
-	//Guardo el error en una variable temporal
-	
-	
-	
-					
-}
 $rowData = mysqli_fetch_assoc ($resultado);
 
 //Se crean las variables
@@ -117,17 +106,6 @@ ORDER BY ubicacion_listado_level_1.Nombre ASC ".$orderby."
 ";
 //Consulta
 $resultado = mysqli_query ($dbConn, $query);
-//Si ejecuto correctamente la consulta
-if(!$resultado){
-	//Genero numero aleatorio
-	$vardata = genera_password(8,'alfanumerico');
-					
-	//Guardo el error en una variable temporal
-	
-	
-	
-					
-}
 while ( $row = mysqli_fetch_assoc ($resultado)){
 array_push( $arrLicitacion,$row );
 }
@@ -362,7 +340,6 @@ LEFT JOIN `core_estados`     ON core_estados.idEstado     = ubicacion_listado.id
 $SIS_order = $order_by;
 $arrArea = array();
 $arrArea = db_select_array (false, $SIS_query, 'ubicacion_listado', $SIS_join, $SIS_where, $SIS_order, $dbConn, $_SESSION['usuario']['basic_data']['Nombre'], $original, 'arrArea');
-
 ?>
 
 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 breadcrumb-bar">
@@ -476,5 +453,4 @@ $arrArea = db_select_array (false, $SIS_query, 'ubicacion_listado', $SIS_join, $
 /*                                             Se llama al pie del documento html                                                 */
 /**********************************************************************************************************************************/
 require_once 'core/Web.Footer.Main.php';
-
 ?>

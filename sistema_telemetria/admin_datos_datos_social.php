@@ -237,5 +237,4 @@ if($_SESSION['usuario']['basic_data']['idTipoUsuario']==1){
 /*                                             Se llama al pie del documento html                                                 */
 /**********************************************************************************************************************************/
 require_once 'core/Web.Footer.Main.php';
-
 ?>

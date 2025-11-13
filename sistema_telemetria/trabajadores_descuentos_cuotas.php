@@ -163,7 +163,6 @@ if(!empty($_GET['addFile'])){ ?>
 <?php //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 }elseif(!empty($_GET['modBase'])){
 $w = "idSistema=".$_SESSION['usuario']['basic_data']['idSistema']." AND idEstado=1";
-
 ?>
 
 <div class="col-xs-12 col-sm-10 col-md-9 col-lg-8 fcenter">
@@ -388,7 +387,6 @@ if (isset($_SESSION['desc_cuotas_listado'])){
 validaPermisoUser($rowlevel['level'], 3, $dbConn);
 //se crea filtro
 $w = "idSistema=".$_SESSION['usuario']['basic_data']['idSistema']." AND idEstado=1";
-
 ?>
 
 <div class="col-xs-12 col-sm-10 col-md-9 col-lg-8 fcenter">
@@ -503,7 +501,6 @@ LEFT JOIN `trabajadores_descuentos_cuotas_tipos`    ON trabajadores_descuentos_c
 $SIS_order = $order_by.' LIMIT '.$comienzo.', '.$cant_reg;
 $arrTipo = array();
 $arrTipo = db_select_array (false, $SIS_query, 'trabajadores_descuentos_cuotas', $SIS_join, $SIS_where, $SIS_order, $dbConn, $_SESSION['usuario']['basic_data']['Nombre'], $original, 'arrTipo');
-
 ?>
 
 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 breadcrumb-bar">
@@ -653,5 +650,4 @@ $arrTipo = db_select_array (false, $SIS_query, 'trabajadores_descuentos_cuotas',
 /*                                             Se llama al pie del documento html                                                 */
 /**********************************************************************************************************************************/
 require_once 'core/Web.Footer.Main.php';
-
 ?>

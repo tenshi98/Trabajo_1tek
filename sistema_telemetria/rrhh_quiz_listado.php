@@ -96,19 +96,7 @@ FROM `rrhh_quiz_listado`
 WHERE idQuiz = ".$_GET['id_quiz'];
 //Consulta
 $resultado = mysqli_query ($dbConn, $query);
-//Si ejecuto correctamente la consulta
-if(!$resultado){
-	//Genero numero aleatorio
-	$vardata = genera_password(8,'alfanumerico');
-					
-	//Guardo el error en una variable temporal
-	
-	
-	
-					
-}
 $rowData = mysqli_fetch_assoc ($resultado);
-
 ?>
 
 <div class="col-xs-12 col-sm-10 col-md-9 col-lg-8 fcenter">
@@ -396,19 +384,7 @@ FROM `rrhh_quiz_listado_preguntas`
 WHERE idPregunta = ".$_GET['editPreg'];
 //Consulta
 $resultado = mysqli_query ($dbConn, $query);
-//Si ejecuto correctamente la consulta
-if(!$resultado){
-	//Genero numero aleatorio
-	$vardata = genera_password(8,'alfanumerico');
-					
-	//Guardo el error en una variable temporal
-	
-	
-	
-					
-}
 $rowData = mysqli_fetch_assoc ($resultado);
-
 ?>
 
 <div class="col-xs-12 col-sm-10 col-md-9 col-lg-8 fcenter">
@@ -645,17 +621,6 @@ LEFT JOIN `rrhh_quiz_tipo_quiz`          ON rrhh_quiz_tipo_quiz.idTipoQuiz      
 WHERE rrhh_quiz_listado.idQuiz = ".$_GET['id_quiz'];
 //Consulta
 $resultado = mysqli_query ($dbConn, $query);
-//Si ejecuto correctamente la consulta
-if(!$resultado){
-	//Genero numero aleatorio
-	$vardata = genera_password(8,'alfanumerico');
-					
-	//Guardo el error en una variable temporal
-	
-	
-	
-					
-}
 $rowData = mysqli_fetch_assoc ($resultado);	 
 
 // Se trae un listado con todas las preguntas
@@ -682,17 +647,6 @@ ORDER BY rrhh_quiz_listado_preguntas.idCategoria ASC
 ";
 //Consulta
 $resultado = mysqli_query ($dbConn, $query);
-//Si ejecuto correctamente la consulta
-if(!$resultado){
-	//Genero numero aleatorio
-	$vardata = genera_password(8,'alfanumerico');
-					
-	//Guardo el error en una variable temporal
-	
-	
-	
-					
-}
 while ( $row = mysqli_fetch_assoc ($resultado)){
 array_push( $arrPreguntas,$row );
 }
@@ -1012,7 +966,6 @@ $SIS_join  = 'LEFT JOIN `core_estados` ON core_estados.idEstado = rrhh_quiz_list
 $SIS_order = 'rrhh_quiz_listado.idEstado ASC, rrhh_quiz_listado.Nombre ASC LIMIT '.$comienzo.', '.$cant_reg;
 $arrUsers = array();
 $arrUsers = db_select_array (false, $SIS_query, 'rrhh_quiz_listado', $SIS_join, $SIS_where, $SIS_order, $dbConn, $_SESSION['usuario']['basic_data']['Nombre'], $original, 'arrUsers');
-
 ?>
 
 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 breadcrumb-bar">
@@ -1116,5 +1069,4 @@ $arrUsers = db_select_array (false, $SIS_query, 'rrhh_quiz_listado', $SIS_join, 
 /*                                             Se llama al pie del documento html                                                 */
 /**********************************************************************************************************************************/
 require_once 'core/Web.Footer.Main.php';
-
 ?>

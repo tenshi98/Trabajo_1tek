@@ -69,7 +69,6 @@ core_telemetria_servicio_tecnico.Nombre AS Servicio';
 $SIS_join  = 'LEFT JOIN `core_telemetria_servicio_tecnico` ON core_telemetria_servicio_tecnico.idServicio  = telemetria_historial_mantencion.idServicio';
 $SIS_where = 'telemetria_historial_mantencion.idMantencion = '.$_GET['id'];
 $rowData = db_select_data (false, $SIS_query, 'telemetria_historial_mantencion', $SIS_join, $SIS_where, $dbConn, $_SESSION['usuario']['basic_data']['Nombre'], $original, 'rowData');
-
 ?>
 
 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
@@ -140,5 +139,4 @@ $rowData = db_select_data (false, $SIS_query, 'telemetria_historial_mantencion',
 /*                                             Se llama al pie del documento html                                                 */
 /**********************************************************************************************************************************/
 require_once 'core/Web.Footer.Main.php';
-
 ?>

@@ -100,5 +100,4 @@ $resultado = db_update_data (false, $SIS_data, 'telemetria_listado_tablarelacion
 
 //recibo el último id generado por mi sesion
 $ultimo_id = $rowTabla['idTabla'];
-
 ?>

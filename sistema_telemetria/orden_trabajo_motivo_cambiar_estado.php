@@ -70,17 +70,6 @@ FROM `orden_trabajo_tareas_listado`
 WHERE idOT = ".$_GET['cambioEstado'];
 //Consulta
 $resultado = mysqli_query ($dbConn, $query);
-//Si ejecuto correctamente la consulta
-if(!$resultado){
-	//Genero numero aleatorio
-	$vardata = genera_password(8,'alfanumerico');
-					
-	//Guardo el error en una variable temporal
-	
-	
-	
-					
-}
 $rowData = mysqli_fetch_assoc ($resultado);	
 	
 	?>
@@ -170,17 +159,6 @@ LEFT JOIN `core_estado_ot_motivos`      ON core_estado_ot_motivos.idEstado      
 ORDER BY orden_trabajo_tareas_listado.idOT DESC ";
 //Consulta
 $resultado = mysqli_query ($dbConn, $query);
-//Si ejecuto correctamente la consulta
-if(!$resultado){
-	//Genero numero aleatorio
-	$vardata = genera_password(8,'alfanumerico');
-					
-	//Guardo el error en una variable temporal
-	
-	
-	
-					
-}
 while ( $row = mysqli_fetch_assoc ($resultado)){
 array_push( $arrOTS,$row );
 }
@@ -306,5 +284,4 @@ array_push( $arrOTS,$row );
 /*                                             Se llama al pie del documento html                                                 */
 /**********************************************************************************************************************************/
 require_once 'core/Web.Footer.Main.php';
-
 ?>

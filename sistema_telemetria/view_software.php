@@ -56,7 +56,6 @@ LEFT JOIN `soporte_software_listado_licencias`   ON soporte_software_listado_lic
 LEFT JOIN `soporte_software_listado_categorias`  ON soporte_software_listado_categorias.idCategoria   = soporte_software_listado.idCategoria';
 $SIS_where = 'soporte_software_listado.idSoftware ='.$X_Puntero;
 $rowData = db_select_data (false, $SIS_query, 'soporte_software_listado', $SIS_join, $SIS_where, $dbConn, $_SESSION['usuario']['basic_data']['Nombre'], basename($_SERVER["REQUEST_URI"], ".php"), 'rowData');
-
 ?>
 
 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="margin-top:50px;">
@@ -131,5 +130,4 @@ if(isset($_GET['return'])&&$_GET['return']!=''){
 /*                                             Se llama al pie del documento html                                                 */
 /**********************************************************************************************************************************/
 require_once 'core/Web.Footer.Views.php';
-
 ?>

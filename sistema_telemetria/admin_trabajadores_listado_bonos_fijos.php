@@ -76,7 +76,6 @@ $SIS_query = 'idBonoFijo,Monto';
 $SIS_join  = '';
 $SIS_where = 'idBono = '.$_GET['edit'];
 $rowData = db_select_data (false, $SIS_query, 'trabajadores_listado_bonos_fijos', $SIS_join, $SIS_where, $dbConn, $_SESSION['usuario']['basic_data']['Nombre'], $original, 'rowData');
-
 ?>
 
 <div class="col-xs-12 col-sm-10 col-md-9 col-lg-8 fcenter">
@@ -167,7 +166,6 @@ $SIS_where = 'trabajadores_listado_bonos_fijos.idTrabajador = '.$_GET['id'];
 $SIS_order = 'sistema_bonos_fijos.Nombre ASC';
 $arrBonos = array();
 $arrBonos = db_select_array (false, $SIS_query, 'trabajadores_listado_bonos_fijos', $SIS_join, $SIS_where, $SIS_order, $dbConn, $_SESSION['usuario']['basic_data']['Nombre'], $original, 'arrBonos');
-
 ?>
 
 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
@@ -252,5 +250,4 @@ $arrBonos = db_select_array (false, $SIS_query, 'trabajadores_listado_bonos_fijo
 /*                                             Se llama al pie del documento html                                                 */
 /**********************************************************************************************************************************/
 require_once 'core/Web.Footer.Main.php';
-
 ?>

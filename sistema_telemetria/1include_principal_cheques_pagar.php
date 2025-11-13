@@ -31,7 +31,6 @@ pagos_facturas_proveedores.F_Pago_dia';
 $SIS_order = 'pagos_facturas_proveedores.F_Pago ASC';
 $arrEventos = array();
 $arrEventos = db_select_array (false, $SIS_query, 'pagos_facturas_proveedores', $SIS_join, $SIS_where, $SIS_order, $dbConn, $_SESSION['usuario']['basic_data']['Nombre'], basename($_SERVER["REQUEST_URI"], ".php"), 'arrEventos');
-
 ?>
 
 <style>

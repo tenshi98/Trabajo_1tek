@@ -77,7 +77,6 @@ PosicionBloque,idEstado';
 $SIS_join  = '';
 $SIS_where = 'idCarousel ='.$_GET['edit'];
 $rowData = db_select_data (false, $SIS_query, 'sitios_listado_carousel', $SIS_join, $SIS_where, $dbConn, $_SESSION['usuario']['basic_data']['Nombre'], $original, 'rowData');
-
 ?>
 
 <div class="col-xs-12 col-sm-10 col-md-9 col-lg-8 fcenter">
@@ -211,7 +210,6 @@ $SIS_where = 'sitios_listado_carousel.idSitio = '.simpleDecode($_GET['id'], fech
 $SIS_order = 'sitios_listado_carousel.idPosicion ASC';
 $arrCarousel = array();
 $arrCarousel = db_select_array (false, $SIS_query, 'sitios_listado_carousel', $SIS_join, $SIS_where, $SIS_order, $dbConn, $_SESSION['usuario']['basic_data']['Nombre'], $original, 'arrCarousel');
-
 ?>
 
 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
@@ -290,5 +288,4 @@ $arrCarousel = db_select_array (false, $SIS_query, 'sitios_listado_carousel', $S
 /*                                             Se llama al pie del documento html                                                 */
 /**********************************************************************************************************************************/
 require_once 'core/Web.Footer.Main.php';
-
 ?>

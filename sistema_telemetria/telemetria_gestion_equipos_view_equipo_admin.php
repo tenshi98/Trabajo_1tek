@@ -147,7 +147,6 @@ $SIS_where = 'idTelemetria ='.simpleDecode($_GET['view'], fecha_actual());
 $SIS_order = 'Fecha DESC, Hora DESC LIMIT 20';
 $arrGPS0 = array();
 $arrGPS0 = db_select_array (false, $SIS_query, 'telemetria_listado_historial_gps', $SIS_join, $SIS_where, $SIS_order, $dbConn, $_SESSION['usuario']['basic_data']['Nombre'], basename($_SERVER["REQUEST_URI"], ".php"), 'arrGPS0');
-
 ?>
 
 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
@@ -373,5 +372,4 @@ $arrGPS0 = db_select_array (false, $SIS_query, 'telemetria_listado_historial_gps
 /*                                             Se llama al pie del documento html                                                 */
 /**********************************************************************************************************************************/
 require_once 'core/Web.Footer.Views.php';
-
 ?>

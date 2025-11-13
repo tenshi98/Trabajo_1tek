@@ -56,5 +56,4 @@ if($HoraTermino<$HoraInicio){
 /****************************************************************/
 //includes con las ejecuciones
 include '0cron_crossenergy_acumulado_hora_include.php';
-
 ?>

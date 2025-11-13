@@ -61,7 +61,6 @@ $SIS_join = 'LEFT JOIN `core_sistemas` ON core_sistemas.idSistema = telemetria_l
 $SIS_order = 'core_sistemas.Nombre ASC, telemetria_listado.Nombre ASC';
 $arrEquipos = array();
 $arrEquipos = db_select_array (false, $SIS_query, 'telemetria_listado', $SIS_join, $SIS_where, $SIS_order, $dbConn, $_SESSION['usuario']['basic_data']['Nombre'], $original, 'arrEquipos');
-
 ?>
 	
 
@@ -208,5 +207,4 @@ if($_SESSION['usuario']['basic_data']['idTipoUsuario']!=1){
 /*                                             Se llama al pie del documento html                                                 */
 /**********************************************************************************************************************************/
 require_once 'core/Web.Footer.Main.php';
-
 ?>

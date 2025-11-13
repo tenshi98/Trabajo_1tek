@@ -103,17 +103,6 @@ FROM `vehiculos_listado`
 WHERE idVehiculo = ".$_GET['id'];
 //Consulta
 $resultado = mysqli_query ($dbConn, $query);
-//Si ejecuto correctamente la consulta
-if(!$resultado){
-	//Genero numero aleatorio
-	$vardata = genera_password(8,'alfanumerico');
-					
-	//Guardo el error en una variable temporal
-	
-	
-	
-					
-}
 $rowData = mysqli_fetch_assoc ($resultado);
 
 $arrTipoCliente = array();
@@ -122,17 +111,6 @@ FROM `vehiculos_mantenciones`
 WHERE idVehiculo = ".$_GET['id'];
 //Consulta
 $resultado = mysqli_query ($dbConn, $query);
-//Si ejecuto correctamente la consulta
-if(!$resultado){
-	//Genero numero aleatorio
-	$vardata = genera_password(8,'alfanumerico');
-					
-	//Guardo el error en una variable temporal
-	
-	
-	
-					
-}
 while ( $row = mysqli_fetch_assoc ($resultado)){
 array_push( $arrTipoCliente,$row );
 }
@@ -185,17 +163,6 @@ FROM usuarios_listado
 WHERE usuarios_listado.idUsuario='".$_GET['id']."' ";
 //Consulta
 $resultado = mysqli_query ($dbConn, $query);
-//Si ejecuto correctamente la consulta
-if(!$resultado){
-	//Genero numero aleatorio
-	$vardata = genera_password(8,'alfanumerico');
-					
-	//Guardo el error en una variable temporal
-	
-	
-	
-					
-}
 $rowDatax = mysqli_fetch_assoc ($resultado);
 
 
@@ -210,7 +177,6 @@ $colegios    = $rowDatax['tran_12'];
 $todos = $telemetria + $bodega + $ruta + $trabajador + $pasajeros + $peonetas + $colegios;
 
 $idTipoUsuario  = $_SESSION['usuario']['basic_data']['idTipoUsuario'];
-
 ?>
 
 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
@@ -359,5 +325,4 @@ $idTipoUsuario  = $_SESSION['usuario']['basic_data']['idTipoUsuario'];
 /*                                             Se llama al pie del documento html                                                 */
 /**********************************************************************************************************************************/
 require_once 'core/Web.Footer.Main.php';
-
 ?>

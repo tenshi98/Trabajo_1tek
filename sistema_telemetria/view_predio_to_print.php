@@ -93,7 +93,6 @@ $Ubicacion = str_replace("'", '', $Ubicacion);
 	
 $Ubicacion = str_replace("Av.", 'Avenida', $Ubicacion);
 $Ubicacion = str_replace("av.", 'Avenida', $Ubicacion);
-
 ?>
 <!DOCTYPE html>
 <html lang="es-ES">
@@ -394,7 +393,6 @@ $Ubicacion = str_replace("av.", 'Avenida', $Ubicacion);
 /*                                             Se llama al pie del documento html                                                 */
 /**********************************************************************************************************************************/
 require_once 'core/Web.Footer.Print.php';
-
 ?>
 <script>
 setTimeout(function(){ window.print();}, 5000);

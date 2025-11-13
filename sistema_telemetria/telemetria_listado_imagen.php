@@ -63,7 +63,6 @@ if(isset($error)&&$error!=''){echo notifications_list($error);}
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // consulto los datos
 $rowData = db_select_data (false, 'idTelemetria, Direccion_img,id_Geo,id_Sensores,Nombre', 'telemetria_listado', '', 'idTelemetria ='.$_GET['id'], $dbConn, $_SESSION['usuario']['basic_data']['Nombre'], $original, 'rowData');
-
 ?>
 
 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
@@ -152,5 +151,4 @@ $rowData = db_select_data (false, 'idTelemetria, Direccion_img,id_Geo,id_Sensore
 /*                                             Se llama al pie del documento html                                                 */
 /**********************************************************************************************************************************/
 require_once 'core/Web.Footer.Main.php';
-
 ?>

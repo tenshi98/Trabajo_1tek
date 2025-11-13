@@ -192,7 +192,6 @@ $SIS_where = 'trabajadores_listado_descuentos_fijos.idTrabajador ='.$X_Puntero;
 $SIS_order = 'sistema_descuentos_fijos.Nombre ASC';
 $arrDescuentos = array();
 $arrDescuentos = db_select_array (false, $SIS_query, 'trabajadores_listado_descuentos_fijos', $SIS_join, $SIS_where, $SIS_order, $dbConn, $_SESSION['usuario']['basic_data']['Nombre'], basename($_SERVER["REQUEST_URI"], ".php"), 'arrDescuentos');
-
 ?>
 
 <div class="no-print">
@@ -606,5 +605,4 @@ if(isset($_GET['return'])&&$_GET['return']!=''){
 /*                                             Se llama al pie del documento html                                                 */
 /**********************************************************************************************************************************/
 require_once 'core/Web.Footer.Views.php';
-
 ?>

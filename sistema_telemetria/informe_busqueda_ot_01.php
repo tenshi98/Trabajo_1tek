@@ -114,7 +114,6 @@ LEFT JOIN `core_ot_tipos`        ON core_ot_tipos.idTipo            = orden_trab
 $SIS_order = $order_by.' LIMIT '.$comienzo.', '.$cant_reg;
 $arrOTS = array();
 $arrOTS = db_select_array (false, $SIS_query, 'orden_trabajo_listado', $SIS_join, $SIS_where, $SIS_order, $dbConn, $_SESSION['usuario']['basic_data']['Nombre'], $original, 'arrOTS');
-
 ?>
 
 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 breadcrumb-bar">
@@ -226,7 +225,6 @@ $arrOTS = db_select_array (false, $SIS_query, 'orden_trabajo_listado', $SIS_join
 }else{
 //Verifico el tipo de usuario que esta ingresando
 $z = "idSistema=".$_SESSION['usuario']['basic_data']['idSistema'];
-
 ?>
 
 <div class="col-xs-12 col-sm-10 col-md-9 col-lg-8 fcenter">
@@ -280,5 +278,4 @@ $z = "idSistema=".$_SESSION['usuario']['basic_data']['idSistema'];
 /*                                             Se llama al pie del documento html                                                 */
 /**********************************************************************************************************************************/
 require_once 'core/Web.Footer.Main.php';
-
 ?>

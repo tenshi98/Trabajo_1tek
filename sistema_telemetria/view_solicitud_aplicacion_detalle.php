@@ -140,7 +140,6 @@ $SIS_where = 'cross_solicitud_aplicacion_listado_cuarteles.idSolicitud = '.$X_Pu
 $SIS_order = 'cross_predios_listado_zonas.Nombre ASC';
 $arrCuarteles = array();
 $arrCuarteles = db_select_array (false, $SIS_query, 'cross_solicitud_aplicacion_listado_cuarteles', $SIS_join, $SIS_where, $SIS_order, $dbConn, $_SESSION['usuario']['basic_data']['Nombre'], basename($_SERVER["REQUEST_URI"], ".php"), 'arrCuarteles');
-
 ?>
 
 <section class="invoice">
@@ -370,5 +369,4 @@ if(isset($_GET['return'])&&$_GET['return']!=''){
 /*                                             Se llama al pie del documento html                                                 */
 /**********************************************************************************************************************************/
 require_once 'core/Web.Footer.Views.php';
-
 ?>

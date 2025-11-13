@@ -163,7 +163,6 @@ $SIS_where = 'sistema_aprobador_oc.idSistema ='.$_GET['id'];
 $SIS_order = 'usuarios_listado.Nombre ASC';
 $arrAprobador = array();
 $arrAprobador = db_select_array (false, $SIS_query, 'sistema_aprobador_oc', $SIS_join, $SIS_where, $SIS_order, $dbConn, $_SESSION['usuario']['basic_data']['Nombre'], $original, 'arrAprobador');
-
 ?>
 
 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
@@ -241,5 +240,4 @@ $arrAprobador = db_select_array (false, $SIS_query, 'sistema_aprobador_oc', $SIS
 /*                                             Se llama al pie del documento html                                                 */
 /**********************************************************************************************************************************/
 require_once 'core/Web.Footer.Main.php';
-
 ?>

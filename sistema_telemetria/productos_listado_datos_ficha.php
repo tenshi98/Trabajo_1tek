@@ -66,7 +66,6 @@ $SIS_query = 'Nombre,FichaTecnica, idTipoProducto, idTipoReceta,idOpciones_1, id
 $SIS_join  = '';
 $SIS_where = 'idProducto = '.$_GET['id'];
 $rowData = db_select_data (false, $SIS_query, 'productos_listado', $SIS_join, $SIS_where, $dbConn, $_SESSION['usuario']['basic_data']['Nombre'], $original, 'rowData');
-
 ?>
 
 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
@@ -155,5 +154,4 @@ $rowData = db_select_data (false, $SIS_query, 'productos_listado', $SIS_join, $S
 /*                                             Se llama al pie del documento html                                                 */
 /**********************************************************************************************************************************/
 require_once 'core/Web.Footer.Main.php';
-
 ?>

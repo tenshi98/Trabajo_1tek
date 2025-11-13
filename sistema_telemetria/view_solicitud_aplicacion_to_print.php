@@ -208,7 +208,6 @@ $SIS_where = 'cross_solicitud_aplicacion_listado_materiales.idSolicitud = '.$X_P
 $SIS_order = 'cross_checking_materiales_seguridad.Nombre ASC';
 $arrMateriales = array();
 $arrMateriales = db_select_array (false, $SIS_query, 'cross_solicitud_aplicacion_listado_materiales', $SIS_join, $SIS_where, $SIS_order, $dbConn, $_SESSION['usuario']['basic_data']['Nombre'], basename($_SERVER["REQUEST_URI"], ".php"), 'arrMateriales');
-
 ?>
 
 <section class="invoice">
@@ -556,5 +555,4 @@ $arrMateriales = db_select_array (false, $SIS_query, 'cross_solicitud_aplicacion
 /*                                             Se llama al pie del documento html                                                 */
 /**********************************************************************************************************************************/
 require_once 'core/Web.Footer.Print.php';
-
 ?>

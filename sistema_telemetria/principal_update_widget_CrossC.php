@@ -541,7 +541,6 @@ $widget = '
 </div>';
 
 echo $widget;
-
 ?>
 
 

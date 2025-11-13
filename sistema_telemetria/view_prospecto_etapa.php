@@ -55,7 +55,6 @@ LEFT JOIN `usuarios_listado`     ON usuarios_listado.idUsuario         = prospec
 LEFT JOIN `prospectos_etapa`     ON prospectos_etapa.idEtapa           = prospectos_etapa_fidelizacion.idEtapa';
 $SIS_where = 'prospectos_etapa_fidelizacion.idEtapaFide ='.$X_Puntero;
 $rowData = db_select_data (false, $SIS_query, 'prospectos_etapa_fidelizacion', $SIS_join, $SIS_where, $dbConn, $_SESSION['usuario']['basic_data']['Nombre'], basename($_SERVER["REQUEST_URI"], ".php"), 'rowData');
-
 ?>
 
 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
@@ -124,5 +123,4 @@ if(isset($_GET['return'])&&$_GET['return']!=''){
 /*                                             Se llama al pie del documento html                                                 */
 /**********************************************************************************************************************************/
 require_once 'core/Web.Footer.Views.php';
-
 ?>

@@ -118,7 +118,7 @@ if (isset($_GET['deleted'])){ $error['deleted'] = 'sucess/Receta Borrada correct
 //Manejador de errores
 if(isset($error)&&$error!=''){echo notifications_list($error);}
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-if(!empty($_GET['newProd'])){  
+if(!empty($_GET['newProd'])){
 //Se revisan los permisos a los productos
 $SIS_query = 'idProducto';
 $SIS_join  = '';
@@ -515,7 +515,6 @@ $SIS_where = 'idTipoProducto=1 AND idEstado=1';
 $SIS_order = 'sistema_productos_uml.Nombre ASC';
 $arrProductos = array();
 $arrProductos = db_select_array (false, $SIS_query, 'productos_listado', $SIS_join, $SIS_where, $SIS_order, $dbConn, $_SESSION['usuario']['basic_data']['Nombre'], $original, 'arrProductos');
-
 ?>
 
 <div class="row">
@@ -682,7 +681,6 @@ $SIS_where = 'productos_recetas.idProducto = '.$_GET['id'];
 $SIS_order = 'productos_listado.Nombre ASC';
 $arrRecetas = array();
 $arrRecetas = db_select_array (false, $SIS_query, 'productos_recetas', $SIS_join, $SIS_where, $SIS_order, $dbConn, $_SESSION['usuario']['basic_data']['Nombre'], $original, 'arrRecetas');
-
 ?>
 
 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
@@ -791,5 +789,4 @@ $arrRecetas = db_select_array (false, $SIS_query, 'productos_recetas', $SIS_join
 /*                                             Se llama al pie del documento html                                                 */
 /**********************************************************************************************************************************/
 require_once 'core/Web.Footer.Main.php';
-
 ?>

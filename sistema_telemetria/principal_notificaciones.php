@@ -64,7 +64,6 @@ if(isset($_GET['noMol'])&&$_GET['noMol']!=''){
 }
 //Include de la notificacion
 include '1include_principal_notificaciones.php';
-
 ?>
   							
                             
@@ -81,5 +80,4 @@ include '1include_principal_notificaciones.php';
 /*                                             Se llama al pie del documento html                                                 */
 /**********************************************************************************************************************************/
 require_once 'core/Web.Footer.Main.php';
-
 ?>

@@ -73,7 +73,6 @@ LEFT JOIN `ubicacion_listado_level_5`   ON ubicacion_listado_level_5.idLevel_5  
 LEFT JOIN `core_estado_caja`            ON core_estado_caja.idEstado             = seguridad_accesos.idEstado';
 $SIS_where = 'seguridad_accesos.idAcceso ='.$X_Puntero;
 $rowData = db_select_data (false, $SIS_query, 'seguridad_accesos', $SIS_join, $SIS_where, $dbConn, $_SESSION['usuario']['basic_data']['Nombre'], basename($_SERVER["REQUEST_URI"], ".php"), 'rowData');
-
 ?>
 
 <section class="invoice">
@@ -162,5 +161,4 @@ if(isset($_GET['return'])&&$_GET['return']!=''){
 /*                                             Se llama al pie del documento html                                                 */
 /**********************************************************************************************************************************/
 require_once 'core/Web.Footer.Views.php';
-
 ?>

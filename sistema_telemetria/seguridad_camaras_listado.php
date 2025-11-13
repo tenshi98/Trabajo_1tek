@@ -100,17 +100,6 @@ LEFT JOIN `core_tipos_camara`          ON core_tipos_camara.idTipoCamara      = 
 WHERE seguridad_camaras_listado.idCamara = ".$_GET['id'];
 //Consulta
 $resultado = mysqli_query ($dbConn, $query);
-//Si ejecuto correctamente la consulta
-if(!$resultado){
-	//Genero numero aleatorio
-	$vardata = genera_password(8,'alfanumerico');
-					
-	//Guardo el error en una variable temporal
-	
-	
-	
-					
-}
 $rowData = mysqli_fetch_assoc ($resultado);
 
 //Se traen las rutas
@@ -131,17 +120,6 @@ WHERE seguridad_camaras_listado_canales.idCamara = ".$_GET['id']."
 ORDER BY seguridad_camaras_listado_canales.idCanal ASC";
 //Consulta
 $resultado = mysqli_query ($dbConn, $query);
-//Si ejecuto correctamente la consulta
-if(!$resultado){
-	//Genero numero aleatorio
-	$vardata = genera_password(8,'alfanumerico');
-					
-	//Guardo el error en una variable temporal
-	
-	
-	
-					
-}
 while ( $row = mysqli_fetch_assoc ($resultado)){
 array_push( $arrCamaras,$row );
 }
@@ -361,7 +339,6 @@ LEFT JOIN `core_sistemas_opciones`  ON core_sistemas_opciones.idOpciones  = segu
 $SIS_order = $order_by.' LIMIT '.$comienzo.', '.$cant_reg;
 $arrCamaras = array();
 $arrCamaras = db_select_array (false, $SIS_query, 'seguridad_camaras_listado', $SIS_join, $SIS_where, $SIS_order, $dbConn, $_SESSION['usuario']['basic_data']['Nombre'], $original, 'arrCamaras');
-
 ?>
 
 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 breadcrumb-bar">
@@ -513,5 +490,4 @@ $arrCamaras = db_select_array (false, $SIS_query, 'seguridad_camaras_listado', $
 /*                                             Se llama al pie del documento html                                                 */
 /**********************************************************************************************************************************/
 require_once 'core/Web.Footer.Main.php';
-
 ?>

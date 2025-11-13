@@ -126,7 +126,6 @@ $arrData[1]['Name'] = "'Caudal Derecho'";
 $arrData[2]['Name'] = "'Caudal Izquierdo'";
 $arrData[3]['Name'] = "'Nivel Estanque'";
 $arrData[4]['Name'] = "'Velocidad'";
-
 ?>
 
 <style>
@@ -372,5 +371,4 @@ if(isset($_GET['return'])&&$_GET['return']!=''){
 /*                                             Se llama al pie del documento html                                                 */
 /**********************************************************************************************************************************/
 require_once 'core/Web.Footer.Views.php';
-
 ?>

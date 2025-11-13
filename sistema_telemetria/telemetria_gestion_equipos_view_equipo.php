@@ -138,7 +138,6 @@ $arrAlertas = db_select_array (false, $SIS_query, 'telemetria_listado_errores', 
 // Se trae un listado con todas las fuera de linea
 $arrFlinea = array();
 $arrFlinea = db_select_array (false, 'idFueraLinea, Fecha_inicio, Hora_inicio, Fecha_termino, Hora_termino, Tiempo', 'telemetria_listado_error_fuera_linea', '', 'idTelemetria = '.simpleDecode($_GET['view'], fecha_actual()), 'idFueraLinea DESC LIMIT 20', $dbConn, $_SESSION['usuario']['basic_data']['Nombre'], basename($_SERVER["REQUEST_URI"], ".php"), 'arrFlinea');
-
 ?>
 
 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
@@ -346,5 +345,4 @@ $arrFlinea = db_select_array (false, 'idFueraLinea, Fecha_inicio, Hora_inicio, F
 /*                                             Se llama al pie del documento html                                                 */
 /**********************************************************************************************************************************/
 require_once 'core/Web.Footer.Views.php';
-
 ?>

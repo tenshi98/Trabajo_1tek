@@ -96,7 +96,6 @@ for ($i = 1; $i <= 4; $i++) {
 }
 //verifico permisos
 $Count_pagos = $prm_x[1] + $prm_x[2] + $prm_x[3] + $prm_x[4];
-
 ?>
 
 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
@@ -167,5 +166,4 @@ $Count_pagos = $prm_x[1] + $prm_x[2] + $prm_x[3] + $prm_x[4];
 /*                                             Se llama al pie del documento html                                                 */
 /**********************************************************************************************************************************/
 require_once 'core/Web.Footer.Main.php';
-
 ?>

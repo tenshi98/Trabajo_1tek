@@ -128,7 +128,6 @@ $SIS_where = 'solicitud_listado_existencias_otros.idSolicitud ='.$X_Puntero;
 $SIS_order = 'solicitud_listado_existencias_otros.Nombre ASC';
 $arrOtros = array();
 $arrOtros = db_select_array (false, $SIS_query, 'solicitud_listado_existencias_otros', $SIS_join, $SIS_where, $SIS_order, $dbConn, $_SESSION['usuario']['basic_data']['Nombre'], basename($_SERVER["REQUEST_URI"], ".php"), 'arrOtros');
-
 ?>
 
 <section class="invoice">
@@ -258,5 +257,4 @@ if(isset($_GET['return'])&&$_GET['return']!=''){
 /*                                             Se llama al pie del documento html                                                 */
 /**********************************************************************************************************************************/
 require_once 'core/Web.Footer.Views.php';
-
 ?>

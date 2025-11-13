@@ -117,7 +117,6 @@ $Ubicacion = str_replace("'", '', $Ubicacion);
 	
 $Ubicacion = str_replace("Av.", 'Avenida', $Ubicacion);
 $Ubicacion = str_replace("av.", 'Avenida', $Ubicacion);
-
 ?>
 
 <section class="invoice">
@@ -345,5 +344,4 @@ if(isset($_GET['return'])&&$_GET['return']!=''){
 /*                                             Se llama al pie del documento html                                                 */
 /**********************************************************************************************************************************/
 require_once 'core/Web.Footer.Views.php';
-
 ?>

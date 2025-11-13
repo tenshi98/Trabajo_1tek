@@ -223,7 +223,6 @@ $SIS_where = 'caja_chica_listado.idSistema ='.$_SESSION['usuario']['basic_data']
 $SIS_order = 'caja_chica_listado.idSistema ASC, caja_chica_listado.Nombre ASC';
 $arrCajas = array();
 $arrCajas = db_select_array (false, $SIS_query, 'caja_chica_listado', $SIS_join, $SIS_where, $SIS_order, $dbConn, $_SESSION['usuario']['basic_data']['Nombre'], $original, 'arrCajas');
-
 ?>
 
 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
@@ -330,5 +329,4 @@ $arrCajas = db_select_array (false, $SIS_query, 'caja_chica_listado', $SIS_join,
 /*                                             Se llama al pie del documento html                                                 */
 /**********************************************************************************************************************************/
 require_once 'core/Web.Footer.Main.php';
-
 ?>

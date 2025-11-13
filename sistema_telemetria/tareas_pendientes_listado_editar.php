@@ -160,7 +160,6 @@ $SIS_query = 'idEstadoTarea,Observacion';
 $SIS_join  = '';
 $SIS_where = 'idTrabajoTareas ='.simpleDecode($_GET['edit_trabajo_tarea'], fecha_actual());
 $rowData = db_select_data (false, $SIS_query, 'tareas_pendientes_listado_tareas', $SIS_join, $SIS_where, $dbConn, $_SESSION['usuario']['basic_data']['Nombre'], $original, 'rowData');
-
 ?>
 
 <div class="col-xs-12 col-sm-10 col-md-9 col-lg-8 fcenter">
@@ -262,7 +261,6 @@ if($arrRepresentantes!=false && !empty($arrRepresentantes) && $arrRepresentantes
 }
 $responsables .= ')';
 $usrfil .= $responsables;
-
 ?>
 
 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
@@ -461,7 +459,6 @@ $SIS_query = 'idPrioridad, idTipo, Nombre,Observaciones';
 $SIS_join  = '';
 $SIS_where = 'idTareas ='.simpleDecode($_GET['view'], fecha_actual());
 $rowData = db_select_data (false, $SIS_query, 'tareas_pendientes_listado', $SIS_join, $SIS_where, $dbConn, $_SESSION['usuario']['basic_data']['Nombre'], $original, 'rowData');
-
 ?>
 
 <div class="col-xs-12 col-sm-10 col-md-9 col-lg-8 fcenter">
@@ -585,7 +582,6 @@ $SIS_where = 'tareas_pendientes_listado_historial.idTareas ='.$X_Puntero;
 $SIS_order = 'tareas_pendientes_listado_historial.idHistorial ASC';
 $arrHistorial = array();
 $arrHistorial = db_select_array (false, $SIS_query, 'tareas_pendientes_listado_historial', $SIS_join, $SIS_where, $SIS_order, $dbConn, $_SESSION['usuario']['basic_data']['Nombre'], $original, 'arrHistorial');
-
 ?>
 
 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="margin-bottom:30px">
@@ -796,5 +792,4 @@ $arrHistorial = db_select_array (false, $SIS_query, 'tareas_pendientes_listado_h
 /*                                             Se llama al pie del documento html                                                 */
 /**********************************************************************************************************************************/
 require_once 'core/Web.Footer.Main.php';
-
 ?>

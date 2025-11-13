@@ -151,7 +151,6 @@ $SIS_join  = 'LEFT JOIN `clientes_listado` ON clientes_listado.idCliente = cotiz
 $SIS_order = 'cotizacion_listado.idCotizacion DESC, cotizacion_listado.Creacion_fecha DESC';
 $arrCotizaciones = array();
 $arrCotizaciones = db_select_array (false, $SIS_query, 'cotizacion_listado', $SIS_join, $SIS_where, $SIS_order, $dbConn, $_SESSION['usuario']['basic_data']['Nombre'], basename($_SERVER["REQUEST_URI"], ".php"), 'arrCotizaciones');
-
 ?>
 
 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
@@ -414,5 +413,4 @@ if(isset($_GET['return'])&&$_GET['return']!=''){
 /*                                             Se llama al pie del documento html                                                 */
 /**********************************************************************************************************************************/
 require_once 'core/Web.Footer.Views.php';
-
 ?>

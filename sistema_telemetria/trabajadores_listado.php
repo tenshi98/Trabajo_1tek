@@ -77,7 +77,6 @@ validaPermisoUser($rowlevel['level'], 3, $dbConn);
 $Alert_Text  = 'Descargar Plantilla';
 $Alert_Text .= '<a href="1download.php?dir='.simpleEncode('templates', fecha_actual()).'&file='.simpleEncode('plantilla_trabajador.xlsx', fecha_actual()).'" title="Descargar Plantilla" class="btn btn-primary btn-sm pull-right" ><i class="fa fa-download" aria-hidden="true"></i> Descargar</a>';
 alert_post_data(2,1,2,0, $Alert_Text);
-
 ?>
 
 <div class="col-xs-12 col-sm-10 col-md-9 col-lg-8 fcenter">
@@ -205,17 +204,6 @@ LEFT JOIN `core_tipo_cuenta`                 ON core_tipo_cuenta.idTipoCuenta   
 WHERE trabajadores_listado.idTrabajador = ".$_GET['id'];
 //Consulta
 $resultado = mysqli_query ($dbConn, $query);
-//Si ejecuto correctamente la consulta
-if(!$resultado){
-	//Genero numero aleatorio
-	$vardata = genera_password(8,'alfanumerico');
-					
-	//Guardo el error en una variable temporal
-	
-	
-	
-					
-}
 $rowData = mysqli_fetch_assoc ($resultado);
 
 // Se trae un listado con todos los elementos
@@ -226,17 +214,6 @@ WHERE idTrabajador = ".$_GET['id']."
 ORDER BY idCarga ASC ";
 //Consulta
 $resultado = mysqli_query ($dbConn, $query);
-//Si ejecuto correctamente la consulta
-if(!$resultado){
-	//Genero numero aleatorio
-	$vardata = genera_password(8,'alfanumerico');
-					
-	//Guardo el error en una variable temporal
-	
-	
-	
-					
-}
 while ( $row = mysqli_fetch_assoc ($resultado)){
 array_push( $arrCargas,$row );
 }
@@ -600,7 +577,6 @@ LEFT JOIN `core_estados`                  ON core_estados.idEstado              
 $SIS_order = $order_by.' LIMIT '.$comienzo.', '.$cant_reg;
 $arrTrabajador = array();
 $arrTrabajador = db_select_array (false, $SIS_query, 'trabajadores_listado', $SIS_join, $SIS_where, $SIS_order, $dbConn, $_SESSION['usuario']['basic_data']['Nombre'], $original, 'arrTrabajador');
-
 ?>
 
 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 breadcrumb-bar">
@@ -744,5 +720,4 @@ $arrTrabajador = db_select_array (false, $SIS_query, 'trabajadores_listado', $SI
 /*                                             Se llama al pie del documento html                                                 */
 /**********************************************************************************************************************************/
 require_once 'core/Web.Footer.Main.php';
-
 ?>

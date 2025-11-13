@@ -1588,5 +1588,4 @@ if(!empty($_GET['addTrabajo'])){
 /*                                             Se llama al pie del documento html                                                 */
 /**********************************************************************************************************************************/
 require_once 'core/Web.Footer.Main.php';
-
 ?>

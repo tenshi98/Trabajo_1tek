@@ -123,7 +123,6 @@ $SIS_where = 'orden_trabajo_listado_trabajos.idOT ='.$X_Puntero;
 $SIS_order = 'orden_trabajo_listado_trabajos.NombreComponente ASC, orden_trabajo_listado_trabajos.Descripcion ASC';
 $arrTrabajo = array();
 $arrTrabajo = db_select_array (false, $SIS_query, 'orden_trabajo_listado_trabajos', $SIS_join, $SIS_where, $SIS_order, $dbConn, $_SESSION['usuario']['basic_data']['Nombre'], basename($_SERVER["REQUEST_URI"], ".php"), 'arrTrabajo');
-
 ?>
 
 <div class="col-xs-12">
@@ -317,5 +316,4 @@ if(isset($_GET['return'])&&$_GET['return']!=''){
 /*                                             Se llama al pie del documento html                                                 */
 /**********************************************************************************************************************************/
 require_once 'core/Web.Footer.Views.php';
-
 ?>

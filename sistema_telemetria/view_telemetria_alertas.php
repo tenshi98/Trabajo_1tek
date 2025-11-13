@@ -232,5 +232,4 @@ foreach ($arrUnimed as $sen) {
 require_once 'core/Web.Footer.Views.php';
 //cuadro mensajes
 widget_avgrund();
-
 ?>

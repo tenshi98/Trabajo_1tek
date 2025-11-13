@@ -66,7 +66,6 @@ foreach($arrHistorial as $hist) {
 	if(isset($arrData[1]['Value'])&&$arrData[1]['Value']!=''){$arrData[1]['Value'] .= ", ".$hist['Valor'];    }else{ $arrData[1]['Value'] = $hist['Valor'];}
 }
 $arrData[1]['Name'] = "'".$Tittle."'";
-
 ?>
 
 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
@@ -137,5 +136,4 @@ if(isset($_GET['return'])&&$_GET['return']!=''){
 /*                                             Se llama al pie del documento html                                                 */
 /**********************************************************************************************************************************/
 require_once 'core/Web.Footer.Views.php';
-
 ?>

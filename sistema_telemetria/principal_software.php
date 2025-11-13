@@ -79,7 +79,6 @@ $SIS_where = 'soporte_software_listado_categorias.idCategoria!=0 GROUP BY soport
 $SIS_order = 'soporte_software_listado_categorias.Nombre ASC';
 $arrCategorias = array();
 $arrCategorias = db_select_array (false, $SIS_query, 'soporte_software_listado_categorias', $SIS_join, $SIS_where, $SIS_order, $dbConn, $_SESSION['usuario']['basic_data']['Nombre'], $original, 'arrCategorias');
-
 ?>
 
 <div class="row">
@@ -153,5 +152,4 @@ $arrCategorias = db_select_array (false, $SIS_query, 'soporte_software_listado_c
 /*                                             Se llama al pie del documento html                                                 */
 /**********************************************************************************************************************************/
 require_once 'core/Web.Footer.Main.php';
-
 ?>

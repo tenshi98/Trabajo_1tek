@@ -69,7 +69,6 @@ LEFT JOIN `usuarios_listado`  usuario_asignado    ON usuario_asignado.idUsuario 
 LEFT JOIN `gestion_tickets_area`                  ON gestion_tickets_area.idArea           = gestion_tickets.idArea';
 $SIS_where = 'gestion_tickets.idTicket ='.$X_Puntero;
 $rowData = db_select_data (false, $SIS_query, 'gestion_tickets', $SIS_join, $SIS_where, $dbConn, $_SESSION['usuario']['basic_data']['Nombre'], basename($_SERVER["REQUEST_URI"], ".php"), 'rowData');
-
 ?>
 
 <section class="invoice">
@@ -164,5 +163,4 @@ if(isset($_GET['return'])&&$_GET['return']!=''){
 /*                                             Se llama al pie del documento html                                                 */
 /**********************************************************************************************************************************/
 require_once 'core/Web.Footer.Views.php';
-
 ?>

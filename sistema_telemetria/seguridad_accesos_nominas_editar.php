@@ -109,13 +109,12 @@ if(!empty($_GET['addFile'])){ ?>
 </div>
 
 <?php //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-}elseif(!empty($_GET['editPersona'])){  
+}elseif(!empty($_GET['editPersona'])){
 // consulto los datos
 $SIS_query = 'Nombre,Rut, NDocCedula';
 $SIS_join  = '';
 $SIS_where = 'idNomina ='.$_GET['editPersona'];
 $rowData = db_select_data (false, $SIS_query, 'seguridad_accesos_nominas_listado', $SIS_join, $SIS_where, $dbConn, $_SESSION['usuario']['basic_data']['Nombre'], $original, 'rowData');
-
 ?>
 
 <div class="col-xs-12 col-sm-10 col-md-9 col-lg-8 fcenter">
@@ -309,7 +308,6 @@ $SIS_where = 'idAcceso ='.$_GET['id'];
 $SIS_order = 'Nombre ASC';
 $arrArchivo = array();
 $arrArchivo = db_select_array (false, $SIS_query, 'seguridad_accesos_nominas_archivos', $SIS_join, $SIS_where, $SIS_order, $dbConn, $_SESSION['usuario']['basic_data']['Nombre'], $original, 'arrArchivo');
-
 ?>
 
 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
@@ -461,5 +459,4 @@ $arrArchivo = db_select_array (false, $SIS_query, 'seguridad_accesos_nominas_arc
 /*                                             Se llama al pie del documento html                                                 */
 /**********************************************************************************************************************************/
 require_once 'core/Web.Footer.Main.php';
-
 ?>

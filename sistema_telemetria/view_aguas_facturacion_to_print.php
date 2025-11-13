@@ -185,5 +185,4 @@ if(isset($rowDatos['SII_idFacturable'])&&$rowDatos['SII_idFacturable']!=''){
 /*                                             Se llama al pie del documento html                                                 */
 /**********************************************************************************************************************************/
 require_once 'core/Web.Footer.Print.php';
-
 ?>

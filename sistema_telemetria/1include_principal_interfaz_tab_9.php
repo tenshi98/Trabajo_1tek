@@ -36,7 +36,6 @@ $semanaActual  = semana_actual();
 //calculo de los dias del mes, cuando inicia y cuando termina
 $diaSemana      = date("w",mktime(0,0,0,$Mes,1,$Ano))+7;
 $ultimoDiaMes   = date("d",(mktime(0,0,0,$Mes+1,1,$Ano)-1));
-
 ?>
 
 <style>

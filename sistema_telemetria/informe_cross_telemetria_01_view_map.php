@@ -49,7 +49,6 @@ LEFT JOIN `cross_predios_listado`         ON cross_predios_listado.idPredio     
 LEFT JOIN `telemetria_listado`            ON telemetria_listado.idTelemetria        = telemetria_listado_tablarelacionada_'.$_GET['idTelemetria'].'.idTelemetria';
 $SIS_where = 'telemetria_listado_tablarelacionada_'.$_GET['idTelemetria'].'.idTabla='.$_GET['idTabla'];
 $rowData = db_select_data (false, $SIS_query, 'telemetria_listado_tablarelacionada_'.$_GET['idTelemetria'], $SIS_join, $SIS_where, $dbConn, $_SESSION['usuario']['basic_data']['Nombre'], basename($_SERVER["REQUEST_URI"], ".php"), 'rowData');
-
 ?>
 
 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
@@ -210,5 +209,4 @@ $rowData = db_select_data (false, $SIS_query, 'telemetria_listado_tablarelaciona
 /*                                             Se llama al pie del documento html                                                 */
 /**********************************************************************************************************************************/
 require_once 'core/Web.Footer.Views.php';
-
 ?>

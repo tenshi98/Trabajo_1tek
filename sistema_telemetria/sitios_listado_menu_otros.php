@@ -76,7 +76,6 @@ $SIS_query = 'idPosicion,Nombre,Link,idNewTab,idPopup,idEstado';
 $SIS_join  = '';
 $SIS_where = 'idMenuOtros ='.$_GET['edit'];
 $rowData = db_select_data (false, $SIS_query, 'sitios_listado_menu_otros', $SIS_join, $SIS_where, $dbConn, $_SESSION['usuario']['basic_data']['Nombre'], $original, 'rowData');
-
 ?>
 
 <div class="col-xs-12 col-sm-10 col-md-9 col-lg-8 fcenter">
@@ -209,7 +208,6 @@ $SIS_where = 'sitios_listado_menu_otros.idSitio = '.simpleDecode($_GET['id'], fe
 $SIS_order = 'sitios_listado_menu_otros.idPosicion ASC';
 $arrMenuDesplegable = array();
 $arrMenuDesplegable = db_select_array (false, $SIS_query, 'sitios_listado_menu_otros', $SIS_join, $SIS_where, $SIS_order, $dbConn, $_SESSION['usuario']['basic_data']['Nombre'], $original, 'arrMenuDesplegable');
-
 ?>
 
 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
@@ -292,5 +290,4 @@ $arrMenuDesplegable = db_select_array (false, $SIS_query, 'sitios_listado_menu_o
 /*                                             Se llama al pie del documento html                                                 */
 /**********************************************************************************************************************************/
 require_once 'core/Web.Footer.Main.php';
-
 ?>

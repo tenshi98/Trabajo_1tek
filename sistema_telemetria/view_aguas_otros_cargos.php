@@ -59,7 +59,6 @@ LEFT JOIN `usuarios_listado`        ON usuarios_listado.idUsuario        = aguas
 LEFT JOIN `aguas_clientes_listado`  ON aguas_clientes_listado.idCliente  = aguas_clientes_otros_cargos.idCliente';
 $SIS_where = 'aguas_clientes_otros_cargos.idOtrosCargos ='.$X_Puntero;
 $rowData = db_select_data (false, $SIS_query, 'aguas_clientes_otros_cargos', $SIS_join, $SIS_where, $dbConn, $_SESSION['usuario']['basic_data']['Nombre'], basename($_SERVER["REQUEST_URI"], ".php"), 'rowData');
-
 ?>
 
 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
@@ -170,5 +169,4 @@ if(isset($_GET['return'])&&$_GET['return']!=''){
 /*                                             Se llama al pie del documento html                                                 */
 /**********************************************************************************************************************************/
 require_once 'core/Web.Footer.Views.php';
-
 ?>

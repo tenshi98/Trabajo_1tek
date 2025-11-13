@@ -10,7 +10,6 @@ $SIS_query = 'Fecha, Titulo, Cuerpo, idSistema,idOpciones';
 $SIS_join  = '';
 $SIS_where = 'idCalendario = '.$_GET['id'];
 $rowData = db_select_data (false, $SIS_query, 'principal_calendario_listado', $SIS_join, $SIS_where, $dbConn, $_SESSION['usuario']['basic_data']['Nombre'], basename($_SERVER["REQUEST_URI"], ".php"), 'rowData');
-
 ?>
 
 <div class="col-xs-12 col-sm-10 col-md-9 col-lg-8 fcenter">
@@ -67,7 +66,6 @@ principal_calendario_listado.idUsuario';
 $SIS_join  = 'LEFT JOIN `usuarios_listado` ON usuarios_listado.idUsuario = principal_calendario_listado.idUsuario';
 $SIS_where = 'principal_calendario_listado.idCalendario = '.$_GET['view'];
 $rowData = db_select_data (false, $SIS_query, 'principal_calendario_listado', $SIS_join, $SIS_where, $dbConn, $_SESSION['usuario']['basic_data']['Nombre'], basename($_SERVER["REQUEST_URI"], ".php"), 'rowData');
-
 ?>
 
 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
@@ -190,7 +188,6 @@ $SIS_where = '(idUsuario='.$_SESSION['usuario']['basic_data']['idUsuario'].' OR 
 $SIS_order = 'Fecha ASC';
 $arrEventos = array();
 $arrEventos = db_select_array (false, $SIS_query, 'principal_calendario_listado', $SIS_join, $SIS_where, $SIS_order, $dbConn, $_SESSION['usuario']['basic_data']['Nombre'], basename($_SERVER["REQUEST_URI"], ".php"), 'arrEventos');
-
 ?>
 
 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">

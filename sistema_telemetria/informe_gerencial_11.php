@@ -57,17 +57,6 @@ LEFT JOIN `core_estado_ot`     ON core_estado_ot.idEstado    = orden_trabajo_lis
 GROUP BY orden_trabajo_listado.idEstado";
 //Consulta
 $resultado = mysqli_query ($dbConn, $query);
-//Si ejecuto correctamente la consulta
-if(!$resultado){
-	//Genero numero aleatorio
-	$vardata = genera_password(8,'alfanumerico');
-					
-	//Guardo el error en una variable temporal
-	
-	
-	
-					
-}
 while ( $row = mysqli_fetch_assoc ($resultado)){
 array_push( $arrCountOT,$row );
 }
@@ -87,17 +76,6 @@ LEFT JOIN `core_ot_tipos`    ON core_ot_tipos.idTipo       = orden_trabajo_lista
 GROUP BY orden_trabajo_listado.idEstado, core_ot_tipos.Nombre";
 //Consulta
 $resultado = mysqli_query ($dbConn, $query);
-//Si ejecuto correctamente la consulta
-if(!$resultado){
-	//Genero numero aleatorio
-	$vardata = genera_password(8,'alfanumerico');
-					
-	//Guardo el error en una variable temporal
-	
-	
-	
-					
-}
 while ( $row = mysqli_fetch_assoc ($resultado)){
 array_push( $arrCountType,$row );
 }
@@ -115,17 +93,6 @@ LEFT JOIN `maquinas_listado`  ON maquinas_listado.idMaquina = orden_trabajo_list
 GROUP BY orden_trabajo_listado.idEstado, maquinas_listado.Nombre";
 //Consulta
 $resultado = mysqli_query ($dbConn, $query);
-//Si ejecuto correctamente la consulta
-if(!$resultado){
-	//Genero numero aleatorio
-	$vardata = genera_password(8,'alfanumerico');
-					
-	//Guardo el error en una variable temporal
-	
-	
-	
-					
-}
 while ( $row = mysqli_fetch_assoc ($resultado)){
 array_push( $arrCountMaq,$row );
 }
@@ -157,17 +124,6 @@ LEFT JOIN `orden_trabajo_listado`     ON orden_trabajo_listado.idOT       = orde
 GROUP BY orden_trabajo_listado_trabajos.idProducto";
 //Consulta
 $resultado = mysqli_query ($dbConn, $query);
-//Si ejecuto correctamente la consulta
-if(!$resultado){
-	//Genero numero aleatorio
-	$vardata = genera_password(8,'alfanumerico');
-					
-	//Guardo el error en una variable temporal
-	
-	
-	
-					
-}
 while ( $row = mysqli_fetch_assoc ($resultado)){
 array_push( $arrOT,$row );
 } 
@@ -195,17 +151,6 @@ LEFT JOIN `orden_trabajo_listado`       ON orden_trabajo_listado.idOT           
 GROUP BY maquinas_listado.idUbicacion, orden_trabajo_listado_trabajos.idProducto";
 //Consulta
 $resultado = mysqli_query ($dbConn, $query);
-//Si ejecuto correctamente la consulta
-if(!$resultado){
-	//Genero numero aleatorio
-	$vardata = genera_password(8,'alfanumerico');
-					
-	//Guardo el error en una variable temporal
-	
-	
-	
-					
-}
 while ( $row = mysqli_fetch_assoc ($resultado)){
 array_push( $arrOT2,$row );
 }
@@ -230,17 +175,6 @@ LEFT JOIN `sistema_productos_uml`            ON sistema_productos_uml.idUml     
 GROUP BY orden_trabajo_listado_insumos.idProducto";
 //Consulta
 $resultado = mysqli_query ($dbConn, $query);
-//Si ejecuto correctamente la consulta
-if(!$resultado){
-	//Genero numero aleatorio
-	$vardata = genera_password(8,'alfanumerico');
-					
-	//Guardo el error en una variable temporal
-	
-	
-	
-					
-}
 while ( $row = mysqli_fetch_assoc ($resultado)){
 array_push( $arrInsumos,$row );
 }
@@ -265,17 +199,6 @@ LEFT JOIN `ubicacion_listado`                ON ubicacion_listado.idUbicacion   
 GROUP BY orden_trabajo_listado.idMaquina, orden_trabajo_listado_insumos.idProducto";
 //Consulta
 $resultado = mysqli_query ($dbConn, $query);
-//Si ejecuto correctamente la consulta
-if(!$resultado){
-	//Genero numero aleatorio
-	$vardata = genera_password(8,'alfanumerico');
-					
-	//Guardo el error en una variable temporal
-	
-	
-	
-					
-}
 while ( $row = mysqli_fetch_assoc ($resultado)){
 array_push( $arrInsumos2,$row );
 }
@@ -764,5 +687,4 @@ array_push( $arrInsumos2,$row );
 /*                                             Se llama al pie del documento html                                                 */
 /**********************************************************************************************************************************/
 require_once 'core/Web.Footer.Main.php';
-
 ?>

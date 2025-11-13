@@ -34,7 +34,6 @@ $SIS_join  = '';
 $SIS_order = 'f_programacion ASC';
 $arrOT = array();
 $arrOT = db_select_array (false, $SIS_query, 'orden_trabajo_listado', $SIS_join, $SIS_where, $SIS_order, $dbConn, $_SESSION['usuario']['basic_data']['Nombre'], basename($_SERVER["REQUEST_URI"], ".php"), 'arrOT');
-
 ?>
 
 <style>

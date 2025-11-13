@@ -81,7 +81,6 @@ $SIS_query = 'idCorreosCat, idUsuario';
 $SIS_join  = '';
 $SIS_where = 'idCorreos = '.$_GET['id'];
 $rowData = db_select_data (false, $SIS_query, 'telemetria_mnt_correos_list', $SIS_join, $SIS_where, $dbConn, $_SESSION['usuario']['basic_data']['Nombre'], $original, 'rowData');
-
 ?>
 
 <div class="col-xs-12 col-sm-10 col-md-9 col-lg-8 fcenter">
@@ -229,7 +228,6 @@ LEFT JOIN `core_sistemas`              ON core_sistemas.idSistema               
 $SIS_order = $order_by.' LIMIT '.$comienzo.', '.$cant_reg;
 $arrCorreos = array();
 $arrCorreos = db_select_array (false, $SIS_query, 'telemetria_mnt_correos_list', $SIS_join, $SIS_where, $SIS_order, $dbConn, $_SESSION['usuario']['basic_data']['Nombre'], $original, 'arrEquipos');
-
 ?>
 
 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 breadcrumb-bar">
@@ -366,5 +364,4 @@ $arrCorreos = db_select_array (false, $SIS_query, 'telemetria_mnt_correos_list',
 /*                                             Se llama al pie del documento html                                                 */
 /**********************************************************************************************************************************/
 require_once 'core/Web.Footer.Main.php';
-
 ?>

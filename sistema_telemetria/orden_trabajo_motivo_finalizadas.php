@@ -133,7 +133,6 @@ LEFT JOIN `ubicacion_listado_level_5`   ON ubicacion_listado_level_5.idLevel_5  
 $SIS_order = $order_by.' LIMIT '.$comienzo.', '.$cant_reg;
 $arrOTS = array();
 $arrOTS = db_select_array (false, $SIS_query, 'orden_trabajo_tareas_listado', $SIS_join, $SIS_where, $SIS_order, $dbConn, $_SESSION['usuario']['basic_data']['Nombre'], $original, 'arrOTS');
-
 ?>
 
 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 breadcrumb-bar">
@@ -288,5 +287,4 @@ $arrOTS = db_select_array (false, $SIS_query, 'orden_trabajo_tareas_listado', $S
 /*                                             Se llama al pie del documento html                                                 */
 /**********************************************************************************************************************************/
 require_once 'core/Web.Footer.Main.php';
-
 ?>

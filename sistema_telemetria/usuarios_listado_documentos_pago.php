@@ -204,7 +204,6 @@ $SIS_where = 'sistema_documentos_pago.idDocPago!=0';
 $SIS_order = 'sistema_documentos_pago.Nombre ASC';
 $arrDocumentos = array();
 $arrDocumentos = db_select_array (false, $SIS_query, 'sistema_documentos_pago', $SIS_join, $SIS_where, $SIS_order, $dbConn, $_SESSION['usuario']['basic_data']['Nombre'], $original, 'arrDocumentos');
-
 ?>
 
 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
@@ -295,5 +294,4 @@ $arrDocumentos = db_select_array (false, $SIS_query, 'sistema_documentos_pago', 
 /*                                             Se llama al pie del documento html                                                 */
 /**********************************************************************************************************************************/
 require_once 'core/Web.Footer.Main.php';
-
 ?>

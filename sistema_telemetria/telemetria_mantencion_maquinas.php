@@ -122,7 +122,6 @@ $SIS_query .= ',telemetria_mantencion_matriz.SensoresValor_'.$_GET['mod'].' AS V
 $SIS_query .= ',telemetria_mantencion_matriz.SensoresNumero_'.$_GET['mod'].' AS SensoresNumero';
 $SIS_join  = '';
 $rowData = db_select_data (false, $SIS_query, 'telemetria_mantencion_matriz', $SIS_join, 'idMatriz = '.$_GET['idMatriz'], $dbConn, $_SESSION['usuario']['basic_data']['Nombre'], $original, 'rowData');
-
 ?>
 
 <div class="col-xs-12 col-sm-10 col-md-9 col-lg-8 fcenter">
@@ -184,7 +183,6 @@ $SIS_where = '';
 $SIS_order = 'telemetria_listado_sensores.idSensores ASC';
 $arrTipos = array();
 $arrTipos = db_select_array (false, $SIS_query, 'telemetria_listado_sensores', $SIS_join, $SIS_where, $SIS_order, $dbConn, $_SESSION['usuario']['basic_data']['Nombre'], $original, 'arrTipos');
-
 ?>
 
 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
@@ -238,7 +236,6 @@ $arrTipos = db_select_array (false, $SIS_query, 'telemetria_listado_sensores', $
 $SIS_query  = 'Nombre,cantPuntos, idSistema';
 $SIS_join  = '';
 $rowData = db_select_data (false, $SIS_query, 'telemetria_mantencion_matriz', $SIS_join, 'idMatriz = '.$_GET['idMatriz_2'], $dbConn, $_SESSION['usuario']['basic_data']['Nombre'], $original, 'rowData');
-
 ?>
 
 <div class="col-xs-12 col-sm-10 col-md-9 col-lg-8 fcenter">
@@ -282,7 +279,6 @@ validaPermisoUser($rowlevel['level'], 3, $dbConn);
 //se crea filtro
 //verifico que sea un administrador
 $z = "idSistema=".$_SESSION['usuario']['basic_data']['idSistema'];
-
 ?>
 
 <div class="col-xs-12 col-sm-10 col-md-9 col-lg-8 fcenter">
@@ -372,7 +368,6 @@ $SIS_join  = 'LEFT JOIN `core_estados` ON core_estados.idEstado = telemetria_man
 $SIS_order = $order_by.' LIMIT '.$comienzo.', '.$cant_reg;
 $arrMatriz = array();
 $arrMatriz = db_select_array (false, $SIS_query, 'telemetria_mantencion_matriz', $SIS_join, $SIS_where, $SIS_order, $dbConn, $_SESSION['usuario']['basic_data']['Nombre'], $original, 'arrMatriz');
-
 ?>
 
 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 breadcrumb-bar">
@@ -493,5 +488,4 @@ $arrMatriz = db_select_array (false, $SIS_query, 'telemetria_mantencion_matriz',
 /*                                             Se llama al pie del documento html                                                 */
 /**********************************************************************************************************************************/
 require_once 'core/Web.Footer.Main.php';
-
 ?>
