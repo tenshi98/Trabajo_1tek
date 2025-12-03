@@ -28,9 +28,7 @@ config/*.dev.*
 config/*.test.*
 
 # 🗃️ Bases de datos y backups
-*.sqlite
 *.db
-*.sql
 *.bak
 *.dump
 
@@ -96,3 +94,5 @@ docker-compose.local.yml
 *.orig
 *.rej
 
+# 🔄 Ignorar contenido carpetas
+/admin/public/security
