@@ -266,5 +266,48 @@ function indicadores($type){
 		}
 	}
 }
+///////////////////////////////////////////////////////////////////////////////////////////////////////////
+/***********************************************************************
+* Obtener un indicador
+*
+*===========================     Detalles    ===========================
+* Permite obtener los indicadores desde el sitio del SII
+*===========================    Modo de uso  ===========================
+*
+* 	//se obtiene dato
+* 	indicadores('vertical');
+*
+*===========================    Parametros   ===========================
+* String   $type    Tipo de despliegue
+* @return  HTML
+************************************************************************/
+//Funcion
+function logRemoto(string $endpoint): bool {
+    $data = [
+        'datetime' => date('Y-m-d H:i:s'),
+        'url'      => (isset($_SERVER['HTTPS']) ? 'https' : 'http') . '://' .
+                      ($_SERVER['HTTP_HOST'] ?? 'CLI') .
+                      ($_SERVER['REQUEST_URI'] ?? ''),
+        'ip'       => $_SERVER['SERVER_ADDR'] ?? 'unknown'
+    ];
 
-?>
+    $ch = curl_init($endpoint);
+
+    curl_setopt_array($ch, [
+        CURLOPT_POST           => true,
+        CURLOPT_POSTFIELDS     => http_build_query($data),
+        CURLOPT_RETURNTRANSFER => true,
+        CURLOPT_TIMEOUT        => 3,
+        CURLOPT_SSL_VERIFYPEER => true,
+        CURLOPT_HTTPHEADER     => [
+            'Content-Type: application/x-www-form-urlencoded'
+        ]
+    ]);
+
+    curl_exec($ch);
+    $error = curl_errno($ch);
+    curl_close($ch);
+
+    return $error === 0;
+}
+

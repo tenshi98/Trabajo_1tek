@@ -692,5 +692,3 @@ function arrayToString(array $array = [], $delimiter = ' '){
 
 
 
-
-?>

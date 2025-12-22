@@ -1,11 +1,11 @@
 //Confirmacion de eliminacion
 function add_job(data,direccion){
 	location = direccion+'&val_select=' + document.getElementById('idItemList_'+data).value;
-} 
+}
 //Confirmacion de eliminacion
 function add_sup(direccion){
 	location = direccion+'&val_select=' + document.getElementById('idSupervisor').value;
-} 
+}
 //Confirmacion de eliminacion
 function addtemp(direccion, valorid){
 	let t0 = document.getElementById('T0_'+valorid).value;
@@ -26,7 +26,7 @@ function addaceite(direccion, valorid){
 	let idFlujoAgua    = document.getElementById('idFlujoAgua_'+valorid).value;
 	let Observacion    = document.getElementById('Observacion_'+valorid).value;
 	location = direccion+'&idEstadoAceite='+idEstadoAceite+'&idNivelAgua='+idNivelAgua+'&idNivelAceite='+idNivelAceite+'&idNivelSilice='+idNivelSilice+'&TempAceite='+TempAceite+'&idFlujoAgua='+idFlujoAgua+'&Observacion='+Observacion;
-} 
+}
 //Confirmacion de eliminacion
 function addrevgen(direccion, valorid){
 	location = direccion+'&Observacion=' + document.getElementById('Observacion_'+valorid).value;
@@ -34,23 +34,23 @@ function addrevgen(direccion, valorid){
 //Confirmacion de eliminacion
 function addfalla(direccion, valorid){
 	location = direccion+'&Observacion=' + document.getElementById('Observacion_'+valorid).value;
-} 
+}
 //Confirmacion de eliminacion
 function add_obs(direccion){
 	location = direccion+'&val_select=' + document.getElementById('Observaciones').value;
-} 
+}
 //Confirmacion de eliminacion
 function addfter(direccion){
 	location = direccion+'&val_select=' + document.getElementById('f_termino').value;
-} 
+}
 //Confirmacion de eliminacion
 function addhoraini(direccion){
 	location = direccion+'&val_select=' + document.getElementById('horaInicio').value;
-} 
+}
 //Confirmacion de eliminacion
 function addhoraterm(direccion){
 	location = direccion+'&val_select=' + document.getElementById('horaTermino').value;
-} 
+}
 //Confirmacion de eliminacion
 function addconsumo1(direccion, valorid){
 	let Grasa_inicial       = document.getElementById('Grasa_inicial_'+valorid).value;
@@ -59,7 +59,7 @@ function addconsumo1(direccion, valorid){
 	let idProducto          = document.getElementById('idProducto_'+valorid).value;
 	let Observacion         = document.getElementById('Observacion_'+valorid).value;
 	location = direccion+'&Grasa_inicial='+Grasa_inicial+'&Grasa_relubricacion='+Grasa_relubricacion+'&idUml='+idUml+'&idProducto='+idProducto+'&Observacion='+Observacion;
-} 
+}
 //Confirmacion de eliminacion
 function addconsumo2(direccion, valorid){
 	let Aceite       = document.getElementById('Aceite_'+valorid).value;
@@ -67,7 +67,7 @@ function addconsumo2(direccion, valorid){
 	let idProducto   = document.getElementById('idProducto_'+valorid).value;
 	let Observacion  = document.getElementById('Observacion_'+valorid).value;
 	location = direccion+'&Aceite='+Aceite+'&idUml='+idUml+'&idProducto='+idProducto+'&Observacion='+Observacion;
-} 
+}
 //Confirmacion de eliminacion
 function addconsumo3(direccion, valorid){
 	let Cantidad    = document.getElementById('Cantidad_'+valorid).value;
@@ -75,9 +75,9 @@ function addconsumo3(direccion, valorid){
 	let idProducto  = document.getElementById('idProducto_'+valorid).value;
 	let Observacion = document.getElementById('Observacion_'+valorid).value;
 	location = direccion+'&Cantidad='+Cantidad+'&idUml='+idUml+'&idProducto='+idProducto+'&Observacion='+Observacion;
-} 
+}
 //Confirmacion de eliminacion
 function addfpago(direccion){
 	location = direccion+'&val_select=' + document.getElementById('f_pago').value;
-} 
+}
 

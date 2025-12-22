@@ -2,7 +2,7 @@
 /**********************************************************************************************************************************/
 /*                                                   Se define la Sesion                                                          */
 /**********************************************************************************************************************************/
-$timeout = 604800;                               //Se setea la expiracion a una semana
+$timeout = 604800;                               //Se setea la expiración a una semana
 ini_set( "session.gc_maxlifetime", $timeout );   //Establecer la vida útil máxima de la sesión
 ini_set( "session.cookie_lifetime", $timeout );  //Establecer la duración de las cookies de la sesión
 session_start();                                 //Iniciar una nueva sesión
@@ -171,7 +171,7 @@ if (!empty($_GET['cerrar_ot'])){
 /**********************************************************************************************************************************/
 require_once 'core/Web.Header.Main.php';
 /**********************************************************************************************************************************/
-/*                                                   ejecucion de logica                                                          */
+/*                                                   ejecución de lógica                                                          */
 /**********************************************************************************************************************************/
 //Listado de errores no manejables
 if (isset($_GET['edited'])){     $error['edited']     = 'sucess/Datos editados correctamente';}
@@ -342,16 +342,6 @@ foreach ($arrPermisos as $prod) {
 				//Consulta
 				$resultado = mysqli_query ($dbConn, $query);
 				//Si ejecuto correctamente la consulta
-				if(!$resultado){
-					//Genero numero aleatorio
-					$vardata = genera_password(8,'alfanumerico');
-									
-					//Guardo el error en una variable temporal
-					
-					
-					
-									
-				}
 				while ( $row = mysqli_fetch_assoc ($resultado)){
 				array_push( $arrTipo,$row );
 				}

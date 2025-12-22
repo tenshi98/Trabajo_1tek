@@ -38,3 +38,4 @@ function createBarrel(textura) {
     barrel.appendChild(createFace(100, 100, 0, 98, 0, -Math.PI / 2, 0, 0, textura, 0, 100));
     return barrel;
 }
+

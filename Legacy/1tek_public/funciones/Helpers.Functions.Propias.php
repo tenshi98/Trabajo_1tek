@@ -293,7 +293,6 @@ function print_select ($tipo, $Nombre,$idNombre,$valor, $Validacion) {
 		case 11:
 			echo form_input_validate($Nombre,$idNombre,$valor, 1, $Validacion);
 			break;
-
 	}
 
 }

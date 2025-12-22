@@ -2,7 +2,7 @@
 /**********************************************************************************************************************************/
 /*                                                   Se define la Sesion                                                          */
 /**********************************************************************************************************************************/
-$timeout = 604800;                               //Se setea la expiracion a una semana
+$timeout = 604800;                               //Se setea la expiración a una semana
 ini_set( "session.gc_maxlifetime", $timeout );   //Establecer la vida útil máxima de la sesión
 ini_set( "session.cookie_lifetime", $timeout );  //Establecer la duración de las cookies de la sesión
 session_start();                                 //Iniciar una nueva sesión
@@ -27,7 +27,7 @@ require_once '../A2XRXS_gears/xrxs_configuracion/Load.User.Permission.php';
 /**********************************************************************************************************************************/
 require_once 'core/Web.Header.Main.php';
 /**********************************************************************************************************************************/
-/*                                                   ejecucion de logica                                                          */
+/*                                                   ejecución de lógica                                                          */
 /**********************************************************************************************************************************/
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 if(!empty($_GET['submit_filter'])){
@@ -46,17 +46,6 @@ if(isset($_GET['idTelemetria'])&&$_GET['idTelemetria']!=''){
 	WHERE (backup_telemetria_listado_tablarelacionada_".$_GET['idTelemetria'].".FechaSistema BETWEEN '".$_GET['f_inicio']."' AND '".$_GET['f_termino']."') ";
 	//Consulta
 	$resultado = mysqli_query ($dbConn, $query);
-	//Si ejecuto correctamente la consulta
-	if(!$resultado){
-		//Genero numero aleatorio
-		$vardata = genera_password(8,'alfanumerico');
-						
-		//Guardo el error en una variable temporal
-		
-		
-		
-						
-	}
 	$rowData = mysqli_fetch_assoc ($resultado);
 	/*****************************************/
 	//Se escribe el dato
@@ -107,16 +96,6 @@ if(isset($_GET['idTelemetria'])&&$_GET['idTelemetria']!=''){
 	//Consulta
 	$resultado = mysqli_query ($dbConn, $query);
 	//Si ejecuto correctamente la consulta
-	if(!$resultado){
-		//Genero numero aleatorio
-		$vardata = genera_password(8,'alfanumerico');
-						
-		//Guardo el error en una variable temporal
-		
-		
-		
-						
-	}
 	while ( $row = mysqli_fetch_assoc ($resultado)){
 	array_push( $arrEquipos,$row );
 	}
@@ -136,16 +115,6 @@ if(isset($_GET['idTelemetria'])&&$_GET['idTelemetria']!=''){
 		//Consulta
 		$resultado = mysqli_query ($dbConn, $query);
 		//Si ejecuto correctamente la consulta
-		if(!$resultado){
-			//Genero numero aleatorio
-			$vardata = genera_password(8,'alfanumerico');
-							
-			//Guardo el error en una variable temporal
-			
-			
-			
-							
-		}
 		$rowData = mysqli_fetch_assoc ($resultado);
 
 		$Alert_Text .= 'Total de registros encontrados de '.$equipo['Nombre'].': '.Cantidades($rowData['Total'], 0).'<br/>';

@@ -2,7 +2,7 @@
 /**********************************************************************************************************************************/
 /*                                                   Se define la Sesion                                                          */
 /**********************************************************************************************************************************/
-$timeout = 604800;                               //Se setea la expiracion a una semana
+$timeout = 604800;                               //Se setea la expiración a una semana
 ini_set( "session.gc_maxlifetime", $timeout );   //Establecer la vida útil máxima de la sesión
 ini_set( "session.cookie_lifetime", $timeout );  //Establecer la duración de las cookies de la sesión
 session_start();                                 //Iniciar una nueva sesión
@@ -55,7 +55,7 @@ foreach ($arrUnimed as $sen) {
 /**********************************************************************************************************************************/
 require_once 'core/Web.Header.Views.php';
 /**********************************************************************************************************************************/
-/*                                                   ejecucion de logica                                                          */
+/*                                                   ejecución de lógica                                                          */
 /**********************************************************************************************************************************/
 
 ?>

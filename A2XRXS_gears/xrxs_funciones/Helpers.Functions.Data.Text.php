@@ -822,6 +822,3 @@ function hr_line($Type, $Color){
 	}
 }
 
-
-
-?>

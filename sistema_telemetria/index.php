@@ -2,7 +2,7 @@
 /**********************************************************************************************************************************/
 /*                                                   Se define la Sesion                                                          */
 /**********************************************************************************************************************************/
-$timeout = 604800;                               //Se setea la expiracion a una semana
+$timeout = 604800;                               //Se setea la expiración a una semana
 ini_set( "session.gc_maxlifetime", $timeout );   //Establecer la vida útil máxima de la sesión
 ini_set( "session.cookie_lifetime", $timeout );  //Establecer la duración de las cookies de la sesión
 set_time_limit(2400);                            //Tiempo Maximo de la consulta, 40 minutos por defecto
@@ -158,7 +158,7 @@ $_SESSION['form_require'] = 'required';
 
 <?php
 /**********************************************************************************************************************************/
-/*                                                   ejecucion de logica                                                          */
+/*                                                   ejecución de lógica                                                          */
 /**********************************************************************************************************************************/
 //Listado de errores no manejables
 if (isset($_GET['created'])){ $error['created'] = 'sucess/Corredor Creado correctamente';}

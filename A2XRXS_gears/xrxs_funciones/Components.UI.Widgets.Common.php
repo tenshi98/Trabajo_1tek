@@ -2015,4 +2015,3 @@ function widget_star_rating($max, $value, $text){
 
 }
 
-?>

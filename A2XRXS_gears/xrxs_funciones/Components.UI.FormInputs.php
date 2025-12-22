@@ -9487,5 +9487,3 @@ class Basic_Form_Inputs{
 
 }
 
-
-?>

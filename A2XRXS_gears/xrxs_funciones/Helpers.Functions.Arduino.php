@@ -529,5 +529,3 @@ void loop() {
 	return $code;
 }
 
-
-?>

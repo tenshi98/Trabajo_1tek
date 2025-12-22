@@ -312,4 +312,4 @@ function info_popover_data($IdElemento, $Titulo, $Mensaje, $Ubicacion){
 	}
 }
 
-?>
+

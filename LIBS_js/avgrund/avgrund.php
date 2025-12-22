@@ -18,7 +18,6 @@
 			'<a href="#"               class="btn btn-danger pull-right margin_form_btn avgrund-cierra">Cancelar</a>' +
 			'</div>'
 		});
-
 	}
 
 </script>

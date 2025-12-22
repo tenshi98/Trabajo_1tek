@@ -219,5 +219,3 @@ function getGeocodeData($address, $ApiKey) {
         return false;
     }
 }
-
-?>

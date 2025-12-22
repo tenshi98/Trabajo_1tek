@@ -1,14 +1,14 @@
-<html>  
-    <head>  
-        <title>Make Price Range Slider using JQuery with PHP Ajax</title>  
-		
-		<script src="jquery.min.js"></script> 
+<html>
+    <head>
+        <title>Make Price Range Slider using JQuery with PHP Ajax</title>
+
+		<script src="jquery.min.js"></script>
 		<script src="bootstrap.min.js"></script>
 		<script src="croppie.js"></script>
 		<link rel="stylesheet" href="bootstrap.min.css" />
 		<link rel="stylesheet" href="croppie.css" />
-    </head>  
-    <body>  
+    </head>
+    <body>
         <div class="container">
           <br />
       <h3 align="center">Image Crop & Upload using JQuery with PHP Ajax</h3>
@@ -23,7 +23,7 @@
   				</div>
   			</div>
   		</div>
-    </body>  
+    </body>
 </html>
 
 <div id="uploadimageModal" class="modal" role="dialog">
@@ -53,7 +53,7 @@
     </div>
 </div>
 
-<script>  
+<script>
 $(document).ready(function(){
 
 	$image_crop = $('#image_demo').croppie({
@@ -100,5 +100,5 @@ $(document).ready(function(){
     })
   });
 
-});  
+});
 </script>

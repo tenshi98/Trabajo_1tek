@@ -1112,4 +1112,3 @@ function Chartjs_Line_1($idDiv, $titulo, $xData, $yData){
 
 }
 
-?>

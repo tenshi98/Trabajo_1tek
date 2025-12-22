@@ -133,4 +133,3 @@ function anti_injection($sql){
 }
 
 
-?>

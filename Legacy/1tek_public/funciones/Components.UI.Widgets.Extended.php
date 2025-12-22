@@ -13233,7 +13233,4 @@ function widget_Gestion_Equipos_crosscrane_ubicacion($titulo,$idSistema, $IDGoog
 
 	}
 }
-/*******************************************************************************************************************/
 
-
-?>

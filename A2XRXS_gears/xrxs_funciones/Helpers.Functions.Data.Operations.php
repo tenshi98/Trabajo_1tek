@@ -424,5 +424,3 @@ function diferencia_meses( $fechainicial, $fechafinal ) {
 	return $meses;
 
 }
-
-?>

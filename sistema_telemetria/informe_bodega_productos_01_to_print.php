@@ -2,7 +2,7 @@
 /**********************************************************************************************************************************/
 /*                                                   Se define la Sesion                                                          */
 /**********************************************************************************************************************************/
-$timeout = 604800;                               //Se setea la expiracion a una semana
+$timeout = 604800;                               //Se setea la expiración a una semana
 ini_set( "session.gc_maxlifetime", $timeout );   //Establecer la vida útil máxima de la sesión
 ini_set( "session.cookie_lifetime", $timeout );  //Establecer la duración de las cookies de la sesión
 session_start();                                 //Iniciar una nueva sesión
@@ -45,7 +45,7 @@ $arrProductos = db_select_array (false, $SIS_query, 'productos_listado', $SIS_jo
 /**********************************************************************************************************************************/
 require_once 'core/Web.Header.PrintFact.php';
 /**********************************************************************************************************************************/
-/*                                                   ejecucion de logica                                                          */
+/*                                                   ejecución de lógica                                                          */
 /**********************************************************************************************************************************/
 $my_html ='
 	<div class="panel panel-cascade panel-invoice">

@@ -683,4 +683,3 @@ function envio_sendinblue($De_correo, $De_nombre,
 
 }
 
-?>

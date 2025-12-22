@@ -1224,18 +1224,16 @@ $(function () {
 
     var countryInput = $(document).find('.countrypicker');
     var countryList = "";
-    
-
 
     //set defaults
     for (i = 0; i < countryInput.length; i++) {
 
         //check if flag
         flag = countryInput.eq(i).data('flag');
-        
+
         if (flag) {
             countryList = "";
-            
+
             //for each build list with flag
             $.each(countries, function (index, country) {
                 var flagIcon = domain_val + "/LIB_assets/img/flags/" + country.code.toLowerCase() + ".png";
@@ -1270,18 +1268,17 @@ $(function () {
             });
         }else{
             countryList ="";
-            
+
             //for each build list without flag
             $.each(countries, function (index, country) {
                 countryList += "<option data-country-code='" + country.code + "' data-tokens='" + country.code + " " + country.name + "' value='" + country.val_i + "'>" + country.name + "</option>";
             });
-            
-            
+
         }
-        
+
         datat = "<option data-country-code='none' data-tokens='' value=''>Seleccione una opcion</option>";
         datat += countryList;
-        
+
         countryInput.eq(i).html(datat);
         //append country list
         //countryInput.eq(i).html(countryList);
@@ -1294,9 +1291,6 @@ $(function () {
             countryInput.eq(i).val(def);
         }
 
-
     }
-
-
 
 });

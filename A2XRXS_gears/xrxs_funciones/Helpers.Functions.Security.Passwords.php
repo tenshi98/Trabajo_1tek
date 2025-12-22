@@ -149,5 +149,3 @@ function caracteresRandom($longitud = 16, $lecturaAmigable = true, $incluirSimbo
 
     return $cadena;
 }
-
-?>

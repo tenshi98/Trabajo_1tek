@@ -204,4 +204,3 @@ function token_bin2hex($longitud) {
 	return $token;
 }
 
-?>

@@ -1103,3 +1103,4 @@
 	publicMethod.settings = defaults;
 
 }(jQuery, document, window));
+

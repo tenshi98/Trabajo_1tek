@@ -95,4 +95,3 @@ function Hora_archivos($Hora){
 
 }
 
-?>

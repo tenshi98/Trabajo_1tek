@@ -636,7 +636,3 @@ function fullDate($Fecha){
 
 }
 
-
-
-
-?>

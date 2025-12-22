@@ -753,4 +753,3 @@ function mapa_from_ubicacion_mixta($Ubicacion_1, $explanation_1,$Ubicacion_2, $e
 }
 
 
-?>

@@ -3,6 +3,7 @@
  * For licensing, see LICENSE.html or http://ckeditor.com/license
  */
 
+
 CKEDITOR.editorConfig = function( config ) {
 	// Define changes to default configuration here.
 	// For the complete reference:

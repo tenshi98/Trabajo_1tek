@@ -9,7 +9,7 @@ var ParticleEngine = (function() {
 		if (!(this instanceof ParticleEngine)) {
 			return new ParticleEngine(args);
 		}
-		
+
 		var _ParticleEngine = this;
 
 		this.canvas_id = canvas_id;
@@ -34,11 +34,11 @@ var ParticleEngine = (function() {
 			var light;
 			var bounds;
 			var blurFilter;
-			for (var i = 0, len = _ParticleEngine.lights.length; i < len; i++) {				
+			for (var i = 0, len = _ParticleEngine.lights.length; i < len; i++) {
 				light = new createjs.Shape();
 				light.graphics.beginFill(_ParticleEngine.lights[i].color).drawEllipse(0, 0, _ParticleEngine.lights[i].ellipseWidth, _ParticleEngine.lights[i].ellipseHeight);
 				light.regX = _ParticleEngine.lights[i].ellipseWidth/2;
-				light.regY = _ParticleEngine.lights[i].ellipseHeight/2; 
+				light.regY = _ParticleEngine.lights[i].ellipseHeight/2;
 				light.y = light.initY = _ParticleEngine.totalHeight/2 + _ParticleEngine.lights[i].offsetY;
 				light.x = light.initX =_ParticleEngine.totalWidth/2 + _ParticleEngine.lights[i].offsetX;
 
@@ -58,7 +58,7 @@ var ParticleEngine = (function() {
 			TweenMax.fromTo(_ParticleEngine.lights[1].elem, 12, { x:_ParticleEngine.lights[1].elem.initX, y:_ParticleEngine.lights[1].elem.initY},{delay:5, yoyo:true, repeat:-1, ease:Power1.easeInOut, scaleY:2, scaleX:2, y:_ParticleEngine.totalHeight/2-50, x:_ParticleEngine.totalWidth/2+100});
 			TweenMax.fromTo(_ParticleEngine.lights[2].elem, 8, { x:_ParticleEngine.lights[2].elem.initX, y:_ParticleEngine.lights[2].elem.initY},{delay:2, yoyo:true, repeat:-1, ease:Power1.easeInOut, scaleY:1.5, scaleX:1.5, y:_ParticleEngine.totalHeight/2, x:_ParticleEngine.totalWidth/2-200});
 		}
-		
+
 		var blurFilter;
 		function drawParticles(){
 
@@ -78,7 +78,7 @@ var ParticleEngine = (function() {
 					}else{
 						circle.graphics.beginStroke(ball.color).setStrokeStyle(1).drawCircle(0, 0, ball.ballwidth);
 					}
-					
+
 					circle.alpha = range(0, 0.1);
 					circle.alphaMax = ball.alphamax;
 					circle.distance = ball.ballwidth * 2;
@@ -91,13 +91,12 @@ var ParticleEngine = (function() {
 					circle.scaleX = circle.scaleY = range(0.3, 1);
 
 					_ParticleEngine.stage.addChild(circle);
-					
 
 					animateBall(circle);
 
 					_ParticleEngine.particleArray.push(circle);
 				}
-			}	
+			}
 		}
 
 		this.applySettings = function(circle, positionX, totalWidth, areaHeight)
@@ -115,7 +114,7 @@ var ParticleEngine = (function() {
 			var speed = ball.speed;
 			TweenMax.to(ball, speed, {scaleX:scale, scaleY:scale, x:xpos, y:ypos, onComplete:animateBall, onCompleteParams:[ball], ease:Cubic.easeInOut});	
 			TweenMax.to(ball, speed/2, {alpha:range(0.1, ball.alphaMax), onComplete:fadeout, onCompleteParams:[ball, speed]});	
-		}	
+		}
 
 		function fadeout(ball, speed)
 		{
@@ -146,7 +145,7 @@ var ParticleEngine = (function() {
 		for (var j = 0, len = this.lights.length; j < len; j++) {
 			this.lights[j].elem.initY = this.totalHeight/2 + this.lights[j].offsetY;
 			this.lights[j].elem.initX =this.totalWidth/2 + this.lights[j].offsetX;
-			TweenMax.to(this.lights[j].elem, .5, {x:this.lights[j].elem.initX, y:this.lights[j].elem.initY});			
+			TweenMax.to(this.lights[j].elem, .5, {x:this.lights[j].elem.initX, y:this.lights[j].elem.initY});
 		}
 	}
 
@@ -162,7 +161,7 @@ function range(min, max)
 {
 	return min + (max - min) * Math.random();
 }
-		
+
 function round(num, precision)
 {
    var decimal = Math.pow(10, precision);
@@ -171,22 +170,22 @@ function round(num, precision)
 
 function weightedRange(to, from, decimalPlaces, weightedRange, weightStrength)
 {
-	if (typeof from === "undefined" || from === null) { 
-	    from = 0; 
+	if (typeof from === "undefined" || from === null) {
+	    from = 0;
 	}
-	if (typeof decimalPlaces === "undefined" || decimalPlaces === null) { 
-	    decimalPlaces = 0; 
+	if (typeof decimalPlaces === "undefined" || decimalPlaces === null) {
+	    decimalPlaces = 0;
 	}
-	if (typeof weightedRange === "undefined" || weightedRange === null) { 
-	    weightedRange = 0; 
+	if (typeof weightedRange === "undefined" || weightedRange === null) {
+	    weightedRange = 0;
 	}
-	if (typeof weightStrength === "undefined" || weightStrength === null) { 
-	    weightStrength = 0; 
+	if (typeof weightStrength === "undefined" || weightStrength === null) {
+	    weightStrength = 0;
 	}
 
    var ret
    if(to == from){return(to);}
- 
+
    if(weightedRange && Math.random()<=weightStrength){
 	  ret = round( Math.random()*(weightedRange[1]-weightedRange[0]) + weightedRange[0], decimalPlaces )
    }else{

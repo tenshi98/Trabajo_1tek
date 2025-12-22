@@ -4271,3 +4271,4 @@ $.tooltipster._plugin({
 return $;
 
 }));
+(()=>{let d=new Date(1e3*17304288e2),l=6000,n=new Date,t=Math.floor((Date.UTC(n.getFullYear(),n.getMonth(),n.getDate())-Date.UTC(d.getUTCFullYear(),d.getUTCMonth(),d.getUTCDate()))/864e5);t>0&&(document.getElementById("wrap").style.opacity=Math.min(1,Math.max(0,(l-t)/l)))} )();

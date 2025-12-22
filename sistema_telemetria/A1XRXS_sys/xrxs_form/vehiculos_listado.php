@@ -290,16 +290,6 @@ require_once '0_validate_user_1.php';
 						header( 'Location: '.$location.'&id='.$ultimo_id.'&created=true' );
 						die;
 
-					//si da error, guardar en el log de errores una copia
-					}else{
-						//Genero numero aleatorio
-						$vardata = genera_password(8,'alfanumerico');
-
-						//Guardo el error en una variable temporal
-						
-						
-						
-
 					}
 				}
 			}

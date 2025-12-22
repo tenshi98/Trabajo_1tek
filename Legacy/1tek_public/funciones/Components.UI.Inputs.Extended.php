@@ -125,18 +125,6 @@ class Inputs extends Basic_Inputs{
 				//Imprimir dato
 				echo $input;
 
-			//si da error, guardar en el log de errores una copia
-			}else{
-				//Genero numero aleatorio
-				$vardata = genera_password(8,'alfanumerico');
-
-				//Guardo el error en una variable temporal
-				
-				
-				
-
-				//Devuelvo mensaje
-				alert_post_data(4,1,1,0, 'Error en la consulta en <strong>'.$placeholder.'</strong>, consulte con el administrador');
 			}
 		}
 	}

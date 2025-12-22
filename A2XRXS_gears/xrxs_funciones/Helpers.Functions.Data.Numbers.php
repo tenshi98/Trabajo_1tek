@@ -405,4 +405,3 @@ function numberInit0($valor){
 	}
 }
 
-?>
